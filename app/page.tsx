@@ -102,7 +102,7 @@ export default function HomePage() {
               key={category.slug}
               name={category.name}
               slug={category.slug}
-              image={category.image}
+        
             />
 
           ))}
