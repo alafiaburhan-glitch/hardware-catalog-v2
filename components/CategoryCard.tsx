@@ -2,32 +2,38 @@ import Link from "next/link";
 
 type CategoryCardProps = {
   name: string;
-  description: string;
   slug: string;
   image?: string;
 };
 
 export default function CategoryCard({
   name,
-  description,
   slug,
   image,
 }: CategoryCardProps) {
   return (
     <Link href={`/categories/${slug}`}>
-      <div className="border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 bg-white cursor-pointer h-full">
+      <div className="border-2 border-red-700 rounded-2xl overflow-hidden hover:shadow-xl transition bg-white cursor-pointer">
 
         {image && (
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-40 object-cover rounded-xl mb-4"
-          />
+          <div className="h-40 overflow-hidden">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover"
+            />
+          </div>
         )}
 
-        <h3 className="text-2xl font-semibold mb-3">{name}</h3>
+        <div className="p-5">
+          <h3 className="text-lg font-bold text-gray-900">
+            {name}
+          </h3>
 
-        <p className="text-gray-600">{description}</p>
+          <p className="text-sm text-gray-500 mt-1">
+            View Products
+          </p>
+        </div>
 
       </div>
     </Link>
