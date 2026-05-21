@@ -104,9 +104,7 @@ export default function HomePage() {
               slug={category.slug}
         
             />
-git add .
-git commit -m "fix category image prop"
-git push origin main
+
           ))}
 
         </div>

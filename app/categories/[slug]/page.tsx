@@ -1,88 +1,70 @@
 "use client";
 
-import { use } from "react";
 import { useEffect, useState } from "react";
-
-import productsData from "@/data/products";
+import { useParams } from "next/navigation";
 
 import ProductCard from "@/components/ProductCard";
+import { supabase } from "@/lib/supabase";
 
-type Product = {
-  id: number;
-  name: string;
-  code: string;
-  slug: string;
-  category: string;
-  description?: string;
-  image?: string;
-};
+export default function CategoryPage() {
 
-export default function CategoryPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+  const params = useParams();
 
-  const { slug } = use(params);
+  const slug = params.slug as string;
 
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<any[]>([]);
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
-    const localProducts = JSON.parse(
-      localStorage.getItem("products") || "[]"
-    );
+    async function fetchProducts() {
 
-    const allProducts = [
-      ...productsData,
-      ...localProducts,
-    ];
+    const { data, error } = await supabase
+  .from("products")
+  .select("*")
+  .eq("category", slug);
 
-    const filteredProducts = allProducts.filter(
-      (product) => product.category === slug
-    );
+      if (error) {
+        console.log(error);
+      } else {
+        setProducts(data || []);
+      }
 
-    setProducts(filteredProducts);
+      setLoading(false);
+    }
 
-  }, [slug]);
+    fetchProducts();
+
+  }, []);
 
   return (
 
-    <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="max-w-7xl mx-auto px-6 py-16">
 
-      {/* HEADER */}
+      <div className="mb-10">
 
-      <div className="mb-8">
-
-        <p className="text-red-700 uppercase tracking-[0.2em] font-semibold mb-2 text-xs">
-          CATEGORY
-        </p>
-
-        <h1 className="text-3xl md:text-4xl font-black capitalize">
+        <h1 className="text-4xl font-bold capitalize text-red-700">
           {slug}
         </h1>
 
+        <p className="text-gray-600 mt-2">
+          Browse products under this category
+        </p>
+
       </div>
 
-      {/* PRODUCTS */}
+      {loading ? (
 
-      {products.length === 0 ? (
+        <p>Loading products...</p>
 
-        <div className="border border-red-200 rounded-2xl p-10 text-center">
+      ) : products.length === 0 ? (
 
-          <h2 className="text-xl font-bold mb-2">
-            No Products Found
-          </h2>
-
-          <p className="text-gray-500">
-            No products added in this category yet.
-          </p>
-
-        </div>
+        <p>No products found.</p>
 
       ) : (
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
           {products.map((product) => (
 
@@ -90,8 +72,8 @@ export default function CategoryPage({
               key={product.id}
               name={product.name}
               code={product.code}
-              image={product.image || "/products/default.jpg"}
               slug={product.slug}
+              image={product.image}
             />
 
           ))}

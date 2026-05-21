@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import categories from "@/data/categories";
+import { supabase } from "@/lib/supabase";
 
 export default function NewProductPage() {
+
+  const [loading, setLoading] = useState(false);
+
+  const [imageFile, setImageFile] = useState<File | null>(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -13,58 +20,79 @@ export default function NewProductPage() {
     description: "",
   });
 
-  const handleSubmit = (
+  const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
 
     e.preventDefault();
 
-    const newProduct = {
-      id: Date.now(),
+    setLoading(true);
 
-      name: formData.name,
+    let imageUrl = "/products/default.jpg";
 
-      code: formData.code,
+    // UPLOAD IMAGE
 
-      slug: formData.slug,
+    if (imageFile) {
 
-      category: formData.category,
+      const fileExt = imageFile.name.split(".").pop();
 
-      description: formData.description,
+      const fileName = `${uuidv4()}.${fileExt}`;
 
-      image: "/products/default.jpg",
+      const filePath = fileName;
 
-      specifications: {
-        Material: "Not Added",
-        Size: "Not Added",
-      },
-    };
+      const { error: uploadError } = await supabase
+        .storage
+        .from("products")
+        .upload(filePath, imageFile);
 
-    // GET EXISTING PRODUCTS
+      if (uploadError) {
 
-    const existingProducts = JSON.parse(
-      localStorage.getItem("products") || "[]"
-    );
+        console.log(uploadError);
 
-    // ADD NEW PRODUCT
+        alert("Image upload failed");
 
-    const updatedProducts = [
-      ...existingProducts,
-      newProduct,
-    ];
+        setLoading(false);
 
-    // SAVE BACK TO LOCAL STORAGE
+        return;
+      }
 
-    localStorage.setItem(
-      "products",
-      JSON.stringify(updatedProducts)
-    );
+      const {
+        data: { publicUrl },
+      } = supabase
+        .storage
+        .from("products")
+        .getPublicUrl(filePath);
+
+      imageUrl = publicUrl;
+    }
+
+    // SAVE PRODUCT
+
+    const { error } = await supabase
+      .from("products")
+      .insert([
+        {
+          name: formData.name,
+          code: formData.code,
+          slug: formData.slug,
+          category: formData.category,
+          description: formData.description,
+          image: imageUrl,
+        },
+      ]);
+
+    setLoading(false);
+
+    if (error) {
+
+      console.log(error);
+
+      alert("Error saving product");
+
+      return;
+    }
 
     alert("Product Saved Successfully!");
-
-    console.log(updatedProducts);
-
-    // RESET FORM
 
     setFormData({
       name: "",
@@ -74,17 +102,16 @@ export default function NewProductPage() {
       description: "",
     });
 
+    setImageFile(null);
   };
 
   return (
 
     <div className="max-w-4xl">
 
-      {/* HEADER */}
-
       <div className="mb-10">
 
-        <h1 className="text-5xl font-bold mb-3">
+        <h1 className="text-4xl font-bold mb-3 text-red-700">
           Add Product
         </h1>
 
@@ -94,14 +121,10 @@ export default function NewProductPage() {
 
       </div>
 
-      {/* FORM */}
-
       <form
         onSubmit={handleSubmit}
-        className="space-y-8"
+        className="space-y-6"
       >
-
-        {/* PRODUCT NAME */}
 
         <div>
 
@@ -111,7 +134,7 @@ export default function NewProductPage() {
 
           <input
             type="text"
-            placeholder="Enter product name"
+            required
             value={formData.name}
             onChange={(e) =>
               setFormData({
@@ -119,12 +142,10 @@ export default function NewProductPage() {
                 name: e.target.value,
               })
             }
-            className="w-full border rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-xl px-4 py-3"
           />
 
         </div>
-
-        {/* PRODUCT CODE */}
 
         <div>
 
@@ -134,7 +155,7 @@ export default function NewProductPage() {
 
           <input
             type="text"
-            placeholder="HT001"
+            required
             value={formData.code}
             onChange={(e) =>
               setFormData({
@@ -142,12 +163,10 @@ export default function NewProductPage() {
                 code: e.target.value,
               })
             }
-            className="w-full border rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-xl px-4 py-3"
           />
 
         </div>
-
-        {/* PRODUCT SLUG */}
 
         <div>
 
@@ -157,7 +176,7 @@ export default function NewProductPage() {
 
           <input
             type="text"
-            placeholder="adjustable-spanner"
+            required
             value={formData.slug}
             onChange={(e) =>
               setFormData({
@@ -165,12 +184,10 @@ export default function NewProductPage() {
                 slug: e.target.value,
               })
             }
-            className="w-full border rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-xl px-4 py-3"
           />
 
         </div>
-
-        {/* CATEGORY */}
 
         <div>
 
@@ -179,6 +196,7 @@ export default function NewProductPage() {
           </label>
 
           <select
+            required
             value={formData.category}
             onChange={(e) =>
               setFormData({
@@ -186,7 +204,7 @@ export default function NewProductPage() {
                 category: e.target.value,
               })
             }
-            className="w-full border rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-xl px-4 py-3"
           >
 
             <option value="">
@@ -199,9 +217,7 @@ export default function NewProductPage() {
                 key={category.slug}
                 value={category.slug}
               >
-
                 {category.name}
-
               </option>
 
             ))}
@@ -210,17 +226,15 @@ export default function NewProductPage() {
 
         </div>
 
-        {/* DESCRIPTION */}
-
         <div>
 
           <label className="block text-sm font-medium mb-2">
-            Description
+            Product Description
           </label>
 
           <textarea
-            rows={6}
-            placeholder="Enter product description"
+            rows={5}
+            required
             value={formData.description}
             onChange={(e) =>
               setFormData({
@@ -228,57 +242,39 @@ export default function NewProductPage() {
                 description: e.target.value,
               })
             }
-            className="w-full border rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-xl px-4 py-3"
           />
 
         </div>
 
-        {/* SPECIFICATIONS */}
-
         <div>
 
-          <label className="block text-sm font-medium mb-4">
-            Specifications
+          <label className="block text-sm font-medium mb-2">
+            Product Image
           </label>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
 
-            <input
-              type="text"
-              placeholder="Material"
-              className="border rounded-2xl px-5 py-4"
-            />
+              if (e.target.files?.[0]) {
+                setImageFile(e.target.files[0]);
+              }
 
-            <input
-              type="text"
-              placeholder="Chrome Vanadium Steel"
-              className="border rounded-2xl px-5 py-4"
-            />
-
-            <input
-              type="text"
-              placeholder="Size"
-              className="border rounded-2xl px-5 py-4"
-            />
-
-            <input
-              type="text"
-              placeholder="12 inch"
-              className="border rounded-2xl px-5 py-4"
-            />
-
-          </div>
+            }}
+            className="w-full border rounded-xl px-4 py-3"
+          />
 
         </div>
 
-        {/* SAVE BUTTON */}
-
         <button
           type="submit"
-          className="bg-black text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition"
+          disabled={loading}
+          className="bg-red-700 text-white px-6 py-3 rounded-xl hover:bg-red-800 transition"
         >
 
-          Save Product
+          {loading ? "Saving..." : "Save Product"}
 
         </button>
 

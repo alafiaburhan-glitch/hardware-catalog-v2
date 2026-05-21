@@ -1,94 +1,48 @@
 import Link from "next/link";
-
-import Navbar from "@/components/Navbar";
-
 import categories from "@/data/categories";
 
 export default function CategoriesPage() {
 
   return (
 
-    <div className="bg-white min-h-screen">
+    <div className="max-w-7xl mx-auto px-6 py-16">
 
-      <Navbar />
+      <div className="mb-12">
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+        <h1 className="text-4xl font-bold text-red-700 mb-3">
+          All Categories
+        </h1>
 
-        {/* HEADER */}
+        <p className="text-gray-600">
+          Browse all available product categories
+        </p>
 
-        <div className="mb-14">
+      </div>
 
-          <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-            Product Categories
+        {categories.map((category) => (
 
-          </p>
+          <Link
+            key={category.slug}
+            href={`/categories/${category.slug}`}
+          >
 
-          <h1 className="text-5xl font-black text-black mb-6">
+            <div className="border-2 border-red-700 rounded-2xl p-6 hover:bg-red-700 hover:text-white transition cursor-pointer">
 
-            Explore Categories
+              <h2 className="text-lg font-semibold">
+                {category.name}
+              </h2>
 
-          </h1>
+            </div>
 
-          <p className="text-gray-600 text-lg max-w-3xl leading-8">
+          </Link>
 
-            Browse our industrial hardware catalog by
-            category and explore professional products
-            designed for commercial and industrial use.
-
-          </p>
-
-        </div>
-
-        {/* CATEGORY GRID */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          {categories.map((category) => (
-
-            <Link
-              key={category.slug}
-              href={`/categories/${category.slug}`}
-              className="group"
-            >
-
-              <div className="border rounded-3xl p-7 hover:border-red-700 hover:shadow-xl transition duration-300 bg-white h-full">
-
-                {/* ICON */}
-
-                <div className="w-12 h-12 rounded-2xl bg-red-700/10 flex items-center justify-center mb-6">
-
-                  <div className="w-6 h-6 bg-red-700 rounded-full" />
-
-                </div>
-
-                {/* TITLE */}
-
-                <h2 className="text-2xl font-bold mb-3 group-hover:text-red-700 transition">
-
-                  {category.name}
-
-                </h2>
-
-                {/* DESCRIPTION */}
-
-                <p className="text-gray-600 leading-6 text-sm">
-
-                  Explore professional industrial products
-                  and hardware materials in this category.
-
-                </p>
-
-              </div>
-
-            </Link>
-
-          ))}
-
-        </div>
+        ))}
 
       </div>
 
     </div>
+
   );
 }
