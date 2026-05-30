@@ -1,115 +1,130 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-
 import { supabase } from "@/lib/supabase";
 
-export default function ProductPage() {
+import Image from "next/image";
 
-  const params = useParams();
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
-  const slug = params.slug as string;
+  const { data: product, error } =
+    await supabase
+      .from("products")
+      .select("*")
+      .eq("slug", slug)
+      .single();
+      console.log(product);
 
-  const [product, setProduct] = useState<any>(null);
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-
-    async function fetchProduct() {
-
-      const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .eq("slug", slug)
-        .single();
-
-      if (error) {
-        console.log(error);
-      } else {
-        setProduct(data);
-      }
-
-      setLoading(false);
-    }
-
-    fetchProduct();
-
-  }, [slug]);
-
-  if (loading) {
-
+  if (error || !product) {
     return (
-
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        Loading...
+      <div className="p-10">
+        Product not found
       </div>
-
-    );
-  }
-
-  if (!product) {
-
-    return (
-
-      <div className="max-w-7xl mx-auto px-6 py-16">
-
-        <h1 className="text-3xl font-bold text-red-700">
-          Product Not Found
-        </h1>
-
-      </div>
-
     );
   }
 
   return (
+    <main className="max-w-7xl mx-auto px-6 py-12">
 
-    <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="grid md:grid-cols-2 gap-12">
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
+        {/* PRODUCT IMAGE */}
 
-        <div>
+        <div className="border rounded-3xl overflow-hidden bg-white">
 
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full rounded-2xl border"
-          />
+          {product.image ? (
+
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={800}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+
+          ) : (
+
+            <div className="aspect-square bg-gray-100 flex items-center justify-center">
+              No Image
+            </div>
+
+          )}
 
         </div>
 
+        {/* PRODUCT DETAILS */}
+
         <div>
 
-          <p className="text-red-700 font-semibold uppercase tracking-wider mb-3">
-            {product.category}
+          <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
+            Product Details
           </p>
 
           <h1 className="text-4xl font-bold mb-4">
             {product.name}
           </h1>
 
-          <p className="text-gray-500 mb-6">
-            Product Code: {product.code}
-          </p>
+          <div className="mb-6">
 
-          <div className="border-t pt-6">
-
-            <h2 className="text-xl font-semibold mb-3">
-              Description
-            </h2>
-
-            <p className="text-gray-700 leading-relaxed">
-              {product.description}
-            </p>
+            <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
+              Code: {product.code}
+            </span>
 
           </div>
+
+          <p className="text-gray-600 leading-relaxed text-lg mb-10">
+            {product.description}
+          </p>
+
+          {/* SPECIFICATIONS */}
+
+          {product.specifications && (
+
+            <div className="border rounded-3xl overflow-hidden">
+
+              <div className="bg-red-700 text-white px-6 py-4">
+
+                <h2 className="text-2xl font-bold">
+                  Specifications
+                </h2>
+
+              </div>
+
+              <div className="divide-y">
+
+                {Object.entries(
+                  product.specifications
+                ).map(([key, value]) => (
+
+                  <div
+                    key={key}
+                    className="grid grid-cols-2 px-6 py-4"
+                  >
+
+                    <div className="font-semibold text-gray-700">
+                      {key}
+                    </div>
+
+                    <div className="text-gray-600">
+                      {String(value)}
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          )}
 
         </div>
 
       </div>
 
-    </div>
+    </main>
   );
 }

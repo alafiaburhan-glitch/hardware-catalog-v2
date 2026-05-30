@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
-import categories from "@/data/categories";
+import { useRouter } from "next/navigation";
+
 import { supabase } from "@/lib/supabase";
 
+import categories from "@/data/categories";
+
 export default function NewProductPage() {
+  const router = useRouter();
 
   const [loading, setLoading] = useState(false);
 
@@ -18,193 +21,217 @@ export default function NewProductPage() {
     slug: "",
     category: "",
     description: "",
+    specifications: [
+      {
+        key: "",
+        value: "",
+      },
+    ],
   });
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement |
+      HTMLTextAreaElement |
+      HTMLSelectElement
+    >
   ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
+  const addSpecification = () => {
+    setFormData((prev) => ({
+      ...prev,
+      specifications: [
+        ...prev.specifications,
+        {
+          key: "",
+          value: "",
+        },
+      ],
+    }));
+  };
+
+  const updateSpecification = (
+    index: number,
+    field: "key" | "value",
+    value: string
+  ) => {
+    const updated = [...formData.specifications];
+
+    updated[index][field] = value;
+
+    setFormData({
+      ...formData,
+      specifications: updated,
+    });
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent
+  ) => {
     e.preventDefault();
 
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    let imageUrl = "/products/default.jpg";
+      let imageUrl = "";
 
-    // UPLOAD IMAGE
+      if (imageFile) {
+        const fileName = `${Date.now()}-${imageFile.name}`;
 
-    if (imageFile) {
+        const { error: uploadError } =
+          await supabase.storage
+            .from("PRODUCTS")
+            .upload(fileName, imageFile);
 
-      const fileExt = imageFile.name.split(".").pop();
+        if (uploadError) {
+          console.log(uploadError);
+          return;
+        }
 
-      const fileName = `${uuidv4()}.${fileExt}`;
+        const {
+          data: { publicUrl },
+        } = supabase.storage
+          .from("PRODUCTS")
+          .getPublicUrl(fileName);
 
-      const filePath = fileName;
+        imageUrl = publicUrl;
+      }
 
-      const { error: uploadError } = await supabase
-        .storage
-        .from("products")
-        .upload(filePath, imageFile);
+      const specificationsObject =
+        Object.fromEntries(
+          formData.specifications
+            .filter(
+              (spec) =>
+                spec.key &&
+                spec.value
+            )
+            .map((spec) => [
+              spec.key,
+              spec.value,
+            ])
+        );
 
-      if (uploadError) {
+      const { error } =
+        await supabase
+          .from("products")
+          .insert([
+            {
+              name: formData.name,
+              code: formData.code,
+              slug: formData.slug,
+              category: formData.category,
+              description:
+                formData.description,
+              image: imageUrl,
+              specifications:
+                specificationsObject,
+            },
+          ]);
 
-        console.log(uploadError);
-
-        alert("Image upload failed");
-
-        setLoading(false);
-
+      if (error) {
+        console.log(error);
         return;
       }
 
-      const {
-        data: { publicUrl },
-      } = supabase
-        .storage
-        .from("products")
-        .getPublicUrl(filePath);
+      alert("Product added successfully");
 
-      imageUrl = publicUrl;
-    }
+      router.push("/admin/products");
 
-    // SAVE PRODUCT
-
-    const { error } = await supabase
-      .from("products")
-      .insert([
-        {
-          name: formData.name,
-          code: formData.code,
-          slug: formData.slug,
-          category: formData.category,
-          description: formData.description,
-          image: imageUrl,
-        },
-      ]);
-
-    setLoading(false);
-
-    if (error) {
-
+    } catch (error) {
       console.log(error);
-
-      alert("Error saving product");
-
-      return;
+    } finally {
+      setLoading(false);
     }
-
-    alert("Product Saved Successfully!");
-
-    setFormData({
-      name: "",
-      code: "",
-      slug: "",
-      category: "",
-      description: "",
-    });
-
-    setImageFile(null);
   };
 
   return (
+    <div className="max-w-5xl mx-auto px-6 py-10">
 
-    <div className="max-w-4xl">
-
-      <div className="mb-10">
-
-        <h1 className="text-4xl font-bold mb-3 text-red-700">
-          Add Product
-        </h1>
-
-        <p className="text-gray-600">
-          Create a new product for the catalog.
-        </p>
-
-      </div>
+      <h1 className="text-4xl font-bold mb-10">
+        Add Product
+      </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6"
+        className="space-y-8"
       >
+
+        {/* PRODUCT NAME */}
 
         <div>
 
-          <label className="block text-sm font-medium mb-2">
+          <label className="block font-semibold mb-3">
             Product Name
           </label>
 
           <input
             type="text"
-            required
+            name="name"
             value={formData.name}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                name: e.target.value,
-              })
-            }
-            className="w-full border rounded-xl px-4 py-3"
+            onChange={handleChange}
+            required
+            className="w-full border rounded-2xl p-4"
           />
 
         </div>
 
+        {/* PRODUCT CODE */}
+
         <div>
 
-          <label className="block text-sm font-medium mb-2">
+          <label className="block font-semibold mb-3">
             Product Code
           </label>
 
           <input
             type="text"
-            required
+            name="code"
             value={formData.code}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                code: e.target.value,
-              })
-            }
-            className="w-full border rounded-xl px-4 py-3"
+            onChange={handleChange}
+            required
+            className="w-full border rounded-2xl p-4"
           />
 
         </div>
 
+        {/* PRODUCT SLUG */}
+
         <div>
 
-          <label className="block text-sm font-medium mb-2">
+          <label className="block font-semibold mb-3">
             Product Slug
           </label>
 
           <input
             type="text"
-            required
+            name="slug"
             value={formData.slug}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                slug: e.target.value,
-              })
-            }
-            className="w-full border rounded-xl px-4 py-3"
+            onChange={handleChange}
+            required
+            className="w-full border rounded-2xl p-4"
           />
 
         </div>
 
+        {/* CATEGORY */}
+
         <div>
 
-          <label className="block text-sm font-medium mb-2">
+          <label className="block font-semibold mb-3">
             Category
           </label>
 
           <select
-            required
+            name="category"
             value={formData.category}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                category: e.target.value,
-              })
-            }
-            className="w-full border rounded-xl px-4 py-3"
+            onChange={handleChange}
+            required
+            className="w-full border rounded-2xl p-4"
           >
 
             <option value="">
@@ -226,55 +253,116 @@ export default function NewProductPage() {
 
         </div>
 
+        {/* DESCRIPTION */}
+
         <div>
 
-          <label className="block text-sm font-medium mb-2">
+          <label className="block font-semibold mb-3">
             Product Description
           </label>
 
           <textarea
-            rows={5}
-            required
+            name="description"
             value={formData.description}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                description: e.target.value,
-              })
-            }
-            className="w-full border rounded-xl px-4 py-3"
+            onChange={handleChange}
+            rows={6}
+            required
+            className="w-full border rounded-2xl p-4"
           />
 
         </div>
 
+        {/* IMAGE */}
+
         <div>
 
-          <label className="block text-sm font-medium mb-2">
+          <label className="block font-semibold mb-3">
             Product Image
           </label>
 
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => {
-
-              if (e.target.files?.[0]) {
-                setImageFile(e.target.files[0]);
-              }
-
-            }}
-            className="w-full border rounded-xl px-4 py-3"
+            onChange={(e) =>
+              setImageFile(
+                e.target.files?.[0] || null
+              )
+            }
+            className="w-full border rounded-2xl p-4"
           />
 
         </div>
 
+        {/* SPECIFICATIONS */}
+
+        <div className="space-y-5">
+
+          <label className="block font-semibold text-xl">
+            Product Specifications
+          </label>
+
+          {formData.specifications.map(
+            (spec, index) => (
+
+              <div
+                key={index}
+                className="grid grid-cols-2 gap-4"
+              >
+
+                <input
+                  type="text"
+                  placeholder="Specification Name"
+                  value={spec.key}
+                  onChange={(e) =>
+                    updateSpecification(
+                      index,
+                      "key",
+                      e.target.value
+                    )
+                  }
+                  className="border rounded-2xl p-4"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Value"
+                  value={spec.value}
+                  onChange={(e) =>
+                    updateSpecification(
+                      index,
+                      "value",
+                      e.target.value
+                    )
+                  }
+                  className="border rounded-2xl p-4"
+                />
+
+              </div>
+
+            )
+          )}
+
+          <button
+            type="button"
+            onClick={addSpecification}
+            className="bg-red-700 text-white px-5 py-3 rounded-xl"
+          >
+            + Add Specification
+          </button>
+
+        </div>
+
+        {/* SUBMIT */}
+
         <button
           type="submit"
           disabled={loading}
-          className="bg-red-700 text-white px-6 py-3 rounded-xl hover:bg-red-800 transition"
+          className="bg-black text-white px-8 py-4 rounded-2xl text-lg font-semibold"
         >
 
-          {loading ? "Saving..." : "Save Product"}
+          {loading
+            ? "Saving..."
+            : "Add Product"}
 
         </button>
 

@@ -1,4 +1,10 @@
+"use client";
+
 import Link from "next/link";
+
+import { motion } from "framer-motion";
+
+import Counter from "@/components/Counter";
 
 import categories from "@/data/categories";
 
@@ -6,7 +12,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
 
-      {/* HERO SECTION */}
+      {/* HERO */}
 
       <section className="bg-gradient-to-br from-red-700 via-red-800 to-black text-white">
 
@@ -26,8 +32,8 @@ export default function HomePage() {
             </h1>
 
             <p className="text-base md:text-lg text-red-100 leading-relaxed mb-8 max-w-2xl">
-              Explore our professional range of ropes, tarpaulins,
-              lifting slings, industrial safety materials,
+              Explore our professional range of ropes,
+              tarpaulins, lifting slings, industrial safety materials,
               cargo solutions, and hardware products.
             </p>
 
@@ -57,7 +63,13 @@ export default function HomePage() {
 
       {/* CATEGORIES */}
 
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto px-6 py-16"
+      >
 
         <div className="mb-10">
 
@@ -91,11 +103,17 @@ export default function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* TRUST SECTION */}
 
-      <section className="bg-gray-50 border-t border-b">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="bg-gray-50 border-t border-b"
+      >
 
         <div className="max-w-7xl mx-auto px-6 py-16">
 
@@ -107,14 +125,24 @@ export default function HomePage() {
                 Trusted Across Industries
               </p>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                25+
-              </h2>
+              <div className="mb-4">
+
+                <Counter
+                  value={25}
+                  places={[10, 1]}
+                  fontSize={70}
+                  padding={5}
+                  gap={4}
+                  textColor="#b91c1c"
+                  fontWeight={800}
+                />
+
+              </div>
 
               <p className="text-gray-600 text-lg leading-relaxed">
                 Years of delivering trusted industrial hardware,
                 lifting solutions, ropes, tarpaulins,
-                and safety products across businesses and industries.
+                and safety products across industries.
               </p>
 
             </div>
@@ -127,6 +155,7 @@ export default function HomePage() {
                   <h3 className="text-3xl font-bold text-red-700 mb-2">
                     1000+
                   </h3>
+
                   <p className="text-gray-600">
                     Products Delivered
                   </p>
@@ -136,6 +165,7 @@ export default function HomePage() {
                   <h3 className="text-3xl font-bold text-red-700 mb-2">
                     500+
                   </h3>
+
                   <p className="text-gray-600">
                     Trusted Clients
                   </p>
@@ -145,6 +175,7 @@ export default function HomePage() {
                   <h3 className="text-3xl font-bold text-red-700 mb-2">
                     25+
                   </h3>
+
                   <p className="text-gray-600">
                     Years Experience
                   </p>
@@ -154,6 +185,7 @@ export default function HomePage() {
                   <h3 className="text-3xl font-bold text-red-700 mb-2">
                     24/7
                   </h3>
+
                   <p className="text-gray-600">
                     Customer Support
                   </p>
@@ -167,11 +199,17 @@ export default function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
-      {/* ABOUT PREVIEW */}
+      {/* ABOUT */}
 
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto px-6 py-16"
+      >
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
@@ -186,10 +224,10 @@ export default function HomePage() {
             </h2>
 
             <p className="text-gray-600 leading-relaxed mb-6">
-              Noor Agencies has been serving industries with high-quality
-              industrial hardware products, ropes, lifting equipment,
-              tarpaulins, cargo solutions, and safety materials
-              for decades.
+              Noor Agencies has been serving industries
+              with high-quality industrial hardware products,
+              ropes, lifting equipment, tarpaulins,
+              cargo solutions, and safety materials for decades.
             </p>
 
             <Link
@@ -221,7 +259,7 @@ export default function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
     </main>
   );
