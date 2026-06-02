@@ -36,7 +36,7 @@ export default function CategoryPage() {
 
     fetchProducts();
 
-  }, []);
+  }, [slug]);
 
   return (
 

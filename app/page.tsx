@@ -6,9 +6,27 @@ import { motion } from "framer-motion";
 
 import Counter from "@/components/Counter";
 
-import categories from "@/data/categories";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export default function HomePage() {
+  const [categories, setCategories] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function loadCategories() {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .order("name");
+
+      if (!error && data) {
+        setCategories(data);
+      }
+    }
+
+    loadCategories();
+  }, []);
+
   return (
     <main className="min-h-screen bg-white">
 
@@ -88,8 +106,8 @@ export default function HomePage() {
           {categories.map((category) => (
 
             <Link
-              key={category.slug}
-              href={`/categories/${category.slug}`}
+              key={category.id}
+              href={`/categories/${category.slug?.trim()}`}
               className="border-2 border-red-700 rounded-2xl p-5 hover:bg-red-700 hover:text-white transition-all duration-300 bg-white"
             >
 
