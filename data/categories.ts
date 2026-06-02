@@ -39,6 +39,12 @@ const categories = [
     name: "Tarpaulins",
     slug: "tarpaulins",
   },
+  {
+    name: "Ladders",
+    slug: "ladders-sections"
+  },
+
+
 
 ];
 
