@@ -1,64 +1,79 @@
-export default function NewCategoryPage() {
+import Link from "next/link";
+import { supabase } from "@/lib/supabase";
+
+export default async function CategoriesPage() {
+  const { data: categories, error } = await supabase
+    .from("categories")
+    .select("*")
+    .order("name");
+
+  if (error) {
+    return <div>Failed to load categories</div>;
+  }
+
   return (
-    <div className="max-w-3xl">
+    <div>
+      <div className="flex items-center justify-between mb-10">
+        <div>
+          <h1 className="text-4xl font-bold">
+            Categories
+          </h1>
 
-      {/* HEADER */}
+          <p className="text-gray-600 mt-2">
+            Manage product categories.
+          </p>
+        </div>
 
-      <div className="mb-10">
-
-        <h1 className="text-4xl font-bold">
-          Add New Category
-        </h1>
-
-        <p className="text-gray-600 mt-2">
-          Create a new product category.
-        </p>
-
+        <Link
+          href="/admin/categories/new"
+          className="bg-black text-white px-5 py-3 rounded-xl hover:bg-gray-800 transition"
+        >
+          Add Category
+        </Link>
       </div>
 
-      {/* FORM */}
+      <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <table className="w-full">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="text-left p-4">
+                Category Name
+              </th>
 
-      <form className="bg-white p-8 rounded-2xl shadow-sm space-y-6">
+              <th className="text-left p-4">
+                Slug
+              </th>
 
-        <div>
+              <th className="text-left p-4">
+                Actions
+              </th>
+            </tr>
+          </thead>
 
-          <label className="block font-medium mb-2">
-            Category Name
-          </label>
+          <tbody>
+            {categories?.map((category) => (
+              <tr
+                key={category.id}
+                className="border-t"
+              >
+                <td className="p-4 font-medium">
+                  {category.name}
+                </td>
 
-          <input
-            type="text"
-            placeholder="Enter category name"
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
-          />
+                <td className="p-4 text-gray-600">
+                  {category.slug}
+                </td>
 
-        </div>
-
-        <div>
-
-          <label className="block font-medium mb-2">
-            Slug
-          </label>
-
-          <input
-            type="text"
-            placeholder="example: hand-tools"
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
-          />
-
-        </div>
-
-        <button
-          type="submit"
-          className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition"
-        >
-
-          Create Category
-
-        </button>
-
-      </form>
-
+                <td className="p-4">
+                  <button className="text-red-600 hover:underline">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

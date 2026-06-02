@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import { supabase } from "@/lib/supabase";
 type Product = {
   id: number;
   name: string;
@@ -16,28 +16,49 @@ export default function AdminProductsPage() {
 
   useEffect(() => {
 
-    const storedProducts = JSON.parse(
-      localStorage.getItem("products") || "[]"
-    );
+  async function loadProducts() {
 
-    setProducts(storedProducts);
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .order("id", { ascending: false });
 
-  }, []);
+    if (error) {
+      console.log(error);
+      return;
+    }
 
-  const handleDelete = (id: number) => {
+    setProducts(data || []);
+  }
 
-    const updatedProducts = products.filter(
+  loadProducts();
+
+}, []);
+
+const handleDelete = async (id: number) => {
+
+  const confirmed = window.confirm(
+    "Delete this product?"
+  );
+
+  if (!confirmed) return;
+
+  const { error } = await supabase
+    .from("products")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  setProducts(
+    products.filter(
       (product) => product.id !== id
-    );
-
-    setProducts(updatedProducts);
-
-    localStorage.setItem(
-      "products",
-      JSON.stringify(updatedProducts)
-    );
-
-  };
+    )
+  );
+};
 
   return (
 

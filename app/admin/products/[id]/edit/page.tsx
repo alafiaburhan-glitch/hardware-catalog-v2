@@ -2,236 +2,242 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import categories from "@/data/categories";
-
-type Product = {
-  id: number;
-  name: string;
-  code: string;
-  slug: string;
-  category: string;
-  description: string;
-};
+import { supabase } from "@/lib/supabase";
 
 export default function EditProductPage() {
-
   const router = useRouter();
-
   const params = useParams();
 
-  const [formData, setFormData] = useState<Product>({
-    id: 0,
+  const [loading, setLoading] = useState(false);
+
+  const [categories, setCategories] = useState<any[]>([]);
+
+  const [formData, setFormData] = useState({
     name: "",
     code: "",
     slug: "",
     category: "",
     description: "",
+    material: "",
+    size: "",
+    weight: "",
+    box_contents: "",
+    datasheet_url: "",
   });
 
   useEffect(() => {
+    loadProduct();
+    loadCategories();
+  }, []);
 
-    const storedProducts = JSON.parse(
-      localStorage.getItem("products") || "[]"
-    );
+  async function loadCategories() {
+    const { data } = await supabase
+      .from("categories")
+      .select("*")
+      .order("name");
 
-    const product = storedProducts.find(
-      (item: Product) =>
-        item.id === Number(params.id)
-    );
+    setCategories(data || []);
+  }
 
-    if (product) {
-      setFormData(product);
+    async function loadProduct() {
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", Number(params.id))
+      .single();
+
+    if (error) {
+      console.log(error);
+      return;
     }
 
-  }, [params.id]);
+    setFormData({
+      name: data.name || "",
+      code: data.code || "",
+      slug: data.slug || "",
+      category: data.category || "",
+      description: data.description || "",
+      material: data.material || "",
+      size: data.size || "",
+      weight: data.weight || "",
+      box_contents: data.box_contents || "",
+      datasheet_url: data.datasheet_url || "",
+    });
+  }
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement |
+      HTMLTextAreaElement |
+      HTMLSelectElement
+    >
   ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
+  const handleSubmit = async (
+    e: React.FormEvent
+  ) => {
     e.preventDefault();
 
-    const storedProducts = JSON.parse(
-      localStorage.getItem("products") || "[]"
-    );
+    try {
+      setLoading(true);
 
-    const updatedProducts = storedProducts.map(
-      (product: Product) => {
+      const { error } = await supabase
+        .from("products")
+        .update({
+          name: formData.name,
+          code: formData.code,
+          slug: formData.slug,
+          category: formData.category,
+          description: formData.description,
+          material: formData.material,
+          size: formData.size,
+          weight: formData.weight,
+          box_contents: formData.box_contents,
+          datasheet_url: formData.datasheet_url,
+        })
+        .eq("id", Number(params.id));
 
-        if (product.id === formData.id) {
-          return formData;
-        }
-
-        return product;
-
+      if (error) {
+        console.log(error);
+        alert("Update failed");
+        return;
       }
-    );
 
-    localStorage.setItem(
-      "products",
-      JSON.stringify(updatedProducts)
-    );
+      alert("Product updated successfully");
 
-    alert("Product Updated Successfully!");
+      router.push("/admin/products");
 
-    router.push("/admin/products");
-
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
+    <div className="max-w-5xl mx-auto px-6 py-10">
 
-    <div className="max-w-4xl">
-
-      <div className="mb-10">
-
-        <h1 className="text-5xl font-bold mb-3">
-          Edit Product
-        </h1>
-
-        <p className="text-gray-600">
-          Update product information.
-        </p>
-
-      </div>
+      <h1 className="text-4xl font-bold mb-10">
+        Edit Product
+      </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-8"
+        className="space-y-6"
       >
 
-        {/* PRODUCT NAME */}
+        <input
+          type="text"
+          name="name"
+          placeholder="Product Name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
-        <div>
+        <input
+          type="text"
+          name="code"
+          placeholder="Product Code"
+          value={formData.code}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
-          <label className="block mb-2 text-sm font-medium">
-            Product Name
-          </label>
+        <input
+          type="text"
+          name="slug"
+          placeholder="Slug"
+          value={formData.slug}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
-          <input
-            type="text"
-            value={formData.name}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                name: e.target.value,
-              })
-            }
-            className="w-full border rounded-2xl px-5 py-4"
-          />
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        >
+          <option value="">
+            Select Category
+          </option>
 
-        </div>
+          {categories.map((category) => (
+            <option
+              key={category.id}
+              value={category.slug}
+            >
+              {category.name}
+            </option>
+          ))}
+        </select>
 
-        {/* PRODUCT CODE */}
+        <textarea
+          name="description"
+          placeholder="Description"
+          value={formData.description}
+          onChange={handleChange}
+          rows={5}
+          className="w-full border rounded-2xl p-4"
+        />
 
-        <div>
+        <input
+          type="text"
+          name="material"
+          placeholder="Material"
+          value={formData.material}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
-          <label className="block mb-2 text-sm font-medium">
-            Product Code
-          </label>
+        <input
+          type="text"
+          name="size"
+          placeholder="Size"
+          value={formData.size}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
-          <input
-            type="text"
-            value={formData.code}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                code: e.target.value,
-              })
-            }
-            className="w-full border rounded-2xl px-5 py-4"
-          />
+        <input
+          type="text"
+          name="weight"
+          placeholder="Weight"
+          value={formData.weight}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
-        </div>
+        <textarea
+          name="box_contents"
+          placeholder="What's In The Box"
+          value={formData.box_contents}
+          onChange={handleChange}
+          rows={4}
+          className="w-full border rounded-2xl p-4"
+        />
 
-        {/* PRODUCT SLUG */}
-
-        <div>
-
-          <label className="block mb-2 text-sm font-medium">
-            Product Slug
-          </label>
-
-          <input
-            type="text"
-            value={formData.slug}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                slug: e.target.value,
-              })
-            }
-            className="w-full border rounded-2xl px-5 py-4"
-          />
-
-        </div>
-
-        {/* CATEGORY */}
-
-        <div>
-
-          <label className="block mb-2 text-sm font-medium">
-            Category
-          </label>
-
-          <select
-            value={formData.category}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                category: e.target.value,
-              })
-            }
-            className="w-full border rounded-2xl px-5 py-4"
-          >
-
-            {categories.map((category) => (
-
-              <option
-                key={category.slug}
-                value={category.slug}
-              >
-
-                {category.name}
-
-              </option>
-
-            ))}
-
-          </select>
-
-        </div>
-
-        {/* DESCRIPTION */}
-
-        <div>
-
-          <label className="block mb-2 text-sm font-medium">
-            Description
-          </label>
-
-          <textarea
-            rows={6}
-            value={formData.description}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                description: e.target.value,
-              })
-            }
-            className="w-full border rounded-2xl px-5 py-4"
-          />
-
-        </div>
-
-        {/* UPDATE BUTTON */}
+        <input
+          type="text"
+          name="datasheet_url"
+          placeholder="Datasheet URL"
+          value={formData.datasheet_url}
+          onChange={handleChange}
+          className="w-full border rounded-2xl p-4"
+        />
 
         <button
           type="submit"
+          disabled={loading}
           className="bg-black text-white px-8 py-4 rounded-2xl"
         >
-
-          Update Product
-
+          {loading ? "Updating..." : "Update Product"}
         </button>
 
       </form>

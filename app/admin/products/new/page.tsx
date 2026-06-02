@@ -1,12 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
 import { supabase } from "@/lib/supabase";
-
-import categories from "@/data/categories";
 
 export default function NewProductPage() {
   const router = useRouter();
@@ -15,19 +11,46 @@ export default function NewProductPage() {
 
   const [imageFile, setImageFile] = useState<File | null>(null);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    code: "",
-    slug: "",
-    category: "",
-    description: "",
-    specifications: [
-      {
-        key: "",
-        value: "",
-      },
-    ],
-  });
+  const [categories, setCategories] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function loadCategories() {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .order("name");
+
+      if (error) {
+        console.log(error);
+        return;
+      }
+
+      setCategories(data || []);
+    }
+
+    loadCategories();
+  }, []);
+
+  
+
+const [formData, setFormData] = useState({
+  name: "",
+  code: "",
+  slug: "",
+  category: "",
+  description: "",
+  material: "",
+  size: "",
+  weight: "",
+  box_contents: "",
+  datasheet_url: "",
+  specifications: [
+    {
+      key: "",
+      value: "",
+    },
+  ],
+});
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -85,7 +108,7 @@ export default function NewProductPage() {
 
         const { error: uploadError } =
           await supabase.storage
-            .from("PRODUCTS")
+            .from("products")
             .upload(fileName, imageFile);
 
         if (uploadError) {
@@ -96,7 +119,7 @@ export default function NewProductPage() {
         const {
           data: { publicUrl },
         } = supabase.storage
-          .from("PRODUCTS")
+          .from("products")
           .getPublicUrl(fileName);
 
         imageUrl = publicUrl;
@@ -121,15 +144,22 @@ export default function NewProductPage() {
           .from("products")
           .insert([
             {
-              name: formData.name,
-              code: formData.code,
-              slug: formData.slug,
-              category: formData.category,
-              description:
-                formData.description,
-              image: imageUrl,
-              specifications:
-                specificationsObject,
+          
+  name: formData.name,
+  code: formData.code,
+  slug: formData.slug,
+  category: formData.category,
+  description: formData.description,
+
+  material: formData.material,
+  size: formData.size,
+  weight: formData.weight,
+  box_contents: formData.box_contents,
+  datasheet_url: formData.datasheet_url,
+
+  image: imageUrl,
+  specifications: specificationsObject,
+
             },
           ]);
 
@@ -252,6 +282,72 @@ export default function NewProductPage() {
           </select>
 
         </div>
+        <div>
+  <label className="block font-semibold mb-3">
+    Material
+  </label>
+
+  <input
+    type="text"
+    name="material"
+    value={formData.material}
+    onChange={handleChange}
+    className="w-full border rounded-2xl p-4"
+  />
+</div>
+<div>
+  <label className="block font-semibold mb-3">
+    Size
+  </label>
+
+  <input
+    type="text"
+    name="size"
+    value={formData.size}
+    onChange={handleChange}
+    className="w-full border rounded-2xl p-4"
+  />
+</div>
+<div>
+  <label className="block font-semibold mb-3">
+    Weight
+  </label>
+
+  <input
+    type="text"
+    name="weight"
+    value={formData.weight}
+    onChange={handleChange}
+    className="w-full border rounded-2xl p-4"
+  />
+</div>
+<div>
+  <label className="block font-semibold mb-3">
+    What's In The Box
+  </label>
+
+  <textarea
+    name="box_contents"
+    value={formData.box_contents}
+    onChange={handleChange}
+    rows={4}
+    className="w-full border rounded-2xl p-4"
+  />
+</div>
+<div>
+  <label className="block font-semibold mb-3">
+    Datasheet URL
+  </label>
+
+  <input
+    type="text"
+    name="datasheet_url"
+    value={formData.datasheet_url}
+    onChange={handleChange}
+    className="w-full border rounded-2xl p-4"
+  />
+</div>
+
 
         {/* DESCRIPTION */}
 
