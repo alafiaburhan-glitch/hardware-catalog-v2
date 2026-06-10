@@ -33,11 +33,21 @@ export default async function CategoriesPage() {
             key={category.id}
             href={`/categories/${category.slug.trim()}`}
           >
-            <div className="border-2 border-red-700 rounded-2xl p-6 hover:bg-red-700 hover:text-white transition cursor-pointer">
-              <h2 className="text-lg font-semibold">
-                {category.name}
-              </h2>
-            </div>
+            <div className="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+
+  <div className="flex items-center justify-between">
+
+    <h2 className="text-lg font-bold group-hover:text-red-700 transition">
+      {category.name}
+    </h2>
+
+    <span className="text-red-700 text-xl font-bold group-hover:translate-x-1 transition">
+      →
+    </span>
+
+  </div>
+
+</div>
           </Link>
         ))}
       </div>

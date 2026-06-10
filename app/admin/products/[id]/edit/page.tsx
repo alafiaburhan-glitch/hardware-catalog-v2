@@ -13,17 +13,24 @@ export default function EditProductPage() {
   const [categories, setCategories] = useState<any[]>([]);
 
   const [formData, setFormData] = useState({
-    name: "",
-    code: "",
-    slug: "",
-    category: "",
-    description: "",
-    material: "",
-    size: "",
-    weight: "",
-    box_contents: "",
-    datasheet_url: "",
-  });
+  name: "",
+  code: "",
+  slug: "",
+  category: "",
+  description: "",
+  material: "",
+  size: "",
+  weight: "",
+  box_contents: "",
+  datasheet_url: "",
+
+  specifications: [
+    {
+      key: "",
+      value: "",
+    },
+  ],
+});
 
   useEffect(() => {
     loadProduct();
@@ -52,18 +59,34 @@ export default function EditProductPage() {
     }
 
     setFormData({
-      name: data.name || "",
-      code: data.code || "",
-      slug: data.slug || "",
-      category: data.category || "",
-      description: data.description || "",
-      material: data.material || "",
-      size: data.size || "",
-      weight: data.weight || "",
-      box_contents: data.box_contents || "",
-      datasheet_url: data.datasheet_url || "",
-    });
-  }
+  name: data.name || "",
+  code: data.code || "",
+  slug: data.slug || "",
+  category: data.category || "",
+  description: data.description || "",
+  material: data.material || "",
+  size: data.size || "",
+  weight: data.weight || "",
+  box_contents: data.box_contents || "",
+  datasheet_url: data.datasheet_url || "",
+
+  specifications:
+    data.specifications
+      ? Object.entries(data.specifications).map(
+          ([key, value]) => ({
+            key,
+            value: String(value),
+          })
+        )
+      : [
+          {
+            key: "",
+            value: "",
+          },
+        ],
+});
+
+}
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -77,6 +100,35 @@ export default function EditProductPage() {
       [e.target.name]: e.target.value,
     });
   };
+  const addSpecification = () => {
+  setFormData((prev) => ({
+    ...prev,
+    specifications: [
+      ...prev.specifications,
+      {
+        key: "",
+        value: "",
+      },
+    ],
+  }));
+};
+
+const updateSpecification = (
+  index: number,
+  field: "key" | "value",
+  value: string
+) => {
+  const updated = [...formData.specifications];
+
+  updated[index][field] = value;
+
+  setFormData({
+    ...formData,
+    specifications: updated,
+  });
+};
+
+
 
   const handleSubmit = async (
     e: React.FormEvent
@@ -85,21 +137,37 @@ export default function EditProductPage() {
 
     try {
       setLoading(true);
+      const specificationsObject =
+  Object.fromEntries(
+    formData.specifications
+      .filter(
+        (spec) =>
+          spec.key &&
+          spec.value
+      )
+      .map((spec) => [
+        spec.key,
+        spec.value,
+      ])
+  );
 
       const { error } = await supabase
         .from("products")
         .update({
-          name: formData.name,
-          code: formData.code,
-          slug: formData.slug,
-          category: formData.category,
-          description: formData.description,
-          material: formData.material,
-          size: formData.size,
-          weight: formData.weight,
-          box_contents: formData.box_contents,
-          datasheet_url: formData.datasheet_url,
-        })
+  name: formData.name,
+  code: formData.code,
+  slug: formData.slug,
+  category: formData.category,
+  description: formData.description,
+
+  material: formData.material,
+  size: formData.size,
+  weight: formData.weight,
+  box_contents: formData.box_contents,
+  datasheet_url: formData.datasheet_url,
+
+  specifications: specificationsObject,
+})
         .eq("id", Number(params.id));
 
       if (error) {
@@ -231,6 +299,62 @@ export default function EditProductPage() {
           onChange={handleChange}
           className="w-full border rounded-2xl p-4"
         />
+        <div className="space-y-5">
+
+  <label className="block font-semibold text-xl">
+    Product Specifications
+  </label>
+
+  {formData.specifications.map(
+    (spec, index) => (
+
+      <div
+        key={index}
+        className="grid grid-cols-2 gap-4"
+      >
+
+        <input
+          type="text"
+          placeholder="Specification Name"
+          value={spec.key}
+          onChange={(e) =>
+            updateSpecification(
+              index,
+              "key",
+              e.target.value
+            )
+          }
+          className="border rounded-2xl p-4"
+        />
+
+        <input
+          type="text"
+          placeholder="Value"
+          value={spec.value}
+          onChange={(e) =>
+            updateSpecification(
+              index,
+              "value",
+              e.target.value
+            )
+          }
+          className="border rounded-2xl p-4"
+        />
+
+      </div>
+
+    )
+  )}
+
+  <button
+    type="button"
+    onClick={addSpecification}
+    className="bg-red-700 text-white px-5 py-3 rounded-xl"
+  >
+    + Add Specification
+  </button>
+
+</div>
 
         <button
           type="submit"

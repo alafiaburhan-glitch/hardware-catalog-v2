@@ -1,5 +1,5 @@
 "use client";
-
+import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
@@ -11,73 +11,104 @@ import { supabase } from "@/lib/supabase";
 
 export default function HomePage() {
   const [categories, setCategories] = useState<any[]>([]);
+const [products, setProducts] = useState<any[]>([]);
 
   useEffect(() => {
-    async function loadCategories() {
-      const { data, error } = await supabase
-        .from("categories")
-        .select("*")
-        .order("name");
+  async function loadData() {
 
-      if (!error && data) {
-        setCategories(data);
-      }
+    const { data: categoryData } = await supabase
+      .from("categories")
+      .select("*")
+      .order("name");
+
+    if (categoryData) {
+      setCategories(categoryData);
     }
 
-    loadCategories();
-  }, []);
+    const { data: productData } = await supabase
+  .from("products")
+  .select("*")
+  .eq("featured", true)
+  .limit(4);
+
+    if (productData) {
+      setProducts(productData);
+    }
+  }
+
+  loadData();
+}, []);
 
   return (
     <main className="min-h-screen bg-white">
 
       {/* HERO */}
 
-      <section className="bg-gradient-to-br from-red-700 via-red-800 to-black text-white">
+<section className="relative overflow-hidden bg-gradient-to-br from-red-800 via-red-700 to-black text-white">
 
-        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+  <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-24">
 
-          <div className="max-w-3xl">
+    {/* Background Glow Effects */}
 
-            <p className="uppercase tracking-[0.3em] text-sm font-semibold mb-5 text-red-200">
-              Industrial Hardware Solutions
-            </p>
+    <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-              Premium Hardware
-              <span className="block text-red-300">
-                Industrial Supplies
-              </span>
-            </h1>
+    <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
 
-            <p className="text-base md:text-lg text-red-100 leading-relaxed mb-8 max-w-2xl">
-              Explore our professional range of ropes,
-              tarpaulins, lifting slings, industrial safety materials,
-              cargo solutions, and hardware products.
-            </p>
+    {/* Hero Content */}
 
-            <div className="flex flex-wrap gap-4">
+    <div className="max-w-3xl">
 
-              <Link
-                href="/categories"
-                className="bg-white text-red-700 px-6 py-3 rounded-xl font-semibold hover:bg-red-100 transition"
-              >
-                Explore Products
-              </Link>
+      <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-6 text-sm">
 
-              <Link
-                href="/about"
-                className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-red-700 transition"
-              >
-                About Us
-              </Link>
+        <span className="w-2 h-2 bg-green-400 rounded-full"></span>
 
-            </div>
+        <span>
+          Industrial Hardware Solutions
+        </span>
 
-          </div>
+      </div>
 
-        </div>
+      <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
 
-      </section>
+        Premium Hardware
+
+        <span className="block text-red-300">
+          Industrial Supplies
+        </span>
+
+      </h1>
+
+      <p className="text-lg md:text-xl text-red-100 leading-relaxed mb-10 max-w-2xl">
+
+        Explore our professional range of ropes,
+        tarpaulins, lifting slings, industrial safety materials,
+        cargo solutions, and hardware products.
+
+      </p>
+
+      <div className="flex flex-wrap gap-5">
+
+        <Link
+          href="/categories"
+          className="bg-white text-red-700 px-8 py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
+          Explore Products
+        </Link>
+
+        <Link
+          href="/about"
+          className="border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-red-700 transition-all duration-300"
+        >
+          About Us
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* CATEGORIES */}
 
@@ -105,23 +136,83 @@ export default function HomePage() {
 
           {categories.map((category) => (
 
-            <Link
-              key={category.id}
-              href={`/categories/${category.slug?.trim()}`}
-              className="border-2 border-red-700 rounded-2xl p-5 hover:bg-red-700 hover:text-white transition-all duration-300 bg-white"
-            >
+        <Link
+  key={category.id}
+  href={`/categories/${category.slug?.trim()}`}
+  className="group bg-white rounded-3xl border border-gray-200 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+>
 
-              <h3 className="text-lg font-semibold">
-                {category.name}
-              </h3>
+  <div className="flex items-center justify-between">
 
-            </Link>
+    <h3 className="text-lg font-bold group-hover:text-red-700 transition">
+      {category.name}
+    </h3>
+
+    <span className="text-red-700 text-xl font-bold group-hover:translate-x-1 transition">
+      →
+    </span>
+
+  </div>
+
+</Link>
 
           ))}
 
         </div>
 
       </motion.section>
+      <motion.section
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="bg-gray-50 py-16"
+>
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="flex items-center justify-between mb-10">
+
+      <div>
+
+        <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-3 text-sm">
+          Featured Products
+        </p>
+
+        <h2 className="text-3xl md:text-4xl font-bold">
+          Popular Products
+        </h2>
+
+      </div>
+
+      <Link
+        href="/categories"
+        className="hidden md:inline-block text-red-700 font-semibold hover:underline"
+      >
+        View All →
+      </Link>
+
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      {products.map((product) => (
+
+        <ProductCard
+          key={product.id}
+          name={product.name}
+          code={product.code}
+          image={product.image}
+          slug={product.slug}
+        />
+
+      ))}
+
+    </div>
+
+  </div>
+
+</motion.section>
 
       {/* TRUST SECTION */}
 
@@ -191,7 +282,7 @@ export default function HomePage() {
 
                 <div>
                   <h3 className="text-3xl font-bold text-red-700 mb-2">
-                    25+
+                    7+
                   </h3>
 
                   <p className="text-gray-600">
