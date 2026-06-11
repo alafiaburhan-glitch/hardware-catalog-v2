@@ -1,12 +1,45 @@
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import GritSelector from "@/components/GritSelector";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import Link from "next/link";
+import type { Metadata } from "next";
 
-export default async function ProductPage({
-  params,
-}: {
+type Props = {
   params: Promise<{ slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const { data: product } = await supabase
+    .from("products")
+    .select("name, description, image, code, category")
+    .eq("slug", slug)
+    .single();
+
+  if (!product) {
+    return { title: "Product Not Found | Noor Agencies" };
+  }
+
+  const title = `${product.name} | Noor Agencies`;
+  const description =
+    product.description?.slice(0, 160) ??
+    `Buy ${product.name} (Code: ${product.code}) from Noor Agencies — trusted industrial hardware supplier.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: product.image ? [{ url: product.image }] : [],
+      url: `https://hardware-catalog-v2.vercel.app/products/${slug}`,
+    },
+  };
+}
+
+export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
   const { data: product, error } = await supabase
@@ -16,45 +49,59 @@ export default async function ProductPage({
     .single();
 
   if (error || !product) {
-    return (
-      <div className="p-10">
-        Product not found
-      </div>
-    );
+    return <div className="p-10 text-gray-500">Product not found</div>;
   }
 
-  // Parse Available Grit from specifications if it exists
-  // Case-insensitive lookup for "Available Grit" key
-const availableGritKey = Object.keys(product.specifications ?? {}).find(
-  (k) => k.toLowerCase() === "available grit"
-);
+  const availableGritKey = Object.keys(product.specifications ?? {}).find(
+    (k) => k.toLowerCase() === "available grit"
+  );
 
-const availableGrits: string[] =
-  availableGritKey && product.specifications?.[availableGritKey]
-    ? String(product.specifications[availableGritKey])
-        .split(",")
-        .map((g: string) => g.trim())
-        .filter(Boolean)
-    : [];
-    console.log("SPECS KEYS GALAXY:", JSON.stringify(product.specifications));
+  const availableGrits: string[] =
+    availableGritKey && product.specifications?.[availableGritKey]
+      ? String(product.specifications[availableGritKey])
+          .split(",")
+          .map((g: string) => g.trim())
+          .filter(Boolean)
+      : [];
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
 
+      {/* BREADCRUMB */}
+      <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+        <Link href="/" className="hover:text-red-700 transition">Home</Link>
+        <span>/</span>
+        <Link href="/categories" className="hover:text-red-700 transition">Categories</Link>
+        {product.category && (
+          <>
+            <span>/</span>
+            <Link
+              href={`/categories/${product.category}`}
+              className="hover:text-red-700 transition capitalize"
+            >
+              {product.category.replace(/-/g, " ")}
+            </Link>
+          </>
+        )}
+        <span>/</span>
+        <span className="text-gray-700 font-medium truncate">{product.name}</span>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-12">
 
         {/* IMAGE */}
-        <div className="border rounded-3xl overflow-hidden bg-white">
+        <div className="border rounded-3xl overflow-hidden bg-white sticky top-24 self-start">
           {product.image ? (
             <Image
               src={product.image}
               alt={product.name}
               width={600}
               height={400}
+              loading="eager"
               className="w-full h-auto object-cover"
             />
           ) : (
-            <div className="aspect-square bg-gray-100 flex items-center justify-center">
+            <div className="aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
               No Image
             </div>
           )}
@@ -62,14 +109,11 @@ const availableGrits: string[] =
 
         {/* DETAILS */}
         <div>
-
           <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
             Product Details
           </p>
 
-          <h1 className="text-4xl font-bold mb-4">
-            {product.name}
-          </h1>
+          <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
 
           <div className="mb-6">
             <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
@@ -81,7 +125,6 @@ const availableGrits: string[] =
             {product.description}
           </p>
 
-          {/* GRIT SELECTOR — shown instead of static WhatsApp button when grits exist */}
           {availableGrits.length > 0 ? (
             <GritSelector
               grits={availableGrits}
@@ -89,14 +132,10 @@ const availableGrits: string[] =
               productCode={product.code}
             />
           ) : (
-            <a
-              href={`https://wa.me/918940453952?text=Hi, I am interested in ${product.name} (Code: ${product.code})`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-4 rounded-2xl mb-10"
-            >
-              WhatsApp for Quote
-            </a>
+            <WhatsAppButton
+              productName={product.name}
+              productCode={product.code}
+            />
           )}
 
           {/* QUICK INFO */}
@@ -127,13 +166,13 @@ const availableGrits: string[] =
               href={product.datasheet_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-red-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-800 mb-8"
+              className="inline-block bg-red-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-800 mb-8 transition"
             >
               Download Datasheet
             </a>
           )}
 
-          {/* SPECIFICATIONS — hide "Available Grit" row since we show it as tabs above */}
+          {/* SPECIFICATIONS */}
           {product.specifications && (
             <div className="border rounded-3xl overflow-hidden mb-8">
               <div className="bg-red-700 text-white px-6 py-4">
@@ -141,30 +180,24 @@ const availableGrits: string[] =
               </div>
               <div className="divide-y">
                 {Object.entries(product.specifications)
-                  .filter(([key]) => key !== "Available Grit")
+                  .filter(([key]) => key.toLowerCase() !== "available grit")
                   .map(([key, value]) => (
                     <div key={key} className="grid grid-cols-2 px-6 py-4">
-                      <div className="font-semibold text-gray-700 capitalize">
-                        {key}
-                      </div>
+                      <div className="font-semibold text-gray-700 capitalize">{key}</div>
                       <div className="text-gray-600">{String(value)}</div>
                     </div>
                   ))}
               </div>
             </div>
           )}
-          
 
           {/* BOX CONTENTS */}
           {product.box_contents && (
             <div className="border rounded-3xl p-6">
               <h2 className="text-2xl font-bold mb-4">What's In The Box</h2>
-              <p className="text-gray-600 whitespace-pre-line">
-                {product.box_contents}
-              </p>
+              <p className="text-gray-600 whitespace-pre-line">{product.box_contents}</p>
             </div>
           )}
-
         </div>
       </div>
     </main>
