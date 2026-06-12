@@ -2,6 +2,7 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import GritSelector from "@/components/GritSelector";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -52,6 +53,14 @@ export default async function ProductPage({ params }: Props) {
     return <div className="p-10 text-gray-500">Product not found</div>;
   }
 
+  // Fetch related products — same category, exclude current product
+  const { data: relatedProducts } = await supabase
+    .from("products")
+    .select("id, name, code, image, slug")
+    .eq("category", product.category)
+    .neq("slug", slug)
+    .limit(4);
+
   const availableGritKey = Object.keys(product.specifications ?? {}).find(
     (k) => k.toLowerCase() === "available grit"
   );
@@ -65,10 +74,10 @@ export default async function ProductPage({ params }: Props) {
       : [];
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
 
       {/* BREADCRUMB */}
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <div className="flex items-center gap-2 text-sm text-gray-400 mb-8 flex-wrap">
         <Link href="/" className="hover:text-red-700 transition">Home</Link>
         <span>/</span>
         <Link href="/categories" className="hover:text-red-700 transition">Categories</Link>
@@ -200,6 +209,41 @@ export default async function ProductPage({ params }: Props) {
           )}
         </div>
       </div>
+
+      {/* RELATED PRODUCTS */}
+      {relatedProducts && relatedProducts.length > 0 && (
+        <div className="mt-20 border-t pt-12">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-2 text-sm">
+                More Like This
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold">Related Products</h2>
+            </div>
+            {product.category && (
+              <Link
+                href={`/categories/${product.category}`}
+                className="text-red-700 font-semibold hover:underline text-sm shrink-0 ml-4"
+              >
+                View All →
+              </Link>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {relatedProducts.map((related) => (
+              <ProductCard
+                key={related.id}
+                name={related.name}
+                code={related.code}
+                image={related.image}
+                slug={related.slug}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }

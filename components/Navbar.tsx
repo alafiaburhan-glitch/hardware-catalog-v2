@@ -102,7 +102,7 @@ export default function Navbar() {
           {/* LOGO */}
           <Link
             href="/"
-            className={`flex flex-col shrink-0 ${searchOpen ? "hidden sm:flex" : "flex"}`}
+            className={`flex flex-col shrink-0 focus:outline-none ${searchOpen ? "hidden sm:flex" : "flex"}`}
           >
             <span className="text-3xl font-black tracking-wide">
               <span className="text-black">NOOR</span>
