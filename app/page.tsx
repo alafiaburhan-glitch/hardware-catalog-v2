@@ -1,10 +1,11 @@
 "use client";
-import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Counter from "@/components/Counter";
+import FeaturedCarousel from "@/components/FeaturedCarousel";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+
 
 export default function HomePage() {
   const [categories, setCategories] = useState<any[]>([]);
@@ -21,18 +22,17 @@ export default function HomePage() {
       if (categoryData) setCategories(categoryData);
       setLoadingCategories(false);
 
-      // Try featured first, fall back to any 4 products
       let { data: productData } = await supabase
         .from("products")
         .select("*")
         .eq("featured", true)
-        .limit(4);
+        .limit(8);
 
       if (!productData || productData.length === 0) {
         const { data: fallback } = await supabase
           .from("products")
           .select("*")
-          .limit(4);
+          .limit(8);
         productData = fallback;
       }
 
@@ -132,7 +132,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* FEATURED PRODUCTS */}
+      {/* FEATURED PRODUCTS — carousel */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -148,36 +148,19 @@ export default function HomePage() {
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Popular Products</h2>
             </div>
-            <Link href="/categories" className="hidden md:inline-block text-red-700 font-semibold hover:underline text-sm">
+            <Link href="/categories" className="text-red-700 font-semibold hover:underline text-sm shrink-0 ml-4">
               View All →
             </Link>
           </div>
 
           {loadingProducts ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="flex gap-4 overflow-hidden">
               {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="h-64 rounded-3xl bg-gray-200 animate-pulse" />
+                <div key={i} className="flex-none w-[70vw] sm:w-[45vw] md:w-[23%] h-64 rounded-3xl bg-gray-200 animate-pulse" />
               ))}
             </div>
           ) : products.length > 0 ? (
-            <>
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                {products.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    name={product.name}
-                    code={product.code}
-                    image={product.image}
-                    slug={product.slug}
-                  />
-                ))}
-              </div>
-              <div className="mt-8 text-center md:hidden">
-                <Link href="/categories" className="inline-block bg-red-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-800 transition text-sm">
-                  View All Products
-                </Link>
-              </div>
-            </>
+            <FeaturedCarousel products={products} />
           ) : null}
         </div>
       </motion.section>

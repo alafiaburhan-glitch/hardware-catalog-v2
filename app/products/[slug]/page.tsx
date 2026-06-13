@@ -1,8 +1,10 @@
 import { supabase } from "@/lib/supabase";
-import Image from "next/image";
 import GritSelector from "@/components/GritSelector";
+import WidthSelector from "@/components/WidthSelector";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ProductCard from "@/components/ProductCard";
+import ProductImageLightbox from "@/components/ProductImageLightbox";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -12,16 +14,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-
   const { data: product } = await supabase
     .from("products")
     .select("name, description, image, code, category")
     .eq("slug", slug)
     .single();
 
-  if (!product) {
-    return { title: "Product Not Found | Noor Agencies" };
-  }
+  if (!product) return { title: "Product Not Found | Noor Agencies" };
 
   const title = `${product.name} | Noor Agencies`;
   const description =
@@ -53,7 +52,6 @@ export default async function ProductPage({ params }: Props) {
     return <div className="p-10 text-gray-500">Product not found</div>;
   }
 
-  // Fetch related products — same category, exclude current product
   const { data: relatedProducts } = await supabase
     .from("products")
     .select("id, name, code, image, slug")
@@ -72,6 +70,22 @@ export default async function ProductPage({ params }: Props) {
           .map((g: string) => g.trim())
           .filter(Boolean)
       : [];
+      
+      const availableWidthKey = Object.keys(product.specifications ?? {}).find(
+    (k) => k.toLowerCase() === "available width"
+  );
+
+      const availableWidths =
+      availableWidthKey &&
+  product.specifications?.[availableWidthKey]
+    ? String(
+        product.specifications[availableWidthKey]
+      )
+        .split(",")
+        .map((w: string) => w.trim())
+        .filter(Boolean)
+    : [];
+      
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
@@ -84,10 +98,7 @@ export default async function ProductPage({ params }: Props) {
         {product.category && (
           <>
             <span>/</span>
-            <Link
-              href={`/categories/${product.category}`}
-              className="hover:text-red-700 transition capitalize"
-            >
+            <Link href={`/categories/${product.category}`} className="hover:text-red-700 transition capitalize">
               {product.category.replace(/-/g, " ")}
             </Link>
           </>
@@ -98,54 +109,54 @@ export default async function ProductPage({ params }: Props) {
 
       <div className="grid md:grid-cols-2 gap-12">
 
-        {/* IMAGE */}
-        <div className="border rounded-3xl overflow-hidden bg-white sticky top-24 self-start">
-          {product.image ? (
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={600}
-              height={400}
-              loading="eager"
-              className="w-full h-auto object-cover"
-            />
-          ) : (
+        {/* IMAGE — with lightbox if image exists, plain div if not */}
+        {product.image ? (
+          <ProductImageLightbox src={product.image} alt={product.name} />
+        ) : (
+          <div className="border rounded-3xl overflow-hidden bg-white sticky top-24 self-start">
             <div className="aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
               No Image
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* DETAILS */}
         <div>
           <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
             Product Details
           </p>
-
           <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
-
           <div className="mb-6">
             <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
               Code: {product.code}
             </span>
           </div>
-
-          <p className="text-gray-600 leading-relaxed text-lg mb-8">
-            {product.description}
-          </p>
+          <p className="text-gray-600 leading-relaxed text-lg mb-8">{product.description}</p>
 
           {availableGrits.length > 0 ? (
-            <GritSelector
-              grits={availableGrits}
-              productName={product.name}
-              productCode={product.code}
-            />
-          ) : (
-            <WhatsAppButton
-              productName={product.name}
-              productCode={product.code}
-            />
-          )}
+
+  <GritSelector
+    grits={availableGrits}
+    productName={product.name}
+    productCode={product.code}
+  />
+
+) : availableWidths.length > 0 ? (
+
+  <WidthSelector
+    widths={availableWidths}
+    productName={product.name}
+    productCode={product.code}
+  />
+
+) : (
+
+  <WhatsAppButton
+    productName={product.name}
+    productCode={product.code}
+  />
+
+)}
 
           {/* QUICK INFO */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -181,29 +192,31 @@ export default async function ProductPage({ params }: Props) {
             </a>
           )}
 
-          {/* SPECIFICATIONS */}
-          {product.specifications && (
-            <div className="border rounded-3xl overflow-hidden mb-8">
-              <div className="bg-red-700 text-white px-6 py-4">
-                <h2 className="text-2xl font-bold">Specifications</h2>
-              </div>
-              <div className="divide-y">
-                {Object.entries(product.specifications)
-                  .filter(([key]) => key.toLowerCase() !== "available grit")
-                  .map(([key, value]) => (
-                    <div key={key} className="grid grid-cols-2 px-6 py-4">
-                      <div className="font-semibold text-gray-700 capitalize">{key}</div>
-                      <div className="text-gray-600">{String(value)}</div>
-                    </div>
-                  ))}
-              </div>
+          {/* SPECIFICATIONS */} 
+          {product.specifications && 
+          ( <div className="border rounded-3xl overflow-hidden mb-8"> 
+          <div className="bg-red-700 text-white px-6 py-4"> 
+            <h2 className="text-2xl font-bold">Specifications</h2> 
             </div>
-          )}
+             <div className="divide-y"> 
+              {Object.entries(product.specifications)
+               .filter(([key]) => key.toLowerCase() !== "available grit" &&
+                key.toLowerCase() !== "available width")
+                .map(([key, value]) => ( 
+                <div key={key} className="grid grid-cols-2 px-6 py-4"> 
+                <div className="font-semibold text-gray-700 capitalize"
+                >{key}</div> <div className="text-gray-600">{String(value)}
+                </div>
+                 </div>
+                 ))}
+                  </div>
+                   </div>
+                   )}
 
           {/* BOX CONTENTS */}
           {product.box_contents && (
             <div className="border rounded-3xl p-6">
-              <h2 className="text-2xl font-bold mb-4">What's In The Box</h2>
+               <h2 className="text-2xl font-bold mb-4">What's In The Box</h2>
               <p className="text-gray-600 whitespace-pre-line">{product.box_contents}</p>
             </div>
           )}
@@ -215,21 +228,15 @@ export default async function ProductPage({ params }: Props) {
         <div className="mt-20 border-t pt-12">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-2 text-sm">
-                More Like This
-              </p>
+              <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-2 text-sm">More Like This</p>
               <h2 className="text-2xl sm:text-3xl font-bold">Related Products</h2>
             </div>
             {product.category && (
-              <Link
-                href={`/categories/${product.category}`}
-                className="text-red-700 font-semibold hover:underline text-sm shrink-0 ml-4"
-              >
+              <Link href={`/categories/${product.category}`} className="text-red-700 font-semibold hover:underline text-sm shrink-0 ml-4">
                 View All →
               </Link>
             )}
           </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {relatedProducts.map((related) => (
               <ProductCard

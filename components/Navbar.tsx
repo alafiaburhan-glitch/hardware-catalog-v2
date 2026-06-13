@@ -24,7 +24,6 @@ export default function Navbar() {
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Focus input when search opens
   useEffect(() => {
     if (searchOpen) {
       inputRef.current?.focus();
@@ -35,7 +34,6 @@ export default function Navbar() {
     }
   }, [searchOpen]);
 
-  // Debounced live search
   useEffect(() => {
     if (query.trim().length < 2) {
       setResults([]);
@@ -59,7 +57,6 @@ export default function Navbar() {
     return () => clearTimeout(timer);
   }, [query]);
 
-  // Close dropdown on outside click
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
@@ -96,19 +93,20 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6">
+        {/* h-14 on mobile, h-20 on desktop */}
+        <div className="h-14 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
 
           {/* LOGO */}
           <Link
             href="/"
             className={`flex flex-col shrink-0 focus:outline-none ${searchOpen ? "hidden sm:flex" : "flex"}`}
           >
-            <span className="text-3xl font-black tracking-wide">
+            <span className="text-xl sm:text-3xl font-black tracking-wide leading-tight">
               <span className="text-black">NOOR</span>
               <span className="text-red-700"> AGENCIES</span>
             </span>
-            <span className="text-xs text-gray-500">Industrial Hardware Supplier</span>
+            <span className="text-[10px] sm:text-xs text-gray-500 leading-tight">Industrial Hardware Supplier</span>
           </Link>
 
           {/* SEARCH BAR + DROPDOWN */}
@@ -116,11 +114,9 @@ export default function Navbar() {
             <div ref={containerRef} className="flex-1 relative flex items-center gap-2">
               <form onSubmit={handleSearch} className="flex-1 flex items-center gap-2">
                 <div className="relative flex-1">
-                  {/* Search icon */}
-                  <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0Z" />
                   </svg>
-
                   <input
                     ref={inputRef}
                     type="text"
@@ -128,7 +124,7 @@ export default function Navbar() {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onFocus={() => results.length > 0 && setShowDropdown(true)}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm"
+                    className="w-full pl-9 pr-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm"
                   />
 
                   {/* DROPDOWN */}
@@ -145,16 +141,13 @@ export default function Navbar() {
                               onClick={handleResultClick}
                               className="flex items-center gap-3 px-4 py-3 hover:bg-red-50 transition group border-b border-gray-50 last:border-0"
                             >
-                              {/* Thumbnail */}
-                              <div className="w-10 h-10 rounded-lg overflow-hidden bg-gray-100 shrink-0">
+                              <div className="w-9 h-9 rounded-lg overflow-hidden bg-gray-100 shrink-0">
                                 {product.image ? (
                                   <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center text-gray-300 text-xs">N/A</div>
                                 )}
                               </div>
-
-                              {/* Info */}
                               <div className="flex-1 min-w-0">
                                 <p className="text-sm font-semibold text-gray-800 truncate group-hover:text-red-700 transition">
                                   {product.name}
@@ -166,15 +159,11 @@ export default function Navbar() {
                                   )}
                                 </p>
                               </div>
-
-                              {/* Arrow */}
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-gray-300 group-hover:text-red-700 group-hover:translate-x-0.5 transition shrink-0">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-gray-300 group-hover:text-red-700 transition shrink-0">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
                               </svg>
                             </Link>
                           ))}
-
-                          {/* See all results */}
                           <button
                             type="submit"
                             className="w-full px-4 py-3 text-sm text-red-700 font-semibold hover:bg-red-50 transition text-left flex items-center justify-between bg-red-50/50"
@@ -194,7 +183,8 @@ export default function Navbar() {
                   )}
                 </div>
 
-                <button type="submit" className="bg-red-700 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-red-800 transition text-sm shrink-0">
+                {/* Hide Search button on mobile to save space */}
+                <button type="submit" className="hidden sm:block bg-red-700 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-red-800 transition text-sm shrink-0">
                   Search
                 </button>
               </form>
@@ -207,7 +197,7 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* NAVIGATION */}
+          {/* NAVIGATION — desktop only */}
           {!searchOpen && (
             <nav className="hidden md:flex items-center gap-8 font-medium">
               <Link href="/" className="hover:text-red-700 transition">Home</Link>
@@ -218,7 +208,7 @@ export default function Navbar() {
           )}
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {!searchOpen && (
               <button
                 onClick={() => setSearchOpen(true)}
@@ -230,7 +220,10 @@ export default function Navbar() {
                 </svg>
               </button>
             )}
-            <a href="tel:+919894084576" className="bg-red-700 text-white px-5 py-3 rounded-xl font-semibold hover:bg-red-800 transition">
+            <a
+              href="tel:+918940453952"
+              className="bg-red-700 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold hover:bg-red-800 transition text-xs sm:text-base"
+            >
               Call Now
             </a>
           </div>

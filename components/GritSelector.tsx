@@ -8,15 +8,22 @@ interface GritSelectorProps {
   productCode: string;
 }
 
-export default function GritSelector({ grits, productName, productCode }: GritSelectorProps) {
+export default function GritSelector({
+  grits,
+  productName,
+  productCode,
+}: GritSelectorProps) {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
     <div className="mb-8">
       <p className="text-sm text-gray-500 mb-3 font-medium">
         Available Grit Sizes
+
         {selected && (
-          <span className="text-red-700 font-semibold"> - {selected} selected</span>
+          <span className="text-red-700 font-semibold">
+            {" "} - {selected} selected
+          </span>
         )}
       </p>
 
@@ -24,7 +31,9 @@ export default function GritSelector({ grits, productName, productCode }: GritSe
         {grits.map((grit) => (
           <button
             key={grit}
-            onClick={() => setSelected(selected === grit ? null : grit)}
+            onClick={() =>
+              setSelected(selected === grit ? null : grit)
+            }
             className={
               selected === grit
                 ? "px-4 py-2 rounded-xl border-2 text-sm font-semibold border-red-700 bg-red-700 text-white"
