@@ -7,6 +7,11 @@ import ProductImageLightbox from "@/components/ProductImageLightbox";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import MaterialSelector from "@/components/MaterialSelector";
+import DensitySelector from "@/components/DensitySelector";
+import SizeSelector from "@/components/SizeSelector";
+import OptionSelector from "@/components/OptionsSelector";
+import ProductVariantSelector from "@/components/ProductVariantSelector";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -85,7 +90,46 @@ export default async function ProductPage({ params }: Props) {
         .map((w: string) => w.trim())
         .filter(Boolean)
     : [];
-      
+
+    const availableMaterials =
+  product.specifications?.["Available Material"]
+    ? String(
+        product.specifications["Available Material"]
+      )
+        .split(",")
+        .map((m: string) => m.trim())
+        .filter(Boolean)
+    : [];
+
+    const availableDensities =
+  product.specifications?.["Available Density"]
+    ? String(
+        product.specifications["Available Density"]
+      )
+        .split(",")
+        .map((d: string) => d.trim())
+        .filter(Boolean)
+    : [];
+
+    const availableSizes =
+  product.specifications?.["Available Size"]
+    ? String(
+        product.specifications["Available Size"]
+      )
+        .split(",")
+        .map((s: string) => s.trim())
+        .filter(Boolean)
+    : [];
+
+    const availableOptions =
+  product.specifications?.["Available Options"]
+    ? String(product.specifications["Available Options"])
+        .split(",")
+        .map((x: string) => x.trim())
+        .filter(Boolean)
+    : [];
+
+      console.log("AVAILABLE OPTIONS:", availableOptions);
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
@@ -149,6 +193,49 @@ export default async function ProductPage({ params }: Props) {
     productCode={product.code}
   />
 
+) : availableMaterials.length > 0 ? (
+
+  <MaterialSelector
+    materials={availableMaterials}
+    productName={product.name}
+    productCode={product.code}
+  />
+
+) : availableDensities.length > 0 ? (
+
+  <DensitySelector
+    densities={availableDensities}
+    productName={product.name}
+    productCode={product.code}
+  />
+
+) : availableSizes.length > 0 && availableOptions.length > 0 ? (
+
+  <ProductVariantSelector
+    sizes={availableSizes}
+    options={availableOptions}
+    productName={product.name}
+    productCode={product.code}
+  />
+
+) : availableSizes.length > 0 ? (
+
+  <SizeSelector
+    sizes={availableSizes}
+    productName={product.name}
+    productCode={product.code}
+  />
+
+) : availableOptions.length > 0 ? (
+
+  <OptionSelector
+    title="Available Options"
+    options={availableOptions}
+    optionType="Option"
+    productName={product.name}
+    productCode={product.code}
+  />
+
 ) : (
 
   <WhatsAppButton
@@ -201,7 +288,11 @@ export default async function ProductPage({ params }: Props) {
              <div className="divide-y"> 
               {Object.entries(product.specifications)
                .filter(([key]) => key.toLowerCase() !== "available grit" &&
-                key.toLowerCase() !== "available width")
+                key.toLowerCase() !== "available width" &&
+                key.toLowerCase() !== "available material" &&
+                key.toLowerCase() !=="available density" &&
+                key.toLowerCase() !=="available size" &&
+                key.toLowerCase() !=="available options")
                 .map(([key, value]) => ( 
                 <div key={key} className="grid grid-cols-2 px-6 py-4"> 
                 <div className="font-semibold text-gray-700 capitalize"
