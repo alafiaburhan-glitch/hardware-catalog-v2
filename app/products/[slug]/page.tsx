@@ -12,7 +12,7 @@ import DensitySelector from "@/components/DensitySelector";
 import SizeSelector from "@/components/SizeSelector";
 import OptionSelector from "@/components/OptionsSelector";
 import ProductVariantSelector from "@/components/ProductVariantSelector";
-
+import UniversalSelector from "@/components/UniversalSelector";
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -129,6 +129,38 @@ export default async function ProductPage({ params }: Props) {
         .filter(Boolean)
     : [];
 
+    const variants = [];
+
+if (availableWidths.length > 0)
+  variants.push({
+    title: "Width",
+    values: availableWidths,
+  });
+
+if (availableSizes.length > 0)
+  variants.push({
+    title: "Size",
+    values: availableSizes,
+  });
+
+if (availableMaterials.length > 0)
+  variants.push({
+    title: "Material",
+    values: availableMaterials,
+  });
+
+if (availableDensities.length > 0)
+  variants.push({
+    title: "Density",
+    values: availableDensities,
+  });
+
+if (availableOptions.length > 0)
+  variants.push({
+    title: "Option",
+    values: availableOptions,
+  });
+
       console.log("AVAILABLE OPTIONS:", availableOptions);
 
   return (
@@ -185,55 +217,12 @@ export default async function ProductPage({ params }: Props) {
     productCode={product.code}
   />
 
-) : availableWidths.length > 0 ? (
+) : variants.length > 0 ? (
 
-  <WidthSelector
-    widths={availableWidths}
+  <UniversalSelector
     productName={product.name}
     productCode={product.code}
-  />
-
-) : availableMaterials.length > 0 ? (
-
-  <MaterialSelector
-    materials={availableMaterials}
-    productName={product.name}
-    productCode={product.code}
-  />
-
-) : availableDensities.length > 0 ? (
-
-  <DensitySelector
-    densities={availableDensities}
-    productName={product.name}
-    productCode={product.code}
-  />
-
-) : availableSizes.length > 0 && availableOptions.length > 0 ? (
-
-  <ProductVariantSelector
-    sizes={availableSizes}
-    options={availableOptions}
-    productName={product.name}
-    productCode={product.code}
-  />
-
-) : availableSizes.length > 0 ? (
-
-  <SizeSelector
-    sizes={availableSizes}
-    productName={product.name}
-    productCode={product.code}
-  />
-
-) : availableOptions.length > 0 ? (
-
-  <OptionSelector
-    title="Available Options"
-    options={availableOptions}
-    optionType="Option"
-    productName={product.name}
-    productCode={product.code}
+    variants={variants}
   />
 
 ) : (
@@ -244,7 +233,6 @@ export default async function ProductPage({ params }: Props) {
   />
 
 )}
-
           {/* QUICK INFO */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             {product.material && (

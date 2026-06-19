@@ -292,7 +292,7 @@ export default function HomePage() {
               WhatsApp
             </a>
             <a
-              href="tel:+919894084576"
+              href="tel:+918940453952"
               className="bg-white text-red-700 px-4 sm:px-6 py-3 rounded-xl font-semibold hover:bg-red-50 transition text-sm sm:text-base"
             >
               Call Now
