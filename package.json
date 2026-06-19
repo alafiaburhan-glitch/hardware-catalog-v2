@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.16",
+    "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.106.1",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.40.0",
