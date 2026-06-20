@@ -1,18 +1,12 @@
 import { supabase } from "@/lib/supabase";
 import GritSelector from "@/components/GritSelector";
-import WidthSelector from "@/components/WidthSelector";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ProductCard from "@/components/ProductCard";
 import ProductImageLightbox from "@/components/ProductImageLightbox";
-import Image from "next/image";
+import ProductDetailClient from "@/components/ProductDetailClient";
 import Link from "next/link";
 import type { Metadata } from "next";
-import MaterialSelector from "@/components/MaterialSelector";
-import DensitySelector from "@/components/DensitySelector";
-import SizeSelector from "@/components/SizeSelector";
-import OptionSelector from "@/components/OptionsSelector";
-import ProductVariantSelector from "@/components/ProductVariantSelector";
-import UniversalSelector from "@/components/UniversalSelector";
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -64,104 +58,124 @@ export default async function ProductPage({ params }: Props) {
     .neq("slug", slug)
     .limit(4);
 
-  const availableGritKey = Object.keys(product.specifications ?? {}).find(
-    (k) => k.toLowerCase() === "available grit"
+  const specs = product.specifications ?? {};
+
+  function findKey(target: string): string | undefined {
+    return Object.keys(specs).find((k) => k.toLowerCase() === target.toLowerCase());
+  }
+
+  function parseComma(key: string | undefined): string[] {
+    if (!key || !specs[key]) return [];
+    return String(specs[key]).split(",").map((s: string) => s.trim()).filter(Boolean);
+  }
+
+  const availableGrits = parseComma(findKey("available grit"));
+  const availableWidths = parseComma(findKey("available width"));
+  const availableMaterials = parseComma(findKey("available material"));
+  const availableDensities = parseComma(findKey("available density"));
+  const sizeKey = findKey("available size") ?? findKey("available sizes");
+  const availableSizes = parseComma(sizeKey);
+  const availableOptions = parseComma(findKey("available options"));
+
+  const variants: { title: string; values: string[] }[] = [];
+  if (availableWidths.length > 0) variants.push({ title: "Width", values: availableWidths });
+  if (availableSizes.length > 0) variants.push({ title: "Size", values: availableSizes });
+  if (availableMaterials.length > 0) variants.push({ title: "Material", values: availableMaterials });
+  if (availableDensities.length > 0) variants.push({ title: "Density", values: availableDensities });
+  if (availableOptions.length > 0) variants.push({ title: "Option", values: availableOptions });
+
+  const hiddenSpecKeys = new Set([
+    "available grit",
+    "available width",
+    "available material",
+    "available density",
+    "available size",
+    "available sizes",
+    "available options",
+  ]);
+
+  const hasGrit = availableGrits.length > 0;
+  const hasVariants = variants.length > 0;
+
+  const detailsTop = (
+    <>
+      <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
+        Product Details
+      </p>
+      <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+      <div className="mb-6">
+        <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
+          Code: {product.code}
+        </span>
+      </div>
+      <p className="text-gray-600 leading-relaxed text-lg mb-8">{product.description}</p>
+    </>
   );
 
-  const availableGrits: string[] =
-    availableGritKey && product.specifications?.[availableGritKey]
-      ? String(product.specifications[availableGritKey])
-          .split(",")
-          .map((g: string) => g.trim())
-          .filter(Boolean)
-      : [];
-      
-      const availableWidthKey = Object.keys(product.specifications ?? {}).find(
-    (k) => k.toLowerCase() === "available width"
+  const detailsBottom = (
+    <>
+      {/* QUICK INFO */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 mt-8">
+        {product.material && (
+          <div className="border rounded-2xl p-4">
+            <p className="text-sm text-gray-500">Material</p>
+            <p className="font-semibold">{product.material}</p>
+          </div>
+        )}
+        {product.size && (
+          <div className="border rounded-2xl p-4">
+            <p className="text-sm text-gray-500">Size</p>
+            <p className="font-semibold">{product.size}</p>
+          </div>
+        )}
+        {product.weight && (
+          <div className="border rounded-2xl p-4">
+            <p className="text-sm text-gray-500">Weight</p>
+            <p className="font-semibold">{product.weight}</p>
+          </div>
+        )}
+      </div>
+
+      {/* DATASHEET */}
+      {product.datasheet_url && (
+        <a
+          href={product.datasheet_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-red-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-800 mb-8 transition"
+        >
+          Download Datasheet
+        </a>
+      )}
+
+      {/* SPECIFICATIONS */}
+      {product.specifications && (
+        <div className="border rounded-3xl overflow-hidden mb-8">
+          <div className="bg-red-700 text-white px-6 py-4">
+            <h2 className="text-2xl font-bold">Specifications</h2>
+          </div>
+          <div className="divide-y">
+            {Object.entries(product.specifications)
+              .filter(([key]) => !hiddenSpecKeys.has(key.toLowerCase()))
+              .map(([key, value]) => (
+                <div key={key} className="grid grid-cols-2 px-6 py-4">
+                  <div className="font-semibold text-gray-700 capitalize">{key}</div>
+                  <div className="text-gray-600">{String(value)}</div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      {/* BOX CONTENTS */}
+      {product.box_contents && (
+        <div className="border rounded-3xl p-6">
+          <h2 className="text-2xl font-bold mb-4">What's In The Box</h2>
+          <p className="text-gray-600 whitespace-pre-line">{product.box_contents}</p>
+        </div>
+      )}
+    </>
   );
-
-      const availableWidths =
-      availableWidthKey &&
-  product.specifications?.[availableWidthKey]
-    ? String(
-        product.specifications[availableWidthKey]
-      )
-        .split(",")
-        .map((w: string) => w.trim())
-        .filter(Boolean)
-    : [];
-
-    const availableMaterials =
-  product.specifications?.["Available Material"]
-    ? String(
-        product.specifications["Available Material"]
-      )
-        .split(",")
-        .map((m: string) => m.trim())
-        .filter(Boolean)
-    : [];
-
-    const availableDensities =
-  product.specifications?.["Available Density"]
-    ? String(
-        product.specifications["Available Density"]
-      )
-        .split(",")
-        .map((d: string) => d.trim())
-        .filter(Boolean)
-    : [];
-
-    const availableSizes =
-  product.specifications?.["Available Size"]
-    ? String(
-        product.specifications["Available Size"]
-      )
-        .split(",")
-        .map((s: string) => s.trim())
-        .filter(Boolean)
-    : [];
-
-    const availableOptions =
-  product.specifications?.["Available Options"]
-    ? String(product.specifications["Available Options"])
-        .split(",")
-        .map((x: string) => x.trim())
-        .filter(Boolean)
-    : [];
-
-    const variants = [];
-
-if (availableWidths.length > 0)
-  variants.push({
-    title: "Width",
-    values: availableWidths,
-  });
-
-if (availableSizes.length > 0)
-  variants.push({
-    title: "Size",
-    values: availableSizes,
-  });
-
-if (availableMaterials.length > 0)
-  variants.push({
-    title: "Material",
-    values: availableMaterials,
-  });
-
-if (availableDensities.length > 0)
-  variants.push({
-    title: "Density",
-    values: availableDensities,
-  });
-
-if (availableOptions.length > 0)
-  variants.push({
-    title: "Option",
-    values: availableOptions,
-  });
-
-      console.log("AVAILABLE OPTIONS:", availableOptions);
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
@@ -183,124 +197,48 @@ if (availableOptions.length > 0)
         <span className="text-gray-700 font-medium truncate">{product.name}</span>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12">
-
-        {/* IMAGE — with lightbox if image exists, plain div if not */}
-        {product.image ? (
-          <ProductImageLightbox src={product.image} alt={product.name} />
-        ) : (
-          <div className="border rounded-3xl overflow-hidden bg-white sticky top-24 self-start">
-            <div className="aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
-              No Image
-            </div>
-          </div>
-        )}
-
-        {/* DETAILS */}
-        <div>
-          <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
-            Product Details
-          </p>
-          <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
-          <div className="mb-6">
-            <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
-              Code: {product.code}
-            </span>
-          </div>
-          <p className="text-gray-600 leading-relaxed text-lg mb-8">{product.description}</p>
-
-          {availableGrits.length > 0 ? (
-
-  <GritSelector
-    grits={availableGrits}
-    productName={product.name}
-    productCode={product.code}
-  />
-
-) : variants.length > 0 ? (
-
-  <UniversalSelector
-    productName={product.name}
-    productCode={product.code}
-    variants={variants}
-  />
-
-) : (
-
-  <WhatsAppButton
-    productName={product.name}
-    productCode={product.code}
-  />
-
-)}
-          {/* QUICK INFO */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {product.material && (
-              <div className="border rounded-2xl p-4">
-                <p className="text-sm text-gray-500">Material</p>
-                <p className="font-semibold">{product.material}</p>
+      {hasVariants ? (
+        <ProductDetailClient
+          productName={product.name}
+          productCode={product.code}
+          defaultImage={product.image || null}
+          sizeImages={product.size_images ?? {}}
+          variants={variants}
+          detailsTop={detailsTop}
+          detailsBottom={detailsBottom}
+        />
+      ) : (
+        <div className="grid md:grid-cols-2 gap-12">
+          {product.image ? (
+            <ProductImageLightbox src={product.image} alt={product.name} />
+          ) : (
+            <div className="border rounded-3xl overflow-hidden bg-white sticky top-24 self-start">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
+                No Image
               </div>
-            )}
-            {product.size && (
-              <div className="border rounded-2xl p-4">
-                <p className="text-sm text-gray-500">Size</p>
-                <p className="font-semibold">{product.size}</p>
-              </div>
-            )}
-            {product.weight && (
-              <div className="border rounded-2xl p-4">
-                <p className="text-sm text-gray-500">Weight</p>
-                <p className="font-semibold">{product.weight}</p>
-              </div>
-            )}
-          </div>
-
-          {/* DATASHEET */}
-          {product.datasheet_url && (
-            <a
-              href={product.datasheet_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-red-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-800 mb-8 transition"
-            >
-              Download Datasheet
-            </a>
-          )}
-
-          {/* SPECIFICATIONS */} 
-          {product.specifications && 
-          ( <div className="border rounded-3xl overflow-hidden mb-8"> 
-          <div className="bg-red-700 text-white px-6 py-4"> 
-            <h2 className="text-2xl font-bold">Specifications</h2> 
-            </div>
-             <div className="divide-y"> 
-              {Object.entries(product.specifications)
-               .filter(([key]) => key.toLowerCase() !== "available grit" &&
-                key.toLowerCase() !== "available width" &&
-                key.toLowerCase() !== "available material" &&
-                key.toLowerCase() !=="available density" &&
-                key.toLowerCase() !=="available size" &&
-                key.toLowerCase() !=="available options")
-                .map(([key, value]) => ( 
-                <div key={key} className="grid grid-cols-2 px-6 py-4"> 
-                <div className="font-semibold text-gray-700 capitalize"
-                >{key}</div> <div className="text-gray-600">{String(value)}
-                </div>
-                 </div>
-                 ))}
-                  </div>
-                   </div>
-                   )}
-
-          {/* BOX CONTENTS */}
-          {product.box_contents && (
-            <div className="border rounded-3xl p-6">
-               <h2 className="text-2xl font-bold mb-4">What's In The Box</h2>
-              <p className="text-gray-600 whitespace-pre-line">{product.box_contents}</p>
             </div>
           )}
+
+          <div>
+            {detailsTop}
+
+            {hasGrit ? (
+              <GritSelector
+                grits={availableGrits}
+                productName={product.name}
+                productCode={product.code}
+              />
+            ) : (
+              <WhatsAppButton
+                productName={product.name}
+                productCode={product.code}
+              />
+            )}
+
+            {detailsBottom}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* RELATED PRODUCTS */}
       {relatedProducts && relatedProducts.length > 0 && (

@@ -1,22 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface UniversalSelectorProps {
   productName: string;
   productCode: string;
+
   variants: {
     title: string;
     values: string[];
   }[];
+
+  onSelectionChange?: (
+    selected: Record<string, string>
+  ) => void;
 }
 
 export default function UniversalSelector({
   productName,
   productCode,
   variants,
+  onSelectionChange,
 }: UniversalSelectorProps) {
   const [selected, setSelected] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    if (onSelectionChange) {
+      onSelectionChange(selected);
+    }
+  }, [selected, onSelectionChange]);
 
   const allSelected = variants.every(
     (v) => selected[v.title]
@@ -24,11 +36,8 @@ export default function UniversalSelector({
 
   return (
     <div className="space-y-6 mb-8">
-
       {variants.map((variant) => (
-
         <div key={variant.title}>
-
           <p className="text-sm text-gray-500 mb-3 font-medium">
             {variant.title}
 
@@ -41,48 +50,42 @@ export default function UniversalSelector({
           </p>
 
           <div className="flex flex-wrap gap-2">
-
             {variant.values.map((value) => (
-
               <button
-                key={value}
-                onClick={() =>
+                key={`${variant.title}-${value}`}
+                type="button"
+                onClick={() => {
                   setSelected((prev) => ({
                     ...prev,
                     [variant.title]:
                       prev[variant.title] === value
                         ? ""
                         : value,
-                  }))
-                }
+                  }));
+                }}
                 className={
                   selected[variant.title] === value
-                    ? "px-4 py-2 rounded-xl border-2 text-sm font-semibold border-red-700 bg-red-700 text-white"
-                    : "px-4 py-2 rounded-xl border-2 text-sm font-semibold border-gray-200 bg-white text-gray-700 hover:border-red-300 hover:bg-red-50 hover:text-red-700"
+                    ? "px-4 py-2 rounded-xl border-2 text-sm font-semibold border-red-700 bg-red-700 text-white focus:outline-none"
+                    : "px-4 py-2 rounded-xl border-2 text-sm font-semibold border-gray-200 bg-white text-gray-700 hover:border-red-300 hover:bg-red-50 hover:text-red-700 focus:outline-none"
                 }
               >
                 {value}
               </button>
-
             ))}
-
           </div>
-
         </div>
-
       ))}
 
       {allSelected && (
-
         <a
           href={`https://wa.me/918940453952?text=${encodeURIComponent(
             `Hi, I am interested in ${productName} (Code: ${productCode})\n\n` +
-            variants
-              .map(
-                (v) =>
-                  `${v.title}: ${selected[v.title]}`
-              )
-              .join("\n")
+              variants
+                .map(
+                  (v) =>
+                    `${v.title}: ${selected[v.title]}`
+                )
+                .join("\n")
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -90,9 +93,7 @@ export default function UniversalSelector({
         >
           WhatsApp for Quote
         </a>
-
       )}
-
     </div>
   );
 }

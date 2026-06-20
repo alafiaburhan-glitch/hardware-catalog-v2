@@ -3,34 +3,30 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import SizeImageUploader from "@/components/SizeImageUploader";
+import { toast } from "sonner";
 
 export default function EditProductPage() {
   const router = useRouter();
   const params = useParams();
 
   const [loading, setLoading] = useState(false);
-
   const [categories, setCategories] = useState<any[]>([]);
+  const [sizeImages, setSizeImages] = useState<Record<string, string>>({});
 
   const [formData, setFormData] = useState({
-  name: "",
-  code: "",
-  slug: "",
-  category: "",
-  description: "",
-  material: "",
-  size: "",
-  weight: "",
-  box_contents: "",
-  datasheet_url: "",
-
-  specifications: [
-    {
-      key: "",
-      value: "",
-    },
-  ],
-});
+    name: "",
+    code: "",
+    slug: "",
+    category: "",
+    description: "",
+    material: "",
+    size: "",
+    weight: "",
+    box_contents: "",
+    datasheet_url: "",
+    specifications: [{ key: "", value: "" }],
+  });
 
   useEffect(() => {
     loadProduct();
@@ -38,15 +34,11 @@ export default function EditProductPage() {
   }, []);
 
   async function loadCategories() {
-    const { data } = await supabase
-      .from("categories")
-      .select("*")
-      .order("name");
-
+    const { data } = await supabase.from("categories").select("*").order("name");
     setCategories(data || []);
   }
 
-    async function loadProduct() {
+  async function loadProduct() {
     const { data, error } = await supabase
       .from("products")
       .select("*")
@@ -59,127 +51,98 @@ export default function EditProductPage() {
     }
 
     setFormData({
-  name: data.name || "",
-  code: data.code || "",
-  slug: data.slug || "",
-  category: data.category || "",
-  description: data.description || "",
-  material: data.material || "",
-  size: data.size || "",
-  weight: data.weight || "",
-  box_contents: data.box_contents || "",
-  datasheet_url: data.datasheet_url || "",
-
-  specifications:
-    data.specifications
-      ? Object.entries(data.specifications).map(
-          ([key, value]) => ({
+      name: data.name || "",
+      code: data.code || "",
+      slug: data.slug || "",
+      category: data.category || "",
+      description: data.description || "",
+      material: data.material || "",
+      size: data.size || "",
+      weight: data.weight || "",
+      box_contents: data.box_contents || "",
+      datasheet_url: data.datasheet_url || "",
+      specifications: data.specifications
+        ? Object.entries(data.specifications).map(([key, value]) => ({
             key,
             value: String(value),
-          })
-        )
-      : [
-          {
-            key: "",
-            value: "",
-          },
-        ],
-});
+          }))
+        : [{ key: "", value: "" }],
+    });
 
-}
+    setSizeImages(data.size_images || {});
+  }
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement |
-      HTMLTextAreaElement |
-      HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const addSpecification = () => {
-  setFormData((prev) => ({
-    ...prev,
-    specifications: [
-      ...prev.specifications,
-      {
-        key: "",
-        value: "",
-      },
-    ],
-  }));
-};
+    setFormData((prev) => ({
+      ...prev,
+      specifications: [...prev.specifications, { key: "", value: "" }],
+    }));
+  };
 
-const updateSpecification = (
-  index: number,
-  field: "key" | "value",
-  value: string
-) => {
-  const updated = [...formData.specifications];
-
-  updated[index][field] = value;
-
-  setFormData({
-    ...formData,
-    specifications: updated,
-  });
-};
-
-
-
-  const handleSubmit = async (
-    e: React.FormEvent
+  const updateSpecification = (
+    index: number,
+    field: "key" | "value",
+    value: string
   ) => {
+    const updated = [...formData.specifications];
+    updated[index][field] = value;
+    setFormData({ ...formData, specifications: updated });
+  };
+
+  // Detect "Available Sizes" spec to drive the size image uploader
+  const availableSizesSpec = formData.specifications.find(
+    (s) => ["available size", "available sizes"].includes(s.key.trim().toLowerCase())
+  );
+  const parsedSizes = availableSizesSpec?.value
+    ? availableSizesSpec.value
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : [];
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
       setLoading(true);
-      const specificationsObject =
-  Object.fromEntries(
-    formData.specifications
-      .filter(
-        (spec) =>
-          spec.key &&
-          spec.value
-      )
-      .map((spec) => [
-        spec.key,
-        spec.value,
-      ])
-  );
+      const specificationsObject = Object.fromEntries(
+        formData.specifications
+          .filter((spec) => spec.key && spec.value)
+          .map((spec) => [spec.key, spec.value])
+      );
 
       const { error } = await supabase
         .from("products")
         .update({
-  name: formData.name,
-  code: formData.code,
-  slug: formData.slug,
-  category: formData.category,
-  description: formData.description,
-
-  material: formData.material,
-  size: formData.size,
-  weight: formData.weight,
-  box_contents: formData.box_contents,
-  datasheet_url: formData.datasheet_url,
-
-  specifications: specificationsObject,
-})
+          name: formData.name,
+          code: formData.code,
+          slug: formData.slug,
+          category: formData.category,
+          description: formData.description,
+          material: formData.material,
+          size: formData.size,
+          weight: formData.weight,
+          box_contents: formData.box_contents,
+          datasheet_url: formData.datasheet_url,
+          specifications: specificationsObject,
+          size_images: sizeImages,
+        })
         .eq("id", Number(params.id));
 
       if (error) {
         console.log(error);
-        alert("Update failed");
+        toast.error("Update failed");
         return;
       }
 
-      alert("Product updated successfully");
-
+      toast.success("Product updated successfully");
       router.push("/admin/products");
-
     } catch (error) {
       console.log(error);
     } finally {
@@ -189,15 +152,9 @@ const updateSpecification = (
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-10">
+      <h1 className="text-4xl font-bold mb-10">Edit Product</h1>
 
-      <h1 className="text-4xl font-bold mb-10">
-        Edit Product
-      </h1>
-
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-6"
-      >
+      <form onSubmit={handleSubmit} className="space-y-6">
 
         <input
           type="text"
@@ -232,15 +189,9 @@ const updateSpecification = (
           onChange={handleChange}
           className="w-full border rounded-2xl p-4"
         >
-          <option value="">
-            Select Category
-          </option>
-
+          <option value="">Select Category</option>
           {categories.map((category) => (
-            <option
-              key={category.id}
-              value={category.slug}
-            >
+            <option key={category.id} value={category.slug}>
               {category.name}
             </option>
           ))}
@@ -299,62 +250,48 @@ const updateSpecification = (
           onChange={handleChange}
           className="w-full border rounded-2xl p-4"
         />
+
         <div className="space-y-5">
+          <label className="block font-semibold text-xl">Product Specifications</label>
+          <p className="text-sm text-gray-500">
+            Tip: a spec named <strong>"Available Size"</strong> or <strong>"Available Sizes"</strong> with comma-separated
+            values enables size-specific image uploads below.
+          </p>
 
-  <label className="block font-semibold text-xl">
-    Product Specifications
-  </label>
+          {formData.specifications.map((spec, index) => (
+            <div key={index} className="grid grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Specification Name"
+                value={spec.key}
+                onChange={(e) => updateSpecification(index, "key", e.target.value)}
+                className="border rounded-2xl p-4"
+              />
+              <input
+                type="text"
+                placeholder="Value"
+                value={spec.value}
+                onChange={(e) => updateSpecification(index, "value", e.target.value)}
+                className="border rounded-2xl p-4"
+              />
+            </div>
+          ))}
 
-  {formData.specifications.map(
-    (spec, index) => (
+          <button
+            type="button"
+            onClick={addSpecification}
+            className="bg-red-700 text-white px-5 py-3 rounded-xl"
+          >
+            + Add Specification
+          </button>
+        </div>
 
-      <div
-        key={index}
-        className="grid grid-cols-2 gap-4"
-      >
-
-        <input
-          type="text"
-          placeholder="Specification Name"
-          value={spec.key}
-          onChange={(e) =>
-            updateSpecification(
-              index,
-              "key",
-              e.target.value
-            )
-          }
-          className="border rounded-2xl p-4"
+        {/* SIZE IMAGE UPLOADER */}
+        <SizeImageUploader
+          sizes={parsedSizes}
+          sizeImages={sizeImages}
+          onChange={setSizeImages}
         />
-
-        <input
-          type="text"
-          placeholder="Value"
-          value={spec.value}
-          onChange={(e) =>
-            updateSpecification(
-              index,
-              "value",
-              e.target.value
-            )
-          }
-          className="border rounded-2xl p-4"
-        />
-
-      </div>
-
-    )
-  )}
-
-  <button
-    type="button"
-    onClick={addSpecification}
-    className="bg-red-700 text-white px-5 py-3 rounded-xl"
-  >
-    + Add Specification
-  </button>
-
-</div>
 
         <button
           type="submit"
@@ -365,7 +302,6 @@ const updateSpecification = (
         </button>
 
       </form>
-
     </div>
   );
 }
