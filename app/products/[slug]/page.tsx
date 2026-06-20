@@ -75,11 +75,18 @@ export default async function ProductPage({ params }: Props) {
   const availableDensities = parseComma(findKey("available density"));
   const sizeKey = findKey("available size") ?? findKey("available sizes");
   const availableSizes = parseComma(sizeKey);
+  const availableCapacities = parseComma(findKey("available capacity"));
+  const availableLengths = parseComma(findKey("available length"));
   const availableOptions = parseComma(findKey("available options"));
 
   const variants: { title: string; values: string[] }[] = [];
   if (availableWidths.length > 0) variants.push({ title: "Width", values: availableWidths });
-  if (availableSizes.length > 0) variants.push({ title: "Size", values: availableSizes });
+  if (availableCapacities.length > 0 && availableLengths.length > 0) {
+    variants.push({ title: "Capacity", values: availableCapacities });
+    variants.push({ title: "Length", values: availableLengths });
+  } else if (availableSizes.length > 0) {
+    variants.push({ title: "Size", values: availableSizes });
+  }
   if (availableMaterials.length > 0) variants.push({ title: "Material", values: availableMaterials });
   if (availableDensities.length > 0) variants.push({ title: "Density", values: availableDensities });
   if (availableOptions.length > 0) variants.push({ title: "Option", values: availableOptions });
@@ -92,6 +99,8 @@ export default async function ProductPage({ params }: Props) {
     "available size",
     "available sizes",
     "available options",
+    "available capacity",
+    "available length",
   ]);
 
   const hasGrit = availableGrits.length > 0;
