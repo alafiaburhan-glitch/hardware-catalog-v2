@@ -1,6 +1,7 @@
 "use client";
 
 import ProductCard from "@/components/ProductCard";
+import FaqAccordion from "@/components/FaqAccordion";
 import Link from "next/link";
 
 type Product = {
@@ -11,13 +12,24 @@ type Product = {
   image?: string;
 };
 
+type Faq = {
+  question: string;
+  answer: string;
+};
+
 type Props = {
   slug: string;
   categoryName: string;
   initialProducts: Product[];
+  faqs?: Faq[];
 };
 
-export default function CategoryPageClient({ slug, categoryName, initialProducts }: Props) {
+export default function CategoryPageClient({
+  slug,
+  categoryName,
+  initialProducts,
+  faqs = [],
+}: Props) {
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
 
@@ -65,6 +77,9 @@ export default function CategoryPageClient({ slug, categoryName, initialProducts
           ))}
         </div>
       )}
+
+      {/* FAQ ACCORDION — only renders if faqs exist */}
+      <FaqAccordion faqs={faqs} categoryName={categoryName} />
     </div>
   );
 }

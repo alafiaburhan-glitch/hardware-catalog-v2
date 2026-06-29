@@ -73,6 +73,7 @@ export default async function ProductPage({ params }: Props) {
   const availableWidths = parseComma(findKey("available width"));
   const availableMaterials = parseComma(findKey("available material"));
   const availableDensities = parseComma(findKey("available density"));
+  const availableGsms = parseComma(findKey("available gsm"));
   const sizeKey = findKey("available size") ?? findKey("available sizes");
   const availableSizes = parseComma(sizeKey);
   const availableCapacities = parseComma(findKey("available capacity"));
@@ -89,6 +90,11 @@ export default async function ProductPage({ params }: Props) {
   }
   if (availableMaterials.length > 0) variants.push({ title: "Material", values: availableMaterials });
   if (availableDensities.length > 0) variants.push({ title: "Density", values: availableDensities });
+  if (availableGsms.length > 0)
+  variants.push({
+    title: "GSM",
+    values: availableGsms,
+  });
   if (availableOptions.length > 0) variants.push({ title: "Option", values: availableOptions });
 
   const hiddenSpecKeys = new Set([
@@ -101,6 +107,7 @@ export default async function ProductPage({ params }: Props) {
     "available options",
     "available capacity",
     "available length",
+    "available gsm"
   ]);
 
   const hasGrit = availableGrits.length > 0;

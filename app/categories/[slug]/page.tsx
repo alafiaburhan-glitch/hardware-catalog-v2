@@ -35,7 +35,7 @@ export default async function CategoryPage({ params }: Props) {
 
   const { data: category } = await supabase
     .from("categories")
-    .select("name")
+    .select("name, faqs")
     .eq("slug", slug)
     .single();
 
@@ -49,6 +49,7 @@ export default async function CategoryPage({ params }: Props) {
       slug={slug}
       categoryName={category?.name ?? slug.replace(/-/g, " ")}
       initialProducts={products ?? []}
+      faqs={category?.faqs ?? []}
     />
   );
 }
