@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Counter from "@/components/Counter";
+import TrustSection from "@/components/TrustSection";
+import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
@@ -47,7 +49,7 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-red-800 via-red-700 to-black text-white">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 md:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-14">
           <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-48 md:w-72 h-48 md:h-72 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -72,7 +74,7 @@ export default function HomePage() {
               industrial safety materials, cargo solutions, and hardware products.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-8">
               <Link
                 href="/categories"
                 className="bg-white text-red-700 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
@@ -89,6 +91,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* BRANDS MARQUEE */}
+      <BrandsMarquee />
 
       {/* CATEGORIES */}
       <motion.section
@@ -165,7 +170,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* TRUST SECTION */}
+      {/* TRUST SECTION — now with all stats animated */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -179,9 +184,9 @@ export default function HomePage() {
               <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-3 text-xs sm:text-sm">
                 Trusted Across Industries
               </p>
-              <div className="mb-4">
+              <div className="mb-4 flex items-baseline">
                 <Counter
-                  value={25}
+                  value={10}
                   places={[10, 1]}
                   fontSize={60}
                   padding={5}
@@ -189,6 +194,7 @@ export default function HomePage() {
                   textColor="#b91c1c"
                   fontWeight={800}
                 />
+                <span className="text-5xl sm:text-6xl font-extrabold text-red-700">+</span>
               </div>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 Years of delivering trusted industrial hardware, lifting solutions,
@@ -196,21 +202,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl shadow-sm border p-6 sm:p-8">
-              <div className="grid grid-cols-2 gap-5 sm:gap-6">
-                {[
-                  { value: "1000+", label: "Products Delivered" },
-                  { value: "500+", label: "Trusted Clients" },
-                  { value: "7+", label: "Years Experience" },
-                  { value: "24/7", label: "Customer Support" },
-                ].map(({ value, label }) => (
-                  <div key={label}>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-red-700 mb-1">{value}</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">{label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <TrustSection />
           </div>
         </div>
       </motion.section>

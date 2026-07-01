@@ -38,7 +38,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <head>
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) — excludes /admin/* paths */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-PE619MSD5B"
@@ -49,7 +49,25 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-PE619MSD5B');
+            gtag('config', 'G-PE619MSD5B', {
+              cookie_flags: 'SameSite=None;Secure',
+              page_path: window.location.pathname,
+              send_page_view: !window.location.pathname.startsWith('/admin')
+            });
+
+            // Override page_view tracking to skip /admin pages
+            const originalGtag = window.gtag;
+            window.gtag = function() {
+              const args = Array.from(arguments);
+              if (
+                args[0] === 'event' &&
+                args[1] === 'page_view' &&
+                window.location.pathname.startsWith('/admin')
+              ) {
+                return; // Block admin page views
+              }
+              originalGtag.apply(this, arguments);
+            };
           `}
         </Script>
       </head>

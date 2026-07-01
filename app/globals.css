@@ -5,23 +5,29 @@ body {
   margin: 0;
   padding: 0;
 }
-@keyframes marquee {
 
+@keyframes marquee {
   from {
     transform: translateX(0);
   }
-
   to {
-    transform: translateX(calc(-100% - 1rem));
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
 @keyframes marquee-vertical {
-
   from {
     transform: translateY(0);
   }
-
   to {
     transform: translateY(calc(-100% - 1rem));
   }
@@ -31,6 +37,15 @@ body {
   animation: marquee 35s linear infinite;
 }
 
+.animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
+
 .animate-marquee-vertical {
   animation: marquee-vertical 35s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
 }
