@@ -36,6 +36,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
+      style={{ overflowX: "hidden" }}
     >
       <head>
         {/* Google tag (gtag.js) — excludes /admin/* paths */}
@@ -64,14 +65,14 @@ export default function RootLayout({
                 args[1] === 'page_view' &&
                 window.location.pathname.startsWith('/admin')
               ) {
-                return; // Block admin page views
+                return;
               }
               originalGtag.apply(this, arguments);
             };
           `}
         </Script>
       </head>
-      <body className="min-h-screen bg-white">
+      <body className="min-h-screen bg-white overflow-x-hidden">
         <Navbar />
         <main>
           {children}
