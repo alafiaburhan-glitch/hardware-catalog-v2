@@ -37,8 +37,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      images: product.image ? [{ url: product.image }] : [],
-      url: `https://hardware-catalog-v2.vercel.app/products/${slug}`,
+      images: product.image
+  ? [
+      {
+        url: product.image,
+        width: 1200,
+        height: 630,
+        alt: product.name,
+      },
+    ]
+  : [],
+    url: `https://nooragencies.in/products/${slug}`,
     },
   };
 }
@@ -197,9 +206,98 @@ export default async function ProductPage({ params }: Props) {
       )}
     </>
   );
+  const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+
+  name: product.name,
+
+  image: product.image ? [product.image] : [],
+
+  description: product.description,
+
+  sku: product.code,
+
+  category: product.category,
+
+  brand: {
+    "@type": "Brand",
+    name: "Noor Agencies",
+  },
+
+  manufacturer: {
+    "@type": "Organization",
+    name: "Noor Agencies",
+  },
+
+  url: `https://nooragencies.in/products/${product.slug}`,
+
+  offers: {
+    "@type": "Offer",
+
+    availability: "https://schema.org/InStock",
+
+    url: `https://nooragencies.in/products/${product.slug}`,
+
+    seller: {
+      "@type": "Organization",
+      name: "Noor Agencies",
+    },
+  },
+};
+
+  const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nooragencies.in",
+    },
+
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Categories",
+      item: "https://nooragencies.in/categories",
+    },
+
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: product.category.replace(/-/g, " "),
+      item: `https://nooragencies.in/categories/${product.category}`,
+    },
+
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: product.name,
+      item: `https://nooragencies.in/products/${product.slug}`,
+    },
+  ],
+}
+
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+
+        <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(productSchema),
+      }}
+      />
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(breadcrumbSchema),
+  }}
+/>
+    
 
       {/* BREADCRUMB */}
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-8 flex-wrap">

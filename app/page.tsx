@@ -4,7 +4,7 @@ import HomePageClient from "@/components/HomePageClient";
 export const metadata: Metadata = {
   title: "Noor Agencies",
   description:
-    "Industrial hardware supplier offering ropes, tarpaulins, lifting slings, safety products and more.",
+    "Noor Agencies supplies industrial hardware including ropes, tarpaulins, lifting equipment, ladders, hoses, safety products, industrial adhesives and more across India.",
   alternates: {
     canonical: "/",
   },

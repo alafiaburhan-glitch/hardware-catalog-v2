@@ -23,7 +23,7 @@ export default async function CategoriesPage() {
   if (error) {
     return <div className="p-10">Failed to load categories</div>;
   }
-
+  
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
       <div className="mb-12">
