@@ -82,7 +82,8 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="text-lg font-semibold text-gray-800 hover:text-green-600 transition"
                   >
-                    +91 89404 53952
+                    +91 96266 52275
+
                   </a>
                 </div>
               </div>
