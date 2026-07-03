@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nooragencies.in"),
+
   title: "Noor Agencies",
   description: "Industrial Hardware Solutions",
 };

@@ -11,6 +11,7 @@ export default function CategoryCard({
   slug,
   image,
 }: CategoryCardProps) {
+
   return (
     <Link href={`/categories/${slug}`}>
       <div className="border-2 border-red-700 rounded-2xl overflow-hidden hover:shadow-xl transition bg-white cursor-pointer">

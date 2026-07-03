@@ -17,7 +17,7 @@ export default function WhatsAppButton({ productName, productCode }: Props) {
 
   return (
     <a
-      href={`https://wa.me/918940453952?text=Hi, I am interested in ${productName} (Code: ${productCode})`}
+      href={`https://wa.me/919626652275?text=Hi, I am interested in ${productName} (Code: ${productCode})`}
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}

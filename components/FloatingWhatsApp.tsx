@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
 
   return (
     <a
-      href="https://wa.me/918940453952?text=Hi, I would like to enquire about your products."
+      href="https://wa.me/919626652275?text=Hi, I would like to enquire about your products."
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}

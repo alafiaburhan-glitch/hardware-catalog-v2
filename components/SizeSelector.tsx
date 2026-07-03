@@ -63,7 +63,7 @@ export default function SizeSelector({
         <div className="mt-4">
 
           <a
-            href={`https://wa.me/918940453952?text=Hi, I am interested in ${productName} (Code: ${productCode}) - Size: ${selectedSize}`}
+            href={`https://wa.me/919626652275?text=Hi, I am interested in ${productName} (Code: ${productCode}) - Size: ${selectedSize}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-2xl"

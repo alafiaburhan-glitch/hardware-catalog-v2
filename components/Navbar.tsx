@@ -221,7 +221,7 @@ export default function Navbar() {
               </button>
             )}
             <a
-              href="tel:+918940453952"
+              href="tel:+919626652275"
               className="bg-red-700 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold hover:bg-red-800 transition text-xs sm:text-base"
             >
               Call Now

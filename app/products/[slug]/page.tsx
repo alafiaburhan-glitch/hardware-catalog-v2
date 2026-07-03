@@ -18,8 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .select("name, description, image, code, category")
     .eq("slug", slug)
     .single();
+    if (!product) {
+  return {
+    title: "Product Not Found | Noor Agencies",
+    description: "Product not found.",
+  };
+}
 
-  if (!product) return { title: "Product Not Found | Noor Agencies" };
 
   const title = `${product.name} | Noor Agencies`;
   const description =

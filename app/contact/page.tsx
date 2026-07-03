@@ -77,7 +77,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">WhatsApp</p>
                   <a
-                    href="https://wa.me/918940453952?text=Hi, I would like to enquire about your products."
+                    href="https://wa.me/919626652275?text=Hi, I would like to enquire about your products."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-lg font-semibold text-gray-800 hover:text-green-600 transition"
@@ -132,7 +132,7 @@ export default function ContactPage() {
             {/* Quick Action Buttons */}
             <div className="flex flex-wrap gap-3 mt-10">
               <a
-                href="https://wa.me/918940453952?text=Hi, I would like to enquire about your products."
+                href="https://wa.me/919626652275?text=Hi, I would like to enquire about your products."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-xl font-semibold transition text-sm"
