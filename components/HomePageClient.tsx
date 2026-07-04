@@ -7,7 +7,7 @@ import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import Image from "next/image";
+
 export const metadata = {
   alternates: {
     canonical: "/",
@@ -135,13 +135,7 @@ export default function HomePage() {
                   className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-  <Image
-    src={categoryIcons[category.slug] || "/icons/default.svg"}
-    alt={category.name}
-    width={48}
-    height={48}
-    className="w-12 h-12 flex-shrink-0"
-  />
+ 
 
   <div className="flex-1">
     <h3 className="text-sm sm:text-base font-bold group-hover:text-red-700 transition leading-tight">
