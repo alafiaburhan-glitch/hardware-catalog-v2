@@ -40,14 +40,15 @@ const brandsRow2: Brand[] = [
 
 function BrandCard({ brand }: { brand: Brand }) {
   return (
-    <div className="flex items-center justify-center shrink-0 mx-3 sm:mx-4 px-6 py-3 bg-white border border-gray-100 rounded-2xl h-16 sm:h-20 min-w-[120px] sm:min-w-[150px] shadow-sm">
-      <Image
-        src={brand.logo}
-        alt={brand.name}
-        width={120}
-        height={48}
-        className="h-8 sm:h-10 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-      />
+    <div className="flex items-center justify-center shrink-0 mx-3 sm:mx-4 px-4 py-3 bg-white border border-gray-100 rounded-2xl h-16 sm:h-20 w-36 sm:w-44 shadow-sm">
+      <div className="relative w-full h-full flex items-center justify-center">
+        <Image
+          src={brand.logo}
+          alt={brand.name}
+          fill
+          className="object-contain p-2 grayscale hover:grayscale-0 transition duration-300"
+        />
+      </div>
     </div>
   );
 }

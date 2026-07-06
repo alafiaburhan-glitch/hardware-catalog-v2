@@ -8,13 +8,7 @@ import FeaturedCarousel from "@/components/FeaturedCarousel";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-export const metadata = {
-  alternates: {
-    canonical: "/",
-  },
-};
-
-export default function HomePage() {
+export default function HomePageClient() {
   const [categories, setCategories] = useState<any[]>([]);
   const [products, setProducts] = useState<any[]>([]);
   const [loadingCategories, setLoadingCategories] = useState(true);
@@ -48,9 +42,6 @@ export default function HomePage() {
     }
     loadData();
   }, []);
-  const categoryIcons: Record<string, string> = {
-  "emery-paper": "/icons/emery-paper.svg",
-  };
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
@@ -82,7 +73,7 @@ export default function HomePage() {
               industrial safety materials, cargo solutions, and hardware products.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/categories"
                 className="bg-white text-red-700 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
@@ -134,22 +125,14 @@ export default function HomePage() {
                   href={`/categories/${category.slug?.trim()}`}
                   className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-4">
- 
-
-  <div className="flex-1">
-    <h3 className="text-sm sm:text-base font-bold group-hover:text-red-700 transition leading-tight">
-      {category.name}
-    </h3>
-  </div>
-
-  <span className="text-red-700 font-bold group-hover:translate-x-1 transition shrink-0">
-    →
-  </span>
-</div>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm sm:text-base font-bold group-hover:text-red-700 transition leading-tight">
+                      {category.name}
+                    </h3>
+                    <span className="text-red-700 font-bold group-hover:translate-x-1 transition shrink-0">→</span>
+                  </div>
                 </Link>
               ))}
-              
         </div>
       </motion.section>
 
@@ -186,7 +169,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* TRUST SECTION — now with all stats animated */}
+      {/* TRUST SECTION */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -217,7 +200,6 @@ export default function HomePage() {
                 ropes, tarpaulins, and safety products across industries.
               </p>
             </div>
-
             <TrustSection />
           </div>
         </div>
@@ -312,4 +294,3 @@ export default function HomePage() {
     </main>
   );
 }
-
