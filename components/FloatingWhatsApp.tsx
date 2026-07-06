@@ -15,13 +15,13 @@ export default function FloatingWhatsApp() {
 
   return (
     <a
-      href="https://wa.me/919626652275?text=Hi, I would like to enquire about your products."
+      href="https://wa.me/919626652275?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20products.%20Please%20share%20availability%20and%20pricing."
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="fixed bottom-6 right-6 z-50 flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+      className="fixed bottom-4 right-4 z-50 flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden sm:bottom-6 sm:right-6"
       style={{
         height: "56px",
         width: hovered ? "180px" : "56px",

@@ -1,12 +1,54 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { Award, Boxes, Grid2X2, Users } from "lucide-react";
 import Counter from "@/components/Counter";
 import TrustSection from "@/components/TrustSection";
 import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+
+const heroTiles = [
+  {
+    name: "Power Tools",
+    href: "/categories/power-tools",
+    image: "/products/drill.jpg",
+    className: "lg:left-[31%] lg:top-[29%] lg:h-56 lg:w-56",
+  },
+  {
+    name: "Ropes",
+    href: "/categories/ropes",
+    image: "/products/webbing slings.jpg",
+    className: "lg:left-[58%] lg:top-[3%] lg:h-40 lg:w-40",
+  },
+  {
+    name: "Tarpaulins",
+    href: "/categories/tarpaulins",
+    image: "/products/construction hose.jpeg",
+    className: "lg:left-[75%] lg:top-[22%] lg:h-40 lg:w-40",
+  },
+  {
+    name: "Lifting Equipment",
+    href: "/categories/lifting-equipments",
+    image: "/products/webbing slings.jpg",
+    className: "lg:left-[8%] lg:top-[59%] lg:h-36 lg:w-36",
+  },
+  {
+    name: "Safety Products",
+    href: "/categories/safety-products",
+    image: "/products/stanley.png",
+    className: "lg:left-[68%] lg:top-[65%] lg:h-44 lg:w-44",
+  },
+];
+
+const heroStats = [
+  { label: "Products", value: "1200+", icon: Boxes },
+  { label: "Categories", value: "18+", icon: Grid2X2 },
+  { label: "Years Experience", value: "30+", icon: Award },
+  { label: "Happy Customers", value: "1000+", icon: Users },
+];
 
 export default function HomePageClient() {
   const [categories, setCategories] = useState<any[]>([]);
@@ -45,51 +87,61 @@ export default function HomePageClient() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
-
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-800 via-red-700 to-black text-white">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-14">
-          <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-48 md:w-72 h-48 md:h-72 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+<section className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-black text-white min-h-[72vh] flex items-center">
+<div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.08),transparent_45%)]"></div>
+  {/* background glow */}
+  <div className="absolute inset-0">
+    <div className="absolute top-10 left-20 w-96 h-96 bg-red-500/20 blur-[140px] rounded-full" />
+    <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-black/40 blur-[160px] rounded-full" />
+  </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full mb-5 text-xs sm:text-sm">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shrink-0"></span>
-              <span>Industrial Hardware Solutions</span>
-            </div>
+  <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center">
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-5">
-              Premium Hardware
-              <span className="block text-red-300">Industrial Supplies</span>
-            </h1>
+    <div className="max-w-3xl">
 
-            <p className="text-base sm:text-lg md:text-xl text-red-100 leading-relaxed mb-8 max-w-2xl">
-              Explore our professional range of ropes, tarpaulins, lifting slings,
-              industrial safety materials, cargo solutions, and hardware products.
-            </p>
+      {/* LEFT SIDE */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="mb-6">
+  <div className="flex items-center gap-3 mb-6">
+    <div className="w-10 h-[2px] bg-red-300"></div>
+    <span className="uppercase tracking-[0.35em] text-sm text-red-200 font-semibold">
+      INDUSTRIAL SUPPLIER
+    </span>
+  </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/categories"
-                className="bg-white text-red-700 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
-              >
-                Explore Products →
-              </Link>
-              <Link
-                href="/about"
-                className="border border-white/60 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold hover:bg-white hover:text-red-700 transition-all duration-300 text-sm sm:text-base"
-              >
-                About Us
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1] tracking-tight">
+    <span className="block text-white">Industrial Hardware</span>
+    <span className="block text-red-200">Solutions</span>
+  </h1>
+</div>
+
+        <p className="mt-8 text-xl text-red-100 max-w-lg leading-relaxed">
+          Trusted supplier of industrial hardware, lifting equipment,
+          ropes, tarpaulins, safety products, industrial adhesives and
+          power tools for businesses across India.
+        </p>
+
+       <div className="mt-10">
+  <Link
+    href="/categories"
+    className="inline-flex bg-white text-red-700 px-10 py-5 rounded-2xl font-bold shadow-xl hover:scale-105 transition"
+  >
+    Explore Products →
+  </Link>
+</div>
+      </motion.div>  
+
+    </div>
+
+  </div>
+
+</section>
+
 
       {/* BRANDS MARQUEE */}
       <BrandsMarquee />
