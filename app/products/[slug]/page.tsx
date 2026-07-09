@@ -7,6 +7,8 @@ import ProductDetailClient from "@/components/ProductDetailClient";
 import Link from "next/link";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
