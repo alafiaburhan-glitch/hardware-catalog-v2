@@ -21,6 +21,7 @@ const brandsRow1: Brand[] = [
   { name: "Garware", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/garware.png" },
   { name: "Golden Bullet", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/golden%20bullet.png" },
   { name: "Jainson", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/jainson.png" },
+  { name: "Taparia", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/taparia.png"}
 ];
 
 const brandsRow2: Brand[] = [

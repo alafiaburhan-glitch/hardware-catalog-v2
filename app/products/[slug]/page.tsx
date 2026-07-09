@@ -152,7 +152,7 @@ export default async function ProductPage({ params }: Props) {
             <p className="font-semibold">{product.material}</p>
           </div>
         )}
-        {product.size && (
+        {product.size && !availableSizes.length && (
           <div className="border rounded-2xl p-4">
             <p className="text-sm text-gray-500">Size</p>
             <p className="font-semibold">{product.size}</p>
@@ -200,7 +200,7 @@ export default async function ProductPage({ params }: Props) {
       {/* BOX CONTENTS */}
       {product.box_contents && (
         <div className="border rounded-3xl p-6">
-          <h2 className="text-2xl font-bold mb-4">What's In The Box</h2>
+          <h2 className="text-2xl font-bold mb-4">What&apos;s In The Box</h2>
           <p className="text-gray-600 whitespace-pre-line">{product.box_contents}</p>
         </div>
       )}

@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import CategoryPageClient from "@/components/CategoryPageClient";
+import BrandCategoryClient from "@/components/BrandCategoryClient";
+import { getCategoryBrands, productMatchesBrand } from "@/lib/categoryBrandGroups";
+
+export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = rawSlug.trim();
 
   const { data: category } = await supabase
     .from("categories")
@@ -32,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = rawSlug.trim();
 
   const { data: category } = await supabase
     .from("categories")
@@ -45,16 +51,30 @@ export default async function CategoryPage({ params }: Props) {
     .select("*")
     .eq("category", slug);
 
+  const categoryName = category?.name ?? slug.replace(/-/g, " ");
+  const brandGroups = getCategoryBrands(slug);
+
+  if (brandGroups.length > 0) {
+    const brandsWithCounts = brandGroups.map((brand) => ({
+      ...brand,
+      productCount: (products ?? []).filter((product) => productMatchesBrand(product, brand)).length,
+    }));
+
+    return (
+      <BrandCategoryClient
+        categoryName={categoryName}
+        categorySlug={slug}
+        brands={brandsWithCounts}
+      />
+    );
+  }
+
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-
-    name: category?.name,
-
+    name: categoryName,
     url: `https://nooragencies.in/categories/${slug}`,
-
-    description: `Browse ${category?.name} products from Noor Agencies.`,
-
+    description: `Browse ${categoryName} products from Noor Agencies.`,
     isPartOf: {
       "@type": "WebSite",
       name: "Noor Agencies",
@@ -65,7 +85,6 @@ export default async function CategoryPage({ params }: Props) {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-
     itemListElement: [
       {
         "@type": "ListItem",
@@ -82,32 +101,26 @@ export default async function CategoryPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 3,
-        name: category?.name ?? slug.replace(/-/g, " "),
+        name: categoryName,
         item: `https://nooragencies.in/categories/${slug}`,
       },
     ],
   };
+
   const itemListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-
-  name: `${category?.name} Products`,
-
-  itemListOrder: "https://schema.org/ItemListOrderAscending",
-
-  numberOfItems: products?.length ?? 0,
-
-  itemListElement:
-    products?.map((product, index) => ({
-      "@type": "ListItem",
-
-      position: index + 1,
-
-      url: `https://nooragencies.in/products/${product.slug}`,
-
-      name: product.name,
-    })) ?? [],
-};
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${categoryName} Products`,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    numberOfItems: products?.length ?? 0,
+    itemListElement:
+      products?.map((product, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://nooragencies.in/products/${product.slug}`,
+        name: product.name,
+      })) ?? [],
+  };
 
   return (
     <>
@@ -117,7 +130,6 @@ export default async function CategoryPage({ params }: Props) {
           __html: JSON.stringify(collectionSchema),
         }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -125,15 +137,14 @@ export default async function CategoryPage({ params }: Props) {
         }}
       />
       <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(itemListSchema),
-  }}
-/>
-
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema),
+        }}
+      />
       <CategoryPageClient
         slug={slug}
-        categoryName={category?.name ?? slug.replace(/-/g, " ")}
+        categoryName={categoryName}
         initialProducts={products ?? []}
         faqs={category?.faqs ?? []}
       />

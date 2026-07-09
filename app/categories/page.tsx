@@ -25,13 +25,13 @@ export default async function CategoriesPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <div className="mb-8 flex items-end justify-between gap-4 sm:mb-10">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.36em] text-red-700 sm:text-sm">
             Browse Products
           </p>
-          <h1 className="text-3xl font-bold text-black sm:text-4xl md:text-5xl">
+          <h1 className="text-3xl font-bold text-black sm:text-4xl">
             Product Categories
           </h1>
         </div>
@@ -39,24 +39,24 @@ export default async function CategoriesPage() {
           href="/categories"
           className="hidden shrink-0 text-sm font-semibold text-red-700 transition hover:underline sm:block"
         >
-          View All -&gt;
+          View All &rarr;
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 min-[560px]:grid-cols-2 lg:grid-cols-4 lg:gap-5 xl:gap-6">
+      <div className="grid grid-cols-1 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
         {categories?.map((category) => (
           <Link
             key={category.id}
             href={`/categories/${category.slug.trim()}`}
             className="group block h-full"
           >
-            <div className="flex h-full min-h-20 items-center rounded-2xl border border-gray-200 bg-white px-5 py-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-md sm:min-h-24 sm:rounded-[1.35rem] sm:px-6">
-              <div className="flex w-full items-center justify-between gap-5">
-                <h2 className="text-base font-bold leading-snug text-black transition group-hover:text-red-700 sm:text-lg">
+            <div className="flex h-full min-h-24 items-center rounded-[22px] border border-gray-200 bg-white px-7 py-5 shadow-[0_2px_6px_rgba(15,23,42,0.08)] transition-colors duration-200 hover:border-red-200">
+              <div className="flex w-full items-center justify-between gap-4">
+                <h2 className="text-[16px] font-bold leading-snug text-black transition group-hover:text-red-700 sm:text-[17px]">
                   {category.name}
                 </h2>
-                <span className="shrink-0 text-base font-bold text-red-700 transition group-hover:translate-x-1">
-                  -&gt;
+                <span className="shrink-0 text-sm font-bold text-red-700 transition group-hover:translate-x-0.5">
+                  &rarr;
                 </span>
               </div>
             </div>
