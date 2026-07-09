@@ -6,6 +6,89 @@ import { getCategoryBrands, productMatchesBrand } from "@/lib/categoryBrandGroup
 
 export const dynamic = "force-dynamic";
 
+const categorySeo: Record<string, { title: string; description: string }> = {
+  "emery-papers": {
+    title: "Emery Paper in Coimbatore",
+    description:
+      "Buy emery paper in Coimbatore from Noor Agencies. We supply industrial emery sheets for sanding, surface preparation, deburring, metal work and workshop use.",
+  },
+  "emery-roll": {
+    title: "Emery Roll Supplier in Coimbatore",
+    description:
+      "Noor Agencies supplies emery rolls in Coimbatore in multiple grit options for sanding, metal finishing, fabrication and workshop use.",
+  },
+  "industrial-adhesives-sealants": {
+    title: "Loctite Adhesives Supplier in Coimbatore",
+    description:
+      "Loctite adhesives and sealants supplier in Coimbatore. Contact Noor Agencies for Loctite 401, 243, 270, 577, 638 and other industrial adhesive products.",
+  },
+  "hand-tools": {
+    title: "Hand Tools Supplier in Coimbatore",
+    description:
+      "Hand tools supplier in Coimbatore. Noor Agencies supplies spanners, workshop tools and industrial hand tools for maintenance, repair and factory use.",
+  },
+  "power-tools": {
+    title: "Power Tools Supplier in Coimbatore",
+    description:
+      "Power tools supplier in Coimbatore for construction, fabrication, maintenance and industrial use. Contact Noor Agencies for available brands and models.",
+  },
+  ropes: {
+    title: "Industrial Rope Supplier in Coimbatore",
+    description:
+      "Industrial rope supplier in Coimbatore for lifting, safety, packing, workshop and commercial applications. Contact Noor Agencies for availability.",
+  },
+  hoses: {
+    title: "Industrial Hose Supplier in Coimbatore",
+    description:
+      "Industrial hose supplier in Coimbatore offering PVC hoses, braided hoses, suction hoses, air hoses, spray hoses and related hose products.",
+  },
+  "safety-products": {
+    title: "Safety Products Supplier in Coimbatore",
+    description:
+      "Safety products supplier in Coimbatore for industrial, workshop, construction and maintenance requirements. Contact Noor Agencies for product availability.",
+  },
+  "lifting-equipments": {
+    title: "Lifting Equipment Supplier in Coimbatore",
+    description:
+      "Lifting equipment supplier in Coimbatore offering webbing slings, ratchet lashings, magnetic lifters and industrial lifting accessories.",
+  },
+  "ladders-sections": {
+    title: "Ladder Supplier in Coimbatore",
+    description:
+      "Ladder supplier in Coimbatore offering aluminium ladders, step ladders and telescopic ladders for industrial, commercial and maintenance use.",
+  },
+  "heat-insulation": {
+    title: "Heat Insulation Material Supplier in Coimbatore",
+    description:
+      "Heat insulation material supplier in Coimbatore. Noor Agencies supplies ceramic blankets, glass wool and insulation products for industrial use.",
+  },
+  "lubricants-sealants": {
+    title: "Lubricants and Sealants Supplier in Coimbatore",
+    description:
+      "Noor Agencies supplies industrial lubricants and sealants in Coimbatore for maintenance, repair, assembly and workshop applications.",
+  },
+  "packaging-material": {
+    title: "Packaging Material Supplier in Coimbatore",
+    description:
+      "Packaging material supplier in Coimbatore offering tapes and industrial packaging supplies for warehouses, workshops, dispatch and commercial use.",
+  },
+  tapes: {
+    title: "Industrial Tape Supplier in Coimbatore",
+    description:
+      "Industrial tape supplier in Coimbatore offering masking tape, duct tape, foam tape, floor marking tape, reflective tape and other adhesive tapes.",
+  },
+  tarpaulins: {
+    title: "Tarpaulin Supplier in Coimbatore",
+    description:
+      "Tarpaulin supplier in Coimbatore offering HDPE and PVC tarpaulins for waterproof covering, transport, storage, agriculture and outdoor protection.",
+  },
+  "shade-nets": {
+    title: "Shade Net Supplier in Coimbatore",
+    description:
+      "Shade net supplier in Coimbatore for nurseries, farms, gardens, parking areas, construction sites and outdoor work zones. Contact Noor Agencies.",
+  },
+};
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -21,17 +104,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .single();
 
   const name = category?.name ?? slug.replace(/-/g, " ");
+  const seo = categorySeo[slug] ?? {
+    title: `${name} Supplier in Coimbatore`,
+    description: `Browse industrial ${name.toLowerCase()} products from Noor Agencies, a trusted industrial hardware supplier in Coimbatore.`,
+  };
+  const pageUrl = `https://nooragencies.in/categories/${slug}`;
 
   return {
-    title: `${name} | Noor Agencies`,
-    description: `Browse our range of industrial ${name.toLowerCase()} products from Noor Agencies.`,
+    title: seo.title,
+    description: seo.description,
     alternates: {
-      canonical: `https://nooragencies.in/categories/${slug}`,
+      canonical: pageUrl,
     },
     openGraph: {
-      title: `${name} | Noor Agencies`,
-      description: `Browse our range of industrial ${name.toLowerCase()} products from Noor Agencies.`,
-      url: `https://nooragencies.in/categories/${slug}`,
+      title: `${seo.title} | Noor Agencies`,
+      description: seo.description,
+      url: pageUrl,
+    },
+    twitter: {
+      card: "summary",
+      title: `${seo.title} | Noor Agencies`,
+      description: seo.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
@@ -52,6 +149,9 @@ export default async function CategoryPage({ params }: Props) {
     .eq("category", slug);
 
   const categoryName = category?.name ?? slug.replace(/-/g, " ");
+  const seoDescription =
+    categorySeo[slug]?.description ??
+    `Browse industrial ${categoryName.toLowerCase()} products from Noor Agencies, a trusted industrial hardware supplier in Coimbatore.`;
   const brandGroups = getCategoryBrands(slug);
 
   if (brandGroups.length > 0) {
@@ -64,6 +164,7 @@ export default async function CategoryPage({ params }: Props) {
       <BrandCategoryClient
         categoryName={categoryName}
         categorySlug={slug}
+        seoDescription={seoDescription}
         brands={brandsWithCounts}
       />
     );
@@ -74,7 +175,7 @@ export default async function CategoryPage({ params }: Props) {
     "@type": "CollectionPage",
     name: categoryName,
     url: `https://nooragencies.in/categories/${slug}`,
-    description: `Browse ${categoryName} products from Noor Agencies.`,
+    description: seoDescription,
     isPartOf: {
       "@type": "WebSite",
       name: "Noor Agencies",
@@ -146,6 +247,7 @@ export default async function CategoryPage({ params }: Props) {
         slug={slug}
         categoryName={categoryName}
         initialProducts={products ?? []}
+        seoDescription={seoDescription}
         faqs={category?.faqs ?? []}
       />
     </>

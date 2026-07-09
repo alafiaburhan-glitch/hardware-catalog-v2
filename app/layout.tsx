@@ -22,21 +22,21 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nooragencies.in"),
 
   title: {
-    default: "Noor Agencies | Industrial Hardware Supplier",
+    default: "Noor Agencies | Industrial Hardware Supplier in Coimbatore",
     template: "%s | Noor Agencies",
   },
 
   description:
-    "Noor Agencies is a trusted industrial hardware supplier in Coimbatore dealing in ropes, tarpaulins, lifting equipment, safety products, hoses, ladders, industrial adhesives, sealants and hardware supplies.",
+    "Noor Agencies supplies emery paper, emery rolls, Loctite adhesives, tarpaulins, shade nets, ropes, hoses, safety products and industrial hardware in Coimbatore.",
 
   alternates: {
     canonical: "/",
   },
 
   openGraph: {
-    title: "Noor Agencies",
+    title: "Noor Agencies | Industrial Hardware Supplier in Coimbatore",
     description:
-      "Industrial Hardware Supplier in Coimbatore.",
+      "Emery paper, Loctite adhesives, tarpaulins, shade nets and industrial hardware supplier in Coimbatore.",
     url: "https://nooragencies.in",
     siteName: "Noor Agencies",
     locale: "en_IN",

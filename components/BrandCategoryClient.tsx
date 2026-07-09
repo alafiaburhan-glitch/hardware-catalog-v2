@@ -7,10 +7,16 @@ import type { CategoryBrand } from "@/lib/categoryBrandGroups";
 type Props = {
   categoryName: string;
   categorySlug: string;
+  seoDescription?: string;
   brands: Array<CategoryBrand & { productCount: number }>;
 };
 
-export default function BrandCategoryClient({ categoryName, categorySlug, brands }: Props) {
+export default function BrandCategoryClient({
+  categoryName,
+  categorySlug,
+  seoDescription,
+  brands,
+}: Props) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap text-sm text-gray-400 mb-8 pb-1">
@@ -29,6 +35,11 @@ export default function BrandCategoryClient({ categoryName, categorySlug, brands
         <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-500 sm:text-base">
           Select a brand to view available products and varieties.
         </p>
+        {seoDescription && (
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base">
+            {seoDescription}
+          </p>
+        )}
       </div>
 
       <div className="grid grid-cols-1 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">

@@ -20,40 +20,54 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .select("name, description, image, code, category")
     .eq("slug", slug)
     .single();
-    if (!product) {
-  return {
-    title: "Product Not Found | Noor Agencies",
-    description: "Product not found.",
-  };
-}
 
+  if (!product) {
+    return {
+      title: "Product Not Found | Noor Agencies",
+      description: "Product not found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
 
-  const title = `${product.name} | Noor Agencies`;
-  const description =
-    product.description?.slice(0, 160) ??
-    `Buy ${product.name} (Code: ${product.code}) from Noor Agencies — trusted industrial hardware supplier.`;
+  const productUrl = `https://nooragencies.in/products/${slug}`;
+  const title = `${product.name} in Coimbatore`;
+  const description = `Buy ${product.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: productUrl,
+    },
     openGraph: {
       title,
       description,
       images: product.image
-  ? [
-      {
-        url: product.image,
-        width: 1200,
-        height: 630,
-        alt: product.name,
-      },
-    ]
-  : [],
-    url: `https://nooragencies.in/products/${slug}`,
+        ? [
+            {
+              url: product.image,
+              width: 1200,
+              height: 630,
+              alt: product.name,
+            },
+          ]
+        : [],
+      url: productUrl,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
-
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
@@ -141,6 +155,11 @@ export default async function ProductPage({ params }: Props) {
         </span>
       </div>
       <p className="text-gray-600 leading-relaxed text-lg mb-8">{product.description}</p>
+      <p className="text-gray-600 leading-relaxed mb-8">
+        {product.name} is available from Noor Agencies in Coimbatore for
+        industrial, workshop, maintenance and bulk supply enquiries. Contact us
+        to confirm current stock, sizes, variants and pricing.
+      </p>
     </>
   );
 
@@ -216,7 +235,7 @@ export default async function ProductPage({ params }: Props) {
 
   image: product.image ? [product.image] : [],
 
-  description: product.description,
+  description: `${product.description} Available from Noor Agencies in Coimbatore.`,
 
   sku: product.code,
 

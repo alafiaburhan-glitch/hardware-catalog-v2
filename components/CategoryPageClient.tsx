@@ -21,12 +21,14 @@ type Props = {
   slug: string;
   categoryName: string;
   initialProducts: Product[];
+  seoDescription?: string;
   faqs?: Faq[];
 };
 
 export default function CategoryPageClient({
   categoryName,
   initialProducts,
+  seoDescription,
   faqs = [],
 }: Props) {
   const whatsappText = encodeURIComponent(
@@ -55,6 +57,11 @@ export default function CategoryPageClient({
         <p className="text-sm sm:text-base text-gray-500">
           {initialProducts.length} product{initialProducts.length !== 1 ? "s" : ""} available
         </p>
+        {seoDescription && (
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base">
+            {seoDescription}
+          </p>
+        )}
       </div>
 
       {initialProducts.length === 0 ? (

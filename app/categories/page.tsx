@@ -3,13 +3,16 @@ import { supabase } from "@/lib/supabase";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Product Categories | Noor Agencies",
+  title: "Industrial Hardware Product Categories in Coimbatore",
   description:
-    "Browse all industrial hardware product categories at Noor Agencies, including ropes, tarpaulins, lifting slings, safety products, power tools, and more.",
+    "Browse industrial hardware product categories from Noor Agencies in Coimbatore, including emery paper, Loctite adhesives, tarpaulins, shade nets, ropes, hoses and safety products.",
+  alternates: {
+    canonical: "https://nooragencies.in/categories",
+  },
   openGraph: {
-    title: "Product Categories | Noor Agencies",
+    title: "Industrial Hardware Product Categories in Coimbatore | Noor Agencies",
     description:
-      "Browse all industrial hardware product categories at Noor Agencies.",
+      "Browse emery paper, Loctite adhesives, tarpaulins, shade nets and industrial hardware categories from Noor Agencies.",
     url: "https://nooragencies.in/categories",
   },
 };

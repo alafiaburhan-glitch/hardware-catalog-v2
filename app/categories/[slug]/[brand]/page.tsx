@@ -15,14 +15,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const brand = getCategoryBrand(slug, brandSlug);
 
   if (!brand) {
-    return { title: "Brand | Noor Agencies" };
+    return {
+      title: "Brand",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
   }
 
+  const pageUrl = `https://nooragencies.in/categories/${slug}/${brand.slug}`;
+  const title = `${brand.name} Products in Coimbatore`;
+  const description = `Browse ${brand.name} products available from Noor Agencies in Coimbatore. Contact us for availability, product details and bulk enquiries.`;
+
   return {
-    title: `${brand.name} Products | Noor Agencies`,
-    description: `Browse ${brand.name} products available from Noor Agencies.`,
+    title,
+    description,
     alternates: {
-      canonical: `https://nooragencies.in/categories/${slug}/${brand.slug}`,
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${title} | Noor Agencies`,
+      description,
+      url: pageUrl,
+    },
+    twitter: {
+      card: "summary",
+      title: `${title} | Noor Agencies`,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
