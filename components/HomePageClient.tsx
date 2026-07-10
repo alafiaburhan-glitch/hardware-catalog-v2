@@ -185,7 +185,7 @@ export default function HomePageClient() {
                     className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <div className="flex min-w-0 items-center gap-3">
+                      <div className="flex min-w-0 items-center gap-2 sm:gap-3">
                         {icon && (
                           <Image
                             src={icon}
@@ -196,7 +196,7 @@ export default function HomePageClient() {
                             className="h-14 w-14 shrink-0 object-contain transition duration-300 group-hover:scale-105"
                           />
                         )}
-                        <h3 className="text-sm sm:text-base font-bold group-hover:text-red-700 transition leading-tight">
+                        <h3 className="min-w-0 break-words text-[13px] font-bold leading-tight group-hover:text-red-700 transition min-[390px]:text-[14px] sm:text-base">
                           {category.name}
                         </h3>
                       </div>
