@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Award, Boxes, Grid2X2, Users } from "lucide-react";
 import Counter from "@/components/Counter";
 import TrustSection from "@/components/TrustSection";
 import BrandsMarquee from "@/components/BrandsMarquee";
@@ -10,49 +9,54 @@ import FeaturedCarousel from "@/components/FeaturedCarousel";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-const heroTiles = [
-  {
-    name: "Power Tools",
-    href: "/categories/power-tools",
-    image: "/products/drill.jpg",
-    className: "lg:left-[31%] lg:top-[29%] lg:h-56 lg:w-56",
-  },
-  {
-    name: "Ropes",
-    href: "/categories/ropes",
-    image: "/products/webbing slings.jpg",
-    className: "lg:left-[58%] lg:top-[3%] lg:h-40 lg:w-40",
-  },
-  {
-    name: "Tarpaulins",
-    href: "/categories/tarpaulins",
-    image: "/products/construction hose.jpeg",
-    className: "lg:left-[75%] lg:top-[22%] lg:h-40 lg:w-40",
-  },
-  {
-    name: "Lifting Equipment",
-    href: "/categories/lifting-equipments",
-    image: "/products/webbing slings.jpg",
-    className: "lg:left-[8%] lg:top-[59%] lg:h-36 lg:w-36",
-  },
-  {
-    name: "Safety Products",
-    href: "/categories/safety-products",
-    image: "/products/stanley.png",
-    className: "lg:left-[68%] lg:top-[65%] lg:h-44 lg:w-44",
-  },
-];
+type CategorySummary = {
+  id: number | string;
+  name: string;
+  slug: string | null;
+};
 
-const heroStats = [
-  { label: "Products", value: "1200+", icon: Boxes },
-  { label: "Categories", value: "18+", icon: Grid2X2 },
-  { label: "Years Experience", value: "30+", icon: Award },
-  { label: "Happy Customers", value: "1000+", icon: Users },
-];
+type FeaturedProduct = {
+  id: number | string;
+  name: string;
+  code: string;
+  image?: string | null;
+  slug?: string | null;
+};
+
+const categoryIcons: Record<string, string> = {
+  "emery-paper": "/category-icons/emery-papers.png",
+  "emery-papers": "/category-icons/emery-papers.png",
+  "emery-roll": "/category-icons/emery-roll.png",
+  "emery-rolls": "/category-icons/emery-roll.png",
+  "hand-tools": "/category-icons/hand-tools.png",
+  "power-tools": "/category-icons/power-tools.png",
+  ropes: "/category-icons/ropes.png",
+  hoses: "/category-icons/hoses.png",
+  "safety-products": "/category-icons/safety-products.png",
+  "lifting-equipment": "/category-icons/lifting-equipment.png",
+  "lifting-equipments": "/category-icons/lifting-equipments.png",
+  "lifting-slings": "/category-icons/lifting-slings.png",
+  "shade-nets": "/category-icons/shade-nets.png",
+  tarpaulins: "/category-icons/tarpaulins.png",
+  ladders: "/category-icons/ladders-sections.png",
+  "ladders-sections": "/category-icons/ladders-sections.png",
+  "heat-insulation": "/category-icons/heat-insulation.png",
+  "industrial-adhesives": "/category-icons/industrial-adhesives.png",
+  "industrial-adhesives-sealants":
+    "/category-icons/industrial-adhesives-sealants.png",
+  "lubricants-sealants": "/category-icons/lubricants-sealants.png",
+  "packaging-material": "/category-icons/packaging-material.png",
+  tapes: "/category-icons/tapes.png",
+};
+
+function getCategoryIcon(slug: string | null) {
+  if (!slug) return null;
+  return categoryIcons[slug.trim().toLowerCase()] ?? null;
+}
 
 export default function HomePageClient() {
-  const [categories, setCategories] = useState<any[]>([]);
-  const [products, setProducts] = useState<any[]>([]);
+  const [categories, setCategories] = useState<CategorySummary[]>([]);
+  const [products, setProducts] = useState<FeaturedProduct[]>([]);
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [loadingProducts, setLoadingProducts] = useState(true);
 
@@ -171,20 +175,36 @@ export default function HomePageClient() {
             ? Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-16 sm:h-20 rounded-2xl bg-gray-100 animate-pulse" />
               ))
-            : categories.map((category) => (
-                <Link
-                  key={category.id}
-                  href={`/categories/${category.slug?.trim()}`}
-                  className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-sm sm:text-base font-bold group-hover:text-red-700 transition leading-tight">
-                      {category.name}
-                    </h3>
-                    <span className="text-red-700 font-bold group-hover:translate-x-1 transition shrink-0">→</span>
-                  </div>
-                </Link>
-              ))}
+            : categories.map((category) => {
+                const icon = getCategoryIcon(category.slug);
+
+                return (
+                  <Link
+                    key={category.id}
+                    href={`/categories/${category.slug?.trim()}`}
+                    className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex min-w-0 items-center gap-3">
+                        {icon && (
+                          <Image
+                            src={icon}
+                            alt=""
+                            width={56}
+                            height={56}
+                            sizes="56px"
+                            className="h-14 w-14 shrink-0 object-contain transition duration-300 group-hover:scale-105"
+                          />
+                        )}
+                        <h3 className="text-sm sm:text-base font-bold group-hover:text-red-700 transition leading-tight">
+                          {category.name}
+                        </h3>
+                      </div>
+                      <span className="text-red-700 font-bold group-hover:translate-x-1 transition shrink-0">→</span>
+                    </div>
+                  </Link>
+                );
+              })}
         </div>
       </motion.section>
 

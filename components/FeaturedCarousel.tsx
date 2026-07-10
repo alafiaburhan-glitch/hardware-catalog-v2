@@ -5,11 +5,11 @@ import { useCallback } from "react";
 import ProductCard from "@/components/ProductCard";
 
 type Product = {
-  id: string;
+  id: string | number;
   name: string;
   code: string;
-  image?: string;
-  slug?: string;
+  image?: string | null;
+  slug?: string | null;
 };
 
 type Props = {
@@ -41,8 +41,8 @@ export default function FeaturedCarousel({ products }: Props) {
               <ProductCard
                 name={product.name}
                 code={product.code}
-                image={product.image}
-                slug={product.slug}
+                image={product.image ?? undefined}
+                slug={product.slug ?? undefined}
               />
             </div>
           ))}

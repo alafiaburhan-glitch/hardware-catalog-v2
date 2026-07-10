@@ -6,12 +6,17 @@ import { supabase } from "@/lib/supabase";
 import SizeImageUploader from "@/components/SizeImageUploader";
 import { toast } from "sonner";
 
+type CategoryOption = {
+  name: string;
+  slug: string;
+};
+
 export default function NewProductPage() {
   const router = useRouter();
 
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState<File | null>(null);
-  const [categories, setCategories] = useState<any[]>([]);
+  const [categories, setCategories] = useState<CategoryOption[]>([]);
   const [sizeImages, setSizeImages] = useState<Record<string, string>>({});
 
   useEffect(() => {
@@ -248,7 +253,7 @@ export default function NewProductPage() {
         </div>
 
         <div>
-          <label className="block font-semibold mb-3">What's In The Box</label>
+          <label className="block font-semibold mb-3">What&apos;s In The Box</label>
           <textarea
             name="box_contents"
             value={formData.box_contents}
@@ -295,8 +300,8 @@ export default function NewProductPage() {
         <div className="space-y-5">
           <label className="block font-semibold text-xl">Product Specifications</label>
           <p className="text-sm text-gray-500">
-            Tip: add a spec named <strong>"Available Size"</strong> or <strong>"Available Sizes"</strong> with comma-separated
-            values (e.g. "25mm, 35mm, 50mm") to enable size-specific image uploads below.
+            Tip: add a spec named <strong>&quot;Available Size&quot;</strong> or <strong>&quot;Available Sizes&quot;</strong> with comma-separated
+            values (e.g. &quot;25mm, 35mm, 50mm&quot;) to enable size-specific image uploads below.
           </p>
 
           {formData.specifications.map((spec, index) => (

@@ -23,29 +23,36 @@ export default function EditCategoryPage() {
   const [faqs, setFaqs] = useState<Faq[]>([]);
 
   useEffect(() => {
-    setFetching(true);
-    loadCategory();
-  }, [id]);
+    let isMounted = true;
 
-  async function loadCategory() {
-    const { data, error } = await supabase
-      .from("categories")
-      .select("*")
-      .eq("id", Number(id))
-      .single();
+    async function loadCategory() {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .eq("id", Number(id))
+        .single();
 
-    if (error) {
-      console.log(error);
-      toast.error("Failed to load category");
+      if (!isMounted) return;
+
+      if (error) {
+        console.log(error);
+        toast.error("Failed to load category");
+        setFetching(false);
+        return;
+      }
+
+      setName(data.name || "");
+      setSlug(data.slug || "");
+      setFaqs(data.faqs && data.faqs.length > 0 ? data.faqs : []);
       setFetching(false);
-      return;
     }
 
-    setName(data.name || "");
-    setSlug(data.slug || "");
-    setFaqs(data.faqs && data.faqs.length > 0 ? data.faqs : []);
-    setFetching(false);
-  }
+    loadCategory();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [id]);
 
   function addFaq() {
     setFaqs((prev) => [...prev, { question: "", answer: "" }]);
@@ -137,7 +144,7 @@ export default function EditCategoryPage() {
             <span className="text-sm text-gray-500">{faqs.length} added</span>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            These appear as an expandable FAQ section at the bottom of this category's public page.
+            These appear as an expandable FAQ section at the bottom of this category&apos;s public page.
           </p>
 
           <div className="space-y-4">

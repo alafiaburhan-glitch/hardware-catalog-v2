@@ -3,197 +3,445 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import SizeImageUploader from "@/components/SizeImageUploader";
 import { toast } from "sonner";
 
-interface Faq {
-  question: string;
-  answer: string;
-}
+type CategoryOption = {
+  name: string;
+  slug: string;
+};
 
-export default function EditCategoryPage() {
+type ProductRecord = {
+  name?: string | null;
+  code?: string | null;
+  slug?: string | null;
+  category?: string | null;
+  description?: string | null;
+  material?: string | null;
+  size?: string | null;
+  weight?: string | null;
+  box_contents?: string | null;
+  datasheet_url?: string | null;
+  image?: string | null;
+  specifications?: Record<string, string> | null;
+  size_images?: Record<string, string> | null;
+};
+
+type SpecificationRow = {
+  key: string;
+  value: string;
+};
+
+type ProductFormData = {
+  name: string;
+  code: string;
+  slug: string;
+  category: string;
+  description: string;
+  material: string;
+  size: string;
+  weight: string;
+  box_contents: string;
+  datasheet_url: string;
+  image: string;
+  specifications: SpecificationRow[];
+};
+
+const emptyFormData: ProductFormData = {
+  name: "",
+  code: "",
+  slug: "",
+  category: "",
+  description: "",
+  material: "",
+  size: "",
+  weight: "",
+  box_contents: "",
+  datasheet_url: "",
+  image: "",
+  specifications: [{ key: "", value: "" }],
+};
+
+export default function EditProductPage() {
   const params = useParams();
   const router = useRouter();
   const id = params.id as string;
 
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
-
-  const [name, setName] = useState("");
-  const [slug, setSlug] = useState("");
-  const [faqs, setFaqs] = useState<Faq[]>([]);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [categories, setCategories] = useState<CategoryOption[]>([]);
+  const [sizeImages, setSizeImages] = useState<Record<string, string>>({});
+  const [formData, setFormData] = useState<ProductFormData>(emptyFormData);
 
   useEffect(() => {
-    loadCategory();
-  }, []);
+    let isMounted = true;
 
-  async function loadCategory() {
-    const { data, error } = await supabase
-      .from("categories")
-      .select("*")
-      .eq("id", id)
-      .single();
+    async function loadProduct() {
+      const [categoryResponse, productResponse] = await Promise.all([
+        supabase.from("categories").select("name, slug").order("name"),
+        supabase.from("products").select("*").eq("id", id).single(),
+      ]);
 
-    if (error) {
-      console.log(error);
-      toast.error("Failed to load category");
+      if (!isMounted) return;
+
+      if (categoryResponse.error) {
+        console.log(categoryResponse.error);
+        toast.error("Failed to load categories");
+      } else {
+        setCategories((categoryResponse.data ?? []) as CategoryOption[]);
+      }
+
+      if (productResponse.error || !productResponse.data) {
+        console.log(productResponse.error);
+        toast.error("Failed to load product");
+        setFetching(false);
+        return;
+      }
+
+      const product = productResponse.data as ProductRecord;
+      const specifications = Object.entries(product.specifications ?? {}).map(
+        ([key, value]) => ({ key, value: String(value) })
+      );
+
+      setFormData({
+        name: product.name ?? "",
+        code: product.code ?? "",
+        slug: product.slug ?? "",
+        category: product.category ?? "",
+        description: product.description ?? "",
+        material: product.material ?? "",
+        size: product.size ?? "",
+        weight: product.weight ?? "",
+        box_contents: product.box_contents ?? "",
+        datasheet_url: product.datasheet_url ?? "",
+        image: product.image ?? "",
+        specifications: specifications.length > 0 ? specifications : [{ key: "", value: "" }],
+      });
+      setSizeImages(product.size_images ?? {});
       setFetching(false);
-      return;
     }
 
-    setName(data.name || "");
-    setSlug(data.slug || "");
-    setFaqs(data.faqs && data.faqs.length > 0 ? data.faqs : []);
-    setFetching(false);
+    loadProduct();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [id]);
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   }
 
-  function addFaq() {
-    setFaqs((prev) => [...prev, { question: "", answer: "" }]);
+  function addSpecification() {
+    setFormData((prev) => ({
+      ...prev,
+      specifications: [...prev.specifications, { key: "", value: "" }],
+    }));
   }
 
-  function updateFaq(index: number, field: "question" | "answer", value: string) {
-    setFaqs((prev) => {
-      const updated = [...prev];
-      updated[index] = { ...updated[index], [field]: value };
-      return updated;
-    });
+  function updateSpecification(index: number, field: "key" | "value", value: string) {
+    setFormData((prev) => ({
+      ...prev,
+      specifications: prev.specifications.map((spec, specIndex) =>
+        specIndex === index ? { ...spec, [field]: value } : spec
+      ),
+    }));
   }
 
-  function removeFaq(index: number) {
-    setFaqs((prev) => prev.filter((_, i) => i !== index));
+  function removeSpecification(index: number) {
+    setFormData((prev) => ({
+      ...prev,
+      specifications: prev.specifications.filter((_, specIndex) => specIndex !== index),
+    }));
   }
+
+  const availableSizesSpec = formData.specifications.find((spec) =>
+    ["available size", "available sizes"].includes(spec.key.trim().toLowerCase())
+  );
+  const parsedSizes = availableSizesSpec?.value
+    ? availableSizesSpec.value
+        .split(",")
+        .map((size) => size.trim())
+        .filter(Boolean)
+    : [];
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
 
-    // Filter out empty FAQ rows before saving
-    const cleanedFaqs = faqs.filter((f) => f.question.trim() && f.answer.trim());
+    try {
+      let imageUrl = formData.image;
 
-    const { error } = await supabase
-      .from("categories")
-      .update({
-        name,
-        slug,
-        faqs: cleanedFaqs,
-      })
-      .eq("id", id);
+      if (imageFile) {
+        const fileName = `${Date.now()}-${imageFile.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from("products")
+          .upload(fileName, imageFile);
 
-    if (error) {
-      console.log(error);
-      toast.error("Update failed", { description: error.message });
+        if (uploadError) {
+          console.log(uploadError);
+          toast.error("Image upload failed", { description: uploadError.message });
+          return;
+        }
+
+        const {
+          data: { publicUrl },
+        } = supabase.storage.from("products").getPublicUrl(fileName);
+
+        imageUrl = publicUrl;
+      }
+
+      const specificationsObject = Object.fromEntries(
+        formData.specifications
+          .filter((spec) => spec.key.trim() && spec.value.trim())
+          .map((spec) => [spec.key.trim(), spec.value.trim()])
+      );
+
+      const { error } = await supabase
+        .from("products")
+        .update({
+          name: formData.name,
+          code: formData.code,
+          slug: formData.slug,
+          category: formData.category,
+          description: formData.description,
+          material: formData.material,
+          size: formData.size,
+          weight: formData.weight,
+          box_contents: formData.box_contents,
+          datasheet_url: formData.datasheet_url,
+          image: imageUrl,
+          specifications: specificationsObject,
+          size_images: sizeImages,
+        })
+        .eq("id", id);
+
+      if (error) {
+        console.log(error);
+        toast.error("Failed to update product", { description: error.message });
+        return;
+      }
+
+      toast.success("Product updated successfully");
+      router.push("/admin/products");
+    } finally {
       setLoading(false);
-      return;
     }
-
-    toast.success("Category updated successfully");
-    router.push("/admin/categories");
   }
 
   if (fetching) {
-    return <div className="p-10 text-gray-500">Loading category...</div>;
+    return <div className="p-10 text-gray-500">Loading product...</div>;
   }
 
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-5xl mx-auto px-6 py-10">
+      <h1 className="text-4xl font-bold mb-10">Edit Product</h1>
 
-      {/* HEADER */}
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold">Edit Category</h1>
-        <p className="text-gray-600 mt-2">Editing category ID: {id}</p>
-      </div>
-
-      {/* FORM */}
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-sm space-y-6">
-
+      <form onSubmit={handleSubmit} className="space-y-8">
         <div>
-          <label className="block font-medium mb-2">Category Name</label>
+          <label className="block font-semibold mb-3">Product Name</label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-2xl p-4"
           />
         </div>
 
         <div>
-          <label className="block font-medium mb-2">Slug</label>
+          <label className="block font-semibold mb-3">Product Code</label>
           <input
             type="text"
-            value={slug}
-            onChange={(e) => setSlug(e.target.value)}
+            name="code"
+            value={formData.code}
+            onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
+            className="w-full border rounded-2xl p-4"
           />
         </div>
 
-        {/* FAQ MANAGER */}
-        <div className="border-t pt-6">
-          <div className="flex items-center justify-between mb-4">
-            <label className="block font-semibold text-lg">
-              Category FAQs
-            </label>
-            <span className="text-sm text-gray-500">{faqs.length} added</span>
+        <div>
+          <label className="block font-semibold mb-3">Product Slug</label>
+          <input
+            type="text"
+            name="slug"
+            value={formData.slug}
+            onChange={handleChange}
+            required
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Category</label>
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            required
+            className="w-full border rounded-2xl p-4"
+          >
+            <option value="">Select Category</option>
+            {categories.map((category) => (
+              <option key={category.slug} value={category.slug}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Material</label>
+          <input
+            type="text"
+            name="material"
+            value={formData.material}
+            onChange={handleChange}
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Size</label>
+          <input
+            type="text"
+            name="size"
+            value={formData.size}
+            onChange={handleChange}
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Weight</label>
+          <input
+            type="text"
+            name="weight"
+            value={formData.weight}
+            onChange={handleChange}
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">What&apos;s In The Box</label>
+          <textarea
+            name="box_contents"
+            value={formData.box_contents}
+            onChange={handleChange}
+            rows={4}
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Datasheet URL</label>
+          <input
+            type="text"
+            name="datasheet_url"
+            value={formData.datasheet_url}
+            onChange={handleChange}
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Product Description</label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            rows={6}
+            required
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block font-semibold mb-3">Product Image</label>
+          {formData.image && (
+            <a
+              href={formData.image}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-3 inline-block text-sm font-semibold text-red-700 hover:underline"
+            >
+              View current image
+            </a>
+          )}
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+            className="w-full border rounded-2xl p-4"
+          />
+        </div>
+
+        <div className="space-y-5">
+          <div className="flex items-center justify-between gap-4">
+            <label className="block font-semibold text-xl">Product Specifications</label>
+            <button
+              type="button"
+              onClick={addSpecification}
+              className="bg-red-700 text-white px-5 py-3 rounded-xl"
+            >
+              + Add Specification
+            </button>
           </div>
-          <p className="text-sm text-gray-500 mb-4">
-            These appear as an expandable FAQ section at the bottom of this category's public page.
+
+          <p className="text-sm text-gray-500">
+            Tip: add a spec named <strong>&quot;Available Size&quot;</strong> or <strong>&quot;Available Sizes&quot;</strong> with comma-separated
+            values (e.g. &quot;25mm, 35mm, 50mm&quot;) to enable size-specific image uploads below.
           </p>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-200 rounded-xl p-4 space-y-3 relative">
-                <button
-                  type="button"
-                  onClick={() => removeFaq(index)}
-                  className="absolute top-3 right-3 text-gray-400 hover:text-red-600 transition text-sm"
-                >
-                  Remove
-                </button>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1">
-                    Question
-                  </label>
-                  <input
-                    type="text"
-                    value={faq.question}
-                    onChange={(e) => updateFaq(index, "question", e.target.value)}
-                    placeholder="e.g. What WLL (Working Load Limit) do I need?"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1">
-                    Answer
-                  </label>
-                  <textarea
-                    value={faq.answer}
-                    onChange={(e) => updateFaq(index, "answer", e.target.value)}
-                    rows={3}
-                    placeholder="Write a clear, helpful answer..."
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <button
-            type="button"
-            onClick={addFaq}
-            className="mt-4 bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-2.5 rounded-xl font-semibold text-sm transition"
-          >
-            + Add FAQ
-          </button>
+          {formData.specifications.map((spec, index) => (
+            <div key={index} className="grid grid-cols-[1fr_1fr_auto] gap-4">
+              <input
+                type="text"
+                placeholder="Specification Name"
+                value={spec.key}
+                onChange={(e) => updateSpecification(index, "key", e.target.value)}
+                className="border rounded-2xl p-4"
+              />
+              <input
+                type="text"
+                placeholder="Value"
+                value={spec.value}
+                onChange={(e) => updateSpecification(index, "value", e.target.value)}
+                className="border rounded-2xl p-4"
+              />
+              <button
+                type="button"
+                onClick={() => removeSpecification(index)}
+                className="border border-gray-200 text-gray-500 px-4 rounded-2xl hover:border-red-200 hover:text-red-700"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
         </div>
+
+        <SizeImageUploader
+          sizes={parsedSizes}
+          sizeImages={sizeImages}
+          onChange={setSizeImages}
+        />
 
         <button
           type="submit"
           disabled={loading}
-          className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition disabled:opacity-50"
+          className="bg-black text-white px-8 py-4 rounded-2xl text-lg font-semibold disabled:opacity-50"
         >
-          {loading ? "Updating..." : "Update Category"}
+          {loading ? "Updating..." : "Update Product"}
         </button>
-
       </form>
     </div>
   );

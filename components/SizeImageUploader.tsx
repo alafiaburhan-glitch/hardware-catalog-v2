@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 
@@ -77,11 +78,13 @@ export default function SizeImageUploader({
             className="flex items-center gap-3 bg-white border rounded-xl p-3"
           >
             {/* Preview */}
-            <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
+            <div className="relative w-14 h-14 rounded-lg overflow-hidden bg-gray-100 shrink-0 flex items-center justify-center">
               {sizeImages[size] ? (
-                <img
+                <Image
                   src={sizeImages[size]}
                   alt={size}
+                  fill
+                  sizes="56px"
                   className="w-full h-full object-cover"
                 />
               ) : (

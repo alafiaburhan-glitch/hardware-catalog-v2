@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
 import UniversalSelector from "@/components/UniversalSelector";
@@ -29,7 +29,7 @@ export default function ProductDetailClient({
   const [currentImage, setCurrentImage] = useState<string | null>(defaultImage);
   const [activeSize, setActiveSize] = useState<string | null>(null);
 
-  function handleSelectionChange(selected: Record<string, string>) {
+  const handleSelectionChange = useCallback((selected: Record<string, string>) => {
     const size = selected["Size"];
 
     if (!size) {
@@ -49,7 +49,7 @@ export default function ProductDetailClient({
 
     setCurrentImage(imageUrl || defaultImage);
     setActiveSize(size);
-  }
+  }, [defaultImage, sizeImages]);
 
   return (
     <div className="grid md:grid-cols-2 gap-12">

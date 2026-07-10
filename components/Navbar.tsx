@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -27,17 +28,11 @@ export default function Navbar() {
   useEffect(() => {
     if (searchOpen) {
       inputRef.current?.focus();
-    } else {
-      setQuery("");
-      setResults([]);
-      setShowDropdown(false);
     }
   }, [searchOpen]);
 
   useEffect(() => {
     if (query.trim().length < 2) {
-      setResults([]);
-      setShowDropdown(false);
       return;
     }
 
@@ -122,7 +117,15 @@ export default function Navbar() {
                     type="text"
                     placeholder="Search products..."
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={(e) => {
+                      const nextQuery = e.target.value;
+                      setQuery(nextQuery);
+
+                      if (nextQuery.trim().length < 2) {
+                        setResults([]);
+                        setShowDropdown(false);
+                      }
+                    }}
                     onFocus={() => results.length > 0 && setShowDropdown(true)}
                     className="w-full pl-9 pr-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm"
                   />
@@ -141,9 +144,15 @@ export default function Navbar() {
                               onClick={handleResultClick}
                               className="flex items-center gap-3 px-4 py-3 hover:bg-red-50 transition group border-b border-gray-50 last:border-0"
                             >
-                              <div className="w-9 h-9 rounded-lg overflow-hidden bg-gray-100 shrink-0">
+                              <div className="relative w-9 h-9 rounded-lg overflow-hidden bg-gray-100 shrink-0">
                                 {product.image ? (
-                                  <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                                  <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    fill
+                                    sizes="36px"
+                                    className="w-full h-full object-cover"
+                                  />
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center text-gray-300 text-xs">N/A</div>
                                 )}
@@ -168,7 +177,7 @@ export default function Navbar() {
                             type="submit"
                             className="w-full px-4 py-3 text-sm text-red-700 font-semibold hover:bg-red-50 transition text-left flex items-center justify-between bg-red-50/50"
                           >
-                            <span>See all results for "{query}"</span>
+                            <span>See all results for &quot;{query}&quot;</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0Z" />
                             </svg>
@@ -176,7 +185,7 @@ export default function Navbar() {
                         </>
                       ) : (
                         <div className="px-4 py-4 text-sm text-gray-400 text-center">
-                          No products found for "{query}"
+                          No products found for &quot;{query}&quot;
                         </div>
                       )}
                     </div>

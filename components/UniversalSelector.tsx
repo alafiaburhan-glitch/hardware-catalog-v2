@@ -47,7 +47,7 @@ export default function UniversalSelector({
     } else {
       onSelectionChange(selected);
     }
-  }, [selected]);
+  }, [hasCapacityAndLength, onSelectionChange, selected]);
 
   function buildWhatsAppMessage() {
     const lines = variants.map((v) => `${v.title}: ${selected[v.title]}`);

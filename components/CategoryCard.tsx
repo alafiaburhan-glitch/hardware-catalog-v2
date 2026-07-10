@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type CategoryCardProps = {
   name: string;
@@ -17,10 +18,12 @@ export default function CategoryCard({
       <div className="border-2 border-red-700 rounded-2xl overflow-hidden hover:shadow-xl transition bg-white cursor-pointer">
 
         {image && (
-          <div className="h-40 overflow-hidden">
-            <img
+          <div className="relative h-40 overflow-hidden">
+            <Image
               src={image}
               alt={name}
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
               className="w-full h-full object-cover"
             />
           </div>
