@@ -102,7 +102,7 @@ export default async function CategoriesPage() {
                         className="h-14 w-14 shrink-0 object-contain transition duration-300 group-hover:scale-105"
                       />
                     )}
-                    <h2 className="text-[16px] font-bold leading-snug text-black transition group-hover:text-red-700 sm:text-[17px]">
+                    <h2 className="min-w-0 break-words text-[13px] font-bold leading-tight text-black transition group-hover:text-red-700 min-[390px]:text-[14px] sm:text-[17px]">
                       {category.name}
                     </h2>
                   </div>
