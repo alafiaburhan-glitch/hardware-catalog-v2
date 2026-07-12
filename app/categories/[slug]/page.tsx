@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${name} Supplier in Coimbatore`,
     description: `Browse industrial ${name.toLowerCase()} products from Noor Agencies, a trusted industrial hardware supplier in Coimbatore.`,
   };
-  const pageUrl = `https://nooragencies.in/categories/${slug}`;
+  const pageUrl = `https://www.nooragencies.in/categories/${slug}`;
 
   return {
     title: seo.title,
@@ -174,12 +174,12 @@ export default async function CategoryPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: categoryName,
-    url: `https://nooragencies.in/categories/${slug}`,
+    url: `https://www.nooragencies.in/categories/${slug}`,
     description: seoDescription,
     isPartOf: {
       "@type": "WebSite",
       name: "Noor Agencies",
-      url: "https://nooragencies.in",
+      url: "https://www.nooragencies.in",
     },
   };
 
@@ -191,19 +191,19 @@ export default async function CategoryPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://nooragencies.in",
+        item: "https://www.nooragencies.in",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Categories",
-        item: "https://nooragencies.in/categories",
+        item: "https://www.nooragencies.in/categories",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: categoryName,
-        item: `https://nooragencies.in/categories/${slug}`,
+        item: `https://www.nooragencies.in/categories/${slug}`,
       },
     ],
   };
@@ -218,7 +218,7 @@ export default async function CategoryPage({ params }: Props) {
       products?.map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://nooragencies.in/products/${product.slug}`,
+        url: `https://www.nooragencies.in/products/${product.slug}`,
         name: product.name,
       })) ?? [],
   };

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const pageUrl = `https://nooragencies.in/categories/${slug}/${brand.slug}`;
+  const pageUrl = `https://www.nooragencies.in/categories/${slug}/${brand.slug}`;
   const title = `${brand.name} Products in Coimbatore`;
   const description = `Browse ${brand.name} products available from Noor Agencies in Coimbatore. Contact us for availability, product details and bulk enquiries.`;
 

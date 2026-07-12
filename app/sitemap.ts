@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { supabase } from "@/lib/supabase";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://nooragencies.in";
+  const baseUrl = "https://www.nooragencies.in";
 
   const { data: categories } = await supabase
     .from("categories")
@@ -40,16 +40,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const categoryPages =
-    categories?.map((category) => ({
-      url: `${baseUrl}/categories/${category.slug}`,
+    categories?.filter((category) => category.slug?.trim()).map((category) => ({
+      url: `${baseUrl}/categories/${category.slug.trim()}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })) ?? [];
 
   const productPages =
-    products?.map((product) => ({
-      url: `${baseUrl}/products/${product.slug}`,
+    products?.filter((product) => product.slug?.trim()).map((product) => ({
+      url: `${baseUrl}/products/${product.slug.trim()}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,

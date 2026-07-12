@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Browse industrial hardware product categories from Noor Agencies in Coimbatore, including emery paper, Loctite adhesives, tarpaulins, shade nets, ropes, hoses and safety products.",
   alternates: {
-    canonical: "https://nooragencies.in/categories",
+    canonical: "https://www.nooragencies.in/categories",
   },
   openGraph: {
     title: "Industrial Hardware Product Categories in Coimbatore | Noor Agencies",
     description:
       "Browse emery paper, Loctite adhesives, tarpaulins, shade nets and industrial hardware categories from Noor Agencies.",
-    url: "https://nooragencies.in/categories",
+    url: "https://www.nooragencies.in/categories",
   },
 };
 

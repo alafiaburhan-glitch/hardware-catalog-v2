@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nooragencies.in"),
+  metadataBase: new URL("https://www.nooragencies.in"),
 
   title: {
     default: "Noor Agencies | Industrial Hardware Supplier in Coimbatore",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Noor Agencies | Industrial Hardware Supplier in Coimbatore",
     description:
       "Emery paper, Loctite adhesives, tarpaulins, shade nets and industrial hardware supplier in Coimbatore.",
-    url: "https://nooragencies.in",
+    url: "https://www.nooragencies.in",
     siteName: "Noor Agencies",
     locale: "en_IN",
     type: "website",
@@ -116,11 +116,11 @@ export default function RootLayout({
 
               name: "Noor Agencies",
 
-              url: "https://nooragencies.in",
+              url: "https://www.nooragencies.in",
 
-              logo: "https://nooragencies.in/logo.png",
+              logo: "https://www.nooragencies.in/logo.png",
 
-              image: "https://nooragencies.in/logo.png",
+              image: "https://www.nooragencies.in/logo.png",
 
               telephone: "+91-9626652275",
 

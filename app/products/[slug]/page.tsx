@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const productUrl = `https://nooragencies.in/products/${slug}`;
+  const productUrl = `https://www.nooragencies.in/products/${slug}`;
   const title = `${product.name} in Coimbatore`;
   const description = `Buy ${product.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
 
@@ -251,14 +251,14 @@ export default async function ProductPage({ params }: Props) {
     name: "Noor Agencies",
   },
 
-  url: `https://nooragencies.in/products/${product.slug}`,
+  url: `https://www.nooragencies.in/products/${product.slug}`,
 
   offers: {
     "@type": "Offer",
 
     availability: "https://schema.org/InStock",
 
-    url: `https://nooragencies.in/products/${product.slug}`,
+    url: `https://www.nooragencies.in/products/${product.slug}`,
 
     seller: {
       "@type": "Organization",
@@ -276,28 +276,28 @@ export default async function ProductPage({ params }: Props) {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://nooragencies.in",
+      item: "https://www.nooragencies.in",
     },
 
     {
       "@type": "ListItem",
       position: 2,
       name: "Categories",
-      item: "https://nooragencies.in/categories",
+      item: "https://www.nooragencies.in/categories",
     },
 
     {
       "@type": "ListItem",
       position: 3,
       name: product.category.replace(/-/g, " "),
-      item: `https://nooragencies.in/categories/${product.category}`,
+      item: `https://www.nooragencies.in/categories/${product.category}`,
     },
 
     {
       "@type": "ListItem",
       position: 4,
       name: product.name,
-      item: `https://nooragencies.in/products/${product.slug}`,
+      item: `https://www.nooragencies.in/products/${product.slug}`,
     },
   ],
 }
