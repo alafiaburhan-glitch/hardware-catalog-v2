@@ -227,46 +227,6 @@ export default async function ProductPage({ params }: Props) {
       )}
     </>
   );
-  const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-
-  name: product.name,
-
-  image: product.image ? [product.image] : [],
-
-  description: `${product.description} Available from Noor Agencies in Coimbatore.`,
-
-  sku: product.code,
-
-  category: product.category,
-
-  brand: {
-    "@type": "Brand",
-    name: "Noor Agencies",
-  },
-
-  manufacturer: {
-    "@type": "Organization",
-    name: "Noor Agencies",
-  },
-
-  url: `https://www.nooragencies.in/products/${product.slug}`,
-
-  offers: {
-    "@type": "Offer",
-
-    availability: "https://schema.org/InStock",
-
-    url: `https://www.nooragencies.in/products/${product.slug}`,
-
-    seller: {
-      "@type": "Organization",
-      name: "Noor Agencies",
-    },
-  },
-};
-
   const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -306,12 +266,6 @@ export default async function ProductPage({ params }: Props) {
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
 
-        <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(productSchema),
-      }}
-      />
       <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
