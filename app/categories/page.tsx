@@ -42,6 +42,7 @@ const categoryIcons: Record<string, string> = {
   "lubricants-sealants": "/category-icons/lubricants-sealants.png",
   "packaging-material": "/category-icons/packaging-material.png",
   tapes: "/category-icons/tapes.png",
+  "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
 };
 
 function getCategoryIcon(slug: string | null) {
@@ -58,6 +59,10 @@ export default async function CategoriesPage() {
   if (error) {
     return <div className="p-10">Failed to load categories</div>;
   }
+
+  const allCategories = categories?.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")
+    ? categories
+    : [...(categories ?? []), { id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" }];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
@@ -79,7 +84,7 @@ export default async function CategoriesPage() {
       </div>
 
       <div className="grid grid-cols-1 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-        {categories?.map((category) => {
+        {allCategories.map((category) => {
           const icon = getCategoryIcon(category.slug);
           const slug = category.slug.trim();
 

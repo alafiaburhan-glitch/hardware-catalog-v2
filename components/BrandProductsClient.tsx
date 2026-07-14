@@ -19,6 +19,7 @@ type Props = {
 };
 
 export default function BrandProductsClient({ categoryName, categorySlug, brandName, products }: Props) {
+  const isProductGrouping = categorySlug === "hand-tools";
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap text-sm text-gray-400 mb-8 pb-1">
@@ -35,7 +36,7 @@ export default function BrandProductsClient({ categoryName, categorySlug, brandN
 
       <div className="mb-8 sm:mb-10">
         <p className="text-red-700 font-semibold uppercase tracking-[0.24em] sm:tracking-[0.3em] mb-3 text-xs sm:text-sm">
-          Brand
+          {isProductGrouping ? "Tool Group" : "Brand"}
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold mb-2">{brandName}</h1>
         <p className="text-sm sm:text-base text-gray-500">
@@ -51,6 +52,7 @@ export default function BrandProductsClient({ categoryName, categorySlug, brandN
             code={product.code}
             slug={product.slug}
             image={product.image}
+            category={categorySlug}
           />
         ))}
       </div>

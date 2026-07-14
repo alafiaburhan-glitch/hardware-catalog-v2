@@ -6,6 +6,16 @@ import Counter from "@/components/Counter";
 import TrustSection from "@/components/TrustSection";
 import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
+import {
+  ArrowRight,
+  BadgeIndianRupee,
+  CheckCircle2,
+  MessageCircle,
+  PackageCheck,
+  ShieldCheck,
+  Sparkles,
+  Truck,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -21,6 +31,7 @@ type FeaturedProduct = {
   code: string;
   image?: string | null;
   slug?: string | null;
+  category?: string | null;
 };
 
 const categoryIcons: Record<string, string> = {
@@ -47,6 +58,7 @@ const categoryIcons: Record<string, string> = {
   "lubricants-sealants": "/category-icons/lubricants-sealants.png",
   "packaging-material": "/category-icons/packaging-material.png",
   tapes: "/category-icons/tapes.png",
+  "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
 };
 
 function getCategoryIcon(slug: string | null) {
@@ -57,6 +69,7 @@ function getCategoryIcon(slug: string | null) {
 export default function HomePageClient() {
   const [categories, setCategories] = useState<CategorySummary[]>([]);
   const [products, setProducts] = useState<FeaturedProduct[]>([]);
+  const [totalProductCount, setTotalProductCount] = useState(0);
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [loadingProducts, setLoadingProducts] = useState(true);
 
@@ -64,10 +77,20 @@ export default function HomePageClient() {
     async function loadData() {
       const { data: categoryData } = await supabase
         .from("categories")
-        .select("*")
+        .select("id, name, slug")
         .order("name");
-      if (categoryData) setCategories(categoryData);
+      if (categoryData) {
+        const validCategories = categoryData.filter((category) => category.slug?.trim());
+        setCategories(validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")
+          ? validCategories
+          : [...validCategories, { id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" }]);
+      }
       setLoadingCategories(false);
+
+      const { count } = await supabase
+        .from("products")
+        .select("id", { count: "exact", head: true });
+      setTotalProductCount(count ?? 0);
 
       let { data: productData } = await supabase
         .from("products")
@@ -83,7 +106,9 @@ export default function HomePageClient() {
         productData = fallback;
       }
 
-      if (productData) setProducts(productData);
+      if (productData) {
+        setProducts(productData.filter((product) => product.slug?.trim()));
+      }
       setLoadingProducts(false);
     }
     loadData();
@@ -91,60 +116,71 @@ export default function HomePageClient() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
-      {/* HERO */}
-<section className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-black text-white min-h-[72vh] flex items-center">
-<div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.08),transparent_45%)]"></div>
-  {/* background glow */}
-  <div className="absolute inset-0">
-    <div className="absolute top-10 left-20 w-96 h-96 bg-red-500/20 blur-[140px] rounded-full" />
-    <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-black/40 blur-[160px] rounded-full" />
-  </div>
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-black text-white">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.22),transparent_34%),radial-gradient(circle_at_88%_70%,rgba(127,29,29,0.2),transparent_40%)]" />
+        <div className="industrial-grid absolute inset-0 -z-10 opacity-15" />
+        <motion.div
+          aria-hidden
+          className="absolute -left-32 top-28 h-80 w-80 rounded-full border border-white/20"
+          animate={{ scale: [1, 1.12, 1], rotate: [0, 18, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
 
-  <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center">
+        <div className="mx-auto flex min-h-[50vh] max-w-7xl items-center px-4 py-12 sm:px-6 sm:py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="relative z-10 max-w-4xl"
+          >
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-white backdrop-blur-xl">
+              <Sparkles className="h-4 w-4" /> Coimbatore&apos;s industrial supply partner
+            </div>
+            <h1 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.045em] sm:text-5xl lg:text-6xl xl:text-7xl">
+              Built for work.
+              <span className="mt-2 block text-red-100">
+                Ready for industry.
+              </span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
+              Hardware, lifting equipment, safety products, adhesives and power tools—sourced for serious work and delivered with dependable support.
+            </p>
 
-    <div className="max-w-3xl">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="/categories" className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-7 py-4 font-bold text-red-800 shadow-[0_18px_50px_rgba(255,255,255,0.12)] transition hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(255,255,255,0.2)]">
+                Explore the catalog <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+              </Link>
+              <a href="https://wa.me/919626652275?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/35 bg-white/15 px-7 py-4 font-bold text-white backdrop-blur-xl transition hover:bg-white/25">
+                <MessageCircle className="h-5 w-5" /> Get a quick quote
+              </a>
+            </div>
 
-      {/* LEFT SIDE */}
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="mb-6">
-  <div className="flex items-center gap-3 mb-6">
-    <div className="w-10 h-[2px] bg-red-300"></div>
-    <span className="uppercase tracking-[0.35em] text-sm text-red-200 font-semibold">
-      INDUSTRIAL SUPPLIER
-    </span>
-  </div>
+            <div className="mt-10 grid max-w-xl grid-cols-3 gap-3 border-t border-white/10 pt-7">
+              {[['10+', 'Years'], [totalProductCount ? `${totalProductCount}+` : '—', 'Products'], [categories.length || '—', 'Categories']].map(([value, label]) => (
+                <div key={label}>
+                  <p className="text-2xl font-black sm:text-3xl">{value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/65">{label}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-  <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1] tracking-tight">
-    <span className="block text-white">Industrial Hardware</span>
-    <span className="block text-red-200">Solutions</span>
-  </h1>
-</div>
+        </div>
 
-        <p className="mt-8 text-xl text-red-100 max-w-lg leading-relaxed">
-          Trusted supplier of industrial hardware, lifting equipment,
-          ropes, tarpaulins, safety products, industrial adhesives and
-          power tools for businesses across India.
-        </p>
-
-       <div className="mt-10">
-  <Link
-    href="/categories"
-    className="inline-flex bg-white text-red-700 px-10 py-5 rounded-2xl font-bold shadow-xl hover:scale-105 transition"
-  >
-    Explore Products →
-  </Link>
-</div>
-      </motion.div>  
-
-    </div>
-
-  </div>
-
-</section>
+        <div className="border-t border-white/20 bg-red-800/20 backdrop-blur-xl">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px px-4 sm:grid-cols-4 sm:px-6">
+            {[
+              [ShieldCheck, 'Quality checked'],
+              [PackageCheck, 'Wide catalog'],
+              [BadgeIndianRupee, 'Bulk pricing'],
+              [Truck, 'Pan-India supply'],
+            ].map(([Icon, label]) => {
+              const FeatureIcon = Icon as typeof ShieldCheck;
+              return <div key={label as string} className="flex items-center gap-3 border-white/10 px-3 py-4 text-sm font-semibold text-red-50 sm:border-l"><FeatureIcon className="h-5 w-5 text-red-300" />{label as string}</div>;
+            })}
+          </div>
+        </div>
+      </section>
 
 
       {/* BRANDS MARQUEE */}
@@ -156,7 +192,7 @@ export default function HomePageClient() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16"
+        className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24"
       >
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -170,7 +206,7 @@ export default function HomePageClient() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
           {loadingCategories
             ? Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-16 sm:h-20 rounded-2xl bg-gray-100 animate-pulse" />
@@ -181,9 +217,10 @@ export default function HomePageClient() {
                 return (
                   <Link
                     key={category.id}
-                    href={`/categories/${category.slug?.trim()}`}
-                    className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300"
+                    href={`/categories/${category.slug!.trim()}`}
+                    className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-red-200 hover:shadow-[0_24px_60px_rgba(127,29,29,0.12)] sm:rounded-3xl sm:p-6"
                   >
+                    <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-red-100/0 blur-2xl transition group-hover:bg-red-100" />
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex min-w-0 items-center gap-2 sm:gap-3">
                         {icon && (
@@ -193,14 +230,14 @@ export default function HomePageClient() {
                             width={56}
                             height={56}
                             sizes="56px"
-                            className="h-14 w-14 shrink-0 object-contain transition duration-300 group-hover:scale-105"
+                            className="h-14 w-14 shrink-0 rounded-2xl bg-white object-contain p-1.5 shadow-sm transition duration-300 group-hover:scale-110 group-hover:rotate-3"
                           />
                         )}
                         <h3 className="min-w-0 break-words text-[13px] font-bold leading-tight group-hover:text-red-700 transition min-[390px]:text-[14px] sm:text-base">
                           {category.name}
                         </h3>
                       </div>
-                      <span className="text-red-700 font-bold group-hover:translate-x-1 transition shrink-0">→</span>
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-700 transition group-hover:translate-x-1 group-hover:bg-red-700 group-hover:text-white"><ArrowRight className="h-4 w-4" /></span>
                     </div>
                   </Link>
                 );
@@ -272,7 +309,10 @@ export default function HomePageClient() {
                 ropes, tarpaulins, and safety products across industries.
               </p>
             </div>
-            <TrustSection />
+            <TrustSection
+              productCount={totalProductCount}
+              categoryCount={categories.length}
+            />
           </div>
         </div>
       </motion.section>
@@ -296,7 +336,7 @@ export default function HomePageClient() {
             <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
               Noor Agencies has been serving industries with high-quality industrial
               hardware products, ropes, lifting equipment, tarpaulins, cargo solutions,
-              and safety materials for decades.
+              and safety materials for over 10 years.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/about" className="inline-block bg-red-700 text-white px-5 py-3 rounded-xl font-semibold hover:bg-red-800 transition text-sm">
@@ -308,7 +348,9 @@ export default function HomePageClient() {
             </div>
           </div>
 
-          <div className="bg-red-700 rounded-3xl p-7 sm:p-10 text-white">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#dc2626_0%,#b91c1c_48%,#7f1d1d_100%)] p-7 text-white shadow-[0_28px_80px_rgba(127,29,29,0.24)] sm:p-10">
+            <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/15 blur-3xl" />
+            <div className="absolute -bottom-24 -left-16 h-52 w-52 rounded-full bg-red-950/25 blur-3xl" />
             <h3 className="text-xl sm:text-2xl font-bold mb-5">Why Choose Us?</h3>
             <ul className="space-y-3 sm:space-y-4 text-red-100">
               {[
@@ -319,7 +361,7 @@ export default function HomePageClient() {
                 "Fast Product Availability",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm sm:text-base">
-                  <span className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center text-xs shrink-0">✔</span>
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-red-300" />
                   {item}
                 </li>
               ))}

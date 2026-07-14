@@ -1,0 +1,6153 @@
+[
+  {
+    "id": "power-tools-angle-grinder",
+    "name": "Angle Grinders",
+    "slug": "angle-grinder",
+    "code": "PT-ANGLE-GRINDERS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Angle Grinders from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Dewalt, Dongcheng, Galaxy Pro, Jon Bhandari, Makita, Powerbilt, Professional, Pro Maxx, Ultrafast, Ultra Touch",
+      "Product Type": "Angle Grinders",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: AG4 GWS 600; Bosch: AG4 WS 650; Bosch: AG4 GWS 800; Bosch: GWS 900-100; Bosch: AG5 GWS 6-125; Bosch: AG5 GWS 900-125S; Bosch: AG5 GWS 12-125S; Bosch: AG7 GWS2200-180; Bosch: CAR POLISHING GPO 11-180 S; Dewalt: 4\" ANGLE GRINDER; Dewalt: 4\" ANGLE GRINDER; Dewalt: 4\" ANGLE GRINDER; Dewalt: 4\" ANGLE GRINDER; Dewalt: 5\" ANGLE GRINDER; Dewalt: 5\" ANGLE GRINDER; Dongcheng: ANGLE GRINDER 4\" SIDE SWITCH; Dongcheng: ANGLE GRINDER 4\" BACK SWITCH; Dongcheng: ANGLE GRINDER 4\" BACK SWITCH; Dongcheng: ANGLE GRINDER 5\"; Dongcheng: ANGLE GRINDER 7\"; Galaxy Pro: ANGLE GRINDER; Jon Bhandari: ANGLE GRINDER; Makita: ANGLE GRINDER 4\"; Makita: ANGLE GRINDER 4\"; Powerbilt: AG4 BACK SWITCH; Professional: 4\" ANGLE GRINDER BACK SWITCH; Pro Maxx: 4\" ANGLE GRINDER BACK SWITH; Ultrafast: ANGLE GRINDER 4\"; Ultra Touch: ANGLE GRINDER; Ultra Touch: ANGLE GRINDER"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "AG4 GWS 600",
+        "specifications": {
+          "Watts": "600"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "AG4 WS 650",
+        "specifications": {
+          "Watts": "650"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "AG4 GWS 800",
+        "specifications": {
+          "Watts": "800"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GWS 900-100",
+        "specifications": {
+          "Watts": "900"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "AG5 GWS 6-125",
+        "specifications": {
+          "Watts": "670"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "AG5 GWS 900-125S",
+        "specifications": {
+          "Watts": "900"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "AG5 GWS 12-125S",
+        "specifications": {
+          "Watts": "1200"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "AG7 GWS2200-180",
+        "specifications": {
+          "Watts": "2200"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "CAR POLISHING GPO 11-180 S",
+        "specifications": {
+          "Watts": "1100"
+        },
+        "series": "Car Polishinng Machine"
+      },
+      {
+        "brand": "Dewalt",
+        "name": "4\" ANGLE GRINDER",
+        "specifications": {
+          "Model No": "DW750",
+          "Watts": "750"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "4\" ANGLE GRINDER",
+        "specifications": {
+          "Model No": "DW801-IN",
+          "Watts": "850"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "4\" ANGLE GRINDER",
+        "specifications": {
+          "Model No": "DW803",
+          "Watts": "1000"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "4\" ANGLE GRINDER",
+        "specifications": {
+          "Model No": "DWE8300S-IN",
+          "Watts": "1010"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "5\" ANGLE GRINDER",
+        "specifications": {
+          "Model No": "DWE41215",
+          "Watts": "1200"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "5\" ANGLE GRINDER",
+        "specifications": {
+          "Model No": "DWE4115",
+          "Watts": "950"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ANGLE GRINDER 4\" SIDE SWITCH",
+        "specifications": {
+          "Watts": "710W",
+          "Model No": "DSM03-100A"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ANGLE GRINDER 4\" BACK SWITCH",
+        "specifications": {
+          "Watts": "800W",
+          "Model No": "DSM08-100"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ANGLE GRINDER 4\" BACK SWITCH",
+        "specifications": {
+          "Watts": "1100W",
+          "Model No": "DSM17-100"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ANGLE GRINDER 5\"",
+        "specifications": {
+          "Watts": "1200W",
+          "Model No": "DSM02-125"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ANGLE GRINDER 7\"",
+        "specifications": {
+          "Watts": "2200W",
+          "Model No": "DSM180A"
+        }
+      },
+      {
+        "brand": "Galaxy Pro",
+        "name": "ANGLE GRINDER",
+        "specifications": {
+          "Watts": "850",
+          "Model No": "GLX-801"
+        }
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "ANGLE GRINDER",
+        "specifications": {
+          "Model No": "P-072",
+          "Watts": "850"
+        }
+      },
+      {
+        "brand": "Makita",
+        "name": "ANGLE GRINDER 4\"",
+        "specifications": {
+          "Model No": "9553NB",
+          "Watts": "710"
+        }
+      },
+      {
+        "brand": "Makita",
+        "name": "ANGLE GRINDER 4\"",
+        "specifications": {
+          "Model No": "M9513B",
+          "Watts": "850"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "AG4 BACK SWITCH",
+        "specifications": {
+          "Watts": "1100",
+          "Model No": "PBT-AG4-1100"
+        }
+      },
+      {
+        "brand": "Professional",
+        "name": "4\" ANGLE GRINDER BACK SWITCH",
+        "specifications": {
+          "Watts": "670",
+          "Model No": "6-100"
+        }
+      },
+      {
+        "brand": "Pro Maxx",
+        "name": "4\" ANGLE GRINDER BACK SWITH",
+        "specifications": {
+          "Watts": "1350",
+          "Model No": "MXP AG 803"
+        }
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "ANGLE GRINDER 4\"",
+        "specifications": {
+          "Model No": "UF-AG801P",
+          "Watts": "850W"
+        }
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "ANGLE GRINDER",
+        "specifications": {
+          "Model No": "UT-6100",
+          "Watts": "670W"
+        }
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "ANGLE GRINDER",
+        "specifications": {
+          "Model No": "UT-801",
+          "Watts": "850W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-marble-cutter",
+    "name": "Marble Cutters",
+    "slug": "marble-cutter",
+    "code": "PT-MARBLE-CUTTERS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Marble Cutters from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Dongcheng, Ultrafast",
+      "Product Type": "Marble Cutters",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GDC 140(4\"); Bosch: GDC 141(5\"); Bosch: DC 125 (4\"); Dongcheng: MARBLE CUTTER 4\"  SB; Dongcheng: MARBLE CUTTER 4\" / 5\" SA; Dongcheng: MARBLE CUTTER 4\" SB; Ultrafast: MARBLE CUTTER 5\" GOLD SERIES"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GDC 140(4\")",
+        "specifications": {
+          "Watts": "1400"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GDC 141(5\")",
+        "specifications": {
+          "Watts": "1450"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "DC 125 (4\")",
+        "specifications": {
+          "Watts": "1250"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "MARBLE CUTTER 4\"  SB",
+        "specifications": {
+          "Watts": "1240W",
+          "Model No": "DZE02-110"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "MARBLE CUTTER 4\" / 5\" SA",
+        "specifications": {
+          "Watts": "1050W",
+          "Model No": "DZE03-110"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "MARBLE CUTTER 4\" SB",
+        "specifications": {
+          "Watts": "1800W",
+          "Model No": "DZE06-111"
+        }
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "MARBLE CUTTER 5\" GOLD SERIES",
+        "specifications": {
+          "Model No": "UFG-1018-2000W",
+          "Watts": "2000W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-drilling-machine",
+    "name": "Drilling Machines",
+    "slug": "drilling-machine",
+    "code": "PT-DRILLING-MACHINES",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Drilling Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Dewalt, Fad, Powermatic, Ultra Touch",
+      "Product Type": "Drilling Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GSB 450(10mm); Bosch: GSB 500 RE(10mm) 100PC KIT; Bosch: GSB 600(13mm); Bosch: GSB 600(13mm) 100PC KIT; Dewalt: 10mm ELECTRIC DRILL; Dewalt: 13mm ELECTRIC DRILL; Dewalt: 26MM SDS PLUS CORDLESS HAMMER; Fad: DRILLING MACHINE 13MM; Powermatic: 6MM DRILL 350W; Ultra Touch: DRILL MACHINE 6MM; Ultra Touch: DRILL MACHINE 10MM; Ultra Touch: DRILL MACHINE 10MM; Ultra Touch: DRILL MACHINE 13MM"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GSB 450(10mm)",
+        "specifications": {
+          "Watts": "450"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GSB 500 RE(10mm) 100PC KIT",
+        "specifications": {
+          "Watts": "500"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GSB 600(13mm)",
+        "specifications": {
+          "Watts": "600"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GSB 600(13mm) 100PC KIT",
+        "specifications": {
+          "Watts": "600"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "10mm ELECTRIC DRILL",
+        "specifications": {
+          "Model No": "DWD014",
+          "Watts": "550"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "13mm ELECTRIC DRILL",
+        "specifications": {
+          "Model No": "DWD024",
+          "Watts": "750"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "26MM SDS PLUS CORDLESS HAMMER",
+        "specifications": {
+          "Model No": "DCH133N",
+          "Watts": "18V"
+        }
+      },
+      {
+        "brand": "Fad",
+        "name": "DRILLING MACHINE 13MM",
+        "specifications": {
+          "Model No": "FDDM13RF",
+          "Watts": "650"
+        }
+      },
+      {
+        "brand": "Powermatic",
+        "name": "6MM DRILL 350W",
+        "specifications": {
+          "Model No": "PTC-ED-6RE"
+        }
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "DRILL MACHINE 6MM",
+        "specifications": {
+          "Model No": "UTDM6",
+          "Watts": "350W"
+        }
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "DRILL MACHINE 10MM",
+        "specifications": {
+          "Model No": "UTDM10",
+          "Watts": "450W"
+        }
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "DRILL MACHINE 10MM",
+        "specifications": {
+          "Model No": "UTDM10RF",
+          "Watts": "450W"
+        }
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "DRILL MACHINE 13MM",
+        "specifications": {
+          "Model No": "UTDM13RF",
+          "Watts": "650W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-rotary-hammer",
+    "name": "Rotary Hammer",
+    "slug": "rotary-hammer",
+    "code": "PT-ROTARY-HAMMER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Rotary Hammer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Ultra Touch",
+      "Product Type": "Rotary Hammer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GBH 220; Bosch: GBH 2-24 DRE 2.7J; Bosch: GCO-220; Bosch: GCO 14-24; Bosch: GHG 180; Bosch: GHG 20-60; Bosch: GHG 20-63; Ultra Touch: ROTARY HAMMER"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GBH 220",
+        "specifications": {
+          "Spec": "22mm",
+          "Watts": "720"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GBH 2-24 DRE 2.7J",
+        "specifications": {
+          "Spec": "24mm",
+          "Watts": "790"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GCO-220",
+        "specifications": {
+          "Watts": "2200"
+        },
+        "series": "Cut Off Machines 14\""
+      },
+      {
+        "brand": "Bosch",
+        "name": "GCO 14-24",
+        "specifications": {
+          "Watts": "2400"
+        },
+        "series": "Cut Off Machines 14\""
+      },
+      {
+        "brand": "Bosch",
+        "name": "GHG 180",
+        "specifications": {
+          "Watts": "1800"
+        },
+        "series": "Heat Torch/Gun"
+      },
+      {
+        "brand": "Bosch",
+        "name": "GHG 20-60",
+        "specifications": {
+          "Spec": "50-630 DEGREES",
+          "Watts": "2000"
+        },
+        "series": "Heat Torch/Gun"
+      },
+      {
+        "brand": "Bosch",
+        "name": "GHG 20-63",
+        "specifications": {
+          "Spec": "50-630 DEGREES",
+          "Watts": "2000"
+        },
+        "series": "Heat Torch/Gun"
+      },
+      {
+        "brand": "Ultra Touch",
+        "name": "ROTARY HAMMER",
+        "specifications": {
+          "Model No": "UTRH2-20",
+          "Watts": "850W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-random-orbital-sander",
+    "name": "Random Orbital Sander",
+    "slug": "random-orbital-sander",
+    "code": "PT-RANDOM-ORBITAL-SAN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Random Orbital Sander from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Random Orbital Sander",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GEX-125"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GEX-125",
+        "specifications": {
+          "Watts": "290"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-wood-circular-saw-7",
+    "name": "Wood Circular Saw 7\"",
+    "slug": "wood-circular-saw-7",
+    "code": "PT-WOOD-CIRCULAR-SAW-",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Wood Circular Saw 7\" from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Wood Circular Saw 7\"",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GKS130"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GKS130",
+        "specifications": {
+          "Watts": "1300"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-drilling-machine",
+    "name": "Cordless Drilling Machines",
+    "slug": "cordless-drilling-machine",
+    "code": "PT-CORDLESS-DRILLING-",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Drilling Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Mitsuki, Powerbilt, Pro Cut, Tuqo",
+      "Product Type": "Cordless Drilling Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GSR120 LI (SINGLE BATTERY); Bosch: GSR120 LI KIT; Bosch: GSB185; Bosch: GBH185LI BRUSHLESS; Bosch: GST 90 BE; Mitsuki: CORDLESS IMPACT DRILL MI57; Mitsuki: CORDLESS IMPACT WRENCH MI62 KIT; Powerbilt: CORDLESS IMPACT DRILL; Powerbilt: CORDLESS IMPACT DRILL; Powerbilt: CORDLESS IMPACT DRILL; Powerbilt: CORDLESS IMPACT WRENCH; Powerbilt: CORDLESS IMPACT WRENCH; Powerbilt: CORDLESS IMPACT DRIVER; Pro Cut: 12V CORDLESS DRILL/SCREWDRIVER; Tuqo: CORDLESS IMPACT DRILL AS120; Tuqo: CORDLESS IMPACT DRILL AH150"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GSR120 LI (SINGLE BATTERY)",
+        "specifications": {
+          "Watts": "12V"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GSR120 LI KIT",
+        "specifications": {
+          "Watts": "12V"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GSB185",
+        "specifications": {
+          "Watts": "18V"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GBH185LI BRUSHLESS",
+        "specifications": {
+          "Watts": "18V"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GST 90 BE",
+        "specifications": {
+          "Watts": "650W"
+        },
+        "series": "Jigsaw"
+      },
+      {
+        "brand": "Mitsuki",
+        "name": "CORDLESS IMPACT DRILL MI57",
+        "specifications": {
+          "Watts": "21V"
+        }
+      },
+      {
+        "brand": "Mitsuki",
+        "name": "CORDLESS IMPACT WRENCH MI62 KIT",
+        "specifications": {
+          "Watts": "21V",
+          "Bar": "450N"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS IMPACT DRILL",
+        "specifications": {
+          "Watts": "12V",
+          "Model No": "PBT-CL-CD12ES"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS IMPACT DRILL",
+        "specifications": {
+          "Watts": "16.8V 45NM",
+          "Model No": "PBT-CBL-16.8V"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS IMPACT DRILL",
+        "specifications": {
+          "Watts": "21v",
+          "Model No": "PBT-CL-CID21V"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS IMPACT WRENCH",
+        "specifications": {
+          "Watts": "550NM",
+          "Model No": "PBT-CL-21WR550"
+        },
+        "series": "Cordless Impact Wrench"
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS IMPACT WRENCH",
+        "specifications": {
+          "Watts": "1000NM",
+          "Model No": "PBT-CL-21WR1000"
+        },
+        "series": "Cordless Impact Wrench"
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS IMPACT DRIVER",
+        "specifications": {
+          "Model No": "PBT-CL-WR21"
+        },
+        "series": "Cordless Impact Wrench"
+      },
+      {
+        "brand": "Pro Cut",
+        "name": "12V CORDLESS DRILL/SCREWDRIVER",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS IMPACT DRILL AS120",
+        "specifications": {
+          "Watts": "12V"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS IMPACT DRILL AH150",
+        "specifications": {
+          "Watts": "21V"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-router-machine",
+    "name": "Router Machines",
+    "slug": "router-machine",
+    "code": "PT-ROUTER-MACHINES",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Router Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Router Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GOF130 UPTO 8MM BIT"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GOF130 UPTO 8MM BIT",
+        "specifications": {
+          "Spec": "1300W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-laser-measure",
+    "name": "Laser Measure",
+    "slug": "laser-measure",
+    "code": "PT-LASER-MEASURE",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Laser Measure from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Laser Measure",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GLM100-25C"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GLM100-25C",
+        "specifications": {
+          "Spec": "100M"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-blower",
+    "name": "Electric Blower",
+    "slug": "electric-blower",
+    "code": "PT-ELECTRIC-BLOWER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Blower from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Perfect Tools, Strong Ali",
+      "Product Type": "Electric Blower",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GBL 650; Bosch: GDS18V350; Perfect Tools: ELECTRIC BLOWER; Perfect Tools: ELECTRIC BLOWER VARIABLE; Strong Ali: ORANGE BLOWER 550W"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GBL 650",
+        "specifications": {
+          "Watts": "650W"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GDS18V350",
+        "specifications": {
+          "Spec": "350NM",
+          "Watts": "18V"
+        },
+        "series": "Cordless Impact Wrench"
+      },
+      {
+        "brand": "Perfect Tools",
+        "name": "ELECTRIC BLOWER",
+        "specifications": {
+          "Model No": "PT750",
+          "Watts": "750"
+        }
+      },
+      {
+        "brand": "Perfect Tools",
+        "name": "ELECTRIC BLOWER VARIABLE",
+        "specifications": {
+          "Model No": "PT750PRO",
+          "Watts": "750"
+        }
+      },
+      {
+        "brand": "Strong Ali",
+        "name": "ORANGE BLOWER 550W",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-pressure-washer",
+    "name": "Pressure Washers",
+    "slug": "pressure-washer",
+    "code": "PT-PRESSURE-WASHERS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Pressure Washers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Mitsuki, Parksiide, Tuqo, Xlnt",
+      "Product Type": "Pressure Washers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: AQT 140; Mitsuki: HIGH PRESSURE WASHER MI5; Mitsuki: HIGH PRESSURE WASHER MI8; Parksiide: HIGH PRESSURE WASHER 240 BAR; Tuqo: HIGH PRESSURE WASHER HW1000; Tuqo: HIGH PRESSURE WASHER HW1800; Tuqo: HIGH PRESSURE WASHER HW1900; Tuqo: HIGH PRESSURE WASHER HW2000; Tuqo: HIGH PRESSURE WASHER HW2020; Tuqo: HIGH PRESSURE WASHER HW2050; Tuqo: HIGH PRESSURE WASHER HW2060; Tuqo: HIGH PRESSURE WASHER HW2070; Tuqo: HIGH PRESSURE WASHER HW2080; Tuqo: HIGH PRESSURE WASHER HW2300; Xlnt: XL-2209; Xlnt: XL-12-8; Xlnt: XTHPW-37"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "AQT 140",
+        "specifications": {
+          "Spec": "140BAR",
+          "Watts": "2200W"
+        }
+      },
+      {
+        "brand": "Mitsuki",
+        "name": "HIGH PRESSURE WASHER MI5",
+        "specifications": {
+          "Watts": "2500",
+          "Bar": "180"
+        }
+      },
+      {
+        "brand": "Mitsuki",
+        "name": "HIGH PRESSURE WASHER MI8",
+        "specifications": {
+          "Watts": "2850",
+          "Bar": "210"
+        }
+      },
+      {
+        "brand": "Parksiide",
+        "name": "HIGH PRESSURE WASHER 240 BAR",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW1000",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW1800",
+        "specifications": {
+          "Watts": "1800",
+          "Bar": "130"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW1900",
+        "specifications": {
+          "Watts": "1800",
+          "Bar": "130"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2000",
+        "specifications": {
+          "Watts": "1700",
+          "Bar": "140"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2020",
+        "specifications": {
+          "Watts": "1750",
+          "Bar": "145"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2050",
+        "specifications": {
+          "Watts": "2200",
+          "Bar": "150"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2060",
+        "specifications": {
+          "Watts": "2000",
+          "Bar": "150"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2070",
+        "specifications": {
+          "Watts": "2000",
+          "Bar": "140"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2080",
+        "specifications": {
+          "Watts": "2300",
+          "Bar": "160"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HIGH PRESSURE WASHER HW2300",
+        "specifications": {}
+      },
+      {
+        "brand": "Xlnt",
+        "name": "XL-2209",
+        "specifications": {}
+      },
+      {
+        "brand": "Xlnt",
+        "name": "XL-12-8",
+        "specifications": {}
+      },
+      {
+        "brand": "Xlnt",
+        "name": "XTHPW-37",
+        "specifications": {
+          "Watts": "3000",
+          "Pressure": "300"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-demolition-hammer",
+    "name": "Demolition Hammer",
+    "slug": "demolition-hammer",
+    "code": "PT-DEMOLITION-HAMMER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Demolition Hammer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Dewalt",
+      "Product Type": "Demolition Hammer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GSH 11E; Dewalt: DEMOLITION HAMMER 11KG"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GSH 11E",
+        "specifications": {
+          "Spec": "16.8J",
+          "Watts": "1500W"
+        }
+      },
+      {
+        "brand": "Dewalt",
+        "name": "DEMOLITION HAMMER 11KG",
+        "specifications": {
+          "Model No": "D25881",
+          "Spec": "17.5J",
+          "Watts": "1500"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-vaccum-cleaner",
+    "name": "Vaccum Cleaners",
+    "slug": "vaccum-cleaner",
+    "code": "PT-VACCUM-CLEANERS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Vaccum Cleaners from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Tuqo, Xlnt",
+      "Product Type": "Vaccum Cleaners",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Bosch: GAS 15PS; Bosch: GAS 12-25; Bosch: GAS 400A; Tuqo: VACCUM CLEANER 25L VK02; Tuqo: VACCUM CLEANER 35L VK03; Tuqo: VACCUM CLEANER 70L VK06; Tuqo: VACCUM CLEANER 100L VK07; Xlnt: VACCUM CLEANER XTVC 40-30"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "GAS 15PS",
+        "specifications": {
+          "Watts": "1100"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GAS 12-25",
+        "specifications": {
+          "Watts": "1250"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "GAS 400A",
+        "specifications": {
+          "Watts": "1200"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "VACCUM CLEANER 25L VK02",
+        "specifications": {
+          "Watts": "1600",
+          "Bar": "200"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "VACCUM CLEANER 35L VK03",
+        "specifications": {
+          "Watts": "1800",
+          "Bar": "200"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "VACCUM CLEANER 70L VK06",
+        "specifications": {
+          "Watts": "5400",
+          "Bar": "250"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "VACCUM CLEANER 100L VK07",
+        "specifications": {
+          "Watts": "5400",
+          "Bar": "250"
+        }
+      },
+      {
+        "brand": "Xlnt",
+        "name": "VACCUM CLEANER XTVC 40-30",
+        "specifications": {
+          "Watts": "1000"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-paint-sprayer",
+    "name": "Paint Sprayer",
+    "slug": "paint-sprayer",
+    "code": "PT-PAINT-SPRAYER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Paint Sprayer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Checkmate",
+    "specifications": {
+      "Brand": "Checkmate",
+      "Product Type": "Paint Sprayer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Checkmate: ELECTRIC PAINT SPRAYER"
+    },
+    "models": [
+      {
+        "brand": "Checkmate",
+        "name": "ELECTRIC PAINT SPRAYER",
+        "specifications": {
+          "Watts": "1200W",
+          "Model No": "CKT-PS-1200"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-screwdriver-sets",
+    "name": "Electric Screwdriver Sets",
+    "slug": "electric-screwdriver-sets",
+    "code": "PT-ELECTRIC-SCREWDRIV",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Screwdriver Sets from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic",
+      "Product Type": "Electric Screwdriver Sets",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: TUOYE  47 PC CORDLESS SCREWDRIVER SET"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "TUOYE  47 PC CORDLESS SCREWDRIVER SET",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-digital-clamp-meter",
+    "name": "Digital Clamp Meter",
+    "slug": "digital-clamp-meter",
+    "code": "PT-DIGITAL-CLAMP-METE",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Digital Clamp Meter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic",
+      "Product Type": "Digital Clamp Meter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: REPON DIGITAL CLAMP METER"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "REPON DIGITAL CLAMP METER",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-digital-multi-meter",
+    "name": "Digital Multi Meter",
+    "slug": "digital-multi-meter",
+    "code": "PT-DIGITAL-MULTI-METE",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Digital Multi Meter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic",
+      "Product Type": "Digital Multi Meter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: HAOYUE DIGITAL MULTIMETER(CHACHA)"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "HAOYUE DIGITAL MULTIMETER(CHACHA)",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-pressure-washer",
+    "name": "Cordless Pressure Washer",
+    "slug": "cordless-pressure-washer",
+    "code": "PT-CORDLESS-PRESSURE-",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Pressure Washer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic, Maf Pro",
+      "Product Type": "Cordless Pressure Washer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: CORDLESS PRESSURE WASHER BLACK; Chinese Generic: CORDLESS PRESSURE WASHER BLUE; Maf Pro: CORDLESS PRESSURE WASHER"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS PRESSURE WASHER BLACK",
+        "specifications": {
+          "Brand": "BASKETO"
+        }
+      },
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS PRESSURE WASHER BLUE",
+        "specifications": {
+          "Brand": "BASKETO"
+        }
+      },
+      {
+        "brand": "Maf Pro",
+        "name": "CORDLESS PRESSURE WASHER",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-vaccum-cleaner",
+    "name": "Cordless Vaccum Cleaner",
+    "slug": "cordless-vaccum-cleaner",
+    "code": "PT-CORDLESS-VACCUM-CL",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Vaccum Cleaner from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic",
+      "Product Type": "Cordless Vaccum Cleaner",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: CORDLESS VACCUM CLEANER"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS VACCUM CLEANER",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-blower",
+    "name": "Cordless Blower",
+    "slug": "cordless-blower",
+    "code": "PT-CORDLESS-BLOWER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Blower from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic, Tuqo",
+      "Product Type": "Cordless Blower",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: CORDLESS BLOWER VIOLENT BLACK; Chinese Generic: CORDLESS BLOWER VIOLENT BLUE; Chinese Generic: CORDLESS LEAF BLOWER BLUE 2 BATTERY; Tuqo: CORDLESS BLOWER ABL70"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS BLOWER VIOLENT BLACK",
+        "specifications": {
+          "Brand": "BASKETO"
+        }
+      },
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS BLOWER VIOLENT BLUE",
+        "specifications": {
+          "Brand": "BASKETO"
+        }
+      },
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS LEAF BLOWER BLUE 2 BATTERY",
+        "specifications": {
+          "Brand": "BASKETO"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS BLOWER ABL70",
+        "specifications": {
+          "Watts": "21V"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-brush-cutter",
+    "name": "Cordless Brush Cutter",
+    "slug": "cordless-brush-cutter",
+    "code": "PT-CORDLESS-BRUSH-CUT",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Brush Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic",
+      "Product Type": "Cordless Brush Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: CORDLESS BRUSH CUTTER (W/O) JP PLASTIC; Chinese Generic: CORDLESS BRUSH CUTTER"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS BRUSH CUTTER (W/O) JP PLASTIC",
+        "specifications": {}
+      },
+      {
+        "brand": "Chinese Generic",
+        "name": "CORDLESS BRUSH CUTTER",
+        "specifications": {
+          "Brand": "BASKETO"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-chainsaw",
+    "name": "Cordless Chainsaw",
+    "slug": "cordless-chainsaw",
+    "code": "PT-CORDLESS-CHAINSAW",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Chainsaw from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chinese Generic",
+    "specifications": {
+      "Brand": "Chinese Generic",
+      "Product Type": "Cordless Chainsaw",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Chinese Generic: CHAINSAW(WO)"
+    },
+    "models": [
+      {
+        "brand": "Chinese Generic",
+        "name": "CHAINSAW(WO)",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-heat-gun",
+    "name": "Heat Guns",
+    "slug": "heat-gun",
+    "code": "PT-HEAT-GUNS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Heat Guns from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dewalt",
+    "specifications": {
+      "Brand": "Dewalt, Dongcheng",
+      "Product Type": "Heat Guns",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dewalt: HEATING TORCH; Dongcheng: HEAT GUN"
+    },
+    "models": [
+      {
+        "brand": "Dewalt",
+        "name": "HEATING TORCH",
+        "specifications": {
+          "Model No": "D26414",
+          "Watts": "2000"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "HEAT GUN",
+        "specifications": {
+          "Watts": "2000W",
+          "Model No": "DQB2000"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-drilling-machine",
+    "name": "Electric Drilling Machines",
+    "slug": "electric-drilling-machine",
+    "code": "PT-ELECTRIC-DRILLING-",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Drilling Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng, Makita, Stanley, Ultrafast",
+      "Product Type": "Electric Drilling Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: ELECTRIC IMPACT DRILL 6.5MM; Dongcheng: ELECTRIC IMPACT DRILL 10MM; Dongcheng: ELECTRIC IMPACT DRILL 13MM PLASTIC; Dongcheng: ELECTRIC IMPACT DRILL 13MM METAL; Dongcheng: ELECTRIC DRILL 16MM; Makita: DRILLING MACHINE 10MM; Makita: DRILLING MACHINE 13MM; Stanley: 13mm ELECTRIC DRILLING M/C; Ultrafast: 10MM; Ultrafast: 13MM; Ultrafast: 13MM"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC IMPACT DRILL 6.5MM",
+        "specifications": {
+          "Watts": "230W",
+          "Model No": "DJZ02-6A"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC IMPACT DRILL 10MM",
+        "specifications": {
+          "Watts": "300W",
+          "Model No": "DJZ10A"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC IMPACT DRILL 13MM PLASTIC",
+        "specifications": {
+          "Watts": "500W",
+          "Model No": "DZJ02-13"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC IMPACT DRILL 13MM METAL",
+        "specifications": {
+          "Watts": "500W",
+          "Model No": "DZJ03-13"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC DRILL 16MM",
+        "specifications": {
+          "Watts": "800W",
+          "Model No": "DZJ 16A"
+        }
+      },
+      {
+        "brand": "Makita",
+        "name": "DRILLING MACHINE 10MM",
+        "specifications": {
+          "Model No": "M0600B",
+          "Watts": "400"
+        }
+      },
+      {
+        "brand": "Makita",
+        "name": "DRILLING MACHINE 13MM",
+        "specifications": {
+          "Model No": "M0801B",
+          "Watts": "500"
+        }
+      },
+      {
+        "brand": "Stanley",
+        "name": "13mm ELECTRIC DRILLING M/C",
+        "specifications": {
+          "Model No": "SDH600",
+          "Watts": "600"
+        }
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "10MM",
+        "specifications": {
+          "Model No": "UF-10RE",
+          "Watts": "600W"
+        }
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "13MM",
+        "specifications": {
+          "Model No": "UF-13RE",
+          "Watts": "680W"
+        }
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "13MM",
+        "specifications": {
+          "Model No": "UF-BOS13HD",
+          "Watts": "950W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-rotary-hammer",
+    "name": "Electric Rotary Hammers",
+    "slug": "electric-rotary-hammer",
+    "code": "PT-ELECTRIC-ROTARY-HA",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Rotary Hammers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng, Ultrafast",
+      "Product Type": "Electric Rotary Hammers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: ELECTRIC ROTARY HAMMER 20; Dongcheng: ELECTRIC ROTARY HAMMER 2 FUNCTION DEMOLITION MODEL; Dongcheng: ELECTRIC ROTARY HAMMER 26B 3KG; Dongcheng: ELECTRIC ROTARY HAMMER 26B; Ultrafast: 20MM 500W"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC ROTARY HAMMER 20",
+        "specifications": {
+          "Model No": "DZC02-20"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC ROTARY HAMMER 2 FUNCTION DEMOLITION MODEL",
+        "specifications": {
+          "Watts": "750W",
+          "Model No": "DZC03-26SH"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC ROTARY HAMMER 26B 3KG",
+        "specifications": {
+          "Model No": "DZC03-26B"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC ROTARY HAMMER 26B",
+        "specifications": {
+          "Watts": "800W",
+          "Model No": "DZC05-26B"
+        }
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "20MM 500W",
+        "specifications": {
+          "Model No": "UF-220RE"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-hammering-machine",
+    "name": "Hammering Machines",
+    "slug": "hammering-machine",
+    "code": "PT-HAMMERING-MACHINES",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Hammering Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng, Powerbilt, Powermatic",
+      "Product Type": "Hammering Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: ELECTRIC ROTARY HAMER 5KG; Dongcheng: ELECTRIC ROTARY HAMER 6KG; Dongcheng: PRECURSSION HAMMER 11KG; Powerbilt: 20MM ROTARY HAMMER; Powerbilt: 26MM ROTARY HAMMER; Powerbilt: 30MM ROTARY HAMMER; Powermatic: 20MM ROTARY HAMMER DRILL; Powermatic: 26MM ROTARY HAMMER DRILL"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC ROTARY HAMER 5KG",
+        "specifications": {
+          "Watts": "1050W",
+          "Model No": "DZG6S"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC ROTARY HAMER 6KG",
+        "specifications": {
+          "Watts": "1400W",
+          "Model No": "DZG06-6S"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "PRECURSSION HAMMER 11KG",
+        "specifications": {
+          "Watts": "1500W",
+          "Model No": "DZG10"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "20MM ROTARY HAMMER",
+        "specifications": {
+          "Watts": "1200",
+          "Model No": "PBT-RH-20A"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "26MM ROTARY HAMMER",
+        "specifications": {
+          "Watts": "1600",
+          "Model No": "PBT-RH-26"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "30MM ROTARY HAMMER",
+        "specifications": {
+          "Watts": "2500",
+          "Model No": "PBT-RH-30A"
+        }
+      },
+      {
+        "brand": "Powermatic",
+        "name": "20MM ROTARY HAMMER DRILL",
+        "specifications": {
+          "Model No": "PTC-RH-20HQ",
+          "Watts": "1050"
+        }
+      },
+      {
+        "brand": "Powermatic",
+        "name": "26MM ROTARY HAMMER DRILL",
+        "specifications": {
+          "Model No": "PTC-RH-26HQ",
+          "Watts": "2000"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-battery-cordless-screwdriver-machine",
+    "name": "Battery/Cordless Screwdriver Machines",
+    "slug": "battery-cordless-screwdriver-machine",
+    "code": "PT-BATTERY-CORDLESS-S",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Battery/Cordless Screwdriver Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Battery/Cordless Screwdriver Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: CRODLESS SCREWDRIVER DRILL  35NM"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "CRODLESS SCREWDRIVER DRILL  35NM",
+        "specifications": {
+          "Watts": "12V",
+          "Model No": "DCJZ1202E"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-battery-cordless-impact-drilling-machine",
+    "name": "Battery/Cordless Impact Drilling Machines",
+    "slug": "battery-cordless-impact-drilling-machine",
+    "code": "PT-BATTERY-CORDLESS-I",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Battery/Cordless Impact Drilling Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Battery/Cordless Impact Drilling Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: CRODLESS IMPACT DRILL"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "CRODLESS IMPACT DRILL",
+        "specifications": {
+          "Watts": "20V",
+          "Model No": "DCJZ2060I"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-battery-cordless-impact-wrench",
+    "name": "Battery/Cordless Impact Wrench",
+    "slug": "battery-cordless-impact-wrench",
+    "code": "PT-BATTERY-CORDLESS-I",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Battery/Cordless Impact Wrench from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Battery/Cordless Impact Wrench",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: CORDLESS IMPACT WRENCH; Dongcheng: CORDLESS IMPACT WRENCH; Dongcheng: CORDLESS IMPACT WRENCH"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "CORDLESS IMPACT WRENCH",
+        "specifications": {
+          "Watts": "20V",
+          "Model No": "DCPB298"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "CORDLESS IMPACT WRENCH",
+        "specifications": {
+          "Watts": "20V",
+          "Model No": "DCPB488"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "CORDLESS IMPACT WRENCH",
+        "specifications": {
+          "Watts": "20V",
+          "Model No": "DCPB358"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-die-grinder",
+    "name": "Electric Die Grinder",
+    "slug": "electric-die-grinder",
+    "code": "PT-ELECTRIC-DIE-GRIND",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Die Grinder from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Electric Die Grinder",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: DIE GRINDER METAL BODY"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "DIE GRINDER METAL BODY",
+        "specifications": {
+          "Model No": "DSJ02-25"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-jig-saw",
+    "name": "Electric Jig Saw",
+    "slug": "electric-jig-saw",
+    "code": "PT-ELECTRIC-JIG-SAW",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Jig Saw from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Electric Jig Saw",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: JIG SAW"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "JIG SAW",
+        "specifications": {
+          "Watts": "580W",
+          "Model No": "DMQ85S"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-paint-mixer",
+    "name": "Paint Mixer",
+    "slug": "paint-mixer",
+    "code": "PT-PAINT-MIXER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Paint Mixer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Paint Mixer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: ELECTRIC PAINT MIXER"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "ELECTRIC PAINT MIXER",
+        "specifications": {
+          "Watts": "800W",
+          "Model No": "DQU160"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-concrete-vibrator",
+    "name": "Concrete Vibrator",
+    "slug": "concrete-vibrator",
+    "code": "PT-CONCRETE-VIBRATOR",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Concrete Vibrator from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng, Powerbilt",
+      "Product Type": "Concrete Vibrator",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: CONCRETE VIBRATOR; Powerbilt: CONCRETE VIBRATOR"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "CONCRETE VIBRATOR",
+        "specifications": {
+          "Watts": "1200W",
+          "Model No": "DZD35"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CONCRETE VIBRATOR",
+        "specifications": {
+          "Watts": "1400",
+          "Model No": "PBT-EV-1400"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-router-trimmer",
+    "name": "Router/Trimmer",
+    "slug": "router-trimmer",
+    "code": "PT-ROUTER-TRIMMER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Router/Trimmer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Router/Trimmer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Dongcheng: TRIMMER"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "TRIMMER",
+        "specifications": {
+          "Watts": "550W",
+          "Model No": "DMP04-6"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-engraving-tool",
+    "name": "Engraving Tool",
+    "slug": "engraving-tool",
+    "code": "PT-ENGRAVING-TOOL",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Engraving Tool from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Electo Tools",
+    "specifications": {
+      "Brand": "Electo Tools, Uniqal",
+      "Product Type": "Engraving Tool",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Electo Tools: CARBIDE TIP ENGRAVING TOOL; Uniqal: ENGRAVING TOOL"
+    },
+    "models": [
+      {
+        "brand": "Electo Tools",
+        "name": "CARBIDE TIP ENGRAVING TOOL",
+        "specifications": {
+          "Volt": "250"
+        }
+      },
+      {
+        "brand": "Uniqal",
+        "name": "ENGRAVING TOOL",
+        "specifications": {
+          "Model No": "UQE02"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-plastic-bag-sealing-machine",
+    "name": "Plastic Bag Sealing Machines",
+    "slug": "plastic-bag-sealing-machine",
+    "code": "PT-PLASTIC-BAG-SEALIN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Plastic Bag Sealing Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Global",
+    "specifications": {
+      "Brand": "Global",
+      "Product Type": "Plastic Bag Sealing Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Global: SEALER 8\"; Global: SEALER 10\"; Global: SEALER 12\""
+    },
+    "models": [
+      {
+        "brand": "Global",
+        "name": "SEALER 8\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Global",
+        "name": "SEALER 10\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Global",
+        "name": "SEALER 12\"",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-laser-distance-meter",
+    "name": "Laser Distance Meter",
+    "slug": "laser-distance-meter",
+    "code": "PT-LASER-DISTANCE-MET",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Laser Distance Meter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Golden Bullet",
+    "specifications": {
+      "Brand": "Golden Bullet, Powerbilt",
+      "Product Type": "Laser Distance Meter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Golden Bullet: LASER DISTANCE METER 40M; Golden Bullet: LASER DISTANCE METER 60M; Golden Bullet: LASER DISTANCE METER 80M; Golden Bullet: LASER DISTANCE METER 100M; Powerbilt: LASER DISTANCE METER 100M"
+    },
+    "models": [
+      {
+        "brand": "Golden Bullet",
+        "name": "LASER DISTANCE METER 40M",
+        "specifications": {
+          "Model No": "RL-40A"
+        }
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "LASER DISTANCE METER 60M",
+        "specifications": {
+          "Model No": "RLA-60"
+        }
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "LASER DISTANCE METER 80M",
+        "specifications": {
+          "Model No": "RLA-80"
+        }
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "LASER DISTANCE METER 100M",
+        "specifications": {
+          "Model No": "RLA-100"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "LASER DISTANCE METER 100M",
+        "specifications": {
+          "Model No": "PBT-LDM-100M"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-laser-level",
+    "name": "Laser Level",
+    "slug": "laser-level",
+    "code": "PT-LASER-LEVEL",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Laser Level from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Golden Bullet",
+    "specifications": {
+      "Brand": "Golden Bullet",
+      "Product Type": "Laser Level",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Golden Bullet: LASER LEVEL (2 LINE); Golden Bullet: LASER LEVEL"
+    },
+    "models": [
+      {
+        "brand": "Golden Bullet",
+        "name": "LASER LEVEL (2 LINE)",
+        "specifications": {
+          "Model No": "GL-02-C"
+        }
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "LASER LEVEL",
+        "specifications": {
+          "Model No": "GLC 16"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-high-pressure-washer",
+    "name": "High Pressure Washer",
+    "slug": "high-pressure-washer",
+    "code": "PT-HIGH-PRESSURE-WASH",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "High Pressure Washer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Guster",
+    "specifications": {
+      "Brand": "Guster, Rusteze, Strong Ali",
+      "Product Type": "High Pressure Washer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Guster: PRESSURE WASHER (W/O); Rusteze: PRESSURE WASHER; Strong Ali: STRONG ALI 2023-160-01"
+    },
+    "models": [
+      {
+        "brand": "Guster",
+        "name": "PRESSURE WASHER (W/O)",
+        "specifications": {
+          "Watts": "2200",
+          "Bar/Power": "210"
+        }
+      },
+      {
+        "brand": "Rusteze",
+        "name": "PRESSURE WASHER",
+        "specifications": {
+          "Watts": "2400",
+          "Bar": "245"
+        }
+      },
+      {
+        "brand": "Strong Ali",
+        "name": "STRONG ALI 2023-160-01",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-blower",
+    "name": "Blower",
+    "slug": "blower",
+    "code": "PT-BLOWER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Blower from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Guster",
+    "specifications": {
+      "Brand": "Guster",
+      "Product Type": "Blower",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Guster: BLOWER"
+    },
+    "models": [
+      {
+        "brand": "Guster",
+        "name": "BLOWER",
+        "specifications": {
+          "Watts": "580",
+          "Bar/Power": "185KM/H"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-general-power-tools",
+    "name": "General Power Tools",
+    "slug": "general-power-tools",
+    "code": "PT-GENERAL-POWER-TOOL",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "General Power Tools from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Hikoki",
+    "specifications": {
+      "Brand": "Hikoki, Sepack Sealing Machines, Whdz",
+      "Product Type": "General Power Tools",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Hikoki: CUT OFF MACINE 14\"; Hikoki: CUT OFF MACHINE 14\" ECO; Sepack Sealing Machines: DELTA 200; Sepack Sealing Machines: DELTA 250; Sepack Sealing Machines: DELTA 300; Sepack Sealing Machines: DELTA 400; Sepack Sealing Machines: HB 200; Sepack Sealing Machines: HB 300; Sepack Sealing Machines: HB 400; Sepack Sealing Machines: HB 500; Sepack Sealing Machines: HB 600; Whdz: DIGITAL MULTIMETER"
+    },
+    "models": [
+      {
+        "brand": "Hikoki",
+        "name": "CUT OFF MACINE 14\"",
+        "specifications": {
+          "Watts": "2200",
+          "Model No": "CC14STD"
+        },
+        "series": "Cut Off Machine"
+      },
+      {
+        "brand": "Hikoki",
+        "name": "CUT OFF MACHINE 14\" ECO",
+        "specifications": {
+          "Watts": "2200",
+          "Model No": "CC14SG"
+        },
+        "series": "Cut Off Machine"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "DELTA 200",
+        "specifications": {
+          "Power": "215VA"
+        },
+        "series": "Sepack Delta Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "DELTA 250",
+        "specifications": {
+          "Power": "320VA"
+        },
+        "series": "Sepack Delta Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "DELTA 300",
+        "specifications": {
+          "Power": "340VA"
+        },
+        "series": "Sepack Delta Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "DELTA 400",
+        "specifications": {
+          "Power": "525VA"
+        },
+        "series": "Sepack Delta Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "HB 200",
+        "specifications": {
+          "Power": "245VA"
+        },
+        "series": "Sepack Hb Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "HB 300",
+        "specifications": {},
+        "series": "Sepack Hb Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "HB 400",
+        "specifications": {},
+        "series": "Sepack Hb Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "HB 500",
+        "specifications": {},
+        "series": "Sepack Hb Models"
+      },
+      {
+        "brand": "Sepack Sealing Machines",
+        "name": "HB 600",
+        "specifications": {},
+        "series": "Sepack Hb Models"
+      },
+      {
+        "brand": "Whdz",
+        "name": "DIGITAL MULTIMETER",
+        "specifications": {
+          "Model No": "DT830D"
+        },
+        "series": "Multileter"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-manual-sprayer",
+    "name": "Manual Sprayer",
+    "slug": "manual-sprayer",
+    "code": "PT-MANUAL-SPRAYER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Manual Sprayer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Kisan Kraft",
+    "specifications": {
+      "Brand": "Kisan Kraft",
+      "Product Type": "Manual Sprayer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Kisan Kraft: MANUAL SPRAYER 1L; Kisan Kraft: MANUAL SPRAYER 1.5L; Kisan Kraft: MANUAL SPRAYER 2L; Kisan Kraft: MANUAL SPRAYER 3L; Kisan Kraft: MANUAL SPRAYER 5L; Kisan Kraft: MANUAL SPRAYER 16L"
+    },
+    "models": [
+      {
+        "brand": "Kisan Kraft",
+        "name": "MANUAL SPRAYER 1L",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "MANUAL SPRAYER 1.5L",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "MANUAL SPRAYER 2L",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "MANUAL SPRAYER 3L",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "MANUAL SPRAYER 5L",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "MANUAL SPRAYER 16L",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-battery-operated-sprayer",
+    "name": "Battery Operated Sprayers",
+    "slug": "battery-operated-sprayer",
+    "code": "PT-BATTERY-OPERATED-S",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Battery Operated Sprayers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Kisan Kraft",
+    "specifications": {
+      "Brand": "Kisan Kraft",
+      "Product Type": "Battery Operated Sprayers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Kisan Kraft: BATTERY SPRAYER 12L 312; Kisan Kraft: BATTERY SPRAYER 18L 185; Kisan Kraft: BATTERY SPRAYER 18L 199"
+    },
+    "models": [
+      {
+        "brand": "Kisan Kraft",
+        "name": "BATTERY SPRAYER 12L 312",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "BATTERY SPRAYER 18L 185",
+        "specifications": {}
+      },
+      {
+        "brand": "Kisan Kraft",
+        "name": "BATTERY SPRAYER 18L 199",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-battery-cum-manual-sprayer",
+    "name": "Battery Cum Manual Sprayers",
+    "slug": "battery-cum-manual-sprayer",
+    "code": "PT-BATTERY-CUM-MANUAL",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Battery Cum Manual Sprayers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Kisan Kraft",
+    "specifications": {
+      "Brand": "Kisan Kraft",
+      "Product Type": "Battery Cum Manual Sprayers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Kisan Kraft: SPRAYER 18L 318"
+    },
+    "models": [
+      {
+        "brand": "Kisan Kraft",
+        "name": "SPRAYER 18L 318",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-thermal-fogger",
+    "name": "Thermal Foggers",
+    "slug": "thermal-fogger",
+    "code": "PT-THERMAL-FOGGERS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Thermal Foggers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Kisan Kraft",
+    "specifications": {
+      "Brand": "Kisan Kraft",
+      "Product Type": "Thermal Foggers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Kisan Kraft: THERMAL FOGGER KK-TF-8610"
+    },
+    "models": [
+      {
+        "brand": "Kisan Kraft",
+        "name": "THERMAL FOGGER KK-TF-8610",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-storm-blower",
+    "name": "Cordless Storm Blower",
+    "slug": "cordless-storm-blower",
+    "code": "PT-CORDLESS-STORM-BLO",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Storm Blower from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Maf Pro",
+    "specifications": {
+      "Brand": "Maf Pro",
+      "Product Type": "Cordless Storm Blower",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Maf Pro: CORDLESS STORM BLOWER"
+    },
+    "models": [
+      {
+        "brand": "Maf Pro",
+        "name": "CORDLESS STORM BLOWER",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-glue-gun",
+    "name": "Glue Gun",
+    "slug": "glue-gun",
+    "code": "PT-GLUE-GUN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Glue Gun from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Mega Glue Guns",
+    "specifications": {
+      "Brand": "Mega Glue Guns",
+      "Product Type": "Glue Gun",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Mega Glue Guns: GLUE GUN 40W; Mega Glue Guns: GLUE GUN 60W"
+    },
+    "models": [
+      {
+        "brand": "Mega Glue Guns",
+        "name": "GLUE GUN 40W",
+        "specifications": {}
+      },
+      {
+        "brand": "Mega Glue Guns",
+        "name": "GLUE GUN 60W",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-chainsaws",
+    "name": "Chainsaws",
+    "slug": "chainsaws",
+    "code": "PT-CHAINSAWS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Chainsaws from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Mitsuki",
+    "specifications": {
+      "Brand": "Mitsuki",
+      "Product Type": "Chainsaws",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Mitsuki: CHAINSAW 18\" MI30"
+    },
+    "models": [
+      {
+        "brand": "Mitsuki",
+        "name": "CHAINSAW 18\" MI30",
+        "specifications": {
+          "Watts": "62CC"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-car-polishing-machine",
+    "name": "Car Polishing Machine",
+    "slug": "car-polishing-machine",
+    "code": "PT-CAR-POLISHING-MACH",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Car Polishing Machine from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Powerbilt",
+    "specifications": {
+      "Brand": "Powerbilt",
+      "Product Type": "Car Polishing Machine",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Powerbilt: CAR POLISHING MACHINE 7\""
+    },
+    "models": [
+      {
+        "brand": "Powerbilt",
+        "name": "CAR POLISHING MACHINE 7\"",
+        "specifications": {
+          "Watts": "1500",
+          "Model No": "PBT-CP-1500"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-paint-sprayer",
+    "name": "Electric Paint Sprayer",
+    "slug": "electric-paint-sprayer",
+    "code": "PT-ELECTRIC-PAINT-SPR",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Paint Sprayer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Powerbilt",
+    "specifications": {
+      "Brand": "Powerbilt",
+      "Product Type": "Electric Paint Sprayer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Powerbilt: PAINT SPRAYER"
+    },
+    "models": [
+      {
+        "brand": "Powerbilt",
+        "name": "PAINT SPRAYER",
+        "specifications": {
+          "Watts": "1100",
+          "Model No": "PBT-PS-1100"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordlss-angle-grinder",
+    "name": "Cordlss Angle Grinder",
+    "slug": "cordlss-angle-grinder",
+    "code": "PT-CORDLSS-ANGLE-GRIN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordlss Angle Grinder from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Powerbilt",
+    "specifications": {
+      "Brand": "Powerbilt",
+      "Product Type": "Cordlss Angle Grinder",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Powerbilt: CORDLESS ANGLE GRINDER"
+    },
+    "models": [
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS ANGLE GRINDER",
+        "specifications": {
+          "Watts": "21V",
+          "Model No": "PBT-CL-AG4"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-marble-granite-cutter",
+    "name": "Marble / Granite Cutter",
+    "slug": "marble-granite-cutter",
+    "code": "PT-MARBLE-GRANITE-CUT",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Marble / Granite Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Powerbilt",
+    "specifications": {
+      "Brand": "Powerbilt",
+      "Product Type": "Marble / Granite Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Powerbilt: MARBLE CUTTER"
+    },
+    "models": [
+      {
+        "brand": "Powerbilt",
+        "name": "MARBLE CUTTER",
+        "specifications": {
+          "Watts": "1900",
+          "Model No": "PBT-CM4-1900G"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-corldess-tile-vibrator",
+    "name": "Corldess Tile Vibrator",
+    "slug": "corldess-tile-vibrator",
+    "code": "PT-CORLDESS-TILE-VIBR",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Corldess Tile Vibrator from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Powerbilt",
+    "specifications": {
+      "Brand": "Powerbilt",
+      "Product Type": "Corldess Tile Vibrator",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Powerbilt: CORDLESS TILE VIBRATOR; Powerbilt: CORDLESS TILE VIBRATOR"
+    },
+    "models": [
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS TILE VIBRATOR",
+        "specifications": {
+          "Watts": "12V",
+          "Model No": "PBT-CL-TM135"
+        }
+      },
+      {
+        "brand": "Powerbilt",
+        "name": "CORDLESS TILE VIBRATOR",
+        "specifications": {
+          "Watts": "21V",
+          "Model No": "PBT-CBL21-TM180"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-die-grinder-kits",
+    "name": "Die Grinder Kits",
+    "slug": "die-grinder-kits",
+    "code": "PT-DIE-GRINDER-KITS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Die Grinder Kits from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Pro Cut",
+    "specifications": {
+      "Brand": "Pro Cut",
+      "Product Type": "Die Grinder Kits",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Pro Cut: 211 PC DIE GRINDER KIT"
+    },
+    "models": [
+      {
+        "brand": "Pro Cut",
+        "name": "211 PC DIE GRINDER KIT",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-soldron-soldering-irons",
+    "name": "Soldron Soldering Irons",
+    "slug": "soldron-soldering-irons",
+    "code": "PT-SOLDRON-SOLDERING-",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Soldron Soldering Irons from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Soldron",
+    "specifications": {
+      "Brand": "Soldron",
+      "Product Type": "Soldron Soldering Irons",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Soldron: SI25A; Soldron: SI35A; Soldron: SI50A; Soldron: SI15-30A VARIABLE; Soldron: VAFG15-30 AUTO FEEDER"
+    },
+    "models": [
+      {
+        "brand": "Soldron",
+        "name": "SI25A",
+        "specifications": {
+          "Watts": "25",
+          "Pack Qty": "50"
+        }
+      },
+      {
+        "brand": "Soldron",
+        "name": "SI35A",
+        "specifications": {
+          "Watts": "35",
+          "Pack Qty": "25"
+        }
+      },
+      {
+        "brand": "Soldron",
+        "name": "SI50A",
+        "specifications": {
+          "Watts": "50",
+          "Pack Qty": "25"
+        }
+      },
+      {
+        "brand": "Soldron",
+        "name": "SI15-30A VARIABLE",
+        "specifications": {
+          "Watts": "15-30",
+          "Pack Qty": "15"
+        }
+      },
+      {
+        "brand": "Soldron",
+        "name": "VAFG15-30 AUTO FEEDER",
+        "specifications": {
+          "Watts": "15-30",
+          "Pack Qty": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-electric-glue-gun",
+    "name": "Electric Glue Gun",
+    "slug": "electric-glue-gun",
+    "code": "PT-ELECTRIC-GLUE-GUN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Electric Glue Gun from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Stanley",
+    "specifications": {
+      "Brand": "Stanley",
+      "Product Type": "Electric Glue Gun",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Stanley: GLUE SHOT"
+    },
+    "models": [
+      {
+        "brand": "Stanley",
+        "name": "GLUE SHOT",
+        "specifications": {
+          "Model No": "6-GR20",
+          "Watts": "25"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-presssure-washer",
+    "name": "Presssure Washers",
+    "slug": "presssure-washer",
+    "code": "PT-PRESSSURE-WASHERS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Presssure Washers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Thor",
+    "specifications": {
+      "Brand": "Thor",
+      "Product Type": "Presssure Washers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Thor: ECO-140-23-06"
+    },
+    "models": [
+      {
+        "brand": "Thor",
+        "name": "ECO-140-23-06",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-arc-welding-machine",
+    "name": "Arc Welding Machines",
+    "slug": "arc-welding-machine",
+    "code": "PT-ARC-WELDING-MACHIN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Arc Welding Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Toshweld",
+    "specifications": {
+      "Brand": "Toshweld",
+      "Product Type": "Arc Welding Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Toshweld: ARC 200 NANO; Toshweld: ARC 200 G; Toshweld: ARC 250 NANO; Toshweld: ARC 200; Toshweld: ARC 250 ST; Toshweld: ARC 300; Toshweld: ARC 300 L; Toshweld: ARC 400 T"
+    },
+    "models": [
+      {
+        "brand": "Toshweld",
+        "name": "ARC 200 NANO",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Igbt Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 200 G",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Igbt Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 250 NANO",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Igbt Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 200",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Mosfet Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 250 ST",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Mosfet Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 300",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Mosfet Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 300 L",
+        "specifications": {
+          "Phase": "1 PHASE"
+        },
+        "series": "Mosfet Series"
+      },
+      {
+        "brand": "Toshweld",
+        "name": "ARC 400 T",
+        "specifications": {
+          "Phase": "3 PHASE"
+        },
+        "series": "Mosfet Series"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-tig-welding-machine",
+    "name": "Tig Welding Machines",
+    "slug": "tig-welding-machine",
+    "code": "PT-TIG-WELDING-MACHIN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Tig Welding Machines from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Toshweld",
+    "specifications": {
+      "Brand": "Toshweld",
+      "Product Type": "Tig Welding Machines",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Toshweld: TIG 200; Toshweld: TIG 300"
+    },
+    "models": [
+      {
+        "brand": "Toshweld",
+        "name": "TIG 200",
+        "specifications": {
+          "Phase": "1 PHASE"
+        }
+      },
+      {
+        "brand": "Toshweld",
+        "name": "TIG 300",
+        "specifications": {
+          "Phase": "1 PHASE"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-rotary-hammer",
+    "name": "Cordless Rotary Hammer",
+    "slug": "cordless-rotary-hammer",
+    "code": "PT-CORDLESS-ROTARY-HA",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Rotary Hammer from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Cordless Rotary Hammer",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Tuqo: CORDLESS ROTARY HAMMER  26MM ABH800; Tuqo: CORDLESS grinding MACHINE ACW440; Tuqo: CORDLESS IMPACT WRENCH KIT AZR210"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS ROTARY HAMMER  26MM ABH800",
+        "specifications": {
+          "Watts": "21V"
+        }
+      },
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS grinding MACHINE ACW440",
+        "specifications": {
+          "Watts": "21V"
+        },
+        "series": "Cordless Grinding Machines"
+      },
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS IMPACT WRENCH KIT AZR210",
+        "specifications": {
+          "Torque": "800NM",
+          "Watts": "21V"
+        },
+        "series": "Cordless Impact Wrench"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-pruner",
+    "name": "Cordless Pruner",
+    "slug": "cordless-pruner",
+    "code": "PT-CORDLESS-PRUNER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Pruner from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Cordless Pruner",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Tuqo: CORDLESS PRUNER ACG130"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "CORDLESS PRUNER ACG130",
+        "specifications": {
+          "Watts": "21V"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-chain-saw",
+    "name": "Chain Saws",
+    "slug": "chain-saw",
+    "code": "PT-CHAIN-SAWS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Chain Saws from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Chain Saws",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Tuqo: CHAIN SAW 62CC KN1862"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "CHAIN SAW 62CC KN1862",
+        "specifications": {
+          "Watts": "2.8KW"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-brush-cutter",
+    "name": "Brush Cutter",
+    "slug": "brush-cutter",
+    "code": "PT-BRUSH-CUTTER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Brush Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Brush Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Tuqo: BRUSH CUTTER 52CC GBS340"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "BRUSH CUTTER 52CC GBS340",
+        "specifications": {
+          "Watts": "2.8KW"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-air-compressor",
+    "name": "Air Compressors",
+    "slug": "air-compressor",
+    "code": "PT-AIR-COMPRESSORS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Air Compressors from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Air Compressors",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Tuqo: AIR COMPRESSOR LK09OF 9L \n1440RPM , 105L/MIN; Tuqo: AIR COMPRESSOR LK25DB 25L\n2850RPM , 185L/MIN , 2.5HP"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "AIR COMPRESSOR LK09OF 9L \n1440RPM , 105L/MIN",
+        "specifications": {
+          "Watts": "750",
+          "Bar": "8"
+        },
+        "series": "Oil Free"
+      },
+      {
+        "brand": "Tuqo",
+        "name": "AIR COMPRESSOR LK25DB 25L\n2850RPM , 185L/MIN , 2.5HP",
+        "specifications": {
+          "Bar": "8"
+        },
+        "series": "Oil Type"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-elctric-blower",
+    "name": "Elctric Blower",
+    "slug": "elctric-blower",
+    "code": "PT-ELCTRIC-BLOWER",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Elctric Blower from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultra Touch",
+    "specifications": {
+      "Brand": "Ultra Touch",
+      "Product Type": "Elctric Blower",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Ultra Touch: ELECTRIC BLOWER"
+    },
+    "models": [
+      {
+        "brand": "Ultra Touch",
+        "name": "ELECTRIC BLOWER",
+        "specifications": {
+          "Model No": "UTEB40",
+          "Watts": "550W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-hot-air-gun",
+    "name": "Hot Air Gun",
+    "slug": "hot-air-gun",
+    "code": "PT-HOT-AIR-GUN",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Hot Air Gun from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultra Touch",
+    "specifications": {
+      "Brand": "Ultra Touch",
+      "Product Type": "Hot Air Gun",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Ultra Touch: HOT AIR GUN"
+    },
+    "models": [
+      {
+        "brand": "Ultra Touch",
+        "name": "HOT AIR GUN",
+        "specifications": {
+          "Model No": "HAG-2000",
+          "Watts": "200W"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-tile-vibrator-machine-cordless",
+    "name": "Tile Vibrator Machine Cordless",
+    "slug": "tile-vibrator-machine-cordless",
+    "code": "PT-TILE-VIBRATOR-MACH",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Tile Vibrator Machine Cordless from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultra Touch",
+    "specifications": {
+      "Brand": "Ultra Touch",
+      "Product Type": "Tile Vibrator Machine Cordless",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Ultra Touch: TILE VIBRATOR MACHINE 21V"
+    },
+    "models": [
+      {
+        "brand": "Ultra Touch",
+        "name": "TILE VIBRATOR MACHINE 21V",
+        "specifications": {
+          "Model No": "UT-TM30A",
+          "Watts": "21V"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-cordless-drill",
+    "name": "Cordless Drills",
+    "slug": "cordless-drill",
+    "code": "PT-CORDLESS-DRILLS",
+    "category": "power-tools",
+    "section": "power-tools",
+    "description": "Cordless Drills from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Xlnt",
+    "specifications": {
+      "Brand": "Xlnt",
+      "Product Type": "Cordless Drills",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools",
+      "Available Models": "Xlnt: SCREWDRIVER DRILL XTCDS-126; Xlnt: SCREWDRIVER DRILL XTCDKMC284 METAL CHUCK; Xlnt: IMPACT DRILL SET XTCDIDK214"
+    },
+    "models": [
+      {
+        "brand": "Xlnt",
+        "name": "SCREWDRIVER DRILL XTCDS-126",
+        "specifications": {
+          "Watts": "12V"
+        }
+      },
+      {
+        "brand": "Xlnt",
+        "name": "SCREWDRIVER DRILL XTCDKMC284 METAL CHUCK",
+        "specifications": {
+          "Watts": "12V"
+        }
+      },
+      {
+        "brand": "Xlnt",
+        "name": "IMPACT DRILL SET XTCDIDK214",
+        "specifications": {
+          "Watts": "21V"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-jigsaw-blade",
+    "name": "Jigsaw Blades",
+    "slug": "power-tools-accessories-jigsaw-blade",
+    "code": "PTA-JIGSAW-BLADES",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Jigsaw Blades from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Jigsaw Blades",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: JIGSAW BLADE T144D PRICE/NO; Bosch: JIGSAW BLADE T144DF PRICE/pkt"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "JIGSAW BLADE T144D PRICE/NO",
+        "specifications": {
+          "Qty/Pk": "100"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "JIGSAW BLADE T144DF PRICE/pkt",
+        "specifications": {
+          "Qty/Pk": "5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-cut-off-wheel",
+    "name": "Cut Off Wheels",
+    "slug": "power-tools-accessories-cut-off-wheel",
+    "code": "PTA-CUT-OFF-WHEELS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Cut Off Wheels from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Cumi, Golden Bullet, Hikoki, Jon Bhandari, Ultrafast, Yuri",
+      "Product Type": "Cut Off Wheels",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: 4\"-1.2MM-275; Bosch: 5\"X1.0MM INOX; Bosch: 5\"X1.6; Bosch: 7\"X3; Bosch: 14\"-377 BLK; Cumi: CUT OFF WHEEL 4\" BRN ULTRA THIN; Cumi: CUT OFF WHEEL 4\" BRN ZON; Cumi: CUT OFF WHEEL 14\"X3MM GREEN; Cumi: CUT OFF WHEEL 14\"X2.8MM RAPID CUT BLK; Cumi: CUT OFF WHEEL 14\"X2.8 BLK; Golden Bullet: 4\" 107X1X16; Golden Bullet: 4\" 107X1X16; Golden Bullet: 14\"; Golden Bullet: 5\"  125X1; Hikoki: 14\" BLACK 2.8MM PREMIUM; Jon Bhandari: 4\"x1mm CUT OFF WHEEL (BROWN); Jon Bhandari: 4\"X3mm CUT OFF WHEEL (BROWN); Jon Bhandari: 5\" CUT OFF WHEEL (BROWN); Jon Bhandari: 14\" CUT OFF WHEEL (BROWN); Jon Bhandari: 4\" 100X1X16  (BROWN/GREEN); Jon Bhandari: 4\"X1MM CUT OFF WHEEL; Jon Bhandari: 7\"X3MM CUT OFF WHEEL; Jon Bhandari: 7\"X1.6MM CUT OFF WHEEL; Jon Bhandari: 14\" CUT OFF WHEEL; Ultrafast: 5\" CUT OFF WHEEL GREEN; Ultrafast: 14\" CUT OFF WHEEL BROWN; Yuri: CUT OFF WHEEL 4\"  107X1X16mm"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "4\"-1.2MM-275",
+        "specifications": {
+          "Qty/Pk": "25"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "5\"X1.0MM INOX",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "5\"X1.6",
+        "specifications": {
+          "Qty/Pk": "25"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "7\"X3",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "14\"-377 BLK",
+        "specifications": {
+          "Qty/Pk": "5"
+        }
+      },
+      {
+        "brand": "Cumi",
+        "name": "CUT OFF WHEEL 4\" BRN ULTRA THIN",
+        "specifications": {
+          "Qty/Case": "800"
+        },
+        "series": "Cumi Abrasives"
+      },
+      {
+        "brand": "Cumi",
+        "name": "CUT OFF WHEEL 4\" BRN ZON",
+        "specifications": {
+          "Qty/Case": "500"
+        },
+        "series": "Cumi Abrasives"
+      },
+      {
+        "brand": "Cumi",
+        "name": "CUT OFF WHEEL 14\"X3MM GREEN",
+        "specifications": {
+          "Qty/Case": "25"
+        },
+        "series": "Cumi Abrasives"
+      },
+      {
+        "brand": "Cumi",
+        "name": "CUT OFF WHEEL 14\"X2.8MM RAPID CUT BLK",
+        "specifications": {
+          "Qty/Case": "25"
+        },
+        "series": "Cumi Abrasives"
+      },
+      {
+        "brand": "Cumi",
+        "name": "CUT OFF WHEEL 14\"X2.8 BLK",
+        "specifications": {
+          "Qty/Case": "30"
+        },
+        "series": "Samurai"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "4\" 107X1X16",
+        "specifications": {},
+        "series": "Silver Bullet Series Double Net(Green)"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "4\" 107X1X16",
+        "specifications": {
+          "Qty/Box": "800"
+        },
+        "series": "Golden Bullet Easy Cut Series Double Net(Brown)"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "14\"",
+        "specifications": {
+          "Qty/Box": "50"
+        },
+        "series": "Golden Bullet Easy Cut Series Double Net(Brown)"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "5\"  125X1",
+        "specifications": {
+          "Qty/Box": "400"
+        },
+        "series": "Golden Bullet Classic Series Double Net(Black/Green)"
+      },
+      {
+        "brand": "Hikoki",
+        "name": "14\" BLACK 2.8MM PREMIUM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\"x1mm CUT OFF WHEEL (BROWN)",
+        "specifications": {},
+        "series": "Abrasive Classic Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\"X3mm CUT OFF WHEEL (BROWN)",
+        "specifications": {},
+        "series": "Abrasive Classic Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "5\" CUT OFF WHEEL (BROWN)",
+        "specifications": {},
+        "series": "Abrasive Classic Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "14\" CUT OFF WHEEL (BROWN)",
+        "specifications": {},
+        "series": "Abrasive Classic Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\" 100X1X16  (BROWN/GREEN)",
+        "specifications": {},
+        "series": "Guru Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\"X1MM CUT OFF WHEEL",
+        "specifications": {},
+        "series": "Abrasive Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "7\"X3MM CUT OFF WHEEL",
+        "specifications": {},
+        "series": "Abrasive Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "7\"X1.6MM CUT OFF WHEEL",
+        "specifications": {},
+        "series": "Abrasive Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "14\" CUT OFF WHEEL",
+        "specifications": {},
+        "series": "Abrasive Series"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "5\" CUT OFF WHEEL GREEN",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "14\" CUT OFF WHEEL BROWN",
+        "specifications": {}
+      },
+      {
+        "brand": "Yuri",
+        "name": "CUT OFF WHEEL 4\"  107X1X16mm",
+        "specifications": {},
+        "series": "Go Green Series"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-grinding-wheel",
+    "name": "Grinding Wheels",
+    "slug": "power-tools-accessories-grinding-wheel",
+    "code": "PTA-GRINDING-WHEELS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Grinding Wheels from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Golden Bullet, Jon Bhandari, Ultrafast",
+      "Product Type": "Grinding Wheels",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: 4\"X6MM; Bosch: 5\"X6.8; Bosch: 7\"X3.0; Golden Bullet: GRINDING WHEELS 4\"; Golden Bullet: GRINDING WHEELS 5\"; Jon Bhandari: 4\"X6MM GRINDING WHEEL; Jon Bhandari: 4\" GRINDING WHEEL; Jon Bhandari: 5\" GRINDING WHEEL; Jon Bhandari: 7\" GRINDING WHEEL; Ultrafast: 4\"X6 GRINDING WHEEL BLK; Ultrafast: 5\"X6 GRINDING WHEEL BLK; Ultrafast: 7\"X6 GRINDING WHEEL BRN"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "4\"X6MM",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "5\"X6.8",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "7\"X3.0",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "GRINDING WHEELS 4\"",
+        "specifications": {
+          "Qty/Box": "25"
+        }
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "GRINDING WHEELS 5\"",
+        "specifications": {
+          "Qty/Box": "25"
+        }
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\"X6MM GRINDING WHEEL",
+        "specifications": {},
+        "series": "Classic Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\" GRINDING WHEEL",
+        "specifications": {},
+        "series": "Guru Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "5\" GRINDING WHEEL",
+        "specifications": {},
+        "series": "Abrasive Series"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "7\" GRINDING WHEEL",
+        "specifications": {},
+        "series": "Abrasive Series"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "4\"X6 GRINDING WHEEL BLK",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "5\"X6 GRINDING WHEEL BLK",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "7\"X6 GRINDING WHEEL BRN",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tct-blade",
+    "name": "Tct Blades",
+    "slug": "power-tools-accessories-tct-blade",
+    "code": "PTA-TCT-BLADES",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tct Blades from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Hikoki",
+      "Product Type": "Tct Blades",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: TCT BLADE 4\"X40T; Bosch: TCT BLADE 5\"X12T; Bosch: TCT BLADE 5\"X40T; Bosch: TCT BLADE 7\"X60T; Bosch: TCT BLADE 10\"X60T; Hikoki: 4\" 110X1.5X20X40P; Hikoki: 5\" 125X1.5X20X40P"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "TCT BLADE 4\"X40T",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "TCT BLADE 5\"X12T",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "TCT BLADE 5\"X40T",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "TCT BLADE 7\"X60T",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "TCT BLADE 10\"X60T",
+        "specifications": {}
+      },
+      {
+        "brand": "Hikoki",
+        "name": "4\" 110X1.5X20X40P",
+        "specifications": {}
+      },
+      {
+        "brand": "Hikoki",
+        "name": "5\" 125X1.5X20X40P",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-marble-cutting-blade",
+    "name": "Marble Cutting Blades",
+    "slug": "power-tools-accessories-marble-cutting-blade",
+    "code": "PTA-MARBLE-CUTTING-BLA",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Marble Cutting Blades from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Ultrafast",
+      "Product Type": "Marble Cutting Blades",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: SEGMENT BLADE 4\"; Bosch: SEGMENT BLADE 5\"; Ultrafast: 4\" SEGMENTEDX10T; Ultrafast: 5\" SEGMENTEDX10T"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "SEGMENT BLADE 4\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "SEGMENT BLADE 5\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "4\" SEGMENTEDX10T",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "5\" SEGMENTEDX10T",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-velcro-disc-5-yellow",
+    "name": "Velcro Disc 5\" Yellow",
+    "slug": "power-tools-accessories-velcro-disc-5-yellow",
+    "code": "PTA-VELCRO-DISC-5-YELL",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Velcro Disc 5\" Yellow from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Velcro Disc 5\" Yellow",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: VELCRO DISC 5\"X60G; Bosch: VELCRO DISC 5\"X80G; Bosch: VELCRO DISC 5\"X120G; Bosch: VELCRO DISC 5\"X180G; Bosch: VELCRO DISC 5\"X220G; Bosch: VELCRO DISC 5\"X320G; Bosch: VELCRO DISC 5\"X400G; Bosch: VELCRO DISC 5\"X500G; Bosch: VELCRO DISC 5\"X600G"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X60G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X80G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X120G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X180G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X220G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X320G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X400G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X500G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 5\"X600G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-velcro-disc-6-brown",
+    "name": "Velcro Disc 6\"Brown",
+    "slug": "power-tools-accessories-velcro-disc-6-brown",
+    "code": "PTA-VELCRO-DISC-6-BROW",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Velcro Disc 6\"Brown from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Velcro Disc 6\"Brown",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: VELCRO DISC 6\"X40G; Bosch: VELCRO DISC 6\"X60G; Bosch: VELCRO DISC 6\"X80G; Bosch: VELCRO DISC 6\"X120G; Bosch: VELCRO DISC 6\"X240G; Bosch: VELCRO DISC 6\"X320G"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 6\"X40G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 6\"X60G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 6\"X80G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 6\"X120G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 6\"X240G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "VELCRO DISC 6\"X320G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-sds-plus-bit",
+    "name": "Sds Plus Bits",
+    "slug": "power-tools-accessories-sds-plus-bit",
+    "code": "PTA-SDS-PLUS-BITS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Sds Plus Bits from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Sds Plus Bits",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: SDS PLUS 6X150X210mm"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "SDS PLUS 6X150X210mm",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-hss-drill-bit-sets",
+    "name": "Hss Drill Bit Sets",
+    "slug": "power-tools-accessories-hss-drill-bit-sets",
+    "code": "PTA-HSS-DRILL-BIT-SETS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Hss Drill Bit Sets from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Hss Drill Bit Sets",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: DRILL BIT SET 25PC"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "DRILL BIT SET 25PC",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-outlet-hose",
+    "name": "Outlet Hoses",
+    "slug": "power-tools-accessories-outlet-hose",
+    "code": "PTA-OUTLET-HOSES",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Outlet Hoses from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Outlet Hoses",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: OUTLET HOSE 6M-135BAR; Bosch: EXTIONSION HOSE 6M WITH ADAPTOR"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "OUTLET HOSE 6M-135BAR",
+        "specifications": {}
+      },
+      {
+        "brand": "Bosch",
+        "name": "EXTIONSION HOSE 6M WITH ADAPTOR",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-flap-disc",
+    "name": "Flap Discs",
+    "slug": "power-tools-accessories-flap-disc",
+    "code": "PTA-FLAP-DISCS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Flap Discs from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch, Jon Bhandari, Polymak, Starcke",
+      "Product Type": "Flap Discs",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: FLAP DISC ALOX 4\"X36G; Bosch: FLAP DISC ALOX 5\"X80G; Bosch: FLAP DISC ALOX 7\"X80G; Jon Bhandari: 4\" GRIT 36 60 80 120; Jon Bhandari: 5\" GRIT 60 80; Polymak: 4\" G60; Starcke: FLAP DISC 60,80,120"
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "FLAP DISC ALOX 4\"X36G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "FLAP DISC ALOX 5\"X80G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Bosch",
+        "name": "FLAP DISC ALOX 7\"X80G",
+        "specifications": {
+          "Qty/Pk": "50"
+        }
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\" GRIT 36 60 80 120",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "5\" GRIT 60 80",
+        "specifications": {}
+      },
+      {
+        "brand": "Polymak",
+        "name": "4\" G60",
+        "specifications": {
+          "Qty/Pack": "10"
+        }
+      },
+      {
+        "brand": "Starcke",
+        "name": "FLAP DISC 60,80,120",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-diamond-grinding-cup-wheel",
+    "name": "Diamond Grinding Cup Wheels",
+    "slug": "power-tools-accessories-diamond-grinding-cup-wheel",
+    "code": "PTA-DIAMOND-GRINDING-C",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Diamond Grinding Cup Wheels from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Bosch",
+    "specifications": {
+      "Brand": "Bosch",
+      "Product Type": "Diamond Grinding Cup Wheels",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Bosch: DIAMOND GRINDING CUP WHEEL 4\""
+    },
+    "models": [
+      {
+        "brand": "Bosch",
+        "name": "DIAMOND GRINDING CUP WHEEL 4\"",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-2-26-rotary-hammer-chisel",
+    "name": "2-26 Rotary Hammer Chisel",
+    "slug": "power-tools-accessories-2-26-rotary-hammer-chisel",
+    "code": "PTA-2-26-ROTARY-HAMMER",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "2-26 Rotary Hammer Chisel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chisels",
+    "specifications": {
+      "Brand": "Chisels",
+      "Product Type": "2-26 Rotary Hammer Chisel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Chisels: 14X250 PIONT; Chisels: 14X250 FLAT 20MM; Chisels: 14X250 FLAT 50MM"
+    },
+    "models": [
+      {
+        "brand": "Chisels",
+        "name": "14X250 PIONT",
+        "specifications": {
+          "": "`"
+        }
+      },
+      {
+        "brand": "Chisels",
+        "name": "14X250 FLAT 20MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "14X250 FLAT 50MM",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-5kg-7kg-breaker-chisel",
+    "name": "5Kg/7Kg Breaker Chisel",
+    "slug": "power-tools-accessories-5kg-7kg-breaker-chisel",
+    "code": "PTA-5KG-7KG-BREAKER-CH",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "5Kg/7Kg Breaker Chisel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chisels",
+    "specifications": {
+      "Brand": "Chisels",
+      "Product Type": "5Kg/7Kg Breaker Chisel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Chisels: 17X280 POINT; Chisels: 17X280 FLAT; Chisels: 17X400 POINT; Chisels: 17X400 FLAT"
+    },
+    "models": [
+      {
+        "brand": "Chisels",
+        "name": "17X280 POINT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "17X280 FLAT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "17X400 POINT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "17X400 FLAT",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-11e-breaker-chisel",
+    "name": "11E Breaker Chisel",
+    "slug": "power-tools-accessories-11e-breaker-chisel",
+    "code": "PTA-11E-BREAKER-CHISEL",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "11E Breaker Chisel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chisels",
+    "specifications": {
+      "Brand": "Chisels",
+      "Product Type": "11E Breaker Chisel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Chisels: 18X400 POINT; Chisels: 18X400 FLAT; Chisels: 18X600 POINT; Chisels: 18X600 FLAT"
+    },
+    "models": [
+      {
+        "brand": "Chisels",
+        "name": "18X400 POINT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "18X400 FLAT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "18X600 POINT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "18X600 FLAT",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-ph-65-breaker-chisel",
+    "name": "Ph 65 Breaker Chisel",
+    "slug": "power-tools-accessories-ph-65-breaker-chisel",
+    "code": "PTA-PH-65-BREAKER-CHIS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Ph 65 Breaker Chisel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Chisels",
+    "specifications": {
+      "Brand": "Chisels",
+      "Product Type": "Ph 65 Breaker Chisel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Chisels: 30X410 POINT; Chisels: 30X410 FLAT; Chisels: 30X600 POINT; Chisels: 30X600 FLAT"
+    },
+    "models": [
+      {
+        "brand": "Chisels",
+        "name": "30X410 POINT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "30X410 FLAT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "30X600 POINT",
+        "specifications": {}
+      },
+      {
+        "brand": "Chisels",
+        "name": "30X600 FLAT",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-marble-granite-cutter",
+    "name": "Marble / Granite Cutter",
+    "slug": "power-tools-accessories-marble-granite-cutter",
+    "code": "PTA-MARBLE-GRANITE-CUT",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Marble / Granite Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Covina",
+    "specifications": {
+      "Brand": "Covina",
+      "Product Type": "Marble / Granite Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Covina: 4\" DIAMOND WHEEL SEGMENTED"
+    },
+    "models": [
+      {
+        "brand": "Covina",
+        "name": "4\" DIAMOND WHEEL SEGMENTED",
+        "specifications": {
+          "Qty": "20"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-fiber-disc",
+    "name": "Fiber Discs",
+    "slug": "power-tools-accessories-fiber-disc",
+    "code": "PTA-FIBER-DISCS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Fiber Discs from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Cumi",
+    "specifications": {
+      "Brand": "Cumi, Norton, Starcke",
+      "Product Type": "Fiber Discs",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Cumi: 4\"XG36; Cumi: 4\" X G60; Norton: FIBER DISC 5\" (125X22); Norton: FIBER DISC 4\" (100X16); Norton: FIBER DISC 5\" (125X22.23); Norton: FIBER DISC 7\" (180X22.23); Norton: FIBER DISC 4\" (100X16); Norton: FIBER DISC 5\" (125X22.23); Norton: FIBER DISC 7\" (180X22.23); Starcke: 5\" FIBER DISC G36"
+    },
+    "models": [
+      {
+        "brand": "Cumi",
+        "name": "4\"XG36",
+        "specifications": {
+          "Qty/Case": "10/100"
+        },
+        "series": "Zircon Zing"
+      },
+      {
+        "brand": "Cumi",
+        "name": "4\" X G60",
+        "specifications": {
+          "Qty/Case": "10/100"
+        },
+        "series": "Zircon Zing"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 5\" (125X22)",
+        "specifications": {
+          "Grit": "36"
+        },
+        "series": "Norzon Series"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 4\" (100X16)",
+        "specifications": {
+          "Grit": "24",
+          "Disc": "34.3005"
+        },
+        "series": "Alkon Series"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 5\" (125X22.23)",
+        "specifications": {
+          "Grit": "24",
+          "Disc": "44.02125"
+        },
+        "series": "Alkon Series"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 7\" (180X22.23)",
+        "specifications": {
+          "Grit": "24",
+          "Disc": "87.672"
+        },
+        "series": "Alkon Series"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 4\" (100X16)",
+        "specifications": {
+          "Grit": "24",
+          "Disc": "50.16375"
+        },
+        "series": "Zircon Series"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 5\" (125X22.23)",
+        "specifications": {
+          "Grit": "24",
+          "Disc": "57.69075"
+        },
+        "series": "Zircon Series"
+      },
+      {
+        "brand": "Norton",
+        "name": "FIBER DISC 7\" (180X22.23)",
+        "specifications": {
+          "Grit": "24",
+          "Disc": "115.83975000000001"
+        },
+        "series": "Zircon Series"
+      },
+      {
+        "brand": "Starcke",
+        "name": "5\" FIBER DISC G36",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-abrasive-pad-scotch-brite",
+    "name": "Abrasive Pad Scotch Brite",
+    "slug": "power-tools-accessories-abrasive-pad-scotch-brite",
+    "code": "PTA-ABRASIVE-PAD-SCOTC",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Abrasive Pad Scotch Brite from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Cumi",
+    "specifications": {
+      "Brand": "Cumi",
+      "Product Type": "Abrasive Pad Scotch Brite",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Cumi: CUMI CX 01   152X229 MM"
+    },
+    "models": [
+      {
+        "brand": "Cumi",
+        "name": "CUMI CX 01   152X229 MM",
+        "specifications": {
+          "Qty/Case": "5/100"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-concrete-vibrator-needle",
+    "name": "Concrete Vibrator Needle",
+    "slug": "power-tools-accessories-concrete-vibrator-needle",
+    "code": "PTA-CONCRETE-VIBRATOR-",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Concrete Vibrator Needle from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Dongcheng",
+    "specifications": {
+      "Brand": "Dongcheng",
+      "Product Type": "Concrete Vibrator Needle",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Dongcheng: VIBRATOR NEEDLE 1.5MX35mm; Dongcheng: VIBRATOR NEEDLE 3MX35mm"
+    },
+    "models": [
+      {
+        "brand": "Dongcheng",
+        "name": "VIBRATOR NEEDLE 1.5MX35mm",
+        "specifications": {
+          "Item Code": "ZN35X1.5M"
+        }
+      },
+      {
+        "brand": "Dongcheng",
+        "name": "VIBRATOR NEEDLE 3MX35mm",
+        "specifications": {
+          "Item Code": "ZN35X3M"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tct-blade-for-wood",
+    "name": "Tct Blade For Wood",
+    "slug": "power-tools-accessories-tct-blade-for-wood",
+    "code": "PTA-TCT-BLADE-FOR-WOOD",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tct Blade For Wood from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Golden Bullet",
+    "specifications": {
+      "Brand": "Golden Bullet",
+      "Product Type": "Tct Blade For Wood",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Golden Bullet: 4\" 110mmx30Tx2.2mm; Golden Bullet: 4\" 110mmx40Tx2.2mm; Golden Bullet: 5\" 125mmx30Tx2.2mm; Golden Bullet: 5\" 125mmx40Tx2.2mm"
+    },
+    "models": [
+      {
+        "brand": "Golden Bullet",
+        "name": "4\" 110mmx30Tx2.2mm",
+        "specifications": {
+          "Qty/Box": "10"
+        },
+        "series": "Superb Series"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "4\" 110mmx40Tx2.2mm",
+        "specifications": {
+          "Qty/Box": "10"
+        },
+        "series": "Superb Series"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "5\" 125mmx30Tx2.2mm",
+        "specifications": {
+          "Qty/Box": "10"
+        },
+        "series": "Superb Series"
+      },
+      {
+        "brand": "Golden Bullet",
+        "name": "5\" 125mmx40Tx2.2mm",
+        "specifications": {
+          "Qty/Box": "10"
+        },
+        "series": "Superb Series"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-planer-blade-for-wood",
+    "name": "Planer Blade For Wood",
+    "slug": "power-tools-accessories-planer-blade-for-wood",
+    "code": "PTA-PLANER-BLADE-FOR-W",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Planer Blade For Wood from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Golden Bullet",
+    "specifications": {
+      "Brand": "Golden Bullet",
+      "Product Type": "Planer Blade For Wood",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Golden Bullet: PLANER BLADE 330X30X3MM"
+    },
+    "models": [
+      {
+        "brand": "Golden Bullet",
+        "name": "PLANER BLADE 330X30X3MM",
+        "specifications": {
+          "Qty/Box": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-chainsaw-chain",
+    "name": "Chainsaw Chain",
+    "slug": "power-tools-accessories-chainsaw-chain",
+    "code": "PTA-CHAINSAW-CHAIN",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Chainsaw Chain from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Himax",
+    "specifications": {
+      "Brand": "Himax, Raj Xtreme",
+      "Product Type": "Chainsaw Chain",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Himax: CHAINSAW CHAIN 18\"; Raj Xtreme: CHAIN SAW CHAIN 18\""
+    },
+    "models": [
+      {
+        "brand": "Himax",
+        "name": "CHAINSAW CHAIN 18\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Raj Xtreme",
+        "name": "CHAIN SAW CHAIN 18\"",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-diamond-core-bit",
+    "name": "Diamond Core Bit",
+    "slug": "power-tools-accessories-diamond-core-bit",
+    "code": "PTA-DIAMOND-CORE-BIT",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Diamond Core Bit from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jojo Tools",
+    "specifications": {
+      "Brand": "Jojo Tools",
+      "Product Type": "Diamond Core Bit",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jojo Tools: DIAMOND CORE BIT 6.5MM; Jojo Tools: DIAMOND CORE BIT 10MM; Jojo Tools: DIAMOND CORE BIT 20MM; Jojo Tools: DIAMOND CORE BIT 26MM; Jojo Tools: DIAMOND CORE BIT 33MM; Jojo Tools: DIAMOND CORE BIT 37MM; Jojo Tools: DIAMOND CORE BIT 50MM"
+    },
+    "models": [
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 6.5MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 10MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 20MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 26MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 33MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 37MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jojo Tools",
+        "name": "DIAMOND CORE BIT 50MM",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-wall-cutting-wheel",
+    "name": "Wall Cutting Wheels",
+    "slug": "power-tools-accessories-wall-cutting-wheel",
+    "code": "PTA-WALL-CUTTING-WHEEL",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Wall Cutting Wheels from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jon Bhandari",
+    "specifications": {
+      "Brand": "Jon Bhandari",
+      "Product Type": "Wall Cutting Wheels",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jon Bhandari: WALL CUTTING BLADE 5\" FAST CUT(YELLOW)"
+    },
+    "models": [
+      {
+        "brand": "Jon Bhandari",
+        "name": "WALL CUTTING BLADE 5\" FAST CUT(YELLOW)",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-grinding-wheel-gc",
+    "name": "Grinding Wheels Gc",
+    "slug": "power-tools-accessories-grinding-wheel-gc",
+    "code": "PTA-GRINDING-WHEELS-GC",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Grinding Wheels Gc from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jon Bhandari",
+    "specifications": {
+      "Brand": "Jon Bhandari",
+      "Product Type": "Grinding Wheels Gc",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jon Bhandari: 4\"x2.5 G46; Jon Bhandari: TCT BLADES; Jon Bhandari: 4\"x30t TCT BLADE; Jon Bhandari: 5\"X30T TCT BLADE; Jon Bhandari: 5\"X40 TCT BLADE"
+    },
+    "models": [
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\"x2.5 G46",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "TCT BLADES",
+        "specifications": {
+          "": "98"
+        }
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "4\"x30t TCT BLADE",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "5\"X30T TCT BLADE",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "5\"X40 TCT BLADE",
+        "specifications": {
+          "": "120"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-polish-pad-for-granite-marble",
+    "name": "Polish Pad For Granite/Marble",
+    "slug": "power-tools-accessories-polish-pad-for-granite-marble",
+    "code": "PTA-POLISH-PAD-FOR-GRA",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Polish Pad For Granite/Marble from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jon Bhandari",
+    "specifications": {
+      "Brand": "Jon Bhandari",
+      "Product Type": "Polish Pad For Granite/Marble",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jon Bhandari: GRINDER PAD 0; Jon Bhandari: GRINDER PAD 1; Jon Bhandari: GRINDER PAD 2; Jon Bhandari: GRINDER PAD 3; Jon Bhandari: GRINDER PAD 4; Jon Bhandari: GRINDER PAD 5; Jon Bhandari: GRINDER PAD 6"
+    },
+    "models": [
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 0",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 1",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 2",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 3",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 4",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 5",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "GRINDER PAD 6",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-backup-pad",
+    "name": "Backup Pads",
+    "slug": "power-tools-accessories-backup-pad",
+    "code": "PTA-BACKUP-PADS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Backup Pads from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jon Bhandari",
+    "specifications": {
+      "Brand": "Jon Bhandari",
+      "Product Type": "Backup Pads",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jon Bhandari: BACKUP PAD FOR FIBER DISC; Jon Bhandari: BACKUP PAD FOR VELCRO DISC"
+    },
+    "models": [
+      {
+        "brand": "Jon Bhandari",
+        "name": "BACKUP PAD FOR FIBER DISC",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "BACKUP PAD FOR VELCRO DISC",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-step-drill",
+    "name": "Step Drill",
+    "slug": "power-tools-accessories-step-drill",
+    "code": "PTA-STEP-DRILL",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Step Drill from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jon Bhandari",
+    "specifications": {
+      "Brand": "Jon Bhandari, Ultrafast",
+      "Product Type": "Step Drill",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jon Bhandari: STEP DRILL 4-32; Ultrafast: STEP DRILL 4-32"
+    },
+    "models": [
+      {
+        "brand": "Jon Bhandari",
+        "name": "STEP DRILL 4-32",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "STEP DRILL 4-32",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-nut-bit",
+    "name": "Nut Bit",
+    "slug": "power-tools-accessories-nut-bit",
+    "code": "PTA-NUT-BIT",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Nut Bit from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Jon Bhandari",
+    "specifications": {
+      "Brand": "Jon Bhandari",
+      "Product Type": "Nut Bit",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Jon Bhandari: NUT BIT 8MMX50MM; Jon Bhandari: NUT BIT 10MMX65MM; Jon Bhandari: CUP BURSH TWISTED WIRE 3\" FOR 4\" GRINDER; Jon Bhandari: CUP BURSH TWISTED WIRE 4\" FOR 5\" GRINDER"
+    },
+    "models": [
+      {
+        "brand": "Jon Bhandari",
+        "name": "NUT BIT 8MMX50MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "NUT BIT 10MMX65MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "CUP BURSH TWISTED WIRE 3\" FOR 4\" GRINDER",
+        "specifications": {},
+        "series": "Cup Brush"
+      },
+      {
+        "brand": "Jon Bhandari",
+        "name": "CUP BURSH TWISTED WIRE 4\" FOR 5\" GRINDER",
+        "specifications": {},
+        "series": "Cup Brush"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-petrol-sprayer-lance",
+    "name": "Petrol Sprayer Lance",
+    "slug": "power-tools-accessories-petrol-sprayer-lance",
+    "code": "PTA-PETROL-SPRAYER-LAN",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Petrol Sprayer Lance from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Kisaan Kraft",
+    "specifications": {
+      "Brand": "Kisaan Kraft",
+      "Product Type": "Petrol Sprayer Lance",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Kisaan Kraft: LANCE 2F"
+    },
+    "models": [
+      {
+        "brand": "Kisaan Kraft",
+        "name": "LANCE 2F",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-jig-saw-blade",
+    "name": "Jig Saw Blade",
+    "slug": "power-tools-accessories-jig-saw-blade",
+    "code": "PTA-JIG-SAW-BLADE",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Jig Saw Blade from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Makita",
+    "specifications": {
+      "Brand": "Makita",
+      "Product Type": "Jig Saw Blade",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Makita: JIG SAW BLADES 100MMX74MM(PACK OF 5)  8TPI"
+    },
+    "models": [
+      {
+        "brand": "Makita",
+        "name": "JIG SAW BLADES 100MMX74MM(PACK OF 5)  8TPI",
+        "specifications": {
+          "Part Number": "D-34877      T111C"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tct-saw-blade",
+    "name": "Tct Saw Blades",
+    "slug": "power-tools-accessories-tct-saw-blade",
+    "code": "PTA-TCT-SAW-BLADES",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tct Saw Blades from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Makita",
+    "specifications": {
+      "Brand": "Makita",
+      "Product Type": "Tct Saw Blades",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Makita: TCT SAW BLADES 10\"X32T"
+    },
+    "models": [
+      {
+        "brand": "Makita",
+        "name": "TCT SAW BLADES 10\"X32T",
+        "specifications": {
+          "Part Number": "A-83696"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-bimetal-hole-saw",
+    "name": "Bimetal Hole Saw",
+    "slug": "power-tools-accessories-bimetal-hole-saw",
+    "code": "PTA-BIMETAL-HOLE-SAW",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Bimetal Hole Saw from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Makita",
+    "specifications": {
+      "Brand": "Makita",
+      "Product Type": "Bimetal Hole Saw",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Makita: BIMETAL HOLE SAW 32MM; Makita: BIMETAL HOLE SAW 64MM; Makita: HOLE SAW ARBOUR"
+    },
+    "models": [
+      {
+        "brand": "Makita",
+        "name": "BIMETAL HOLE SAW 32MM",
+        "specifications": {
+          "Part Number": "D-17049"
+        }
+      },
+      {
+        "brand": "Makita",
+        "name": "BIMETAL HOLE SAW 64MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Makita",
+        "name": "HOLE SAW ARBOUR",
+        "specifications": {
+          "Part Number": "D-17186"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-polishing-pad",
+    "name": "Polishing Pad",
+    "slug": "power-tools-accessories-polishing-pad",
+    "code": "PTA-POLISHING-PAD",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Polishing Pad from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Metso",
+    "specifications": {
+      "Brand": "Metso",
+      "Product Type": "Polishing Pad",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Metso: 6\" POLISH PAD"
+    },
+    "models": [
+      {
+        "brand": "Metso",
+        "name": "6\" POLISH PAD",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-non-woven-polishing-wheel",
+    "name": "Non Woven Polishing Wheel",
+    "slug": "power-tools-accessories-non-woven-polishing-wheel",
+    "code": "PTA-NON-WOVEN-POLISHIN",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Non Woven Polishing Wheel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Polymak",
+    "specifications": {
+      "Brand": "Polymak",
+      "Product Type": "Non Woven Polishing Wheel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Polymak: NON WOVEN WHEEL 4\" U3 BROWN"
+    },
+    "models": [
+      {
+        "brand": "Polymak",
+        "name": "NON WOVEN WHEEL 4\" U3 BROWN",
+        "specifications": {
+          "Qty/Pack": "20"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-chainsaw-chain-18",
+    "name": "Chainsaw Chain 18\"",
+    "slug": "power-tools-accessories-chainsaw-chain-18",
+    "code": "PTA-CHAINSAW-CHAIN-18",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Chainsaw Chain 18\" from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Powermatic",
+    "specifications": {
+      "Brand": "Powermatic",
+      "Product Type": "Chainsaw Chain 18\"",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Powermatic: POWERMATIC CHAIN"
+    },
+    "models": [
+      {
+        "brand": "Powermatic",
+        "name": "POWERMATIC CHAIN",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-vibrator-needle",
+    "name": "Vibrator Needle",
+    "slug": "power-tools-accessories-vibrator-needle",
+    "code": "PTA-VIBRATOR-NEEDLE",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Vibrator Needle from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Raj Xtreme",
+    "specifications": {
+      "Brand": "Raj Xtreme, Swastik Gold",
+      "Product Type": "Vibrator Needle",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Raj Xtreme: CONCRETE VIBRATOR NEEDLE 35mmX3M; Swastik Gold: VIBRATOR NEEDLE 1.5MX35MM"
+    },
+    "models": [
+      {
+        "brand": "Raj Xtreme",
+        "name": "CONCRETE VIBRATOR NEEDLE 35mmX3M",
+        "specifications": {}
+      },
+      {
+        "brand": "Swastik Gold",
+        "name": "VIBRATOR NEEDLE 1.5MX35MM",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-sponge-polish-wheel",
+    "name": "Sponge Polish Wheel",
+    "slug": "power-tools-accessories-sponge-polish-wheel",
+    "code": "PTA-SPONGE-POLISH-WHEE",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Sponge Polish Wheel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Raj Xtreme",
+    "specifications": {
+      "Brand": "Raj Xtreme",
+      "Product Type": "Sponge Polish Wheel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Raj Xtreme: SPONGE POLISH WHEEL 5\"; Raj Xtreme: SPONGE POLISH WHEEL 7\""
+    },
+    "models": [
+      {
+        "brand": "Raj Xtreme",
+        "name": "SPONGE POLISH WHEEL 5\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Raj Xtreme",
+        "name": "SPONGE POLISH WHEEL 7\"",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-rainbow-2000-marble-granite-cutter",
+    "name": "Rainbow 2000 Marble/Granite Cutter",
+    "slug": "power-tools-accessories-rainbow-2000-marble-granite-cutter",
+    "code": "PTA-RAINBOW-2000-MARBL",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Rainbow 2000 Marble/Granite Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Rainbow",
+    "specifications": {
+      "Brand": "Rainbow",
+      "Product Type": "Rainbow 2000 Marble/Granite Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Rainbow: MARBLE/GRANITE CUTTER 4\" G+"
+    },
+    "models": [
+      {
+        "brand": "Rainbow",
+        "name": "MARBLE/GRANITE CUTTER 4\" G+",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-rainbow-2000-ceramic-black-tiles-cutter",
+    "name": "Rainbow 2000 Ceramic Black Tiles Cutter",
+    "slug": "power-tools-accessories-rainbow-2000-ceramic-black-tiles-cutter",
+    "code": "PTA-RAINBOW-2000-CERAM",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Rainbow 2000 Ceramic Black Tiles Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Rainbow",
+    "specifications": {
+      "Brand": "Rainbow",
+      "Product Type": "Rainbow 2000 Ceramic Black Tiles Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Rainbow: TILES CUTTER CERAMIC BLACK"
+    },
+    "models": [
+      {
+        "brand": "Rainbow",
+        "name": "TILES CUTTER CERAMIC BLACK",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-velcro-disc",
+    "name": "Velcro Disc",
+    "slug": "power-tools-accessories-velcro-disc",
+    "code": "PTA-VELCRO-DISC",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Velcro Disc from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Starcke",
+    "specifications": {
+      "Brand": "Starcke, Ultrafast",
+      "Product Type": "Velcro Disc",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Starcke: 5\" VELCRO DISC G 80-600; Starcke: 7\" VELCRO DISC WALL SANDING DISC; Starcke: 9\" VELCRO DISC WALL SANDING DISC; Ultrafast: 5\" GRIT; Ultrafast: 7\" GRIT 60"
+    },
+    "models": [
+      {
+        "brand": "Starcke",
+        "name": "5\" VELCRO DISC G 80-600",
+        "specifications": {}
+      },
+      {
+        "brand": "Starcke",
+        "name": "7\" VELCRO DISC WALL SANDING DISC",
+        "specifications": {}
+      },
+      {
+        "brand": "Starcke",
+        "name": "9\" VELCRO DISC WALL SANDING DISC",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "5\" GRIT",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "7\" GRIT 60",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-pressure-washer-outlet-hose",
+    "name": "Pressure Washer Outlet Hose",
+    "slug": "power-tools-accessories-pressure-washer-outlet-hose",
+    "code": "PTA-PRESSURE-WASHER-OU",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Pressure Washer Outlet Hose from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Strong Ali",
+    "specifications": {
+      "Brand": "Strong Ali, Tuqo",
+      "Product Type": "Pressure Washer Outlet Hose",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Strong Ali: PRESSURE WASHER OUTLET HOSE 8M; Strong Ali: PRESSURE WASHER OUTLET HOSE 10M; Strong Ali: PRESSURE WASHER OUTLET HOSE 12M; Strong Ali: PRESSURE WASHER OUTLET HOSE 15M; Tuqo: OUTLET HOSE 7M AW06; Tuqo: OUTLET HOSE 10M AW09; Tuqo: OUTLET HOSE 15M AW10; Tuqo: OUTLET HOSE 20M AW11; Tuqo: HOSE CONNECTOR HEX NIPPLE M22 RB438"
+    },
+    "models": [
+      {
+        "brand": "Strong Ali",
+        "name": "PRESSURE WASHER OUTLET HOSE 8M",
+        "specifications": {}
+      },
+      {
+        "brand": "Strong Ali",
+        "name": "PRESSURE WASHER OUTLET HOSE 10M",
+        "specifications": {}
+      },
+      {
+        "brand": "Strong Ali",
+        "name": "PRESSURE WASHER OUTLET HOSE 12M",
+        "specifications": {}
+      },
+      {
+        "brand": "Strong Ali",
+        "name": "PRESSURE WASHER OUTLET HOSE 15M",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "OUTLET HOSE 7M AW06",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "OUTLET HOSE 10M AW09",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "OUTLET HOSE 15M AW10",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "OUTLET HOSE 20M AW11",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "HOSE CONNECTOR HEX NIPPLE M22 RB438",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-polish-pad-100mm-gold-dcrpd4s1",
+    "name": "Polish Pad 100Mm Gold Dcrpd4S1",
+    "slug": "power-tools-accessories-polish-pad-100mm-gold-dcrpd4s1",
+    "code": "PTA-POLISH-PAD-100MM-G",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Polish Pad 100Mm Gold Dcrpd4S1 from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Surie Polex",
+    "specifications": {
+      "Brand": "Surie Polex",
+      "Product Type": "Polish Pad 100Mm Gold Dcrpd4S1",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Surie Polex: SURIE POLISH WHEEL 0 LEVEL GRINDING; Surie Polex: SURIE POLISH WHEEL 1 FINE GRINDING; Surie Polex: SURIE POLISH WHEEL 2 SMOOTH GRINDING; Surie Polex: SURIE POLISH WHEEL 3 PRE POLISH; Surie Polex: SURIE POLISH WHEEL 4 POLISH; Surie Polex: SURIE POLISH WHEEL 5 FINE POLISH; Surie Polex: SURIE POLISH WHEEL 6 BUFF"
+    },
+    "models": [
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 0 LEVEL GRINDING",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 1 FINE GRINDING",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 2 SMOOTH GRINDING",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 3 PRE POLISH",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 4 POLISH",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 5 FINE POLISH",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 6 BUFF",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-polish-pad-100mm-mirrex-dcrpd4s1",
+    "name": "Polish Pad 100Mm Mirrex Dcrpd4S1",
+    "slug": "power-tools-accessories-polish-pad-100mm-mirrex-dcrpd4s1",
+    "code": "PTA-POLISH-PAD-100MM-M",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Polish Pad 100Mm Mirrex Dcrpd4S1 from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Surie Polex",
+    "specifications": {
+      "Brand": "Surie Polex",
+      "Product Type": "Polish Pad 100Mm Mirrex Dcrpd4S1",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Surie Polex: SURIE POLISH WHEEL 0 LEVEL GRINDING; Surie Polex: SURIE POLISH WHEEL 1 FINE GRINDING; Surie Polex: SURIE POLISH WHEEL 2 SMOOTH GRINDING; Surie Polex: SURIE POLISH WHEEL 3 PRE POLISH; Surie Polex: SURIE POLISH WHEEL 4 POLISH; Surie Polex: SURIE POLISH WHEEL 5 FINE POLISH; Surie Polex: SURIE POLISH WHEEL 6 BUFF"
+    },
+    "models": [
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 0 LEVEL GRINDING",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 1 FINE GRINDING",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 2 SMOOTH GRINDING",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 3 PRE POLISH",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 4 POLISH",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 5 FINE POLISH",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      },
+      {
+        "brand": "Surie Polex",
+        "name": "SURIE POLISH WHEEL 6 BUFF",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-flexible-polishing-pad-dcrf5u1xd",
+    "name": "Flexible Polishing Pad Dcrf5U1Xd",
+    "slug": "power-tools-accessories-flexible-polishing-pad-dcrf5u1xd",
+    "code": "PTA-FLEXIBLE-POLISHING",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Flexible Polishing Pad Dcrf5U1Xd from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Surie Polex",
+    "specifications": {
+      "Brand": "Surie Polex",
+      "Product Type": "Flexible Polishing Pad Dcrf5U1Xd",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Surie Polex: Flexible pad XD 60"
+    },
+    "models": [
+      {
+        "brand": "Surie Polex",
+        "name": "Flexible pad XD 60",
+        "specifications": {
+          "Qty/Box": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-pressure-washer-gun-accessory",
+    "name": "Pressure Washer Gun Accessories",
+    "slug": "power-tools-accessories-pressure-washer-gun-accessory",
+    "code": "PTA-PRESSURE-WASHER-GU",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Pressure Washer Gun Accessories from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Pressure Washer Gun Accessories",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Tuqo: PRESSURE WASHER GUN HG12; Tuqo: EXTENSION ROD 250mm VS13; Tuqo: EXTENSION ROD 380mm VS15; Tuqo: NOZZLE SET 4PC(0,15,25,40) DS102-065; Tuqo: NOZZLE SET 6PC(0,15,25,40,1SOAP,1PLANT); Tuqo: SPRAY NOZZLE 6IN1 DS356; Tuqo: QUICK RELEASE COUPLING FOR NOZZLE 1/4\" SV09; Tuqo: QUICK RELEASE COUPLING FOR NOZZLE 3/8\" SAN150 (2PC); Tuqo: TURBO ROTARY NOZZLES (25°,35°,40°,70°) RU025; Tuqo: TURBO ROTARY NOZZLES (25°,35°,40°,70°) RU040; Tuqo: DRAIN SEWER CLEANER NOZZLE DS06 1/4\"; Tuqo: DRAIN SEWER CLEANER NOZZLE DS07 3/8\"; Tuqo: WATER FILTER; Tuqo: ADJUSTABLE NOZZLE BLACK DS50"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "PRESSURE WASHER GUN HG12",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "EXTENSION ROD 250mm VS13",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "EXTENSION ROD 380mm VS15",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "NOZZLE SET 4PC(0,15,25,40) DS102-065",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "NOZZLE SET 6PC(0,15,25,40,1SOAP,1PLANT)",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "SPRAY NOZZLE 6IN1 DS356",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "QUICK RELEASE COUPLING FOR NOZZLE 1/4\" SV09",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "QUICK RELEASE COUPLING FOR NOZZLE 3/8\" SAN150 (2PC)",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TURBO ROTARY NOZZLES (25°,35°,40°,70°) RU025",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TURBO ROTARY NOZZLES (25°,35°,40°,70°) RU040",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "DRAIN SEWER CLEANER NOZZLE DS06 1/4\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "DRAIN SEWER CLEANER NOZZLE DS07 3/8\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "WATER FILTER",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "ADJUSTABLE NOZZLE BLACK DS50",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tuqo-washer-fluids",
+    "name": "Tuqo Washer Fluids",
+    "slug": "power-tools-accessories-tuqo-washer-fluids",
+    "code": "PTA-TUQO-WASHER-FLUIDS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tuqo Washer Fluids from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Tuqo Washer Fluids",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Tuqo: TUQO XTREME FOAM CWS04 500ML; Tuqo: TUQO GOLD SELECT FOAM CWS24 500ML; Tuqo: TUQO PREMIUM SHAMPOO CWS24 500ML; Tuqo: TUQO PREMIUM SHAMPOO CWS22 200ML; Tuqo: TUQO PREMIUM SHAMPOO  CWS28 5L; Tuqo: TUQO SCRUBBER BRUSH 4PC SB20; Tuqo: TUQO CAR DETAILING BRUSH SET TQ490"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "TUQO XTREME FOAM CWS04 500ML",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO GOLD SELECT FOAM CWS24 500ML",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO PREMIUM SHAMPOO CWS24 500ML",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO PREMIUM SHAMPOO CWS22 200ML",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO PREMIUM SHAMPOO  CWS28 5L",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO SCRUBBER BRUSH 4PC SB20",
+        "specifications": {},
+        "series": "Tuqo Brushes"
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO CAR DETAILING BRUSH SET TQ490",
+        "specifications": {},
+        "series": "Tuqo Brushes"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tuqo-foam-lance",
+    "name": "Tuqo Foam Lance",
+    "slug": "power-tools-accessories-tuqo-foam-lance",
+    "code": "PTA-TUQO-FOAM-LANCE",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tuqo Foam Lance from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Tuqo",
+    "specifications": {
+      "Brand": "Tuqo",
+      "Product Type": "Tuqo Foam Lance",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Tuqo: PRESSURE WASHER FOAM LANCE TFL302; Tuqo: FOAM CAN FOR GUN TFL100; Tuqo: TUQO MICRO FIBER CLOTH 340GSM 40X40CM TQ410"
+    },
+    "models": [
+      {
+        "brand": "Tuqo",
+        "name": "PRESSURE WASHER FOAM LANCE TFL302",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "FOAM CAN FOR GUN TFL100",
+        "specifications": {}
+      },
+      {
+        "brand": "Tuqo",
+        "name": "TUQO MICRO FIBER CLOTH 340GSM 40X40CM TQ410",
+        "specifications": {},
+        "series": "Tuqo Microfiber Cloth"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-grinding-wheel-gc-for-tile-polishing",
+    "name": "Grinding Wheel Gc For Tile Polishing",
+    "slug": "power-tools-accessories-grinding-wheel-gc-for-tile-polishing",
+    "code": "PTA-GRINDING-WHEEL-GC-",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Grinding Wheel Gc For Tile Polishing from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Grinding Wheel Gc For Tile Polishing",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: 4\"X2.5 GRINDING WHEEL GREEN G60"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "4\"X2.5 GRINDING WHEEL GREEN G60",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-deep-hole-saw-set",
+    "name": "Deep Hole Saw / Set",
+    "slug": "power-tools-accessories-deep-hole-saw-set",
+    "code": "PTA-DEEP-HOLE-SAW-SET",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Deep Hole Saw / Set from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Deep Hole Saw / Set",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: HOLE SAW 2 1/2\" 65MM; Ultrafast: 6PC HOLE SAW SET; Ultrafast: 11PC HOLE SAW SET TILL 2.5\"; Ultrafast: 12PC HOLE SAW SET TILL 3\"; Ultrafast: 16PC HOLE SAW SET TILL 5\""
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "HOLE SAW 2 1/2\" 65MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "6PC HOLE SAW SET",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "11PC HOLE SAW SET TILL 2.5\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "12PC HOLE SAW SET TILL 3\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "16PC HOLE SAW SET TILL 5\"",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-hack-saw-blade",
+    "name": "Hack Saw Blade",
+    "slug": "power-tools-accessories-hack-saw-blade",
+    "code": "PTA-HACK-SAW-BLADE",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Hack Saw Blade from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Hack Saw Blade",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: BI METAL 12\"X24T"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "BI METAL 12\"X24T",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tiles-cutting-blade",
+    "name": "Tiles Cutting Blades",
+    "slug": "power-tools-accessories-tiles-cutting-blade",
+    "code": "PTA-TILES-CUTTING-BLAD",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tiles Cutting Blades from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Tiles Cutting Blades",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: 4\" ZERO CHIPPING X8T SEGMENTED"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "4\" ZERO CHIPPING X8T SEGMENTED",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-grinding-diamond-cup-wheel",
+    "name": "Grinding Diamond Cup Wheel",
+    "slug": "power-tools-accessories-grinding-diamond-cup-wheel",
+    "code": "PTA-GRINDING-DIAMOND-C",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Grinding Diamond Cup Wheel from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Grinding Diamond Cup Wheel",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: 3\" CUP BLADE CONT/SEG/TURBO; Ultrafast: 4\" CUP BLADE SEG; Ultrafast: 3\" CUP BRUSH BRASS; Ultrafast: 3\" CUP BRUSH TWISTED WIRE; Ultrafast: 4\" 100MM CUP WIRE BRUSH BRASS"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "3\" CUP BLADE CONT/SEG/TURBO",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "4\" CUP BLADE SEG",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "3\" CUP BRUSH BRASS",
+        "specifications": {},
+        "series": "Cup Brush"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "3\" CUP BRUSH TWISTED WIRE",
+        "specifications": {},
+        "series": "Cup Brush"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "4\" 100MM CUP WIRE BRUSH BRASS",
+        "specifications": {},
+        "series": "Cup Brush"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-fiber-disc-accessory",
+    "name": "Fiber Disc & Accessories",
+    "slug": "power-tools-accessories-fiber-disc-accessory",
+    "code": "PTA-FIBER-DISC-ACCESSO",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Fiber Disc & Accessories from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Fiber Disc & Accessories",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: GRIT 36,60,80,100,180 5\"; Ultrafast: FIBER DISC ADAPTOR 5\"; Ultrafast: PAD NUT FOR AG4"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "GRIT 36,60,80,100,180 5\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "FIBER DISC ADAPTOR 5\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "PAD NUT FOR AG4",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-concrete-cutter",
+    "name": "Concrete Cutter",
+    "slug": "power-tools-accessories-concrete-cutter",
+    "code": "PTA-CONCRETE-CUTTER",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Concrete Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Concrete Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: 4\" CONCRETE TURBO (BLK); Ultrafast: 5\" CONCRETE TURBO (BLK)"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "4\" CONCRETE TURBO (BLK)",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "5\" CONCRETE TURBO (BLK)",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-flexible-cutting-wheel-for-stainless-steel-wa",
+    "name": "Flexible Cutting Wheel For Stainless Steel Wa",
+    "slug": "power-tools-accessories-flexible-cutting-wheel-for-stainless-steel-wa",
+    "code": "PTA-FLEXIBLE-CUTTING-W",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Flexible Cutting Wheel For Stainless Steel Wa from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Flexible Cutting Wheel For Stainless Steel Wa",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: FLEXIBLE CUTTING WHEEL WA60"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "FLEXIBLE CUTTING WHEEL WA60",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-pvc-pipe-cutter",
+    "name": "Pvc Pipe Cutter",
+    "slug": "power-tools-accessories-pvc-pipe-cutter",
+    "code": "PTA-PVC-PIPE-CUTTER",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Pvc Pipe Cutter from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Pvc Pipe Cutter",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: PVC PIPE CUTTER 38MM"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "PVC PIPE CUTTER 38MM",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-polishing-wheel",
+    "name": "Polishing Wheels",
+    "slug": "power-tools-accessories-polishing-wheel",
+    "code": "PTA-POLISHING-WHEELS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Polishing Wheels from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Polishing Wheels",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: SS POLISHING WHEEL RED 4\"; Ultrafast: FELT POLISH WHEEL WHITE 4\"; Ultrafast: SDS ADAPTER 1/2\" 20UNF"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "SS POLISHING WHEEL RED 4\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "FELT POLISH WHEEL WHITE 4\"",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "SDS ADAPTER 1/2\" 20UNF",
+        "specifications": {},
+        "series": "Sds Adapter"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-star-bit-nut-bit",
+    "name": "Star Bit / Nut Bit",
+    "slug": "power-tools-accessories-star-bit-nut-bit",
+    "code": "PTA-STAR-BIT-NUT-BIT",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Star Bit / Nut Bit from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Star Bit / Nut Bit",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: DISCO BIT; Ultrafast: NUT BIT 8MM X 50MM SHORT; Ultrafast: NUT BIT 8MM X 65MM LONG"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "DISCO BIT",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "NUT BIT 8MM X 50MM SHORT",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "NUT BIT 8MM X 65MM LONG",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-tct-hole-saw-10-mm-approx-retail-sales",
+    "name": "Tct Hole Saw 10/Mm (Approx Retail Sales)",
+    "slug": "power-tools-accessories-tct-hole-saw-10-mm-approx-retail-sales",
+    "code": "PTA-TCT-HOLE-SAW-10-MM",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Tct Hole Saw 10/Mm (Approx Retail Sales) from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Tct Hole Saw 10/Mm (Approx Retail Sales)",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: TCT HOLE SAW 12MM; Ultrafast: TCT HOLE SAW 16MM; Ultrafast: TCT HOLE SAW 18MM; Ultrafast: TCT HOLE SAW 19MM; Ultrafast: TCT HOLE SAW 20MM; Ultrafast: TCT HOLE SAW 22MM; Ultrafast: TCT HOLE SAW 25MM; Ultrafast: TCT HOLE SAW 32MM; Ultrafast: TCT HOLE SAW 35MM; Ultrafast: TCT HOLE SAW 44MM; Ultrafast: TCT HOLE SAW 50MM; Ultrafast: TCT HOLE SAW 57MM; Ultrafast: TCT HOLE SAW 63MM; Ultrafast: HEX SOCKET 13; Ultrafast: HEX SOCKET 16; Ultrafast: HEX SOCKET 17; Ultrafast: HEX SOCKET 18; Ultrafast: HEX SOCKET 20; Ultrafast: HEX SOCKET 21; Ultrafast: HEX SOCKET 22; Ultrafast: HEX SOCKET 24; Ultrafast: HEX SOCKET 26; Ultrafast: HEX SOCKET 30"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 12MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 16MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 18MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 19MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 20MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 22MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 25MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 32MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 35MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 44MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 50MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 57MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "TCT HOLE SAW 63MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 13",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 16",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 17",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 18",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 20",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 21",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 22",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 24",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 26",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HEX SOCKET 30",
+        "specifications": {},
+        "series": "Hex Sockets 1/2\"Dr"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-hss-drill-gold-black",
+    "name": "Hss Drill Gold/Black",
+    "slug": "power-tools-accessories-hss-drill-gold-black",
+    "code": "PTA-HSS-DRILL-GOLD-BLA",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Hss Drill Gold/Black from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Hss Drill Gold/Black",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: HSS DRILL 4.5MM; Ultrafast: HSS DRILL 5MM; Ultrafast: HSS DRILL 6MM; Ultrafast: HSS DRILL 8MM; Ultrafast: HSS DRILL 10MM"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "HSS DRILL 4.5MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HSS DRILL 5MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HSS DRILL 6MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HSS DRILL 8MM",
+        "specifications": {}
+      },
+      {
+        "brand": "Ultrafast",
+        "name": "HSS DRILL 10MM",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-accessories-concrete-core-bit",
+    "name": "Concrete Core Bits",
+    "slug": "power-tools-accessories-concrete-core-bit",
+    "code": "PTA-CONCRETE-CORE-BITS",
+    "category": "power-tools",
+    "section": "power-tools-accessories",
+    "description": "Concrete Core Bits from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Ultrafast",
+    "specifications": {
+      "Brand": "Ultrafast",
+      "Product Type": "Concrete Core Bits",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Accessories",
+      "Available Models": "Ultrafast: CONCRETE COR BIT 35MM"
+    },
+    "models": [
+      {
+        "brand": "Ultrafast",
+        "name": "CONCRETE COR BIT 35MM",
+        "specifications": {}
+      }
+    ]
+  },
+  {
+    "id": "power-tools-spare-parts-ab-washer",
+    "name": "Ab Washers",
+    "slug": "power-tools-spare-parts-ab-washer",
+    "code": "PTS-AB-WASHERS",
+    "category": "power-tools",
+    "section": "power-tools-spare-parts",
+    "description": "Ab Washers from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Angle Grinders",
+    "specifications": {
+      "Brand": "Angle Grinders",
+      "Product Type": "Ab Washers",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Spare Parts",
+      "Available Models": "Angle Grinders: 4\" AB WASHER"
+    },
+    "models": [
+      {
+        "brand": "Angle Grinders",
+        "name": "4\" AB WASHER",
+        "specifications": {
+          "Brand": "SAW MASTER",
+          "Suitable Machines": "AG4"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-spare-parts-carbon-brushes",
+    "name": "Carbon Brushes",
+    "slug": "power-tools-spare-parts-carbon-brushes",
+    "code": "PTS-CARBON-BRUSHES",
+    "category": "power-tools",
+    "section": "power-tools-spare-parts",
+    "description": "Carbon Brushes from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Angle Grinders",
+    "specifications": {
+      "Brand": "Angle Grinders",
+      "Product Type": "Carbon Brushes",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Spare Parts",
+      "Available Models": "Angle Grinders: CARBON BRUSH BOSCH 1.619.P11.715; Angle Grinders: CARBON BRUSH BOSCH; Angle Grinders: CARBON BRUSH N489912; Angle Grinders: CARBON BRUSH; Angle Grinders: CARBON BRUSH BOSCH; Angle Grinders: SPARE BATTERY"
+    },
+    "models": [
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH BOSCH 1.619.P11.715",
+        "specifications": {
+          "Brand": "BOSCH",
+          "Suitable Machines": "GWS 900,GWS 750"
+        }
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH BOSCH",
+        "specifications": {
+          "Brand": "BOSCH",
+          "Suitable Machines": "GWS 600"
+        }
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH N489912",
+        "specifications": {
+          "Brand": "DEWALT",
+          "Suitable Machines": "DW801-IN,DW803-IN"
+        }
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH",
+        "specifications": {
+          "Brand": "DEWALT",
+          "Suitable Machines": "DWE4215"
+        }
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH BOSCH",
+        "specifications": {
+          "Brand": "BOSCH",
+          "Suitable Machines": "11E"
+        }
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "SPARE BATTERY",
+        "specifications": {
+          "Suitable Machines": "WASHER,BLOWER"
+        },
+        "series": "Cordless China Power Tools"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-spare-parts-drill-chuck",
+    "name": "Drill Chuck",
+    "slug": "power-tools-spare-parts-drill-chuck",
+    "code": "PTS-DRILL-CHUCK",
+    "category": "power-tools",
+    "section": "power-tools-spare-parts",
+    "description": "Drill Chuck from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Angle Grinders",
+    "specifications": {
+      "Brand": "Angle Grinders",
+      "Product Type": "Drill Chuck",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Spare Parts",
+      "Available Models": "Angle Grinders: DRLL CHUCK 1/2\" 13MM    [1/2-20UNF]"
+    },
+    "models": [
+      {
+        "brand": "Angle Grinders",
+        "name": "DRLL CHUCK 1/2\" 13MM    [1/2-20UNF]",
+        "specifications": {
+          "Brand": "JON BHANDARI"
+        }
+      }
+    ]
+  },
+  {
+    "id": "power-tools-spare-parts-drill-chuck-key",
+    "name": "Drill Chuck Key",
+    "slug": "power-tools-spare-parts-drill-chuck-key",
+    "code": "PTS-DRILL-CHUCK-KEY",
+    "category": "power-tools",
+    "section": "power-tools-spare-parts",
+    "description": "Drill Chuck Key from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Angle Grinders",
+    "specifications": {
+      "Brand": "Angle Grinders",
+      "Product Type": "Drill Chuck Key",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Spare Parts",
+      "Available Models": "Angle Grinders: DRILL CHUCK KEY 13MM; Angle Grinders: CARBON BRUSH N022038; Angle Grinders: CARBON BRUSH BOSCH 2.610.391.290"
+    },
+    "models": [
+      {
+        "brand": "Angle Grinders",
+        "name": "DRILL CHUCK KEY 13MM",
+        "specifications": {
+          "Brand": "JON BHANDARI"
+        }
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH N022038",
+        "specifications": {
+          "Brand": "DEWALT",
+          "Suitable Machines": "DWD014-IN"
+        },
+        "series": "Carbon Brush"
+      },
+      {
+        "brand": "Angle Grinders",
+        "name": "CARBON BRUSH BOSCH 2.610.391.290",
+        "specifications": {
+          "Brand": "BOSCH",
+          "Suitable Machines": "GSB-600"
+        },
+        "series": "Carbon Brush"
+      }
+    ]
+  },
+  {
+    "id": "power-tools-spare-parts-spare-battery",
+    "name": "Spare Battery",
+    "slug": "power-tools-spare-parts-spare-battery",
+    "code": "PTS-SPARE-BATTERY",
+    "category": "power-tools",
+    "section": "power-tools-spare-parts",
+    "description": "Spare Battery from the listed catalogue brands and models. Contact Noor Agencies for current availability and a quotation.",
+    "image": "",
+    "brand": "Angle Grinders",
+    "specifications": {
+      "Brand": "Angle Grinders",
+      "Product Type": "Spare Battery",
+      "Category": "Power Tools",
+      "Catalogue Section": "Power Tools Spare Parts",
+      "Available Models": "Angle Grinders: SPARE BATTERY 12.0V"
+    },
+    "models": [
+      {
+        "brand": "Angle Grinders",
+        "name": "SPARE BATTERY 12.0V",
+        "specifications": {
+          "Brand": "BOSCH",
+          "Suitable Machines": "GSR120-LI"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,632 @@
+[
+  {
+    "id": "pbf-family-001",
+    "name": "Brass Fasteners",
+    "slug": "pbf-brass-fasteners",
+    "code": "PBF-001",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Fasteners grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-030, PBI-019, PBI-059, PBI-032, PBI-055, PBI-066, PBI-107, PBI-094, KKI-013, KKI-017, KKI-020, KKI-022, KKI-025, KKI-031, KKI-032, KKI-033, KKI-038, KKI-039, KKI-044, KKI-045, KKI-046, KKI-314, KKI-316, KKI-328, KKI-336, KKI-396, KKI-426, KKI-427, KKI-463, KKI-467, KKI-469, KKI-470, KKI-474, KKI-475, KKI-521, KKI-536, KKI-537, KKI-553, KKI-561, KKI-628, KKI-629, KKI-630, KKI-631, KKI-635, KKI-675, KKI-677, KKI-678, KKI-814, KKI-815, KKI-827, KKI-928, KKI-930, KKI-932, KKI-933, KKI-936, KKI-960",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-002",
+    "name": "Brass Compression Fittings",
+    "slug": "pbf-brass-compression-fittings",
+    "code": "PBF-002",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Compression Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-005, PBI-006, PBI-014, PBI-007, PBI-016, PBI-015, PBI-018, PBI-020, PBI-013, PBI-010, PBI-011, PBI-012, PBI-008, PBI-009, PBI-001, PBI-003, PBI-004, PBI-002, KKI-085, KKI-086, KKI-087, KKI-088, KKI-315, KKI-320, KKI-321, KKI-398, KKI-399, KKI-400, KKI-510, KKI-511, KKI-534, KKI-736, KKI-737, KKI-738, KKI-739, KKI-740, KKI-741, KKI-742, KKI-743, KKI-744, KKI-807, KKI-808, KKI-819, KKI-919, KKI-920",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-003",
+    "name": "Brass Pipe Fittings",
+    "slug": "pbf-brass-pipe-fittings",
+    "code": "PBF-003",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Pipe Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-026, PBI-025, PBI-027, PBI-017, PBI-043, PBI-052, PBI-054, PBI-056, PBI-057, PBI-058, PBI-050, PBI-053, PBI-031, PBI-060, PBI-044, PBI-047, PBI-045, PBI-051, PBI-065, PBI-062, PBI-064, PBI-074, PBI-063, PBI-067, PBI-061, KKI-008, KKI-024, KKI-026, KKI-055, KKI-056, KKI-069, KKI-070, KKI-178, KKI-179, KKI-180, KKI-181, KKI-186, KKI-187, KKI-213, KKI-297, KKI-308, KKI-322, KKI-323, KKI-324, KKI-394, KKI-395, KKI-403, KKI-404, KKI-405, KKI-406, KKI-407, KKI-409, KKI-425, KKI-437, KKI-451, KKI-479, KKI-498, KKI-499, KKI-500, KKI-501, KKI-535, KKI-554, KKI-555, KKI-557, KKI-558, KKI-559, KKI-560, KKI-644, KKI-647, KKI-668, KKI-676, KKI-798, KKI-799, KKI-812, KKI-813, KKI-888, KKI-891, KKI-892, KKI-901, KKI-911, KKI-927, KKI-935, KKI-938, KKI-940, KKI-941, KKI-950, KKI-956, KKI-957, KKI-958",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-004",
+    "name": "Brass Hose Fittings",
+    "slug": "pbf-brass-hose-fittings",
+    "code": "PBF-004",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Hose Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-023, PBI-021, PBI-022, PBI-024, PBI-028, PBI-029, PBI-033, KKI-080, KKI-081, KKI-083, KKI-090, KKI-093, KKI-117, KKI-131, KKI-623, KKI-624, KKI-625, KKI-626, KKI-627, KKI-818, KKI-822, KKI-923",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-005",
+    "name": "Brass Pneumatic Fittings",
+    "slug": "pbf-brass-pneumatic-fittings",
+    "code": "PBF-005",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Pneumatic Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-038, PBI-036, PBI-040, PBI-041, PBI-034, PBI-035, PBI-042, PBI-037, PBI-039, PBI-081, PBI-082, PBI-086, PBI-084, PBI-085, PBI-087, PBI-083, PBI-080, KKI-077, KKI-156, KKI-637, KKI-934, KKI-949",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-006",
+    "name": "Brass Valves & Cocks",
+    "slug": "pbf-brass-valves-and-cocks",
+    "code": "PBF-006",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Valves & Cocks grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-070, PBI-069, PBI-075, PBI-076, PBI-078, PBI-079, PBI-071, KKI-002, KKI-062, KKI-173, KKI-183, KKI-212, KKI-288, KKI-289, KKI-290, KKI-311, KKI-312, KKI-452, KKI-453, KKI-454, KKI-455, KKI-456, KKI-457, KKI-458, KKI-459, KKI-460, KKI-461, KKI-462, KKI-492, KKI-493, KKI-556, KKI-670, KKI-671, KKI-672, KKI-673",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-007",
+    "name": "Brass Compressor & Tyre Parts",
+    "slug": "pbf-brass-compressor-and-tyre-parts",
+    "code": "PBF-007",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Compressor & Tyre Parts grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-073, PBI-077, PBI-093, KKI-001, KKI-005, KKI-009, KKI-075, KKI-100, KKI-104, KKI-182, KKI-184, KKI-292, KKI-293, KKI-294, KKI-401, KKI-402, KKI-645, KKI-646, KKI-666, KKI-667, KKI-946, KKI-953, KKI-955",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-008",
+    "name": "Brass Flare Fittings",
+    "slug": "pbf-brass-flare-fittings",
+    "code": "PBF-008",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Flare Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "PBI, KKI",
+      "Available Models": "PBI-088, PBI-089, PBI-091, PBI-090, PBI-092, PBI-104, PBI-102, PBI-105, PBI-101, PBI-103, KKI-141, KKI-432, KKI-433, KKI-466, KKI-468, KKI-471, KKI-547, KKI-548, KKI-889, KKI-890",
+      "Source Catalogs": "PBI Brass Fittings Catalog, KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-009",
+    "name": "Brass Gas & Welding Parts",
+    "slug": "pbf-brass-gas-and-welding-parts",
+    "code": "PBF-009",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Gas & Welding Parts grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "KKI",
+      "Available Models": "KKI-003, KKI-004, KKI-007, KKI-010, KKI-015, KKI-016, KKI-018, KKI-019, KKI-021, KKI-027, KKI-029, KKI-030, KKI-035, KKI-037, KKI-040, KKI-041, KKI-048, KKI-049, KKI-051, KKI-052, KKI-053, KKI-054, KKI-057, KKI-058, KKI-059, KKI-061, KKI-063, KKI-064, KKI-066, KKI-067, KKI-068, KKI-071, KKI-072, KKI-073, KKI-074, KKI-076, KKI-125, KKI-128, KKI-129, KKI-144, KKI-145, KKI-159, KKI-167, KKI-208, KKI-209, KKI-210, KKI-211, KKI-296, KKI-299, KKI-300, KKI-301, KKI-302, KKI-303, KKI-304, KKI-309, KKI-317, KKI-335, KKI-419, KKI-420, KKI-421, KKI-422, KKI-423, KKI-424, KKI-431, KKI-434, KKI-435, KKI-494, KKI-495, KKI-496, KKI-497, KKI-648, KKI-649, KKI-650, KKI-651, KKI-652, KKI-684, KKI-746, KKI-800, KKI-801, KKI-802, KKI-803, KKI-804, KKI-805, KKI-806, KKI-893, KKI-894, KKI-912, KKI-913, KKI-914, KKI-915, KKI-916, KKI-917, KKI-943, KKI-944, KKI-945, KKI-951, KKI-952, KKI-961, KKI-962",
+      "Source Catalogs": "KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-010",
+    "name": "Brass Grease Fittings",
+    "slug": "pbf-brass-grease-fittings",
+    "code": "PBF-010",
+    "category": "pneumatic-brass-fittings",
+    "description": "Brass Grease Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "KKI",
+      "Available Models": "KKI-094, KKI-542, KKI-543, KKI-544, KKI-545, KKI-546",
+      "Source Catalogs": "KKI Brass Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-011",
+    "name": "Pneumatic Manifolds",
+    "slug": "pbf-pneumatic-manifolds",
+    "code": "PBF-011",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Manifolds grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Inteco",
+      "Available Models": "42069, 42080, 42312, 42070/M, LA3029, LA3030, M0030102, M0030103, M0030104, M0030105, M0030106, M0030108, M0030109, M0030110, M0030111, M0030112, M0030202, M0030203, M0030204, M0030205, M0030206, M0030208, M0030210, M0030602, M0030604, M0040204, M0040206, M0040404, M0510102, M0510104, M0510106, M0510110, M0510202, M0510208, M0040106, M0510108, M0030114, INTECO-031",
+      "Source Catalogs": "Janatics Product Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-012",
+    "name": "Pneumatic Filters & Elements",
+    "slug": "pbf-pneumatic-filters-and-elements",
+    "code": "PBF-012",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Filters & Elements grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Inteco",
+      "Available Models": "582025, 582040, 582042, A2C31, A2C32, A2C33, C8018, C8252, F13611, F13613, F14623, F15631, F15633, F15633-A, F15633-AG1, F15633-G1, F17643, F17651-A, F17653, F17653-AG1, FRC 146234-A, FRC136134, frc146234, FRC156334, FRC176434, FRC176534, FRCLM 146234-A, FS15632, F13611-MM, F17643-AG1, INTECO-024, INTECO-027, INTECO-028",
+      "Source Catalogs": "Janatics Product Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-013",
+    "name": "Pneumatic Connectors & Fittings",
+    "slug": "pbf-pneumatic-connectors-and-fittings",
+    "code": "PBF-013",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Connectors & Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Inteco",
+      "Available Models": "890009, A2P01, A2P02, A2P03, A2P07, C4626/1, C7021, C7031, C9055, C9070, C9071, C9072, C9073, C9090, C9103, C9104, C9105, C9107, C9112, C9115, C9122, c9123, C9124, C9207, c9228, C9270, CS40615, CS40692, CS40730, CS90067, CS90102, DP242P70-FH2A, E14613-WTOR0, JPS1211, kbo, KCO, LA2400, MS001, PT11N1, PT11N1-0550, WD2100606B01A, WD2100806, WD2101210, WE20110450, WE20110650, WE20110651, WE20110850, WE20110851, WE20110852, WE20111052, WE20111253, WM5110661SD01B, WM5110860SD01B, WM5110861SD01B, WM5111061SD01B, WM530080808DB, WN015051, WN015151, WN015152, WN015252, WN015253, WN015353, WN017050, WN026051, WN026152, WN026153, WN026352, WN036060, WN036362, WN15253, WP2100404, WP2100606, WP2100808, WP2101010, wp2101212, WP2101414, WP2101616, WP2110450, WP2110451, WP2110470, WP2110650, WP2110651, WP2110652, WP2110653, WP2110654, WP2110670, WP2110850, WP2110851, WP2110852, wp2110853, WP2110854, WP2111050, WP2111051, WP2111052, WP2111053, WP2111054, WP2111250, WP2111251, WP2111252, WP2111253, WP2111254, WP2111452, WP2111453, WP2111454, WP2111455, WP2111652, WP2111653, WP2111654, WP2111655, WP2120460, WP2120461, WP2120660, WP2120661, WP2120662, WP2120663, WP2120860, wp2120861, WP2120862, WP2120863, WP2121060, WP2121061, WP2121062, WP2121063, WP2121261, WP2121262, WP2121263, WP2121463, WP2121663, WP2130450, WP2130451, WP2130470, WP2130650, WP2130670, WP2130850, WP2130851, WP2130852, WP2130853, WP2131050, WP2131051, WP2131052, WP2131053, WP2131251, WP2131252, WP2140408, WP2200404, WP2200606, WP2200612, WP2200808, WP2201010, WP2201212, WP2201414, WP2201616, WP2210450, WP2210451, WP2210452, WP2210470, WP2210650, WP2210651, WP2210652, WP2210653, WP2210670, WP2210850, WP2210851, WP2210852, WP2210853, WP2211050, WP2211051, WP2211052, WP2211053, WP2211054, WP2211250, WP2211251, WP2211252, WP2211253, WP2211254, WP2211452, WP2211453, WP2211454, WP2211652, WP2211653, WP2211654, WP2220460, WP2220461, WP2220660, WP2220661, WP2220860, WP2220861, WP2220862, WP2220863, WP2221061, WP2221063, WP2221263, WP2221463, WP2230650, WP2230651, WP2230850, WP2230851, WP2300404, WP230040406, WP2300606, WP230060604, WP230060608, WP230061212, 300808, WP230080806, WP230080810, WP230080812, WP230081212, WP2301010, WP230101006, WP230101008, WP230101012, WP2301212, WP230121206, WP230121208, WP230121210, WP2301414, WP230141406, WP230141412, WP2301616, WP230161612, WP2310450, WP2310451, WP2310470, WP2310650, WP2310651, WP2310652, WP2310653, WP2310850, WP2310851, WP2310852, WP2310853, WP2311051, WP2311052, WP2311053, WP2311251, WP2311253, WP2311453, WP2311653, WP2320861, WP2321061, WP2330450, WP2330650, WP2330651, WP2330850, WP2330851, WP2330852, WP2330853, WP2331051, WP2331251, WP2331252, WP2331253, WP2340660, WP2340661, WP2340861, WP2400404, WP240040406, WP2400606, WP240060608, WP2400808, WP240080810, WP2401010, WP240101012, WP2401212, WP240121210, WP2401414, WP2500404, WP2500606, WP2500808, WP2501010, WP2501212, WP2501414, WP2501616, WP2700404, WP2700606, WP2700808, WP2701010, WP2701212, WP3110470, WP3210670, WP3311252, wp2221252, WM5211262SD01B, WP2331053, CS90080, PPR156341-W11-XX, C9205, C9093, C9223, WP2200608, WN036463, DS255SR61-BT1R0, WN015050, E14612-WT1R0, WP230060612, WP2130651, PT11161N2-0450, PT11161N1-0100, INTECO-032",
+      "Source Catalogs": "Janatics Product Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-014",
+    "name": "Pneumatic Cylinders & Spares",
+    "slug": "pbf-pneumatic-cylinders-and-spares",
+    "code": "PBF-014",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Cylinders & Spares grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "600/002, 600/003, 600/004, 601/003, A02012025O, A02016010O, A02020030O-M, A02025025O, A02025030O, A02025050O-M, A02032010O-M, A02032030O, A02032050O, A02032080O, A02040010O, a02040025-M, A02040040O, A02063050O, A03025020O-M, A03032040O, A03040015O, A03063040O, A12032025O, A12032050O, A12032060O, A12032080O, A12032100O, A12032160O, A12032200O, A12032250O, A12032300O, A12032400O, A12032450O, A12040040O, A12040050O, A12040060O, A12040060S, A12040080O, A12040100O, A12040100T, A12040125O, A12040140O, A12040160D, A12040160O, A12040600O, A12040700O, A12050025O, A12050040O, A12050050O, A12050080O, A12050100D, A12050100O, A12050120F, A12050150O, A12050160O, A12050200O, A12050250O, A12050400O, A1205090O, A12050965O, A12063050O, A12063080O, A12063100-D, A12063100O, A12063150O, A12063160O, A12063200O, A12063300O, A12063320O, A12063400O, A12063500O, A12080100O, A12080125O, A12080160O, A12080200O, A12080200O-S, A12100100O, A12100100T, A12100125, A12100125O, A12100600O, A13032050O, A13032080O, A13032100O, A13032350O, A13032450O, A13032500O, A13040050O, A13040060O, A13040070O, A13040080O, A13040160O, A13050125, A13050160O, A13050200O, A13050250F, A13050250O, A13063050O, A13063100O, A130631525O, A13063152O, A13063350O, A13063400O, A13063545O, A16125050O, A16125100O, A161251500O, A16125300O, A16160080O, A16160160O, A16160400O, A17125600O, A17125800O, A17160060O, A17160160, A23032025O, A23032200O, A23032400O, A23032450O, A23040160O, A23040700O, A23040790O, A23050050O, A23050080O, A23050125, A23050125D, A23050125O, A23050160O, A23050200O, A23050400O, A23080200O, A24032080O, A24032450O, A24032600O, A24040040O, A24050200K, A24050200O, A24063080G, A24063080O, A24063100O, A24063110O, A240631295O, A24063160O, A24080075O, A24080160O, A24100050O, A24100125O, A24100900O, A24125160O, A25040025O, A27032050O, A27032070O, A27032200O, A27032500O, A27040050O, A27040080O, A27040160O, A27040500O, A27050160O, A27050320O, A27050500O, A27050900O, A27063125O, A27063565O, A27063600O, A27080100O, A27080150O, A27080160O, A27080400O, A27100160O, A28032050O, A28032100O, A28032160O, A28032200O, A28032350O, A28032420O, A28032450O, A28032465O, A28040025O, A28040050O, A28040450, A28040500O, A28045025O, A28050025O, A28050050O, A28050100O, A28050350O, A28080050O, A28080075O, A28080080O, A280801000O, A28080100O, A28080125O, A28080160O, A28080200O, A28080250O, A28080300O, A28080450O, A28080750O, A28100125O, A28100300O, A28100400O, A28100500O, A28100600O, A51012010O, A51012015O, A51012025O, A51012050, A51016025O, A51016030O, A51016040O, A51016050O, A51016080O, A51016200O, A51020020O, A51020025O, A51020050O, A51020060O, A51020080O, A51020100O, A51020125O, A51020160O, A51020200O, A51020250O, A51020400O, A51025010O, A51025015O, A51025020O, A51025025O, A51025030O, A51025040O, A51025050O, A51025080O, A51025100O, A51025110O, A51025125O, A51025160O, A51025180O, A51025200O, A51025250O, A51025300O, A51025350O, A51025450O, A52020025O, A52020050O, A52020080O, A52020100O, A52020200O, A52020225, A52020250O, A52020300O, A52020400O, A52025020O, A52025040O, A52025050O, A52025080O, A52025100O, A52025125O, A52025160O, A52025200O, A52025368O, A54025125O, A55025080O, A55025200O, A55025300O, A63025040O-M, A63025050O-M, A64032015O-M, A64032025O-M, A64032030O, A64040015M, A64040025O-M, A64063050O-M, A64080050O-M, A67032025O, A75032025, A75032420O, A76032025, A76032050, A81020025O, A81025025O, A81025040O, A81025050O, az, C111, C112, C113, C114, C116, C118, C14, C15, C152, C153, C156, C157, C199, C21, C22, C276, C4745/M, C501, c5021, C5022, C50326, C50326 =C5144, C5039, C504, C5058, C5059, C5078, C5091, c5092, C5118, C5132, C5161, C5190, C5195, C5278, C5289, C5328, C5329, C5342, C5436, C5525, c5540, C5541, C5696, c5739, C5853, C5943, C600, C601, C61, C700, C75, C772, CS50081, CS50269, CS50354, CS50410, CS50411, cs50412, CS50413, CS50414, CS50655, CS50930, CSK0012C, CSK0013C, CSK0014C, CSK0015C, CSK0021C, CSK0022C, CSK0054C, CSK0071C, CSK0075C, CSK0085C, CSK0111C, CSK0112C, CSK0113C, CSK0114C, CSK0116C, CSK0118C, CSK0119C, CSK0120C, CSK0151C, CSK0152C, CSK0153C, CSK0154C, CSK0156C, CSK0157C, CSK0162C, CSK0276C, CSK0501C, CSK0600C, CSK0601C, CSK0700C, CSK0772C, CSK5059C, CSKJ004, MC0016, MC0017, MC0025, MC0061, MC0068, MC0069, MC0091, MC0118, MC0138, MC0253, MC0373, MC0429, MC0488, MC0639, MC0643, SK 0063, SK 5632, SK0001, SK0002, SK0003, SK0004, SK0005, SK0006, SK0007, SK0008, SK0011, SK0012, SK0013, SK0014, SK0015, SK0016, SK0051, SK0052, SK0053, SK0054, SK0055, SK0056, SK0064, SK0117, SK0138, SK0143, SK0156, SK0157, SK0175, SK2003, SK3631, SK4015, SK4016, SK4022, SK4045, SK4059, SK4077, SK4134, SK4158, SK4160, SK5611, A51025190O, A24032600O-L, A23063050F, A12050700S, A27032080O, A16160600O, A12040025O, A12040050D, A23032600O, A02020025O-M, A02025010O, A02032010O, A02032025O-M, A02040020O-M, A02040060O-M, A02050015O, A02050050O-M, A02032020O, A02020100O-M, A02016010O-M, SK0144, A23032160O, A52020040O, SK00930025, A02040025O, A02020025O, A120401000O, A28050200O, A12100800O, A21080125O, A13050300O, A02025025O-M, A02025015O-M, A24040160O, A16125200L, A28063320O, A02020010O, A12100250O, MC0027, A52025300O, A24040100O, C5063, A161251000T, A02032025O, A24050065O, A24050400O, A02020030O, A63025080O-M, SK4082, A28080350O, A02016030O, CS50082, A12063180O, SK 0041, A27063160O, a631000350-m, SK0141, A02040050O-M, A10050300O, A51016150O, A13063350D, A02032015O, A02040050O, A13050040O, A51016020O, A51016060O, CS50251, SK00940050, A02050015O-M, A28050080O, C5915, A23063800O, A16200270O, A12050100T, A10032160O, C54, A03080020O-M, A12050070O, A51012080O, CS50232, A12100200O, SK0129, A51025145O, A28032350D, A28063080O, A64040050O, A02050050O, A23050830O, A23H050830, C13, SK0310, A20050320O, A28040500D, A67025015S-M, A161251000O, A64040025O, A12032030O, A12040070O, A12032125O, A03025050O-M, A28032650O, A120631000T, A12063100T, A13040100O, A24080100O, A24080180O, A63080030O-M, A28100100O, A24080250D, A02080030O-M, A24040080O, A12040200O, SK0148, A61050040O, SK4014, A280501000O, A28100080O, A11040050O, A13050600O",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-015",
+    "name": "Cylinder Sensors & Switches",
+    "slug": "pbf-cylinder-sensors-and-switches",
+    "code": "PBF-015",
+    "category": "pneumatic-brass-fittings",
+    "description": "Cylinder Sensors & Switches grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "880006/S, AM1020, AM1025, AM1032, AM1063, AM1080, AM1125, AM2012, AM2032, AM40-0-FL-04, AM40-1-FL-04, AM40-2-FL-04, AM40-3-FL-04, AM41-0-FL-04, AM41-1-FL-04, AM42-2-FL-04, AM5006-1-FL-04, AM6006-2-FL-04, DS244P60-FH1A, DS244P60-FH2A, DS254P60-ML1A, PS0102504, PS0102504A, PS0106504, PS0107504, PS0108504, PS4008504A, PT11N2, PW0104504, DS254P60-LH3A, DS244P60-MP2A, DS254P60-SR3A, C5771, AM42-0-FL-04, DS244P60-ML1A, PS0101504, AM6006-2-FL-07, AM41-3-FL-04",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-016",
+    "name": "Pneumatic Regulators",
+    "slug": "pbf-pneumatic-regulators",
+    "code": "PBF-016",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Regulators grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Inteco",
+      "Available Models": "A2C05, C8001, C8007, C8019, C8025, C8026, C8286, PPR156341-W11-LL, PR13601, PR13611, PR13612, PR13613, R13602-N, R13603-N, R13604, R13604-N, R13611, R13612, R13613, R13613-N, r13614, R13614-N, R14624, R15632, R15632-T, R15634, R15634-T, R17644, R17653, R17654, R23612, R33612, R33613, R15634-N, R17644-N, R33614, R33614-C2, R14624-N, CS80054, R14621-N, R13614-T, INTECO-025",
+      "Source Catalogs": "Janatics Product Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-017",
+    "name": "Pressure Gauges",
+    "slug": "pbf-pressure-gauges",
+    "code": "PBF-017",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pressure Gauges grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "A2CG01, A2CG02, A2CG03, A2CG05, A2CG06, A2G01, A2G02, A2G03, A2G07, a2g08, A2G09, A2GP08, A2PG04, A2PG08",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-018",
+    "name": "Industrial Pneumatic Valves",
+    "slug": "pbf-industrial-pneumatic-valves",
+    "code": "PBF-018",
+    "category": "pneumatic-brass-fittings",
+    "description": "Industrial Pneumatic Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "A2D01, A2D02, A2D03, C 138, C100, C101, C102, C123, C136, C137, C138, C143, C163, C183, C23, C300, C301, C302, C303, C304, C309, C333, C341, C349, C38, C402, C420, C484, C4866, C503, C522, C557, C595, C636, C65, C650, C7020, C7063, C717, c743, C746, C761, C789, C824, C827, C828, C86, C863, C864, C99, CS70000, CS70006, CS70042, DMN227A63-A, DMN227A63-W, DMN229A65-A, DP035061, DP045061, DP055061, DP055N61, DP242O70, DPO45F61, DR195S61-N, DS234P60-FH1A, DS234SR60-WT1R0, DS235ER61, DS235PD61, DS235SR61-W, DS235SR61-WTIR0, DS244EE60, DS244ER60, DS244P60, DS244P60-LH3A, DS244SR60-A, DS244SR60-AT1R0, DS244SR60-G, DS244SR60-W, DS244SR60-WT1RO, DS245EE61, DS245ER61, DS245PD61, DS245PR61, DS245SR61-A, DS245SR61-G, DS245SR61-R, DS245SR61-W, DS245SR61-WT1R0, DS245SS61-A, DS245SS61-W, DS247SR63-A, DS247SR63-W, DS247SR63-WT1R0, DS254SR60-A, DS254SR60-G, DS254SR60-GT1R0, DS254SR60-W, DS254SR60-WT1R0, DS254SS60-B, DS255EE61, DS255ER61, DS255PD61, DS255PR61, DS255SR61-A, DS255SR61-AT1R0, DS255SR61-B, DS255SR61-G, DS255SR61-R, DS255SR61-W, DS255SR61-WT1R0, DS255SS61-A, DS255SS61-G, DS255SS61-R, DS255SS61-W, DS257EE63, DS257ER63, DS257PR63, DS257SR63-A, DS257SR63-W, DS264SC60-W, DS265EC61, DS265SC61-A, DS265SC61-W, DS267SC63-G, DS267SC63-GT1R0, DS275SC61-W, DS41502SR8H-WT0R1, DS43601SC8-W, DS555SR61-A, DS555SR61-W, E12613A, E12613G, E12613R, E14613A, E24002A, E24002A-K, E24002W, EF13615A, EF14615A, EF14615W, EL13615A, EL13637A, EL14615A, EL14615A-K, EL14615W-K, EL14637A, EL14637W, EL15615A, EL15615W, EL15637A, EL15637W, EL25637W, GQ0150, GQ0151, GQ0152, GQ0153, GQ0250, GQ0251, GQ0252, GQ0253, GS150, GS151, GS152, GS153, GS154, GS246H62, GS246L62, GS247H63, JPS205, LA3035, SA2203, SA2204, SA2207, SA2600, SA2601, SSA0611, E24002W-K, C7082, DS235SS61-A, DS355SS61-A, DS234SR60-W, DS254P60, C807, 772001, C579, DP155SR61-W, DS254SR60-AT1R0, DS43601SC8-WT1R0, GS246R62, DS255SR61-GT1R0, GS247L63, DY22123263, CS70022, C826, DS555TT61-W, DS274SC60-W, DS254SR60-AT0R0, DS247SR63-G, DS255SS61-AT0R0, DS234PD60, GS32208K62",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-019",
+    "name": "Foot Operated Valves",
+    "slug": "pbf-foot-operated-valves",
+    "code": "PBF-019",
+    "category": "pneumatic-brass-fittings",
+    "description": "Foot Operated Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "AA016, AA022, AA032, AA040, AA1100, DP045F61, DP055F61, DP055L61, DPO55F61, ML022, ML1032, ML1100, ML063",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-020",
+    "name": "Solenoid Valves & Coils",
+    "slug": "pbf-solenoid-valves-and-coils",
+    "code": "PBF-020",
+    "category": "pneumatic-brass-fittings",
+    "description": "Solenoid Valves & Coils grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "AC11A, AC11B, AC11G, AC23A, AC23B, AC23G, AC34G, CS70074, CSA21A1F0A, DC12W, DC24R, DC24W, DC36W, DMH527B63-W, DS254SS60-W, DS257SS63-A, DS257SS63-W, EF115615W, WHC10B06-04, WHC10B06-06, WHC10B06-10, WHC10B08-02, WHC10B08-04, WHC10B08-06, WHC10B08-10, WHC10B08-15, WHC10B10-02, WHC10B10-04, WHC10B10-10, WHC10B10-15, WHC10B12-02, WHC10B12-06, WHC10B12-10, WHC10K08-02, WHC10Y08-02, C823",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-021",
+    "name": "Pneumatic Silencers",
+    "slug": "pbf-pneumatic-silencers",
+    "code": "PBF-021",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Silencers grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "AS0160, AS0161, ASB0160, ASB0161, ASB0162, ASB0163, ASC0160, ASC0161, ASC0162, ASC0163, ASL0161, C7006, CS70053, ASC0170",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-022",
+    "name": "Flow & Speed Control Valves",
+    "slug": "pbf-flow-and-speed-control-valves",
+    "code": "PBF-022",
+    "category": "pneumatic-brass-fittings",
+    "description": "Flow & Speed Control Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "ASL0160, ASL0163, ASR0160, C207, C299, C52, C7022, C9172, C9173, CS70004, CS70010, GR0110404, GR0110606, GR0110808, GR0111010, GR0111212, GR1105006, GR1105108, GR1105110, GR1107006, GR1136060, GR1136161, GR5105004, GR5105006, GR5105008, GR5105106, GR5105108, GR5105110, GR5105208, GR5105210, GR5105212, GR5105308, GR5105310, GR5105312, GR5107004, GR5107006, GR5136060, GR5136161, GR5136262, GR5136363, GR5137070, GR1105008",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-023",
+    "name": "Pneumatic Tubes",
+    "slug": "pbf-pneumatic-tubes",
+    "code": "PBF-023",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Tubes grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Inteco",
+      "Available Models": "C4536, WB107, WB109, WC1, WH 01W12, WH 01W10, WH 01W14, WH00B04, WH00B04-21, WH00B06, WH00B08, WH00B10, WH00B12, WH00B14, WH00B16, WH00K04, WH00K06, WH00K08, WH00K10, WH00R06, WH00R08, WH00R10, WH00T04, WH00T06, WH00T08, WH00T10, WH00T12, WH00Y06, WH00Y08, WH00Y10, WH01W04, WH01W06, WH01W08, WH08A04, WH08A06, WH08A08, WH08A10, WH08A12, WH08A14, WH08A16, WT008-08, WH01W12, WT010-08, INTECO-018",
+      "Source Catalogs": "Janatics Product Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-024",
+    "name": "Pneumatic Logic & Check Valves",
+    "slug": "pbf-pneumatic-logic-and-check-valves",
+    "code": "PBF-024",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Logic & Check Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "C49, C7007, C7008, GV160, GV161, GV162, GV163, GV210650, GV210651, GV216151",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-025",
+    "name": "Manual & Mechanical Valves",
+    "slug": "pbf-manual-and-mechanical-valves",
+    "code": "PBF-025",
+    "category": "pneumatic-brass-fittings",
+    "description": "Manual & Mechanical Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics",
+      "Available Models": "C64, C7086, DP045R61, DP055R61, DS244HR60, DS245HD61, DS245HR61, DS247HD63, DS255HD61, DS255HR61, DS257HD63, DS265HC61, DS265HD61, DS267HC63, DS267HD63, DS275HC61, DS285HD61, E24612A, DS275HD61, DS277HC63",
+      "Source Catalogs": "Janatics Product Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-026",
+    "name": "Pneumatic FRL Units",
+    "slug": "pbf-pneumatic-frl-units",
+    "code": "PBF-026",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic FRL Units grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Techno",
+      "Available Models": "C8005, C8016, C8024, C8052, C8177, FRC1434-A, FRC146234-A, FRC156314-A, FRC156334-A, FRC176534-A, FRC336134-M, FRC356334-M, FRC356334-M-C1, FRC356334-M-C2, FRCLM136134/W, FRCLM146234/W, FRCLM156334/W, FRCLM176434/W, FRCLM176534/W, FRLM136134/W, FRLM176434, SA2202, SA2602, FRC146224-A, FRC356334-A, FRCLM356334-M-W, FRC146214-A, FRC156314, FRC176513, FRC156334-MM, FRCLM156334-MM, AF2000, AFC2000, AFR2000J, AFR2000, AL2000, AR2000, BF4000, BFC4000, BFR4000, BR4000, NAR200, NR2000-02, AC2010-02, AC3010-03, AC4010-04, AC4010-06, AC5010-10, AF2000-02D, AF3000-03, AF4000-04D, AF4000-04, AF4000-06, AF5000-10, AL3000-03, AL4000-04, AL4000-06, AL5000-10, AR2000-02, AR3000-03, AR4000-04, AR4000-06, AR5000-10, AW2000-02P, AW3000-03, AW4000-04, AW4000-06, AW5000-10, KAC2010-02, KAF2000-02, KAL2000-02, KAW2000-02, TC2010-02, TW2000-02",
+      "Source Catalogs": "Janatics Product Catalog, Techno FRL Product Sheet"
+    }
+  },
+  {
+    "id": "pbf-family-027",
+    "name": "Pneumatic Lubricators",
+    "slug": "pbf-pneumatic-lubricators",
+    "code": "PBF-027",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Lubricators grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Janatics, Inteco",
+      "Available Models": "C8010, C8013, C8249, C8280, C8281, L1361, L1462, L1563, L1764, L1765, L3361, INTECO-026",
+      "Source Catalogs": "Janatics Product Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-028",
+    "name": "Techno Solenoid Valves",
+    "slug": "pbf-techno-solenoid-valves",
+    "code": "PBF-028",
+    "category": "pneumatic-brass-fittings",
+    "description": "Techno Solenoid Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "3V-110-06, 3V-210-06, 3V-210-08, 3V-310-10, 3V-410-15, 4V-110-06, 4V-110-M5, 4V-120-06, 4V, 4V-210-06, 4V-210-08, 4V-220-06, 4V-220-08, 4V-230-08, 4V-310-10, 4V-320-10, 4V-330-10, 4V-410-15, 4V-420-15, 4V-430-15, F, DS",
+      "Source Catalogs": "Techno Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-029",
+    "name": "Techno Pneumatic Components",
+    "slug": "pbf-techno-pneumatic-components",
+    "code": "PBF-029",
+    "category": "pneumatic-brass-fittings",
+    "description": "Techno Pneumatic Components grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "NAMUR, BRASS, EWS255, EWS459, EWS915, PU, IS02-24/27/28/30/32/33/34/36/38/41, ISABJ-03, ISPE-10T, ISPE-04T, TMG-11, ISABJ-06, TMG-15",
+      "Source Catalogs": "Techno Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-030",
+    "name": "Techno Pneumatic Valves",
+    "slug": "pbf-techno-pneumatic-valves",
+    "code": "PBF-030",
+    "category": "pneumatic-brass-fittings",
+    "description": "Techno Pneumatic Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "1018",
+      "Source Catalogs": "Techno Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-031",
+    "name": "Industrial Quick Release Couplings",
+    "slug": "pbf-industrial-quick-release-couplings",
+    "code": "PBF-031",
+    "category": "pneumatic-brass-fittings",
+    "description": "Industrial Quick Release Couplings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno, Inteco",
+      "Available Models": "SM, SF, SH, SP, PM, PF, PH, PP, INTECO-030",
+      "Source Catalogs": "Techno QRC Product Sheet, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-032",
+    "name": "SRP Brass Ball Valves",
+    "slug": "pbf-srp-brass-ball-valves",
+    "code": "PBF-032",
+    "category": "pneumatic-brass-fittings",
+    "description": "SRP Brass Ball Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "SRP",
+      "Available Models": "SRP-W0014, SRP-W0038, SRP-W0012, SRP-WH0012, SRP-WG0012, SRP-W0034, SRP-W0001, SRP-WH0001, SRP-W0114",
+      "Source Catalogs": "SRP Ball Valve Product Sheet"
+    }
+  },
+  {
+    "id": "pbf-family-033",
+    "name": "Stainless Steel Pipe Fittings",
+    "slug": "pbf-stainless-steel-pipe-fittings",
+    "code": "PBF-033",
+    "category": "pneumatic-brass-fittings",
+    "description": "Stainless Steel Pipe Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Generic, Lintas",
+      "Available Models": "SS-01, SS-02, SS-03, SS-04, SS-05, SS-06, SS-07, SS-08, SS-09, SS-10, SS-11, SS-12, SS-13, SS-14, SS-15, SS-16, SS-17, SS-18, SS-19, SS-20, SS-21, SS-22, LINTAS-01, LINTAS-02, LINTAS-03, LINTAS-04, LINTAS-05, LINTAS-06, LINTAS-07, LINTAS-08, LINTAS-09, LINTAS-10, LINTAS-11, LINTAS-12, LINTAS-13, LINTAS-14, LINTAS-15, LINTAS-16, LINTAS-17, LINTAS-18, LINTAS-19, LINTAS-20, LINTAS-21, LINTAS-22, LINTAS-23",
+      "Source Catalogs": "Stainless Steel Fittings Product Sheet, Lintas Stainless Steel Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-034",
+    "name": "ATAM Stainless Steel Ball Valves",
+    "slug": "pbf-atam-stainless-steel-ball-valves",
+    "code": "PBF-034",
+    "category": "pneumatic-brass-fittings",
+    "description": "ATAM Stainless Steel Ball Valves grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "ATAM",
+      "Available Models": "ATAM-AV-505",
+      "Source Catalogs": "ATAM Ball Valve Product Sheet"
+    }
+  },
+  {
+    "id": "pbf-family-035",
+    "name": "Akari One Touch Fittings",
+    "slug": "pbf-akari-one-touch-fittings",
+    "code": "PBF-035",
+    "category": "pneumatic-brass-fittings",
+    "description": "Akari One Touch Fittings grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Akari",
+      "Available Models": "AKARI-PC, AKARI-PC-G, AKARI-PC-F, AKARI-PL, AKARI-PL-G, AKARI-PL-F, AKARI-PT, AKARI-PT-G, AKARI-PT-F, AKARI-PY, AKARI-PK, AKARI-PG, AKARI-PW, AKARI-PM, AKARI-PE, AKARI-HVFF, AKARI-HVFS, AKARI-SC, AKARI-SL, AKARI-SPC",
+      "Source Catalogs": "Akari One Touch Fittings Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-036",
+    "name": "Impact Wrench",
+    "slug": "pbf-impact-wrench",
+    "code": "PBF-036",
+    "category": "pneumatic-brass-fittings",
+    "description": "Impact Wrench grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno, Inteco",
+      "Available Models": "AT-239, AT-239 KIT, AT-5040B KIT, AT-242, AT-241, AT-5040B, AT-246, AT-243, AT-245, AT-263, AT-244, AT-5059, AT-9961, AT-9991, AT-266, AT-5030, AT-5031SG, AT-261, AT-265, AT-9981K, AT-9980, INTECO-009",
+      "Source Catalogs": "Compair Pneumatic Products Catalog, Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-037",
+    "name": "Air Die Grinder and Driller",
+    "slug": "pbf-air-die-grinder-and-driller",
+    "code": "PBF-037",
+    "category": "pneumatic-brass-fittings",
+    "description": "Air Die Grinder and Driller grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "AT-7032B, AT-282SG, AT-7033B, AT-3170, AT-3170K, AT-7033BK, PAT-403KL, PAT-401KL, AT-4038C, AT-7042, AT-7035",
+      "Source Catalogs": "Compair Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-038",
+    "name": "Air Sander and Nailer",
+    "slug": "pbf-air-sander-and-nailer",
+    "code": "PBF-038",
+    "category": "pneumatic-brass-fittings",
+    "description": "Air Sander and Nailer grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "AT-980-5V, AT-975-5V, AT-4151, PAT-302, F-50, CN-55, AT-8016, AT-871LA, F-30, AT-1013, ATT-50",
+      "Source Catalogs": "Compair Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-039",
+    "name": "Foam Gun, Rivet Gun and Air Hose Reel",
+    "slug": "pbf-foam-gun-rivet-gun-and-air-hose-reel",
+    "code": "PBF-039",
+    "category": "pneumatic-brass-fittings",
+    "description": "Foam Gun, Rivet Gun and Air Hose Reel grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "AHR01, AHR03, AT-906, AT-3198, AT-6015SG, FG-02, FG-03, FG-01",
+      "Source Catalogs": "Compair Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-040",
+    "name": "Air Screwdriver, Paint Gun, Hammer and Labour Saving Wrench",
+    "slug": "pbf-air-screwdriver-paint-gun-hammer-and-labour-saving-wrench",
+    "code": "PBF-040",
+    "category": "pneumatic-brass-fittings",
+    "description": "Air Screwdriver, Paint Gun, Hammer and Labour Saving Wrench grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "AT-W3, AT-W5, AT-W7, AIR BRUSH, H-2000P, H-827P, AT-2013KSG, ISLSW-088, ISLSW-058, AT-2011KSG, AT-2012KSG",
+      "Source Catalogs": "Compair Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-041",
+    "name": "Pneumatic Special Tool",
+    "slug": "pbf-pneumatic-special-tool",
+    "code": "PBF-041",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Special Tool grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "AT-9039, AT-7039, AT-480SG, AT-6036N, EWS SERIES, EW SERIES, AT-413, AT-6026, IMPACT SOCKET SET, SANDING PAD",
+      "Source Catalogs": "Compair Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-042",
+    "name": "Pneumatic Fitting, Tube and Air Chuck",
+    "slug": "pbf-pneumatic-fitting-tube-and-air-chuck",
+    "code": "PBF-042",
+    "category": "pneumatic-brass-fittings",
+    "description": "Pneumatic Fitting, Tube and Air Chuck grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Techno",
+      "Available Models": "TG-08, AC-8, TWAC, ALN H, ALN, NITROGEN, DG-10, PAWEL, ALUMINIUM AIR GUN, CAR WASHING GUN, ALUMINIUM CAR WASHING GUN, NYLON BRAIDED HOSE, YELLOW SPRAY HOSE, PU TUBE, PU SPIRAL, SP, SH, SF, PP, PM, PF, PH, SM",
+      "Source Catalogs": "Compair Pneumatic Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-043",
+    "name": "Air Hammer",
+    "slug": "pbf-air-hammer",
+    "code": "PBF-043",
+    "category": "pneumatic-brass-fittings",
+    "description": "Air Hammer grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Inteco",
+      "Available Models": "INTECO-014",
+      "Source Catalogs": "Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-044",
+    "name": "Air Nailer",
+    "slug": "pbf-air-nailer",
+    "code": "PBF-044",
+    "category": "pneumatic-brass-fittings",
+    "description": "Air Nailer grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Inteco",
+      "Available Models": "INTECO-019",
+      "Source Catalogs": "Inteco Industrial Products Catalog"
+    }
+  },
+  {
+    "id": "pbf-family-045",
+    "name": "Paint Tank",
+    "slug": "pbf-paint-tank",
+    "code": "PBF-045",
+    "category": "pneumatic-brass-fittings",
+    "description": "Paint Tank grouped from the supplied manufacturer catalogs. Contact Noor Agencies for available models, sizes and technical options.",
+    "image": "",
+    "specifications": {
+      "Brand": "Inteco",
+      "Available Models": "INTECO-020",
+      "Source Catalogs": "Inteco Industrial Products Catalog"
+    }
+  }
+]

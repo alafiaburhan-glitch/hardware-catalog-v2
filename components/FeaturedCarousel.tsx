@@ -10,6 +10,7 @@ type Product = {
   code: string;
   image?: string | null;
   slug?: string | null;
+  category?: string | null;
 };
 
 type Props = {
@@ -43,6 +44,7 @@ export default function FeaturedCarousel({ products }: Props) {
                 code={product.code}
                 image={product.image ?? undefined}
                 slug={product.slug ?? undefined}
+                category={product.category ?? undefined}
               />
             </div>
           ))}

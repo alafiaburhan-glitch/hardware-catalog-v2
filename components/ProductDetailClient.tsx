@@ -112,8 +112,8 @@ export default function ProductDetailClient({
         </Dialog.Root>
       ) : (
         <div className="border rounded-3xl overflow-hidden bg-white md:sticky md:top-24 md:self-start">
-          <div className="aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
-            No Image
+          <div className="aspect-square bg-gray-50 flex flex-col items-center justify-center text-gray-400">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em]">Image pending</span>
           </div>
         </div>
       )}

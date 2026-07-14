@@ -3,6 +3,11 @@ import { supabase } from "@/lib/supabase";
 import CategoryPageClient from "@/components/CategoryPageClient";
 import BrandCategoryClient from "@/components/BrandCategoryClient";
 import { getCategoryBrands, productMatchesBrand } from "@/lib/categoryBrandGroups";
+import { handTools } from "@/data/handTools";
+import { getPowerToolsSection } from "@/data/powerTools";
+import PowerToolsCategoryClient from "@/components/PowerToolsCategoryClient";
+import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
+import { sortProductsAlphabetically } from "@/lib/sortProducts";
 
 export const dynamic = "force-dynamic";
 
@@ -18,9 +23,9 @@ const categorySeo: Record<string, { title: string; description: string }> = {
       "Noor Agencies supplies emery rolls in Coimbatore in multiple grit options for sanding, metal finishing, fabrication and workshop use.",
   },
   "industrial-adhesives-sealants": {
-    title: "Loctite Adhesives Supplier in Coimbatore",
+    title: "Industrial Adhesives & Sealants Supplier in Coimbatore",
     description:
-      "Loctite adhesives and sealants supplier in Coimbatore. Contact Noor Agencies for Loctite 401, 243, 270, 577, 638 and other industrial adhesive products.",
+      "Loctite, Fevicol and Araldite adhesives and sealants supplier in Coimbatore. Contact Noor Agencies for industrial bonding, threadlocking, flooring, foam and epoxy adhesive products.",
   },
   "hand-tools": {
     title: "Hand Tools Supplier in Coimbatore",
@@ -31,6 +36,11 @@ const categorySeo: Record<string, { title: string; description: string }> = {
     title: "Power Tools Supplier in Coimbatore",
     description:
       "Power tools supplier in Coimbatore for construction, fabrication, maintenance and industrial use. Contact Noor Agencies for available brands and models.",
+  },
+  "pneumatic-brass-fittings": {
+    title: "Pneumatic & Brass Fittings Supplier in Coimbatore",
+    description:
+      "Browse pneumatic components, brass fittings, stainless steel fittings, valves, FRL units, couplings and pneumatic tools from Noor Agencies in Coimbatore.",
   },
   ropes: {
     title: "Industrial Rope Supplier in Coimbatore",
@@ -143,22 +153,48 @@ export default async function CategoryPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
-  const { data: products } = await supabase
+  const { data: databaseProducts } = await supabase
     .from("products")
     .select("*")
     .eq("category", slug);
 
-  const categoryName = category?.name ?? slug.replace(/-/g, " ");
+  // Hand tools are intentionally grouped by tool family, with brands and
+  // models exposed as options instead of creating a separate card per brand.
+  const products = sortProductsAlphabetically(slug === "hand-tools"
+    ? [
+        ...handTools,
+        ...(databaseProducts ?? []).filter(
+          (product) => !handTools.some((catalogProduct) => catalogProduct.slug === product.slug),
+        ),
+      ]
+    : slug === "power-tools"
+      ? [...getPowerToolsSection("power-tools"), ...(databaseProducts ?? []).filter((product) => !getPowerToolsSection("power-tools").some((catalogProduct) => catalogProduct.slug === product.slug))]
+      : slug === "pneumatic-brass-fittings"
+        ? [...pneumaticBrassFittings, ...(databaseProducts ?? []).filter((product) => !pneumaticBrassFittings.some((catalogProduct) => catalogProduct.slug === product.slug))]
+        : (databaseProducts ?? []));
+
+  const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"
+    ? "Pneumatic & Brass Fittings"
+    : slug.replace(/-/g, " "));
   const seoDescription =
     categorySeo[slug]?.description ??
     `Browse industrial ${categoryName.toLowerCase()} products from Noor Agencies, a trusted industrial hardware supplier in Coimbatore.`;
   const brandGroups = getCategoryBrands(slug);
 
+  if (slug === "power-tools") {
+    return <PowerToolsCategoryClient products={products} />;
+  }
+
   if (brandGroups.length > 0) {
     const brandsWithCounts = brandGroups.map((brand) => ({
       ...brand,
-      productCount: (products ?? []).filter((product) => productMatchesBrand(product, brand)).length,
+      productCount: products.filter((product) => productMatchesBrand(product, brand)).length,
     }));
+    const directProducts = slug === "hand-tools"
+      ? products.filter(
+          (product) => !brandGroups.some((brand) => productMatchesBrand(product, brand)),
+        )
+      : [];
 
     return (
       <BrandCategoryClient
@@ -166,6 +202,7 @@ export default async function CategoryPage({ params }: Props) {
         categorySlug={slug}
         seoDescription={seoDescription}
         brands={brandsWithCounts}
+        directProducts={directProducts}
       />
     );
   }
@@ -213,9 +250,9 @@ export default async function CategoryPage({ params }: Props) {
     "@type": "ItemList",
     name: `${categoryName} Products`,
     itemListOrder: "https://schema.org/ItemListOrderAscending",
-    numberOfItems: products?.length ?? 0,
+    numberOfItems: products.length,
     itemListElement:
-      products?.map((product, index) => ({
+      products.map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
         url: `https://www.nooragencies.in/products/${product.slug}`,
@@ -246,7 +283,7 @@ export default async function CategoryPage({ params }: Props) {
       <CategoryPageClient
         slug={slug}
         categoryName={categoryName}
-        initialProducts={products ?? []}
+        initialProducts={products}
         seoDescription={seoDescription}
         faqs={category?.faqs ?? []}
       />

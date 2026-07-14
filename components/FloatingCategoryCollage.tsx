@@ -41,7 +41,7 @@ export default function FloatingCategoryCollage() {
                   fill
                   className="object-cover"
                 />
-              </div>
+                </div>
 
             </div>
 

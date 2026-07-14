@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { supabase } from "@/lib/supabase";
+import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nooragencies.in";
@@ -47,6 +48,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     })) ?? [];
 
+  if (!categoryPages.some((category) => category.url.endsWith("/pneumatic-brass-fittings"))) {
+    categoryPages.push({
+      url: `${baseUrl}/categories/pneumatic-brass-fittings`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    });
+  }
+
   const productPages =
     products?.filter((product) => product.slug?.trim()).map((product) => ({
       url: `${baseUrl}/products/${product.slug.trim()}`,
@@ -54,6 +64,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })) ?? [];
+
+  const knownProductUrls = new Set(productPages.map((product) => product.url));
+  for (const product of pneumaticBrassFittings) {
+    const url = `${baseUrl}/products/${product.slug}`;
+    if (!knownProductUrls.has(url)) {
+      productPages.push({ url, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 });
+    }
+  }
 
   return [
     ...staticPages,

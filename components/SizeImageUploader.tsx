@@ -68,7 +68,7 @@ export default function SizeImageUploader({
       </div>
 
       <p className="text-sm text-gray-500 mb-4">
-        Upload a unique image for each size. Sizes without an image will fall back to the main product image.
+        Upload a unique image for each size. Missing size images will fall back to the main product image.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[480px] overflow-y-auto pr-1">

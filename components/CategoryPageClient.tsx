@@ -26,6 +26,7 @@ type Props = {
 };
 
 export default function CategoryPageClient({
+  slug,
   categoryName,
   initialProducts,
   seoDescription,
@@ -104,6 +105,7 @@ export default function CategoryPageClient({
               code={product.code}
               slug={product.slug}
               image={product.image}
+              category={slug}
             />
           ))}
         </div>

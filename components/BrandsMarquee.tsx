@@ -1,53 +1,65 @@
-"use client";
-
 import Image from "next/image";
 
 interface Brand {
   name: string;
   logo: string;
+  scale?: "compact" | "wide";
 }
 
 const brandsRow1: Brand[] = [
-  { name: "3M", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/3m.png" },
-  { name: "Abro", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/abro.png" },
-  { name: "Bosch", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/bosch.png" },
-  { name: "DeWalt", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/dewalt.png" },
-  { name: "Dongcheng", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/dongcheng.png" },
-  { name: "Dowsil", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/dowsil.png" },
-  { name: "Dutron", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/dutron.png" },
-  { name: "Eastman", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/eastman.png" },
-  { name: "Ferreterro", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/ferreterro.png" },
-  { name: "Fevicol", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/fevicol.png" },
-  { name: "Garware", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/garware.png" },
-  { name: "Golden Bullet", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/golden%20bullet.png" },
-  { name: "Jainson", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/jainson.png" },
-  { name: "Taparia", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/taparia.png"}
+  { name: "3M", logo: "/products/3m.png", scale: "compact" },
+  { name: "Abro", logo: "/products/abro.png", scale: "wide" },
+  { name: "Bosch", logo: "/products/bosch.png" },
+  { name: "DeWalt", logo: "/products/dewalt.png", scale: "wide" },
+  { name: "Dongcheng", logo: "/products/dongcheng.png", scale: "compact" },
+  { name: "Dowsil", logo: "/products/dowsil.png", scale: "compact" },
+  { name: "Dutron", logo: "/products/dutron.png" },
+  { name: "Eastman", logo: "/products/eastman.png", scale: "compact" },
+  { name: "Ferreterro", logo: "/products/ferreterro.png" },
+  { name: "Fevicol", logo: "/products/fevicol.png", scale: "compact" },
+  { name: "Loctite", logo: "/brands/loctite.svg", scale: "wide" },
+  { name: "WD-40", logo: "/brands/wd-40.svg", scale: "compact" },
+  { name: "Garware", logo: "/products/garware.png" },
+  { name: "Golden Bullet", logo: "/products/golden bullet.png", scale: "wide" },
 ];
 
 const brandsRow2: Brand[] = [
-  { name: "Janatics", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/janatics.jpg" },
-  { name: "OKS", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/oks.png" },
-  { name: "Patpolyn", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/patpolyn.png" },
-  { name: "Polyflex", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/polyflex.png" },
-  { name: "Raksha", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/raksha.png" },
-  { name: "SRF", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/srf.png" },
-  { name: "Stanley", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/stanley.png" },
-  { name: "Tata", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/tata.png" },
-  { name: "Techno", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/techno.png" },
-  { name: "Tirupati Polyflex", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/tirupati_polyflex.png" },
-  { name: "Tuqo", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/tuqo.jpg" },
-  { name: "Ultrafast", logo: "https://lbbmvabcirbkzagrdmwj.supabase.co/storage/v1/object/public/products/uf.png" },
+  { name: "Jainson", logo: "/products/jainson.png" },
+  { name: "Taparia", logo: "/products/taparia.png", scale: "compact" },
+  { name: "Janatics", logo: "/products/janatics.jpg", scale: "compact" },
+  { name: "OKS", logo: "/products/oks.png", scale: "compact" },
+  { name: "Patpolyn", logo: "/products/patpolyn.png", scale: "compact" },
+  { name: "Polyflex", logo: "/products/polyflex.png", scale: "compact" },
+  { name: "Raksha", logo: "/products/raksha.png" },
+  { name: "SRF", logo: "/products/srf.png", scale: "compact" },
+  { name: "Stanley", logo: "/products/stanley.png" },
+  { name: "Tata", logo: "/products/tata.png", scale: "compact" },
+  { name: "Techno", logo: "/products/techno.png" },
+  { name: "Tirupati Polyflex", logo: "/products/tirupati_polyflex.png", scale: "compact" },
+  { name: "Tuqo", logo: "/products/tuqo.jpg", scale: "compact" },
+  { name: "Ultrafast", logo: "/products/uf.png", scale: "wide" },
 ];
 
-function BrandCard({ brand }: { brand: Brand }) {
+function BrandCard({ brand, duplicate = false }: { brand: Brand; duplicate?: boolean }) {
+  const imageSize =
+    brand.scale === "wide"
+      ? "h-7 sm:h-9 w-[88%]"
+      : brand.scale === "compact"
+        ? "h-11 sm:h-14 w-[72%]"
+        : "h-10 sm:h-12 w-[82%]";
+
   return (
-    <div className="flex items-center justify-center shrink-0 mx-3 sm:mx-4 px-4 py-3 bg-white border border-gray-100 rounded-2xl h-16 sm:h-20 w-36 sm:w-44 shadow-sm">
-      <div className="relative w-full h-full flex items-center justify-center">
+    <div
+      aria-hidden={duplicate || undefined}
+      className="mx-2 flex h-[72px] w-36 shrink-0 items-center justify-center rounded-2xl border border-slate-200/80 bg-white px-3 shadow-[0_4px_18px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-[0_8px_24px_rgba(185,28,28,0.10)] sm:mx-2.5 sm:h-[88px] sm:w-44"
+    >
+      <div className={`relative ${imageSize}`}>
         <Image
           src={brand.logo}
-          alt={brand.name}
+          alt={duplicate ? "" : `${brand.name} logo`}
           fill
-          className="object-contain p-2 grayscale hover:grayscale-0 transition duration-300"
+          sizes="(max-width: 640px) 115px, 145px"
+          className="object-contain"
         />
       </div>
     </div>
@@ -55,19 +67,11 @@ function BrandCard({ brand }: { brand: Brand }) {
 }
 
 function MarqueeRow({ brands, reverse = false }: { brands: Brand[]; reverse?: boolean }) {
-  const loopBrands = [...brands, ...brands];
-
   return (
-    <div className="relative overflow-hidden py-2">
-      <div
-        className="flex w-max"
-        style={{
-          animation: `${reverse ? "marquee-reverse" : "marquee"} 40s linear infinite`,
-        }}
-      >
-        {loopBrands.map((brand, i) => (
-          <BrandCard key={`${brand.name}-${i}`} brand={brand} />
-        ))}
+    <div className="group overflow-hidden py-1.5">
+      <div className={`flex w-max ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
+        {brands.map((brand) => <BrandCard key={brand.name} brand={brand} />)}
+        {brands.map((brand) => <BrandCard key={`${brand.name}-duplicate`} brand={brand} duplicate />)}
       </div>
     </div>
   );
@@ -75,32 +79,22 @@ function MarqueeRow({ brands, reverse = false }: { brands: Brand[]; reverse?: bo
 
 export default function BrandsMarquee() {
   return (
-    <div className="bg-gray-50 border-y border-gray-100 py-8">
-      <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-5">
-        Trusted Brands We Supply
-      </p>
+    <section className="border-y border-slate-200 bg-slate-50/80 py-9 sm:py-11" aria-labelledby="brands-heading">
+      <div className="mx-auto mb-6 max-w-7xl px-5 text-center">
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.24em] text-red-700">Our brand network</p>
+        <h2 id="brands-heading" className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+          Trusted brands we supply
+        </h2>
+      </div>
 
       <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
-
-        <div className="space-y-3">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent sm:w-28" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent sm:w-28" />
+        <div className="space-y-2.5">
           <MarqueeRow brands={brandsRow1} />
           <MarqueeRow brands={brandsRow2} reverse />
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-        @keyframes marquee-reverse {
-          from { transform: translateX(-50%); }
-          to { transform: translateX(0); }
-        }
-      `}</style>
-    </div>
+    </section>
   );
 }

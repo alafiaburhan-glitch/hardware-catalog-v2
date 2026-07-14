@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import ProductCard from "@/components/ProductCard";
+import { searchProducts } from "@/lib/productSearch";
 
 type Product = {
   id: string;
@@ -28,16 +29,14 @@ export default function SearchClient({ products = [], categories = [], initialQu
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const filtered = useMemo(() => {
-    return (products ?? []).filter((p) => {
-      const matchesQuery =
-        query.trim() === "" ||
-        p.name.toLowerCase().includes(query.toLowerCase()) ||
-        p.code.toLowerCase().includes(query.toLowerCase());
-      const matchesCategory =
+    const productsInCategory = (products ?? []).filter((p) => {
+      return (
         selectedCategory === "all" ||
-        p.category?.toLowerCase() === selectedCategory.toLowerCase();
-      return matchesQuery && matchesCategory;
+        p.category?.toLowerCase() === selectedCategory.toLowerCase()
+      );
     });
+
+    return searchProducts(productsInCategory, query);
   }, [query, selectedCategory, products]);
 
   return (
@@ -86,7 +85,7 @@ export default function SearchClient({ products = [], categories = [], initialQu
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filtered.map((product) => (
-            <ProductCard key={product.id} name={product.name} code={product.code} image={product.image} slug={product.slug} />
+            <ProductCard key={product.id} name={product.name} code={product.code} image={product.image} slug={product.slug} category={product.category} />
           ))}
         </div>
       ) : (

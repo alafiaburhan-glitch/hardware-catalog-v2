@@ -6,6 +6,11 @@ import ProductImageLightbox from "@/components/ProductImageLightbox";
 import ProductDetailClient from "@/components/ProductDetailClient";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getHandTool, handTools } from "@/data/handTools";
+import { getPowerTool, powerTools, type PowerToolModel } from "@/data/powerTools";
+import BrandModelSelector from "@/components/BrandModelSelector";
+import { getPneumaticBrassFitting, pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
+import { getCategoryIcon } from "@/lib/categoryIcons";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  if (!product) {
+  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug);
+  if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
       description: "Product not found.",
@@ -33,8 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const productUrl = `https://www.nooragencies.in/products/${slug}`;
-  const title = `${product.name} in Coimbatore`;
-  const description = `Buy ${product.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
+  const title = `${catalogProduct.name} in Coimbatore`;
+  const description = `Buy ${catalogProduct.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
 
   return {
     title,
@@ -45,13 +51,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      images: product.image
+      images: catalogProduct.image
         ? [
             {
-              url: product.image,
+              url: catalogProduct.image,
               width: 1200,
               height: 630,
-              alt: product.name,
+              alt: catalogProduct.name,
             },
           ]
         : [],
@@ -71,24 +77,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
-  const { data: product, error } = await supabase
+  const { data: databaseProduct } = await supabase
     .from("products")
     .select("*")
     .eq("slug", slug)
     .single();
 
-  if (error || !product) {
+  const product = databaseProduct ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug);
+  if (!product) {
     return <div className="p-10 text-gray-500">Product not found</div>;
   }
 
-  const { data: relatedProducts } = await supabase
+  const { data: databaseRelatedProducts } = await supabase
     .from("products")
     .select("id, name, code, image, slug")
     .eq("category", product.category)
     .neq("slug", slug)
     .limit(4);
+  const relatedProducts = product.category === "hand-tools"
+    ? handTools.filter((item) => item.slug !== slug).slice(0, 4)
+    : product.category === "power-tools"
+      ? powerTools.filter((item) => item.slug !== slug).slice(0, 4)
+      : product.category === "pneumatic-brass-fittings"
+        ? pneumaticBrassFittings.filter((item) => item.slug !== slug).slice(0, 4)
+        : databaseRelatedProducts;
 
   const specs = product.specifications ?? {};
+  const catalogModels: PowerToolModel[] = "models" in product && Array.isArray(product.models) ? product.models : [];
 
   function findKey(target: string): string | undefined {
     return Object.keys(specs).find((k) => k.toLowerCase() === target.toLowerCase());
@@ -96,7 +111,14 @@ export default async function ProductPage({ params }: Props) {
 
   function parseComma(key: string | undefined): string[] {
     if (!key || !specs[key]) return [];
-    return String(specs[key]).split(",").map((s: string) => s.trim()).filter(Boolean);
+    return Array.from(
+      new Set(
+        String(specs[key])
+          .split(",")
+          .map((s: string) => s.trim())
+          .filter(Boolean)
+      )
+    );
   }
 
   const availableGrits = parseComma(findKey("available grit"));
@@ -109,8 +131,11 @@ export default async function ProductPage({ params }: Props) {
   const availableCapacities = parseComma(findKey("available capacity"));
   const availableLengths = parseComma(findKey("available length"));
   const availableOptions = parseComma(findKey("available options"));
+  const availableBrands = parseComma(findKey("brand")) || [];
 
   const variants: { title: string; values: string[] }[] = [];
+  if (catalogModels.length === 0 && availableBrands.length > 1) variants.push({ title: "Brand", values: availableBrands });
+  if (availableGrits.length > 0) variants.push({ title: "Grit", values: availableGrits });
   if (availableWidths.length > 0) variants.push({ title: "Width", values: availableWidths });
   if (availableCapacities.length > 0 && availableLengths.length > 0) {
     variants.push({ title: "Capacity", values: availableCapacities });
@@ -137,11 +162,14 @@ export default async function ProductPage({ params }: Props) {
     "available options",
     "available capacity",
     "available length",
-    "available gsm"
+    "available gsm",
+    "brand",
+    "available models",
   ]);
 
   const hasGrit = availableGrits.length > 0;
   const hasVariants = variants.length > 0;
+  const categoryIcon = getCategoryIcon(product.category);
 
   const detailsTop = (
     <>
@@ -187,6 +215,10 @@ export default async function ProductPage({ params }: Props) {
         )}
       </div>
 
+      {catalogModels.length > 0 && (
+        <BrandModelSelector productName={product.name} productCode={product.code} models={catalogModels} />
+      )}
+
       {/* DATASHEET */}
       {product.datasheet_url && (
         <a
@@ -214,6 +246,29 @@ export default async function ProductPage({ params }: Props) {
                   <div className="text-gray-600">{String(value)}</div>
                 </div>
               ))}
+          </div>
+        </div>
+      )}
+
+      {false && (
+        <div className="border rounded-3xl overflow-hidden mb-8">
+          <div className="bg-gray-900 text-white px-6 py-4">
+            <h2 className="text-2xl font-bold">Available Brands &amp; Models</h2>
+            <p className="text-sm text-gray-300 mt-1">{catalogModels.length} catalogue entries</p>
+          </div>
+          <div className="divide-y max-h-[42rem] overflow-y-auto">
+            {catalogModels.map((model, index) => (
+              <div key={`${model.brand}-${model.name}-${index}`} className="px-6 py-4">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h3 className="font-semibold text-gray-900">{model.name}</h3>
+                  <span className="text-sm font-medium text-red-700">{model.brand}</span>
+                </div>
+                {model.series && <p className="text-xs text-gray-500 mt-1">{model.series}</p>}
+                {Object.keys(model.specifications).length > 0 && (
+                  <p className="text-sm text-gray-600 mt-2">{Object.entries(model.specifications).map(([key, value]) => `${key}: ${value}`).join(" · ")}</p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -295,7 +350,7 @@ export default async function ProductPage({ params }: Props) {
         <ProductDetailClient
           productName={product.name}
           productCode={product.code}
-          defaultImage={product.image || null}
+          defaultImage={product.image || categoryIcon || null}
           sizeImages={product.size_images ?? {}}
           variants={variants}
           detailsTop={detailsTop}
@@ -303,12 +358,12 @@ export default async function ProductPage({ params }: Props) {
         />
       ) : (
         <div className="grid md:grid-cols-2 gap-12">
-          {product.image ? (
-            <ProductImageLightbox src={product.image} alt={product.name} />
+          {product.image || categoryIcon ? (
+            <ProductImageLightbox src={product.image || categoryIcon!} alt={product.name} />
           ) : (
             <div className="border rounded-3xl overflow-hidden bg-white sticky top-24 self-start">
-              <div className="aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
-                No Image
+              <div className="aspect-square bg-gray-50 flex flex-col items-center justify-center text-gray-400">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em]">Image pending</span>
               </div>
             </div>
           )}
@@ -322,12 +377,12 @@ export default async function ProductPage({ params }: Props) {
                 productName={product.name}
                 productCode={product.code}
               />
-            ) : (
+            ) : catalogModels.length === 0 ? (
               <WhatsAppButton
                 productName={product.name}
                 productCode={product.code}
               />
-            )}
+            ) : null}
 
             {detailsBottom}
           </div>
@@ -356,6 +411,7 @@ export default async function ProductPage({ params }: Props) {
                 code={related.code}
                 image={related.image}
                 slug={related.slug}
+                category={product.category}
               />
             ))}
           </div>

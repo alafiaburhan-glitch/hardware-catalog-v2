@@ -3,12 +3,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CategoryBrand } from "@/lib/categoryBrandGroups";
+import ProductCard from "@/components/ProductCard";
+
+type Product = {
+  id: string;
+  name: string;
+  code: string;
+  slug: string;
+  image?: string;
+};
 
 type Props = {
   categoryName: string;
   categorySlug: string;
   seoDescription?: string;
   brands: Array<CategoryBrand & { productCount: number }>;
+  directProducts?: Product[];
 };
 
 export default function BrandCategoryClient({
@@ -16,7 +26,9 @@ export default function BrandCategoryClient({
   categorySlug,
   seoDescription,
   brands,
+  directProducts = [],
 }: Props) {
+  const isProductGrouping = categorySlug === "hand-tools";
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap text-sm text-gray-400 mb-8 pb-1">
@@ -29,11 +41,13 @@ export default function BrandCategoryClient({
 
       <div className="mb-8 sm:mb-10">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.36em] text-red-700 sm:text-sm">
-          Browse Brands
+          {isProductGrouping ? "Browse Tool Groups" : "Browse Brands"}
         </p>
         <h1 className="text-3xl font-bold text-black sm:text-4xl">{categoryName}</h1>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-500 sm:text-base">
-          Select a brand to view available products and varieties.
+          {isProductGrouping
+            ? "Select a tool group to view its available products, types and varieties."
+            : "Select a brand to view available products and varieties."}
         </p>
         {seoDescription && (
           <p className="mt-4 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base">
@@ -82,6 +96,24 @@ export default function BrandCategoryClient({
           </Link>
         ))}
       </div>
+
+      {directProducts.length > 0 && (
+        <section className="mt-14 border-t border-gray-200 pt-10">
+          <h2 className="mb-6 text-2xl font-bold text-black">Hand Tools</h2>
+          <div className="grid grid-cols-1 gap-4 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-6">
+            {directProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                code={product.code}
+                slug={product.slug}
+                image={product.image}
+                category={categorySlug}
+              />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

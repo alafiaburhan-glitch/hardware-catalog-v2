@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import SearchClient from "@/components/SearchClient";
+import { getSearchCatalog } from "@/lib/searchCatalog";
 
 export default async function SearchPage({
   searchParams,
@@ -8,10 +9,7 @@ export default async function SearchPage({
 }) {
   const { q } = await searchParams;
 
-  const { data: products } = await supabase
-    .from("products")
-    .select("id, name, code, image, slug, category")
-    .order("name");
+  const products = await getSearchCatalog();
 
   const { data: categories } = await supabase
     .from("categories")
@@ -31,7 +29,7 @@ export default async function SearchPage({
       </div>
 
       <SearchClient
-        products={products ?? []}
+        products={products}
         categories={categories ?? []}
         initialQuery={q ?? ""}
       />

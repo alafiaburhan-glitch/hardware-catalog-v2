@@ -12,6 +12,14 @@ body {
   min-height: 100%;
 }
 
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
 @layer utilities {
   @keyframes marquee {
     from {
@@ -55,5 +63,13 @@ body {
   .animate-marquee:hover,
   .animate-marquee-reverse:hover {
     animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-marquee-reverse,
+    .animate-marquee-vertical {
+      animation: none;
+    }
   }
 }

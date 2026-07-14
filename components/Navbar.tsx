@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
 
 type ProductResult = {
   id: string;
@@ -38,13 +37,10 @@ export default function Navbar() {
 
     const timer = setTimeout(async () => {
       setLoading(true);
-      const { data } = await supabase
-        .from("products")
-        .select("id, name, code, slug, image, category")
-        .or(`name.ilike.%${query}%,code.ilike.%${query}%`)
-        .limit(6);
+      const response = await fetch(`/api/search?q=${encodeURIComponent(query.trim())}`);
+      const products: ProductResult[] = response.ok ? await response.json() : [];
 
-      setResults(data ?? []);
+      setResults(products);
       setShowDropdown(true);
       setLoading(false);
     }, 250);
