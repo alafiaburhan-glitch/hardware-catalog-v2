@@ -1,4 +1,5 @@
 import powerToolsData from "@/data/powerTools.generated.json";
+import { powerToolDescriptions } from "@/data/powerToolDescriptions";
 
 export type PowerToolModel = {
   brand: string;
@@ -22,7 +23,10 @@ export type CatalogPowerTool = {
   models: PowerToolModel[];
 };
 
-export const powerTools = powerToolsData as CatalogPowerTool[];
+export const powerTools = (powerToolsData as CatalogPowerTool[]).map((product) => ({
+  ...product,
+  description: powerToolDescriptions[product.slug] ?? product.description,
+}));
 
 function canonicalFamilySlug(slug: string) {
   const singulars: Record<string, string> = {

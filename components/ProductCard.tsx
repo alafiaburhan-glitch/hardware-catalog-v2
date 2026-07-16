@@ -29,7 +29,7 @@ export default function ProductCard({
               alt={name}
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 520px) 50vw, 100vw"
-              className={`h-full w-full transition duration-700 group-hover:scale-105 ${image ? "object-cover" : "object-contain p-5"}`}
+              className={`h-full w-full transition duration-700 group-hover:scale-105 ${category === "power-tools" ? "object-contain p-3" : image ? "object-cover" : "object-contain p-5"}`}
             />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center bg-gray-50 px-4 text-center">
