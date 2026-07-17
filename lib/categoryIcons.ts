@@ -22,6 +22,7 @@ const categoryIcons: Record<string, string> = {
   "packaging-material": "/category-icons/packaging-material.png",
   tapes: "/category-icons/tapes.png",
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
+  "measuring-instruments": "/category-icons/measuring-instruments-red.png",
 };
 
 export function getCategoryIcon(category?: string | null): string | undefined {

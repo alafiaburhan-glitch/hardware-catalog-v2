@@ -7,6 +7,18 @@
 };
 
 export const categoryBrandGroups: Record<string, CategoryBrand[]> = {
+  "measuring-instruments": [
+    { name: "Calipers, Height & Depth Gauges", slug: "calipers-height-depth", description: "Vernier, digital, dial and specialist calipers plus height and depth gauges.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Calipers, Height & Depth Gauges"] },
+    { name: "Micrometers", slug: "micrometers", description: "Outside, inside, depth, blade, tube, point, thread and digital micrometers.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Micrometers"] },
+    { name: "Indicators & Gauges", slug: "indicators-gauges", description: "Dial indicators, bore gauges, thickness gauges, snap gauges and inspection gauges.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Indicators & Gauges"] },
+    { name: "Tapes & Measuring Wheels", slug: "tapes-measuring-wheels", description: "Steel, fibreglass and metal-wired tapes, tape rules, refills and measuring wheels.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Tapes & Measuring Wheels"] },
+    { name: "Levels, Squares & Angle Measurement", slug: "levels-squares-angle", description: "Spirit and digital levels, squares, protractors, angle finders and straight edges.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Levels, Squares & Angle Measurement"] },
+    { name: "NDT & Material Testing", slug: "ndt-material-testing", description: "Hardness, coating, ultrasonic thickness and surface roughness testing instruments.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["NDT & Material Testing"] },
+    { name: "Environmental & Electronic Testers", slug: "environmental-electronic-testers", description: "Sound, vibration, temperature, air velocity, light and moisture instruments.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Environmental & Electronic Testers"] },
+    { name: "Rules, Blocks & Reference Gauges", slug: "rules-blocks-reference", description: "Steel rules, gauge blocks, radius gauges and workshop reference tools.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Rules, Blocks & Reference Gauges"] },
+    { name: "Stands & Holders", slug: "stands-holders", description: "Magnetic stands, indicator holders and micrometer stands.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Stands & Holders"] },
+    { name: "Other Precision Instruments", slug: "other-precision-instruments", description: "Specialist precision instruments from the supplied catalogs.", image: "/category-icons/measuring-instruments-red.png", matchTerms: ["Other Precision Instruments"] },
+  ],
   "hand-tools": [
     {
       name: "Spanners",
@@ -167,9 +179,10 @@ export function getCategoryBrand(categorySlug: string, brandSlug: string) {
 }
 
 export function productMatchesBrand(
-  product: { name?: string | null; code?: string | null; brand?: string | null },
+  product: { name?: string | null; code?: string | null; brand?: string | null; instrumentGroup?: string | null; specifications?: Record<string, unknown> | null },
   brand: CategoryBrand
 ) {
-  const searchable = `${product.brand ?? ""} ${product.name ?? ""} ${product.code ?? ""}`.toLowerCase();
+  const group = product.instrumentGroup ?? product.specifications?.["Instrument Group"] ?? "";
+  const searchable = `${product.brand ?? ""} ${product.name ?? ""} ${product.code ?? ""} ${String(group)}`.toLowerCase();
   return brand.matchTerms.some((term) => searchable.includes(term.toLowerCase()));
 }

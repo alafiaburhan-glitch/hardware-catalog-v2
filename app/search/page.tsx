@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import SearchClient from "@/components/SearchClient";
 import { getSearchCatalog } from "@/lib/searchCatalog";
+
+export const metadata: Metadata = {
+  title: "Search Products",
+  description: "Search the Noor Agencies industrial hardware catalogue.",
+  alternates: {
+    canonical: "/search",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default async function SearchPage({
   searchParams,

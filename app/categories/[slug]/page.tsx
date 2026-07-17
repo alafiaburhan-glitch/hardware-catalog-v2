@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import CategoryPageClient from "@/components/CategoryPageClient";
 import BrandCategoryClient from "@/components/BrandCategoryClient";
@@ -8,6 +9,7 @@ import { getPowerToolsSection } from "@/data/powerTools";
 import PowerToolsCategoryClient from "@/components/PowerToolsCategoryClient";
 import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { sortProductsAlphabetically } from "@/lib/sortProducts";
+import { measuringInstruments } from "@/data/measuringInstruments";
 
 export const dynamic = "force-dynamic";
 
@@ -41,6 +43,11 @@ const categorySeo: Record<string, { title: string; description: string }> = {
     title: "Pneumatic & Brass Fittings Supplier in Coimbatore",
     description:
       "Browse pneumatic components, brass fittings, stainless steel fittings, valves, FRL units, couplings and pneumatic tools from Noor Agencies in Coimbatore.",
+  },
+  "measuring-instruments": {
+    title: "Measuring Instruments Supplier in Coimbatore",
+    description:
+      "Browse Kency, Yamayo and Freemans measuring instruments, precision tools, measuring tapes, gauges, calipers, micrometers and levels from Noor Agencies in Coimbatore.",
   },
   ropes: {
     title: "Industrial Rope Supplier in Coimbatore",
@@ -107,11 +114,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug: rawSlug } = await params;
   const slug = rawSlug.trim();
 
-  const { data: category } = await supabase
+  const { data: category, error: categoryError } = await supabase
     .from("categories")
     .select("name")
     .eq("slug", slug)
     .single();
+
+  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments";
+  const categoryDoesNotExist = !categoryError || categoryError.code === "PGRST116";
+  if (!category && !isLocalCategory && categoryDoesNotExist) {
+    notFound();
+  }
 
   const name = category?.name ?? slug.replace(/-/g, " ");
   const seo = categorySeo[slug] ?? {
@@ -171,10 +184,14 @@ export default async function CategoryPage({ params }: Props) {
       ? [...getPowerToolsSection("power-tools"), ...(databaseProducts ?? []).filter((product) => !getPowerToolsSection("power-tools").some((catalogProduct) => catalogProduct.slug === product.slug))]
       : slug === "pneumatic-brass-fittings"
         ? [...pneumaticBrassFittings, ...(databaseProducts ?? []).filter((product) => !pneumaticBrassFittings.some((catalogProduct) => catalogProduct.slug === product.slug))]
+        : slug === "measuring-instruments"
+          ? [...measuringInstruments, ...(databaseProducts ?? []).filter((product) => !measuringInstruments.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : (databaseProducts ?? []));
 
   const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"
     ? "Pneumatic & Brass Fittings"
+    : slug === "measuring-instruments"
+      ? "Measuring Instruments"
     : slug.replace(/-/g, " "));
   const seoDescription =
     categorySeo[slug]?.description ??

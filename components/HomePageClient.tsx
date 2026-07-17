@@ -59,6 +59,7 @@ const categoryIcons: Record<string, string> = {
   "packaging-material": "/category-icons/packaging-material.png",
   tapes: "/category-icons/tapes.png",
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
+  "measuring-instruments": "/category-icons/measuring-instruments-red.png",
 };
 
 function getCategoryIcon(slug: string | null) {
@@ -79,12 +80,14 @@ export default function HomePageClient() {
         .from("categories")
         .select("id, name, slug")
         .order("name");
-      if (categoryData) {
-        const validCategories = categoryData.filter((category) => category.slug?.trim());
-        setCategories(validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")
-          ? validCategories
-          : [...validCategories, { id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" }]);
+      const validCategories = (categoryData ?? []).filter((category) => category.slug?.trim());
+      if (!validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
+        validCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
       }
+      if (!validCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
+        validCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
+      }
+      setCategories(validCategories);
       setLoadingCategories(false);
 
       const { count } = await supabase

@@ -7,6 +7,7 @@ import { handTools } from "@/data/handTools";
 import { getPowerToolsSection } from "@/data/powerTools";
 import CategoryPageClient from "@/components/CategoryPageClient";
 import { sortProductsAlphabetically } from "@/lib/sortProducts";
+import { measuringInstruments } from "@/data/measuringInstruments";
 
 export const dynamic = "force-dynamic";
 
@@ -95,7 +96,14 @@ export default async function BrandPage({ params }: Props) {
           (product) => !handTools.some((catalogProduct) => catalogProduct.slug === product.slug),
         ),
       ]
-    : (databaseProducts ?? []);
+    : slug === "measuring-instruments"
+      ? [
+          ...measuringInstruments,
+          ...(databaseProducts ?? []).filter(
+            (product) => !measuringInstruments.some((catalogProduct) => catalogProduct.slug === product.slug),
+          ),
+        ]
+      : (databaseProducts ?? []);
 
   const matchingProducts = sortProductsAlphabetically(
     products.filter((product) => productMatchesBrand(product, brand)),

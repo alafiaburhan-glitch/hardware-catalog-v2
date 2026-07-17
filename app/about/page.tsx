@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Noor Agencies",
+  description:
+    "Learn about Noor Agencies, a trusted industrial hardware supplier serving businesses and industries from Coimbatore.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">

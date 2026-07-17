@@ -30,10 +30,6 @@ export const metadata: Metadata = {
   description:
     "Noor Agencies supplies emery paper, emery rolls, Loctite adhesives, tarpaulins, shade nets, ropes, hoses, safety products and industrial hardware in Coimbatore.",
 
-  alternates: {
-    canonical: "/",
-  },
-
   openGraph: {
     title: "Noor Agencies | Industrial Hardware Supplier in Coimbatore",
     description:

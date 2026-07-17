@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Contact Us | Noor Agencies",
   description:
     "Get in touch with Noor Agencies for industrial hardware enquiries, bulk pricing, and product availability. Located in Coimbatore, Tamil Nadu.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

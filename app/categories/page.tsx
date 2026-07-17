@@ -43,6 +43,7 @@ const categoryIcons: Record<string, string> = {
   "packaging-material": "/category-icons/packaging-material.png",
   tapes: "/category-icons/tapes.png",
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
+  "measuring-instruments": "/category-icons/measuring-instruments-red.png",
 };
 
 function getCategoryIcon(slug: string | null) {
@@ -60,9 +61,13 @@ export default async function CategoriesPage() {
     return <div className="p-10">Failed to load categories</div>;
   }
 
-  const allCategories = categories?.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")
-    ? categories
-    : [...(categories ?? []), { id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" }];
+  const allCategories = [...(categories ?? [])];
+  if (!allCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
+    allCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
+  }
+  if (!allCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
+    allCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">

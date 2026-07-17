@@ -6,11 +6,13 @@ import ProductImageLightbox from "@/components/ProductImageLightbox";
 import ProductDetailClient from "@/components/ProductDetailClient";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getHandTool, handTools } from "@/data/handTools";
 import { getPowerTool, powerTools, type PowerToolModel } from "@/data/powerTools";
 import BrandModelSelector from "@/components/BrandModelSelector";
 import { getPneumaticBrassFitting, pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { getCategoryIcon } from "@/lib/categoryIcons";
+import { getMeasuringInstrument, measuringInstruments } from "@/data/measuringInstruments";
 
 export const dynamic = "force-dynamic";
 
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug);
+  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug);
   if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
@@ -83,9 +85,9 @@ export default async function ProductPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
-  const product = databaseProduct ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug);
+  const product = databaseProduct ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug);
   if (!product) {
-    return <div className="p-10 text-gray-500">Product not found</div>;
+    notFound();
   }
 
   const { data: databaseRelatedProducts } = await supabase
@@ -100,6 +102,8 @@ export default async function ProductPage({ params }: Props) {
       ? powerTools.filter((item) => item.slug !== slug).slice(0, 4)
       : product.category === "pneumatic-brass-fittings"
         ? pneumaticBrassFittings.filter((item) => item.slug !== slug).slice(0, 4)
+        : product.category === "measuring-instruments"
+          ? measuringInstruments.filter((item) => item.slug !== slug).slice(0, 4)
         : databaseRelatedProducts;
 
   const specs = product.specifications ?? {};
