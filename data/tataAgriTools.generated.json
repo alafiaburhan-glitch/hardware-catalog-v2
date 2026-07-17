@@ -1,0 +1,2112 @@
+[
+  {
+    "code": "AXE001",
+    "description": "Axe - 0.9",
+    "family": "Axe",
+    "prefix": "AXE",
+    "hsn": "82014000",
+    "weightKg": "0.90",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "AXE003",
+    "description": "Axe - 1.4",
+    "family": "Axe",
+    "prefix": "AXE",
+    "hsn": "82014000",
+    "weightKg": "1.40",
+    "packQty": "10",
+    "catalogPage": 3
+  },
+  {
+    "code": "AXE006",
+    "description": "Axe - 0.5",
+    "family": "Axe",
+    "prefix": "AXE",
+    "hsn": "82014000",
+    "weightKg": "0.50",
+    "packQty": "20",
+    "catalogPage": 3
+  },
+  {
+    "code": "CFC001",
+    "description": "Chaff Cutter - CC1",
+    "family": "Chaff Cutter",
+    "prefix": "CFC",
+    "hsn": "84369900",
+    "weightKg": "0.90",
+    "packQty": "50",
+    "catalogPage": 9
+  },
+  {
+    "code": "CFC002",
+    "description": "Thresher Cutter - CC2",
+    "family": "Chaff Cutter",
+    "prefix": "CFC",
+    "hsn": "84369900",
+    "weightKg": "1.00",
+    "packQty": "50",
+    "catalogPage": 9
+  },
+  {
+    "code": "CFC003",
+    "description": "Chaff Cutter - CC3",
+    "family": "Chaff Cutter",
+    "prefix": "CFC",
+    "hsn": "84369900",
+    "weightKg": "0.90",
+    "packQty": "50",
+    "catalogPage": 9
+  },
+  {
+    "code": "CHE001",
+    "description": "Chisel - 22mm (22X325)",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "1.00",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE002",
+    "description": "Chisel - 25mm (25X325)",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "1.30",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE003",
+    "description": "Chisel - 29mm (29X325)",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "1.70",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE004",
+    "description": "Chisel - 32mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "1.40",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE005",
+    "description": "Chisel - 22 mm with point end tip",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.70",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE007",
+    "description": "Chisel - 22 X 152 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.46",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE008",
+    "description": "Chisel - 22 x 228 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.69",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE009",
+    "description": "Chisel - 25 x 152 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.60",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE010",
+    "description": "Chisel - 25 x 228 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.90",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE011",
+    "description": "Chisel - 29 x 152 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.80",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE012",
+    "description": "Chisel - 29 x 228 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "1.17",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CHE013",
+    "description": "Chisel - 32 x 152 mm",
+    "family": "Chisel",
+    "prefix": "CHE",
+    "hsn": "82053000",
+    "weightKg": "0.95",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB001",
+    "description": "Crow Bar - 22 (22X1650)",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "5.10",
+    "packQty": "6",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB002",
+    "description": "Crow Bar - 25 (25X1650)",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "6.70",
+    "packQty": "5",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB003",
+    "description": "Crow Bar - 29 (29X1650)",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "8.50",
+    "packQty": "4",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB004",
+    "description": "Crow Bar - 32 (32X1650)",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "10.50",
+    "packQty": "3",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB014",
+    "description": "Crow Bar - 22 (22X1220) - 4 FT",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "3.70",
+    "packQty": "8",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB015",
+    "description": "Crow Bar - 25 (25X1220) - 4 FT",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "4.90",
+    "packQty": "6",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB016",
+    "description": "Crow Bar - 29 (29X1220) - 4 FT",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "6.20",
+    "packQty": "4",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB018",
+    "description": "Crow Bar - 32 (32x1220) - 4 FT",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "7.60",
+    "packQty": "3",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB019",
+    "description": "Sri Lanka - 25 mm- 4 Ft",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "4.84",
+    "packQty": "5",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB022",
+    "description": "Crow Bar - 22 (22X825) - 3 Ft",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "2.55",
+    "packQty": "12",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB023",
+    "description": "Crow Bar - 25 (25X825) - 3 Ft",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "3.35",
+    "packQty": "10",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB024",
+    "description": "Crow Bar - 29 (29X825) - 3 Ft",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "4.25",
+    "packQty": "8",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB025",
+    "description": "Crow Bar - 32 (32X825) - 3 Ft",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "5.25",
+    "packQty": "6",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB027",
+    "description": "Scoop Crowbar - 25 mm",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "3.60",
+    "packQty": "5",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB028",
+    "description": "CB - 25(25X1650) with longer chiesel end",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "6.70",
+    "packQty": "5",
+    "catalogPage": 3
+  },
+  {
+    "code": "CWB030",
+    "description": "Crow Bar - 23 (23X1500)",
+    "family": "Crowbar",
+    "prefix": "CWB",
+    "hsn": "82019000",
+    "weightKg": "5.15",
+    "packQty": "6",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR001",
+    "description": "Hammer - DFS-16",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "7.26",
+    "packQty": "3",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR002",
+    "description": "Hammer - DFS-14",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "6.36",
+    "packQty": "4",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR003",
+    "description": "Hammer - DFS-12",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "5.45",
+    "packQty": "4",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR004",
+    "description": "Hammer - DFS-10",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "4.54",
+    "packQty": "6",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR005",
+    "description": "Hammer - DFS-8",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "3.63",
+    "packQty": "6",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR006",
+    "description": "Hammer - DFS-6",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "2.72",
+    "packQty": "9",
+    "catalogPage": 3
+  },
+  {
+    "code": "HMR007",
+    "description": "Hammer - DFS-5",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "2.27",
+    "packQty": "10",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR008",
+    "description": "Hammer - DFS-4",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "1.82",
+    "packQty": "12",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR009",
+    "description": "Hammer - DFS-3",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "1.36",
+    "packQty": "18",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR010",
+    "description": "Hammer - DFS-2.5",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "1.14",
+    "packQty": "18",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR011",
+    "description": "Hammer - DFS-2",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.91",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR012",
+    "description": "Hammer - DFS-1.5",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.68",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR013",
+    "description": "Hammer - DFS-1",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.45",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR014",
+    "description": "Hammer - SB-1",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.45",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR020",
+    "description": "Hammer - DFS-18",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "8.17",
+    "packQty": "3",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR021",
+    "description": "Hammer - DFS-20",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "9.08",
+    "packQty": "2",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR022",
+    "description": "Hammer -SP-10- Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "4.54",
+    "packQty": "6",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR023",
+    "description": "Hammer - SP-12- Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "5.45",
+    "packQty": "4",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR024",
+    "description": "Hammer - SP-14- Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "6.36",
+    "packQty": "4",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR025",
+    "description": "Hammer - SP-16- Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "7.26",
+    "packQty": "3",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR026",
+    "description": "Hammer - SP-1.5 Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.68",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR027",
+    "description": "Hammer - SP-2 Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.91",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR028",
+    "description": "Hammer - SP-8 Round Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "3.63",
+    "packQty": "6",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR029",
+    "description": "Hammer - SP 12 Oval Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "5.45",
+    "packQty": "4",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR030",
+    "description": "Hammer - SP-14 Oval Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "6.36",
+    "packQty": "4",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR031",
+    "description": "Hammer - SP-16 Oval Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "7.26",
+    "packQty": "3",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR032",
+    "description": "Hammer - CP 2 Oval Hole",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.91",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR040",
+    "description": "Hammer - SP-18 Round",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "8.17",
+    "packQty": "3",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR041",
+    "description": "Hammer - SP-20 Round",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "9.08",
+    "packQty": "2",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR043",
+    "description": "Hammer - SP-12 Rajasthan Model",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "5.45",
+    "packQty": "4",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR044",
+    "description": "Hammer-SP-14 Rajasthan Model",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "6.36",
+    "packQty": "4",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR048",
+    "description": "Hammer - SP -1.5 RH Rajasthan Model",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.68",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR049",
+    "description": "Hammer - SP-2 RH Rajasthan Model",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "0.91",
+    "packQty": "24",
+    "catalogPage": 4
+  },
+  {
+    "code": "HMR050",
+    "description": "Hammer - DFS-2 with handle",
+    "family": "Hammer",
+    "prefix": "HMR",
+    "hsn": "82052000",
+    "weightKg": "1.03",
+    "packQty": "10",
+    "catalogPage": 4
+  },
+  {
+    "code": "HOE001",
+    "description": "Powrah Fork FP-1.6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 4
+  },
+  {
+    "code": "HOE002",
+    "description": "Powrah - AG 3",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.05",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE003",
+    "description": "Powrah - AG 4",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE004",
+    "description": "Powrah - AG 5",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE005",
+    "description": "Powrah - AG 6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE006",
+    "description": "P o w r ah - E a s t In d i a",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE007",
+    "description": "Powrah - West India",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE009",
+    "description": "P o w ra h - B o m b a y 7",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.20",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE010",
+    "description": "Powrah - Bombay 8",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE011",
+    "description": "Powrah - Lanka Hoe",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.25",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE013",
+    "description": "Powrah - SNM 1.45",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.45",
+    "packQty": "10",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE014",
+    "description": "Powrah - SNM 1.8",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "10",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE015",
+    "description": "Powrah - TM 1.6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "10",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE016",
+    "description": "Powrah - BHM - Button Head Mammoty",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.90",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE017",
+    "description": "Powrah - Bombay 12",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE019",
+    "description": "TP 3 Powrah - Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.70",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE020",
+    "description": "Powrah - TP 4 - Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE021",
+    "description": "TP 5 Powrah - Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.45",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE024",
+    "description": "Powrah - TM 1.4",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "10",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE027",
+    "description": "Powrah - TP - 11 Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.54",
+    "packQty": "10",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE031",
+    "description": "Powrah - TP - 5(Gold) Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE032",
+    "description": "Powrah TP 11 (Gold) Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.15",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE035",
+    "description": "Powrah - MM 1.4 (Gold) - Black Colour",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "10",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE040",
+    "description": "Powrah - Nepal Agri 1.6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE041",
+    "description": "Powrah - Kundali",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE042",
+    "description": "Powrah - Agrilite (1 Kg)",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.05",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE043",
+    "description": "Powrah - Smaller West India",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.25",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE044",
+    "description": "Powrah - PVC Handle (29\")",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "0.58",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE045",
+    "description": "PVC Powrah - Handle (30.5\")",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "0.73",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE047",
+    "description": "TP 6 Powrah - Riveted Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.30",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE051",
+    "description": "Powrah - TP 6 - Large",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE055",
+    "description": "Powrah - MM 1.4 (Gold) - Orange Colour",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "10",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE056",
+    "description": "Powrah - Potato Hoe -1 Kg",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.00",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE058",
+    "description": "P o w ra h - E a s t In d ia S m a l le r",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE059",
+    "description": "Powrah - PVC Handle (35\")",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "0.95",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE060",
+    "description": "Powrah - Potato Hoe - 0.850 Kg",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "0.85",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE061",
+    "description": "Powrah - Burmese Hoe",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "0.85",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE064",
+    "description": "TP - GDN Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.20",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE068",
+    "description": "Powrah - Integrated AG 3",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.76",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE069",
+    "description": "Powrah - Integrated AG6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.51",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE072",
+    "description": "Powrah - Integrated Nepal AG 6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.31",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE074",
+    "description": "P o w r a h - Inte g r at e d A G 4",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.11",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE075",
+    "description": "Integrated Powrah - East India 1.6",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.31",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE076",
+    "description": "Integrated Powrah - West India 3'",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.31",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE077",
+    "description": "P o w ra h - B o m b a y 5",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "0.83",
+    "packQty": "20",
+    "catalogPage": 5
+  },
+  {
+    "code": "HOE081",
+    "description": "Powrah - Integrated Agrilite",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.76",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE082",
+    "description": "SNM 1.45 Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.00",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE083",
+    "description": "Powrah - Integrated West India 4'",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "2.62",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE084",
+    "description": "Powrah - Integrated AG3 Burmese",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.56",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE085",
+    "description": "Powrah - Integrated Potato Hoe (0.85KG) - 3'",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.56",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE086",
+    "description": "Powrah - Integrated Potato Hoe (0.85KG) - 4'",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.87",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE087",
+    "description": "Powrah - Agri 6 Neo",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE088",
+    "description": "Powrah - Integrated Agrilite New",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.78",
+    "packQty": "6",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE089",
+    "description": "Powrah - West India New",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.00",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE090",
+    "description": "Powrah - TP Panja Powrah - 1.5 KG",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.50",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE091",
+    "description": "Powrah - TP Panja Powrah - 1.0 KG",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.00",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "HOE093",
+    "description": "Gujarat Powrah",
+    "family": "Hoe / Powrah",
+    "prefix": "HOE",
+    "hsn": "82013000",
+    "weightKg": "1.00",
+    "packQty": "20",
+    "catalogPage": 6
+  },
+  {
+    "code": "PKX001",
+    "description": "Kudali - 11 DP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "2.20",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX002",
+    "description": "Kudali - 12 DP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "2.50",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX003",
+    "description": "Kudali - 10 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX004",
+    "description": "Kudali - 14 DP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "3.00",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX005",
+    "description": "Kudali - 11 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "2.20",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX006",
+    "description": "Kudali - 8 DP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "1.40",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX007",
+    "description": "Kudali - 12 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "2.50",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX008",
+    "description": "Kudali - 10 DP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX009",
+    "description": "Kudali - 14 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "3.00",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX013",
+    "description": "Kudali - 16 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "4.00",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX015",
+    "description": "Kudali - PVC Handle (30.5\")",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "0.79",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX016",
+    "description": "Kudali - 14 CP Super",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "3.20",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX018",
+    "description": "Pickaxe - 9 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "1.60",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX019",
+    "description": "Pickaxe - Steel Pickaxe Handle (35\")",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "1.00",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX021",
+    "description": "Pickaxe - Integrated 10 CP",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "2.51",
+    "packQty": "6",
+    "catalogPage": 7
+  },
+  {
+    "code": "PKX022",
+    "description": "Pick Mattock - 4Lbs",
+    "family": "Pickaxe / Kudali",
+    "prefix": "PKX",
+    "hsn": "82013000",
+    "weightKg": "1.80",
+    "packQty": "10",
+    "catalogPage": 7
+  },
+  {
+    "code": "RVB002",
+    "description": "Rotavator Blade RVL-11",
+    "family": "Rotavator Blade",
+    "prefix": "RVB",
+    "hsn": "84322910",
+    "weightKg": "11..0000",
+    "packQty": "18",
+    "catalogPage": 8
+  },
+  {
+    "code": "RVB003",
+    "description": "Rotavator Blade RVL-14",
+    "family": "Rotavator Blade",
+    "prefix": "RVB",
+    "hsn": "84322910",
+    "weightKg": "11..0000",
+    "packQty": "18",
+    "catalogPage": 8
+  },
+  {
+    "code": "RVB006",
+    "description": "RT Blade 14.5 mm dia",
+    "family": "Rotavator Blade",
+    "prefix": "RVB",
+    "hsn": "84322910",
+    "weightKg": "11..0000",
+    "packQty": "18",
+    "catalogPage": 8
+  },
+  {
+    "code": "RVB007",
+    "description": "Rotavator Blade 12 X 44 MM",
+    "family": "Rotavator Blade",
+    "prefix": "RVB",
+    "hsn": "84322910",
+    "weightKg": "11..0000",
+    "packQty": "18",
+    "catalogPage": 8
+  },
+  {
+    "code": "SIC002",
+    "description": "Sickle - 102 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC004",
+    "description": "Sickle - 104 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC005",
+    "description": "Sickle - 105 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC006",
+    "description": "Sickle - 105(Top Teeth) : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC007",
+    "description": "Sickle - 107 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC008",
+    "description": "Sickle - 108 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC010",
+    "description": "Sickle - 108(Top Teeth) : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC020",
+    "description": "Sickle - Maharastra Model: Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC021",
+    "description": "Sickle - 102 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC022",
+    "description": "Sickle - 104 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC023",
+    "description": "Sickle - 105 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC024",
+    "description": "Sickle - 105 (Top Teeth): Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC025",
+    "description": "Sickle - 107 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC026",
+    "description": "Sickle - 108 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SIC028",
+    "description": "Sickle - 108 (Top Teeth): Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SIC",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 7
+  },
+  {
+    "code": "SICM02",
+    "description": "Sickle - 102 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM04",
+    "description": "Sickle - 104 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM05",
+    "description": "Sickle - 104 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM06",
+    "description": "Sickle - 105(Top Teeth): Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM07",
+    "description": "Sickle - 107 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM08",
+    "description": "Sickle - 108 : Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM09",
+    "description": "SIC - 1 0 7 (T o p T e e th): W o o d e n H a n d le",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM10",
+    "description": "SIC - 108(Top Teeth): Wooden Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM21",
+    "description": "Sickle - 102 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM22",
+    "description": "Sickle - 104 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.23",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM23",
+    "description": "Sickle - 105 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM24",
+    "description": "Sickle - 105(Top Teeth): Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.20",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM25",
+    "description": "Sickle - 107 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "50",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM26",
+    "description": "Sickle - 108 : Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM27",
+    "description": "SIC - 107(Top Teeth): Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SICM28",
+    "description": "SIC - 108(Top Teeth): Plastic Handle",
+    "family": "Sickle",
+    "prefix": "SICM",
+    "hsn": "82019000",
+    "weightKg": "0.22",
+    "packQty": "20",
+    "catalogPage": 9
+  },
+  {
+    "code": "SVL001",
+    "description": "Shovel - RD 2",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..1100",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL002",
+    "description": "Shovel - RD 4",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..4455",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL004",
+    "description": "Shovel - SQ 4",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..6655",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL005",
+    "description": "Shovel - SQ 6",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..8855",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL008",
+    "description": "Shovel - SQ 4 (Steel Handle)",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..5555",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL009",
+    "description": "Shovel - SQ 6 (Steel Handle)",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..7755",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL011",
+    "description": "Shovel - RD 2 (Steel Handle)",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..0000",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL012",
+    "description": "Shovel - RD 4 (Steel Handle)",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..3355",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL013",
+    "description": "Shovel - SQ 4 - Bend Shoulder",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..6655",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL015",
+    "description": "Shovel - Wooden Handle Assembly",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "00..8899",
+    "packQty": "25",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL016",
+    "description": "Shovel - SQ 4 Without Handle",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "11..8800",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL018",
+    "description": "Shovel - SQ 4 - Bend Shoulder & Steel Handle",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..5555",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL019",
+    "description": "Shovel - SQ 6 - Bend Shoulder & Steel Handle",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..7755",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL022",
+    "description": "Shovel - SQ 4-Light Weight Wooden",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..2233",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL023",
+    "description": "Shovel - SQ 4 -Steel Handle-Light weight",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..1166",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL025",
+    "description": "Shovel - RD 4 Light Wt (Steel Handle)",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..0044",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL026",
+    "description": "Sh o v e l - R D 2 -S t e el H an d l e - L i g ht w e ig h t",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "11..7711",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL030",
+    "description": "Shovel - SQ 4 Integrated Steel (L)-Matt",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..4455",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL031",
+    "description": "Shovel - SQ 4 Integrated Steel Bend (L)-Matt",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..4455",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL032",
+    "description": "S h o v e l - Integ r a t e d R D 4",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..0033",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL033",
+    "description": "Shovel - SQ 4 Light Wt Bend Shoulder",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..2200",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "SVL037",
+    "description": "Shovel - SQ 4 Light Wt Bend Shoulder(PVC)",
+    "family": "Shovel",
+    "prefix": "SVL",
+    "hsn": "82011000",
+    "weightKg": "22..1133",
+    "packQty": "6",
+    "catalogPage": 8
+  },
+  {
+    "code": "TLS001",
+    "description": "Cultivator - 6 CS3",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "0.66",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS002",
+    "description": "Cultivator - 8 CS3",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "0.85",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS003",
+    "description": "Cultivator - 8 CS2",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "0.71",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS004",
+    "description": "Cultivator - 12 CS3",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.75",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS006",
+    "description": "Cultivator - 8 CS3 (L)",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.40",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS007",
+    "description": "Cultivator - 8 CS4 (L)",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.40",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS010",
+    "description": "Cultivator - 8 CS3 - TRD",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "0.85",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS011",
+    "description": "Cultivator - 8 CS3L - TRD",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.40",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS012",
+    "description": "Cultivator - 8 CS4L - TRD",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.40",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS013",
+    "description": "Cultivator - 15 CS3",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.80",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS014",
+    "description": "Cultivator - 15 CS3",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "2.00",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS015",
+    "description": "C u lt iv a t o r - 14 C S 3 (2 . 15 K g)",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "2.15",
+    "packQty": "9",
+    "catalogPage": 9
+  },
+  {
+    "code": "TLS016",
+    "description": "Cultivator - 8CS3, 10kg-set",
+    "family": "Tiller Shoe / Cultivator",
+    "prefix": "TLS",
+    "hsn": "84321090",
+    "weightKg": "1.10",
+    "packQty": "9",
+    "catalogPage": 9
+  }
+]

@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { supabase } from "@/lib/supabase";
 import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { measuringInstruments } from "@/data/measuringInstruments";
+import { agriTools } from "@/data/agriTools";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nooragencies.in";
@@ -65,6 +66,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     });
   }
+  if (!categoryPages.some((category) => category.url.endsWith("/agri-tools"))) {
+    categoryPages.push({ url: `${baseUrl}/categories/agri-tools`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 });
+  }
 
   const productPages =
     products?.filter((product) => product.slug?.trim()).map((product) => ({
@@ -75,7 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) ?? [];
 
   const knownProductUrls = new Set(productPages.map((product) => product.url));
-  for (const product of [...pneumaticBrassFittings, ...measuringInstruments]) {
+  for (const product of [...pneumaticBrassFittings, ...measuringInstruments, ...agriTools]) {
     const url = `${baseUrl}/products/${product.slug}`;
     if (!knownProductUrls.has(url)) {
       productPages.push({ url, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 });

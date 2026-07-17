@@ -119,7 +119,7 @@ const rawHandTools: CatalogHandTool[] = [
   tool("non-sparking-tools", "Non-Sparking Tools", "HT-NST", "", "Taparia", { Material: "Beryllium copper or aluminium bronze", "Available Options": "Adjustable wrench, pliers, cutters, hammers, spanners and specialist non-sparking tools" }),
   tool("bench-pipe-vice", "Bench & Pipe Vice", "HT-VIC", img("image4.png"), "Taparia, Kendo, Generic", { Material: "Cast iron and hardened steel", "Available Options": "Bench vice, pipe vice", "Available Sizes": "Multiple jaw widths and pipe capacities" }),
   tool("tape-dispenser-stapler", "Tape Dispenser & Manual Stapler", "HT-TDS", img("image29.png"), "Falcon, Omega, Ikon, Kangaroo, Lucky Numen, Miles", { "Available Sizes": "1 inch, 2 inch, 3 inch", "Available Options": "Hand dispenser, tabletop dispenser, manual stapler" }),
-  ...(excelHandToolsData as unknown as CatalogHandTool[]),
+  ...(catalogHandToolsData as unknown as CatalogHandTool[]),
 ];
 
 const FAMILY_ALIASES: Record<string, string> = {
@@ -230,4 +230,4 @@ export const handTools: CatalogHandTool[] = [...consolidatedByFamily.values()];
 export function getHandTool(slug: string) {
   return productAliases.get(slug) ?? handTools.find((product) => product.slug === slug);
 }
-import excelHandToolsData from "@/data/excelHandTools.generated.json";
+import catalogHandToolsData from "@/data/handToolsCatalog.generated.json";

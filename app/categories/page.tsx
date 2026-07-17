@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import type { Metadata } from "next";
+import localCategories from "@/data/categories";
 
 export const metadata: Metadata = {
   title: "Industrial Hardware Product Categories in Coimbatore",
@@ -44,6 +45,7 @@ const categoryIcons: Record<string, string> = {
   tapes: "/category-icons/tapes.png",
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
   "measuring-instruments": "/category-icons/measuring-instruments-red.png",
+  "agri-tools": "/category-icons/agri-tools.png",
 };
 
 function getCategoryIcon(slug: string | null) {
@@ -57,16 +59,20 @@ export default async function CategoriesPage() {
     .select("*")
     .order("name");
 
-  if (error) {
-    return <div className="p-10">Failed to load categories</div>;
-  }
-
   const allCategories = [...(categories ?? [])];
+  for (const category of localCategories) {
+    if (!allCategories.some((item) => item.slug?.trim() === category.slug)) {
+      allCategories.push({ id: `local-${category.slug}`, ...category });
+    }
+  }
   if (!allCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
     allCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
   }
   if (!allCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
     allCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
+  }
+  if (!allCategories.some((category) => category.slug?.trim() === "agri-tools")) {
+    allCategories.push({ id: "local-agri-tools", name: "Agri Tools", slug: "agri-tools" });
   }
 
   return (

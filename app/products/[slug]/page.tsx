@@ -13,6 +13,7 @@ import BrandModelSelector from "@/components/BrandModelSelector";
 import { getPneumaticBrassFitting, pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { getMeasuringInstrument, measuringInstruments } from "@/data/measuringInstruments";
+import { getAgriTool, agriTools } from "@/data/agriTools";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug);
+  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug);
   if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
@@ -85,7 +86,7 @@ export default async function ProductPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
-  const product = databaseProduct ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug);
+  const product = databaseProduct ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug);
   if (!product) {
     notFound();
   }
@@ -104,6 +105,8 @@ export default async function ProductPage({ params }: Props) {
         ? pneumaticBrassFittings.filter((item) => item.slug !== slug).slice(0, 4)
         : product.category === "measuring-instruments"
           ? measuringInstruments.filter((item) => item.slug !== slug).slice(0, 4)
+        : product.category === "agri-tools"
+          ? agriTools.filter((item) => item.slug !== slug && item.specifications["Instrument Group"] === product.specifications["Instrument Group"]).slice(0, 4)
         : databaseRelatedProducts;
 
   const specs = product.specifications ?? {};
@@ -135,12 +138,15 @@ export default async function ProductPage({ params }: Props) {
   const availableCapacities = parseComma(findKey("available capacity"));
   const availableLengths = parseComma(findKey("available length"));
   const availableOptions = parseComma(findKey("available options"));
+  const weightKey = findKey("available weight") ?? findKey("available weights");
+  const availableWeights = parseComma(weightKey);
   const availableBrands = parseComma(findKey("brand")) || [];
 
   const variants: { title: string; values: string[] }[] = [];
   if (catalogModels.length === 0 && availableBrands.length > 1) variants.push({ title: "Brand", values: availableBrands });
   if (availableGrits.length > 0) variants.push({ title: "Grit", values: availableGrits });
   if (availableWidths.length > 0) variants.push({ title: "Width", values: availableWidths });
+  if (availableWeights.length > 0) variants.push({ title: "Weight", values: availableWeights });
   if (availableCapacities.length > 0 && availableLengths.length > 0) {
     variants.push({ title: "Capacity", values: availableCapacities });
     variants.push({ title: "Length", values: availableLengths });
@@ -169,7 +175,23 @@ export default async function ProductPage({ params }: Props) {
     "available gsm",
     "brand",
     "available models",
+    "available weight",
+    "available weights",
+    "instrument group",
+    "catalog source",
+    "catalog page",
+    "source file",
+    "source sheet",
+    "worksheet",
+    "workbook",
+    "excel workbook",
   ]);
+
+  function isPublicSpecification(key: string) {
+    const normalized = key.toLowerCase().trim();
+    if (hiddenSpecKeys.has(normalized)) return false;
+    return !/(?:excel|workbook|worksheet|source\s*(?:file|sheet)|catalog\s*(?:source|page))/.test(normalized);
+  }
 
   const hasGrit = availableGrits.length > 0;
   const hasVariants = variants.length > 0;
@@ -243,7 +265,7 @@ export default async function ProductPage({ params }: Props) {
           </div>
           <div className="divide-y">
             {Object.entries(product.specifications)
-              .filter(([key]) => !hiddenSpecKeys.has(key.toLowerCase()))
+              .filter(([key]) => isPublicSpecification(key))
               .map(([key, value]) => (
                 <div key={key} className="grid grid-cols-2 px-6 py-4">
                   <div className="font-semibold text-gray-700 capitalize">{key}</div>

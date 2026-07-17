@@ -1,6 +1,11 @@
 const categories = [
 
   {
+    name: "Agri Tools",
+    slug: "agri-tools",
+  },
+
+  {
     name: "Hand Tools",
     slug: "hand-tools",
   },

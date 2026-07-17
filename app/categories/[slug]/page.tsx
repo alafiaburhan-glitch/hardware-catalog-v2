@@ -10,6 +10,7 @@ import PowerToolsCategoryClient from "@/components/PowerToolsCategoryClient";
 import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { sortProductsAlphabetically } from "@/lib/sortProducts";
 import { measuringInstruments } from "@/data/measuringInstruments";
+import { agriTools } from "@/data/agriTools";
 
 export const dynamic = "force-dynamic";
 
@@ -48,6 +49,10 @@ const categorySeo: Record<string, { title: string; description: string }> = {
     title: "Measuring Instruments Supplier in Coimbatore",
     description:
       "Browse Kency, Yamayo and Freemans measuring instruments, precision tools, measuring tapes, gauges, calipers, micrometers and levels from Noor Agencies in Coimbatore.",
+  },
+  "agri-tools": {
+    title: "Tata Agrico Agricultural Tools Supplier in Coimbatore",
+    description: "Browse Tata Agrico axes, hoes, hammers, pickaxes, sickles, shovels, crowbars, chisels, rotavator blades, chaff cutters and tiller shoes from Noor Agencies in Coimbatore.",
   },
   ropes: {
     title: "Industrial Rope Supplier in Coimbatore",
@@ -120,7 +125,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments";
+  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments" || slug === "agri-tools";
   const categoryDoesNotExist = !categoryError || categoryError.code === "PGRST116";
   if (!category && !isLocalCategory && categoryDoesNotExist) {
     notFound();
@@ -186,12 +191,16 @@ export default async function CategoryPage({ params }: Props) {
         ? [...pneumaticBrassFittings, ...(databaseProducts ?? []).filter((product) => !pneumaticBrassFittings.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : slug === "measuring-instruments"
           ? [...measuringInstruments, ...(databaseProducts ?? []).filter((product) => !measuringInstruments.some((catalogProduct) => catalogProduct.slug === product.slug))]
+        : slug === "agri-tools"
+          ? [...agriTools, ...(databaseProducts ?? []).filter((product) => !agriTools.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : (databaseProducts ?? []));
 
   const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"
     ? "Pneumatic & Brass Fittings"
     : slug === "measuring-instruments"
       ? "Measuring Instruments"
+    : slug === "agri-tools"
+      ? "Agri Tools"
     : slug.replace(/-/g, " "));
   const seoDescription =
     categorySeo[slug]?.description ??

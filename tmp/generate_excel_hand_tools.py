@@ -52,25 +52,25 @@ for sheet, rows in src.items():
             elif label=='SIZE' or label.startswith('SIZE '): current['sizes'].add(value)
     for sec in sections:
         if not sec['items']: continue
-        base=slugify(f"{sheet}-{sec['name']}") or 'workbook-product'
+        base=slugify(f"{sheet}-{sec['name']}") or 'hand-tool-product'
         used[base]=used.get(base,0)+1
-        slug=f"excel-{base}" + (f"-{used[base]}" if used[base]>1 else '')
+        slug=base + (f"-{used[base]}" if used[base]>1 else '')
         brands=sorted(sec['brands']) or [clean(sheet).title()]
         tag=classify(sec['name']+' '+' '.join(sec['items']))
         specs={
           'Brand': ', '.join(brands), 'Product Type': sec['name'], 'Category': 'Hand Tools',
           'Application': 'Professional workshop, maintenance and industrial use',
           'Suitable For': 'Professional, industrial, workshop and maintenance use',
-          'Available Options': ', '.join(dict.fromkeys(sec['items'])), 'Workbook Sheet': clean(sheet),
+          'Available Options': ', '.join(dict.fromkeys(sec['items'])),
         }
         if sec['models']: specs['Available Models']=', '.join(sorted(sec['models']))
         if sec['sizes']: specs['Available Sizes']=', '.join(sorted(sec['sizes']))
         products.append({
-          'id':f'excel-hand-tool-{len(products)+1}', 'name':sec['name'], 'slug':slug,
-          'code':f'XL-{tag}-{len(products)+1:03d}', 'category':'hand-tools',
-          'description':f"{sec['name']} from the supplied Hand Tools workbook. Select an available brand, model or option and contact Noor Agencies for current availability.",
+          'id':f'hand-tool-catalog-{len(products)+1}', 'name':sec['name'], 'slug':slug,
+          'code':f'HT-{tag}-{len(products)+1:03d}', 'category':'hand-tools',
+          'description':f"{sec['name']} for professional workshop, maintenance and industrial use. Select an available brand, model or option and contact Noor Agencies for current availability.",
           'image':'', 'brand':brands[0], 'specifications':specs,
         })
 
-Path('data/excelHandTools.generated.json').write_text(json.dumps(products,indent=2,ensure_ascii=False),encoding='utf-8')
-print(json.dumps({'products':len(products),'sheets':len(src),'groups':{t:sum(p['code'].startswith('XL-'+t) for p in products) for t in ['SPANNER','HAMMER','PLIER','SOCKET','SCREW','CLAMP','CUT','RIVET','MEASURE','SPRAY','LIFT','MASON','GARDEN','STORAGE','OTHER']}}))
+Path('data/handToolsCatalog.generated.json').write_text(json.dumps(products,indent=2,ensure_ascii=False),encoding='utf-8')
+print(json.dumps({'products':len(products),'sheets':len(src),'groups':{t:sum(p['code'].startswith('HT-'+t) for p in products) for t in ['SPANNER','HAMMER','PLIER','SOCKET','SCREW','CLAMP','CUT','RIVET','MEASURE','SPRAY','LIFT','MASON','GARDEN','STORAGE','OTHER']}}))

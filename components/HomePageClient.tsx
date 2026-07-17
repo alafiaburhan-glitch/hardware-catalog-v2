@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import localCategories from "@/data/categories";
 
 type CategorySummary = {
   id: number | string;
@@ -60,6 +61,7 @@ const categoryIcons: Record<string, string> = {
   tapes: "/category-icons/tapes.png",
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
   "measuring-instruments": "/category-icons/measuring-instruments-red.png",
+  "agri-tools": "/category-icons/agri-tools.png",
 };
 
 function getCategoryIcon(slug: string | null) {
@@ -80,12 +82,20 @@ export default function HomePageClient() {
         .from("categories")
         .select("id, name, slug")
         .order("name");
-      const validCategories = (categoryData ?? []).filter((category) => category.slug?.trim());
+      const validCategories: CategorySummary[] = (categoryData ?? []).filter((category) => category.slug?.trim());
+      for (const category of localCategories) {
+        if (!validCategories.some((item) => item.slug?.trim() === category.slug)) {
+          validCategories.push({ id: `local-${category.slug}`, ...category });
+        }
+      }
       if (!validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
         validCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
       }
       if (!validCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
         validCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
+      }
+      if (!validCategories.some((category) => category.slug?.trim() === "agri-tools")) {
+        validCategories.push({ id: "local-agri-tools", name: "Agri Tools", slug: "agri-tools" });
       }
       setCategories(validCategories);
       setLoadingCategories(false);
