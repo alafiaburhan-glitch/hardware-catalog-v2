@@ -31,7 +31,6 @@ const categoryIcons: Record<string, string> = {
   "safety-products": "/category-icons/safety-products.png",
   "lifting-equipment": "/category-icons/lifting-equipment.png",
   "lifting-equipments": "/category-icons/lifting-equipments.png",
-  "lifting-slings": "/category-icons/lifting-slings.png",
   "shade-nets": "/category-icons/shade-nets.png",
   tarpaulins: "/category-icons/tarpaulins.png",
   ladders: "/category-icons/ladders-sections.png",
@@ -41,6 +40,7 @@ const categoryIcons: Record<string, string> = {
   "industrial-adhesives-sealants":
     "/category-icons/industrial-adhesives-sealants.png",
   "lubricants-sealants": "/category-icons/lubricants-sealants.png",
+  "packing-material": "/category-icons/packaging-material.png",
   "packaging-material": "/category-icons/packaging-material.png",
   tapes: "/category-icons/tapes.png",
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
@@ -54,7 +54,7 @@ function getCategoryIcon(slug: string | null) {
 }
 
 export default async function CategoriesPage() {
-  const { data: categories, error } = await supabase
+  const { data: categories } = await supabase
     .from("categories")
     .select("*")
     .order("name");

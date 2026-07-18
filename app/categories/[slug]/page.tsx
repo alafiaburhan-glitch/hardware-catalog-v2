@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import CategoryPageClient from "@/components/CategoryPageClient";
 import BrandCategoryClient from "@/components/BrandCategoryClient";
@@ -90,9 +90,9 @@ const categorySeo: Record<string, { title: string; description: string }> = {
       "Noor Agencies supplies industrial lubricants and sealants in Coimbatore for maintenance, repair, assembly and workshop applications.",
   },
   "packaging-material": {
-    title: "Packaging Material Supplier in Coimbatore",
+    title: "Packing Material Supplier in Coimbatore",
     description:
-      "Packaging material supplier in Coimbatore offering tapes and industrial packaging supplies for warehouses, workshops, dispatch and commercial use.",
+      "Packing material supplier in Coimbatore offering tapes and industrial packaging supplies for warehouses, workshops, dispatch and commercial use.",
   },
   tapes: {
     title: "Industrial Tape Supplier in Coimbatore",
@@ -115,9 +115,13 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+function normalizeCategorySlug(slug: string) {
+  return slug === "packing-material" ? "packaging-material" : slug;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug: rawSlug } = await params;
-  const slug = rawSlug.trim();
+  const slug = normalizeCategorySlug(rawSlug.trim());
 
   const { data: category, error: categoryError } = await supabase
     .from("categories")
@@ -163,7 +167,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { slug: rawSlug } = await params;
-  const slug = rawSlug.trim();
+  const requestedSlug = rawSlug.trim();
+  const slug = normalizeCategorySlug(requestedSlug);
+
+  if (requestedSlug !== slug) {
+    permanentRedirect(`/categories/${slug}`);
+  }
 
   const { data: category } = await supabase
     .from("categories")
@@ -171,10 +180,13 @@ export default async function CategoryPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
+  const productCategorySlugs = slug === "packaging-material"
+    ? ["packaging-material", "packing-material"]
+    : [slug];
   const { data: databaseProducts } = await supabase
     .from("products")
     .select("*")
-    .eq("category", slug);
+    .in("category", productCategorySlugs);
 
   // Hand tools are intentionally grouped by tool family, with brands and
   // models exposed as options instead of creating a separate card per brand.

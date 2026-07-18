@@ -31,11 +31,6 @@ const categories = [
   },
 
   {
-    name: "Lifting Slings",
-    slug: "lifting-slings",
-  },
-
-  {
     name: "Shade Nets",
     slug: "shade-nets",
   },
