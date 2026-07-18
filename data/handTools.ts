@@ -204,11 +204,13 @@ const slugsByFamily = new Map<string, string[]>();
 
 for (const product of rawHandTools) {
   const key = familyKey(product.name);
+  if (key === "2" || key === "brand") continue;
   slugsByFamily.set(key, [...(slugsByFamily.get(key) ?? []), product.slug]);
 }
 
 for (const product of rawHandTools) {
   const key = familyKey(product.name);
+  if (key === "2" || key === "brand") continue;
   const existing = consolidatedByFamily.get(key);
   const consolidated = existing ? mergeProducts(existing, product) : product;
   consolidatedByFamily.set(key, consolidated);
@@ -216,7 +218,10 @@ for (const product of rawHandTools) {
 }
 
 for (const [key, product] of consolidatedByFamily) {
-  consolidatedByFamily.set(key, cleanFamilySpecifications(product, key));
+  consolidatedByFamily.set(key, {
+    ...cleanFamilySpecifications(product, key),
+    image: `/products/hand-tools/animated/${key.replace(/\s+/g, "-")}.png`,
+  });
 }
 
 // Keep old links working even when their cards are consolidated into one family.
