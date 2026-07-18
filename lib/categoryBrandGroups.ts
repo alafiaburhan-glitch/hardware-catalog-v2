@@ -16,9 +16,9 @@ export const categoryBrandGroups: Record<string, CategoryBrand[]> = {
     { name: "Pickaxes & Kudalis", slug: "pickaxes-kudalis", description: "Double-point, chisel-point and mattock profiles for hard-ground work.", image: "/products/agri-tools/pickaxe-kudali-studio.png", matchTerms: ["Pickaxe / Kudali"] },
     { name: "Sickles", slug: "sickles", description: "Plain and toothed harvesting sickles with wooden or polymer handles.", image: "/products/agri-tools/sickle-studio.png", matchTerms: ["Sickle"] },
     { name: "Shovels", slug: "shovels", description: "Round-nose, square-nose, lightweight and integrated shovel constructions.", image: "/products/agri-tools/shovel-studio.png", matchTerms: ["Shovel"] },
-    { name: "Rotavator Blades", slug: "rotavator-blades", description: "Tata Agrico rotavator blades in catalog profiles.", image: "/products/agri-tools/rvb.webp", matchTerms: ["Rotavator Blade"] },
-    { name: "Chaff Cutters", slug: "chaff-cutters", description: "Chaff and thresher cutter models for farm use.", image: "/products/agri-tools/cfc.webp", matchTerms: ["Chaff Cutter"] },
-    { name: "Tiller Shoes & Cultivators", slug: "tiller-shoes-cultivators", description: "Cultivator and tiller-shoe models in catalog sizes.", image: "/products/agri-tools/tls.webp", matchTerms: ["Tiller Shoe / Cultivator"] },
+    { name: "Rotavator Blades", slug: "rotavator-blades", description: "Bolt-on rotary tiller blades in catalog profiles and mounting patterns.", image: "/products/agri-tools/rotavator-blade-studio.png", matchTerms: ["Rotavator Blade"] },
+    { name: "Chaff Cutters", slug: "chaff-cutters", description: "Hardened replacement knives for compatible chaff-cutter and thresher assemblies.", image: "/products/agri-tools/chaff-cutter-studio.png", matchTerms: ["Chaff Cutter"] },
+    { name: "Tiller Shoes & Cultivators", slug: "tiller-shoes-cultivators", description: "Ground-engaging cultivator points and tiller shoes in catalog profiles.", image: "/products/agri-tools/cultivator-tiller-studio.png", matchTerms: ["Tiller Shoe / Cultivator"] },
   ],
   "measuring-instruments": [
     { name: "Calipers, Height & Depth Gauges", slug: "calipers-height-depth", description: "Vernier, digital, dial and specialist calipers plus height and depth gauges.", image: "/products/measuring-instruments/animated/calipers.png", matchTerms: ["Calipers, Height & Depth Gauges"] },

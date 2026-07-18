@@ -97,18 +97,21 @@ const familyProfiles: Record<string, FamilyProfile> = {
     selection: "Use round nose for digging and square nose for scooping or levelling",
   },
   "Rotavator Blade": {
+    image: "/products/agri-tools/rotavator-blade-studio.png",
     overview: "Replacement tiller blades supplied in model-specific profiles for rotary soil preparation.",
     application: "Rotavator and rotary tiller soil-cutting assemblies",
     construction: "Formed, heat-treated steel blade with machine mounting provision",
     selection: "Confirm profile, orientation, mounting pattern and machine compatibility before ordering",
   },
   "Chaff Cutter": {
+    image: "/products/agri-tools/chaff-cutter-studio.png",
     overview: "Replacement cutting components for compatible chaff-cutter and thresher assemblies.",
     application: "Cutting fodder and crop residue in compatible agricultural machines",
     construction: "Hardened steel cutter component supplied as an implement spare",
     selection: "Match item code, cutter type, dimensions and machine compatibility",
   },
   "Tiller Shoe / Cultivator": {
+    image: "/products/agri-tools/cultivator-tiller-studio.png",
     overview: "Cultivator points and tiller shoes for soil opening, shallow tillage and wear-part replacement.",
     application: "Cultivator and tiller ground-engaging assemblies",
     construction: "Forged or formed wear-resistant steel implement component",
@@ -117,6 +120,10 @@ const familyProfiles: Record<string, FamilyProfile> = {
 };
 
 const generated = generatedData as GeneratedAgriTool[];
+
+function isValidCatalogNumber(value: string) {
+  return /^\d+(?:\.\d+)?$/.test(value.trim());
+}
 
 const descriptionCorrections: Record<string, string> = {
   HOE006: "Powrah - East India",
@@ -196,7 +203,7 @@ export const agriTools: AgriTool[] = [...grouped.values()].map(({ group, items }
   const first = items[0];
   const profile = familyProfiles[group.family];
   const codes = items.map((item) => item.code);
-  const weights = [...new Set(items.map((item) => item.weightKg).filter(Boolean))]
+  const weights = [...new Set(items.map((item) => item.weightKg).filter(isValidCatalogNumber))]
     .sort((firstWeight, secondWeight) => Number(firstWeight) - Number(secondWeight));
   return {
     id: `agri-tool-${group.key}`,
@@ -225,7 +232,7 @@ export const agriTools: AgriTool[] = [...grouped.values()].map(({ group, items }
       series: group.name.replace("Tata Agrico ", ""),
       specifications: {
         "Item Code": item.code,
-        ...(item.weightKg ? { "Material Weight": `${item.weightKg} kg` } : {}),
+        ...(isValidCatalogNumber(item.weightKg) ? { "Material Weight": `${item.weightKg} kg` } : {}),
         ...(item.packQty ? { "Pack Quantity / MOQ": `${item.packQty} pieces` } : {}),
         HSN: item.hsn,
         "Catalog Reference": `Tata Agrico catalog page ${item.catalogPage}`,
