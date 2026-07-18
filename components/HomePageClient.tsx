@@ -219,7 +219,7 @@ export default function HomePageClient() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
           {loadingCategories
             ? Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-16 sm:h-20 rounded-2xl bg-gray-100 animate-pulse" />
@@ -246,7 +246,10 @@ export default function HomePageClient() {
                             className="h-14 w-14 shrink-0 rounded-2xl bg-white object-contain p-1.5 shadow-sm transition duration-300 group-hover:scale-110 group-hover:rotate-3"
                           />
                         )}
-                        <h3 className="min-w-0 break-words text-[13px] font-bold leading-tight group-hover:text-red-700 transition min-[390px]:text-[14px] sm:text-base">
+                        <h3
+                          className="min-w-0 whitespace-nowrap text-sm font-bold leading-tight transition group-hover:text-red-700 sm:whitespace-normal sm:break-words sm:text-base"
+                          title={category.name}
+                        >
                           {category.name}
                         </h3>
                       </div>
