@@ -31,6 +31,91 @@ type ProductGroup = {
   family: string;
 };
 
+type FamilyProfile = {
+  image?: string;
+  overview: string;
+  application: string;
+  construction: string;
+  selection: string;
+};
+
+const familyProfiles: Record<string, FamilyProfile> = {
+  Axe: {
+    image: "/products/agri-tools/axe-studio.png",
+    overview: "Forged axe heads sized for cutting, clearing and general farm maintenance.",
+    application: "Cutting branches, splitting light timber and field clearing",
+    construction: "Forged steel cutting head; handle fitment depends on the selected code",
+    selection: "Choose by head weight and confirm whether a fitted handle is required",
+  },
+  Chisel: {
+    image: "/products/agri-tools/chisel-studio.png",
+    overview: "Heavy-duty forged chisels for agricultural repair, masonry and workshop use.",
+    application: "Chipping, cutting and dressing metal or masonry",
+    construction: "One-piece forged steel body with a sharpened working edge",
+    selection: "Match the listed diameter, length and material weight to the job",
+  },
+  Crowbar: {
+    image: "/products/agri-tools/crowbar-studio.png",
+    overview: "Forged crowbars in straight, bent and scoop profiles for digging and leverage work.",
+    application: "Digging hard ground, loosening stones, aligning and general levering",
+    construction: "One-piece forged steel bar with profile determined by model",
+    selection: "Choose the working-end profile, bar size and weight for the task",
+  },
+  Hammer: {
+    image: "/products/agri-tools/hammer-studio.png",
+    overview: "Forged striking tools covering double-face, straight-pein and regional hammer patterns.",
+    application: "Heavy striking, fitting, repair and maintenance work",
+    construction: "Forged steel head; round- or oval-eye pattern varies by series",
+    selection: "Select head pattern, eye type and weight; verify handle supply separately",
+  },
+  "Hoe / Powrah": {
+    image: "/products/agri-tools/hoe-powrah-studio.png",
+    overview: "Regional hoes, powrahs and mammoties for soil preparation and field maintenance.",
+    application: "Breaking soil, earthing, trenching, weeding and moving loose material",
+    construction: "Forged working head with tanged, riveted, integrated or separate-handle options",
+    selection: "Match the regional pattern and attachment style to local working practice",
+  },
+  "Pickaxe / Kudali": {
+    image: "/products/agri-tools/pickaxe-kudali-studio.png",
+    overview: "Pickaxes, kudalis and mattocks for demanding excavation and ground-breaking work.",
+    application: "Breaking compacted soil, trenching, grubbing roots and loosening rock",
+    construction: "Forged steel head in double-point, chisel-point or mattock profile",
+    selection: "Choose the head profile and weight, then confirm handled or head-only supply",
+  },
+  Sickle: {
+    image: "/products/agri-tools/sickle-studio.png",
+    overview: "Curved harvesting sickles with plain or toothed cutting profiles and multiple handle options.",
+    application: "Harvesting fodder and crops, cutting grass and light vegetation",
+    construction: "Curved steel blade with wooden or polymer handle according to model",
+    selection: "Choose blade pattern, tooth orientation and handle material",
+  },
+  Shovel: {
+    image: "/products/agri-tools/shovel-studio.png",
+    overview: "Round- and square-nose shovels in standard, lightweight and integrated constructions.",
+    application: "Digging, loading and transferring soil, sand, grain and loose material",
+    construction: "Pressed or forged steel blade with separate, steel or integrated handle options",
+    selection: "Use round nose for digging and square nose for scooping or levelling",
+  },
+  "Rotavator Blade": {
+    overview: "Replacement tiller blades supplied in model-specific profiles for rotary soil preparation.",
+    application: "Rotavator and rotary tiller soil-cutting assemblies",
+    construction: "Formed, heat-treated steel blade with machine mounting provision",
+    selection: "Confirm profile, orientation, mounting pattern and machine compatibility before ordering",
+  },
+  "Chaff Cutter": {
+    overview: "Replacement cutting components for compatible chaff-cutter and thresher assemblies.",
+    application: "Cutting fodder and crop residue in compatible agricultural machines",
+    construction: "Hardened steel cutter component supplied as an implement spare",
+    selection: "Match item code, cutter type, dimensions and machine compatibility",
+  },
+  "Tiller Shoe / Cultivator": {
+    overview: "Cultivator points and tiller shoes for soil opening, shallow tillage and wear-part replacement.",
+    application: "Cultivator and tiller ground-engaging assemblies",
+    construction: "Forged or formed wear-resistant steel implement component",
+    selection: "Confirm profile, size, mounting arrangement and implement compatibility",
+  },
+};
+
 const generated = generatedData as GeneratedAgriTool[];
 
 const descriptionCorrections: Record<string, string> = {
@@ -109,6 +194,7 @@ for (const item of generated) {
 
 export const agriTools: AgriTool[] = [...grouped.values()].map(({ group, items }) => {
   const first = items[0];
+  const profile = familyProfiles[group.family];
   const codes = items.map((item) => item.code);
   const weights = [...new Set(items.map((item) => item.weightKg).filter(Boolean))]
     .sort((firstWeight, secondWeight) => Number(firstWeight) - Number(secondWeight));
@@ -118,9 +204,9 @@ export const agriTools: AgriTool[] = [...grouped.values()].map(({ group, items }
     slug: `tata-agrico-${group.key}`,
     code: codes.length === 1 ? codes[0] : `${first.prefix} Series`,
     category: "agri-tools",
-    image: `/products/agri-tools/${first.prefix.toLowerCase()}.webp`,
+    image: profile.image ?? `/products/agri-tools/${first.prefix.toLowerCase()}.webp`,
     brand: "Tata Agrico",
-    description: `${group.name} with ${items.length} catalog ${items.length === 1 ? "model" : "models"} for agricultural, farming and professional field use. Select an item code below for its exact weight and pack specification.`,
+    description: `${profile.overview} This ${group.name.replace("Tata Agrico ", "")} range includes ${items.length} catalog ${items.length === 1 ? "model" : "models"}; select an item code for the exact weight, packing quantity and catalog reference.`,
     specifications: {
       Brand: "Tata Agrico",
       "Instrument Group": group.family,
@@ -128,7 +214,10 @@ export const agriTools: AgriTool[] = [...grouped.values()].map(({ group, items }
       "Available Models": `${items.length} catalog ${items.length === 1 ? "entry" : "entries"}`,
       ...(weights.length ? { "Available Weights": weights.map((weight) => `${weight} kg`).join(", ") } : {}),
       HSN: [...new Set(items.map((item) => item.hsn))].join(", "),
-      Application: "Agricultural, farming and professional field use",
+      Application: profile.application,
+      Construction: profile.construction,
+      "Selection Guide": profile.selection,
+      "Supply Format": "Model-dependent; review the selected item description for head, blade, handle or assembly details",
     },
     models: items.map((item) => ({
       brand: "Tata Agrico",
@@ -139,6 +228,7 @@ export const agriTools: AgriTool[] = [...grouped.values()].map(({ group, items }
         ...(item.weightKg ? { "Material Weight": `${item.weightKg} kg` } : {}),
         ...(item.packQty ? { "Pack Quantity / MOQ": `${item.packQty} pieces` } : {}),
         HSN: item.hsn,
+        "Catalog Reference": `Tata Agrico catalog page ${item.catalogPage}`,
       },
     })),
   };

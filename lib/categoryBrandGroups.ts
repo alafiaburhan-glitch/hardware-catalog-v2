@@ -8,14 +8,14 @@
 
 export const categoryBrandGroups: Record<string, CategoryBrand[]> = {
   "agri-tools": [
-    { name: "Axes", slug: "axes", description: "Tata Agrico agricultural axes in all catalog weights.", image: "/products/agri-tools/axe.webp", matchTerms: ["Axe"] },
-    { name: "Chisels", slug: "chisels", description: "Tata Agrico chisels in catalog diameters and lengths.", image: "/products/agri-tools/che.webp", matchTerms: ["Chisel"] },
-    { name: "Crowbars", slug: "crowbars", description: "Long, short and scoop crowbars for agricultural and field work.", image: "/products/agri-tools/cwb.webp", matchTerms: ["Crowbar"] },
-    { name: "Hammers", slug: "hammers", description: "Double-face and straight-pein Tata Agrico hammers.", image: "/products/agri-tools/hmr.webp", matchTerms: ["Hammer"] },
-    { name: "Hoes & Powrahs", slug: "hoes-powrahs", description: "Regional, integrated and handled hoe and powrah models.", image: "/products/agri-tools/hoe.webp", matchTerms: ["Hoe / Powrah"] },
-    { name: "Pickaxes & Kudalis", slug: "pickaxes-kudalis", description: "Double-point, chisel-point and handled pickaxes and kudalis.", image: "/products/agri-tools/pkx.webp", matchTerms: ["Pickaxe / Kudali"] },
-    { name: "Sickles", slug: "sickles", description: "Wooden- and PVC-handle Tata Agrico sickles.", image: "/products/agri-tools/sic.webp", matchTerms: ["Sickle"] },
-    { name: "Shovels", slug: "shovels", description: "Round-nose, square-nose, lightweight and integrated shovels.", image: "/products/agri-tools/svl.webp", matchTerms: ["Shovel"] },
+    { name: "Axes", slug: "axes", description: "Forged agricultural axes in catalog head weights for cutting and field clearing.", image: "/products/agri-tools/axe-studio.png", matchTerms: ["Axe"] },
+    { name: "Chisels", slug: "chisels", description: "Forged chisels in catalog diameters, lengths and material weights.", image: "/products/agri-tools/chisel-studio.png", matchTerms: ["Chisel"] },
+    { name: "Crowbars", slug: "crowbars", description: "Straight, bent and scoop crowbars for digging and leverage work.", image: "/products/agri-tools/crowbar-studio.png", matchTerms: ["Crowbar"] },
+    { name: "Hammers", slug: "hammers", description: "Double-face, straight-pein and regional forged hammer patterns.", image: "/products/agri-tools/hammer-studio.png", matchTerms: ["Hammer"] },
+    { name: "Hoes & Powrahs", slug: "hoes-powrahs", description: "Regional, tanged, riveted, integrated and handled soil-working tools.", image: "/products/agri-tools/hoe-powrah-studio.png", matchTerms: ["Hoe / Powrah"] },
+    { name: "Pickaxes & Kudalis", slug: "pickaxes-kudalis", description: "Double-point, chisel-point and mattock profiles for hard-ground work.", image: "/products/agri-tools/pickaxe-kudali-studio.png", matchTerms: ["Pickaxe / Kudali"] },
+    { name: "Sickles", slug: "sickles", description: "Plain and toothed harvesting sickles with wooden or polymer handles.", image: "/products/agri-tools/sickle-studio.png", matchTerms: ["Sickle"] },
+    { name: "Shovels", slug: "shovels", description: "Round-nose, square-nose, lightweight and integrated shovel constructions.", image: "/products/agri-tools/shovel-studio.png", matchTerms: ["Shovel"] },
     { name: "Rotavator Blades", slug: "rotavator-blades", description: "Tata Agrico rotavator blades in catalog profiles.", image: "/products/agri-tools/rvb.webp", matchTerms: ["Rotavator Blade"] },
     { name: "Chaff Cutters", slug: "chaff-cutters", description: "Chaff and thresher cutter models for farm use.", image: "/products/agri-tools/cfc.webp", matchTerms: ["Chaff Cutter"] },
     { name: "Tiller Shoes & Cultivators", slug: "tiller-shoes-cultivators", description: "Cultivator and tiller-shoe models in catalog sizes.", image: "/products/agri-tools/tls.webp", matchTerms: ["Tiller Shoe / Cultivator"] },
