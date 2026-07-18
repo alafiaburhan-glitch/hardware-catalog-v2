@@ -86,7 +86,8 @@ export default async function ProductPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
-  const product = databaseProduct ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug);
+  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug);
+  const product = catalogProduct ?? databaseProduct;
   if (!product) {
     notFound();
   }
