@@ -138,6 +138,7 @@ function instrumentGroupFor(name: string) {
 }
 
 const pdfImage = (name: string) => `/products/measuring-instruments/pdf/${name}.webp`;
+const animatedImage = (name: string) => `/products/measuring-instruments/animated/${name}.png`;
 
 function imageFor(name: string, brand: string, group: string) {
   const value = name.toLowerCase();
@@ -152,30 +153,19 @@ function imageFor(name: string, brand: string, group: string) {
     if (value.includes("measuring wheel")) return pdfImage("freemans-measuring-wheel");
   }
 
-  const suffixByGroup: Record<string, string> = {
+  const imageByGroup: Record<string, string> = {
     "Calipers, Height & Depth Gauges": "calipers",
     Micrometers: "micrometers",
-    "Indicators & Gauges": "indicators",
-    "Tapes & Measuring Wheels": brand === "Freemans" ? "tapes" : "tapes-wheels",
+    "Indicators & Gauges": "indicators-gauges",
+    "Tapes & Measuring Wheels": "tapes-wheels",
     "Levels, Squares & Angle Measurement": "levels-angle",
-    "NDT & Material Testing": "ndt",
+    "NDT & Material Testing": "ndt-material-testing",
     "Environmental & Electronic Testers": "electronic-testers",
     "Rules, Blocks & Reference Gauges": "rules-blocks",
-    "Stands & Holders": "stands",
-    "Other Precision Instruments": "other",
+    "Stands & Holders": "stands-holders",
+    "Other Precision Instruments": "rules-blocks",
   };
-  const prefix = brand.toLowerCase();
-  const suffix = suffixByGroup[group];
-  const supported = new Set([
-    "yamayo-calipers", "yamayo-micrometers", "yamayo-indicators", "yamayo-tapes-wheels",
-    "yamayo-levels-angle", "yamayo-ndt", "yamayo-electronic-testers", "yamayo-rules-blocks",
-    "yamayo-stands", "yamayo-other", "kency-calipers", "kency-micrometers", "kency-indicators",
-    "kency-levels-angle", "kency-ndt", "kency-rules-blocks", "kency-stands", "freemans-tapes",
-    "freemans-calipers", "freemans-micrometers", "freemans-indicators", "freemans-levels-angle",
-    "freemans-stands",
-  ]);
-  const key = `${prefix}-${suffix}`;
-  return supported.has(key) ? pdfImage(key) : pdfImage("yamayo-other");
+  return animatedImage(imageByGroup[group] ?? "rules-blocks");
 }
 
 function sizeOptionsFor(name: string): string | undefined {
