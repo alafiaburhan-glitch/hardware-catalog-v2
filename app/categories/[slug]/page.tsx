@@ -12,6 +12,7 @@ import { sortProductsAlphabetically } from "@/lib/sortProducts";
 import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
+import { liftingEquipment } from "@/data/liftingEquipment";
 
 export const dynamic = "force-dynamic";
 
@@ -208,6 +209,8 @@ export default async function CategoryPage({ params }: Props) {
           ? [...agriTools, ...(databaseProducts ?? []).filter((product) => !agriTools.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : slug === "packaging-material"
           ? [...packingMaterials, ...(databaseProducts ?? []).filter((product) => !packingMaterials.some((catalogProduct) => catalogProduct.slug === product.slug))]
+        : slug === "lifting-equipments"
+          ? [...liftingEquipment, ...(databaseProducts ?? []).filter((product) => !liftingEquipment.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : (databaseProducts ?? []));
 
   const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"

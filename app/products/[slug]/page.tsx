@@ -15,6 +15,7 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import { getMeasuringInstrument, measuringInstruments } from "@/data/measuringInstruments";
 import { getAgriTool, agriTools } from "@/data/agriTools";
 import { getPackingMaterial, packingMaterials } from "@/data/packingMaterials";
+import { getLiftingEquipment, liftingEquipment } from "@/data/liftingEquipment";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug);
+  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? product;
   if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
@@ -87,7 +88,7 @@ export default async function ProductPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
-  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug);
+  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug);
   const product = catalogProduct ?? databaseProduct;
   if (!product) {
     notFound();
@@ -111,6 +112,8 @@ export default async function ProductPage({ params }: Props) {
           ? agriTools.filter((item) => item.slug !== slug && item.specifications["Instrument Group"] === product.specifications["Instrument Group"]).slice(0, 4)
         : product.category === "packaging-material"
           ? packingMaterials.filter((item) => item.slug !== slug).slice(0, 4)
+        : product.category === "lifting-equipments"
+          ? liftingEquipment.filter((item) => item.slug !== slug).slice(0, 4)
         : databaseRelatedProducts;
 
   const specs = product.specifications ?? {};

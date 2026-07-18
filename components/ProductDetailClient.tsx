@@ -27,20 +27,20 @@ export default function ProductDetailClient({
   detailsBottom,
 }: ProductDetailClientProps) {
   const [currentImage, setCurrentImage] = useState<string | null>(defaultImage);
-  const [activeSize, setActiveSize] = useState<string | null>(null);
+  const [activeVariant, setActiveVariant] = useState<string | null>(null);
 
   const handleSelectionChange = useCallback((selected: Record<string, string>) => {
-    const size = selected["Size"];
+    const imageVariant = selected["Capacity"] ?? selected["Size"];
 
-    if (!size) {
+    if (!imageVariant) {
       setCurrentImage(defaultImage);
-      setActiveSize(null);
+      setActiveVariant(null);
       return;
     }
 
     // Try exact match first, then normalized (no spaces, uppercase) match
-    const exactMatch = sizeImages?.[size];
-    const normalizedTarget = size.replace(/\s+/g, "").toUpperCase();
+    const exactMatch = sizeImages?.[imageVariant];
+    const normalizedTarget = imageVariant.replace(/\s+/g, "").toUpperCase();
     const normalizedMatch = Object.entries(sizeImages || {}).find(
       ([key]) => key.replace(/\s+/g, "").toUpperCase() === normalizedTarget
     )?.[1];
@@ -48,7 +48,7 @@ export default function ProductDetailClient({
     const imageUrl = exactMatch || normalizedMatch;
 
     setCurrentImage(imageUrl || defaultImage);
-    setActiveSize(size);
+    setActiveVariant(imageVariant);
   }, [defaultImage, sizeImages]);
 
   return (
@@ -63,15 +63,15 @@ export default function ProductDetailClient({
                 <Image
                   key={currentImage}
                   src={currentImage}
-                  alt={activeSize ? `${productName} - ${activeSize}` : productName}
+                  alt={activeVariant ? `${productName} - ${activeVariant}` : productName}
                   width={600}
                   height={400}
                   loading="eager"
                   className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
                 />
-                {activeSize && sizeImages?.[activeSize] && (
+                {activeVariant && (
                   <div className="absolute top-3 left-3 bg-red-700 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-                    {activeSize}
+                    {activeVariant}
                   </div>
                 )}
                 <div className="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition flex items-center gap-1">
@@ -104,7 +104,7 @@ export default function ProductDetailClient({
                   />
                 </div>
                 <Dialog.Title className="text-white text-center mt-3 text-sm opacity-70">
-                  {activeSize ? `${productName} - ${activeSize}` : productName}
+                  {activeVariant ? `${productName} - ${activeVariant}` : productName}
                 </Dialog.Title>
               </div>
             </Dialog.Content>
