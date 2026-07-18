@@ -11,6 +11,7 @@ import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { sortProductsAlphabetically } from "@/lib/sortProducts";
 import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
+import { packingMaterials } from "@/data/packingMaterials";
 
 export const dynamic = "force-dynamic";
 
@@ -205,6 +206,8 @@ export default async function CategoryPage({ params }: Props) {
           ? [...measuringInstruments, ...(databaseProducts ?? []).filter((product) => !measuringInstruments.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : slug === "agri-tools"
           ? [...agriTools, ...(databaseProducts ?? []).filter((product) => !agriTools.some((catalogProduct) => catalogProduct.slug === product.slug))]
+        : slug === "packaging-material"
+          ? [...packingMaterials, ...(databaseProducts ?? []).filter((product) => !packingMaterials.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : (databaseProducts ?? []));
 
   const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"

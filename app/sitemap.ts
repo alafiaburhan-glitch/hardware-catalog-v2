@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase";
 import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
+import { packingMaterials } from "@/data/packingMaterials";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nooragencies.in";
@@ -79,7 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) ?? [];
 
   const knownProductUrls = new Set(productPages.map((product) => product.url));
-  for (const product of [...pneumaticBrassFittings, ...measuringInstruments, ...agriTools]) {
+  for (const product of [...pneumaticBrassFittings, ...measuringInstruments, ...agriTools, ...packingMaterials]) {
     const url = `${baseUrl}/products/${product.slug}`;
     if (!knownProductUrls.has(url)) {
       productPages.push({ url, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 });

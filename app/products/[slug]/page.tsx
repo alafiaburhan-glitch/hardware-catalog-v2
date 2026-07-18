@@ -14,6 +14,7 @@ import { getPneumaticBrassFitting, pneumaticBrassFittings } from "@/data/pneumat
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { getMeasuringInstrument, measuringInstruments } from "@/data/measuringInstruments";
 import { getAgriTool, agriTools } from "@/data/agriTools";
+import { getPackingMaterial, packingMaterials } from "@/data/packingMaterials";
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug);
+  const catalogProduct = product ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug);
   if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
@@ -86,7 +87,7 @@ export default async function ProductPage({ params }: Props) {
     .eq("slug", slug)
     .single();
 
-  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug);
+  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug);
   const product = catalogProduct ?? databaseProduct;
   if (!product) {
     notFound();
@@ -108,6 +109,8 @@ export default async function ProductPage({ params }: Props) {
           ? measuringInstruments.filter((item) => item.slug !== slug).slice(0, 4)
         : product.category === "agri-tools"
           ? agriTools.filter((item) => item.slug !== slug && item.specifications["Instrument Group"] === product.specifications["Instrument Group"]).slice(0, 4)
+        : product.category === "packaging-material"
+          ? packingMaterials.filter((item) => item.slug !== slug).slice(0, 4)
         : databaseRelatedProducts;
 
   const specs = product.specifications ?? {};
@@ -153,6 +156,9 @@ export default async function ProductPage({ params }: Props) {
     variants.push({ title: "Length", values: availableLengths });
   } else if (availableSizes.length > 0) {
     variants.push({ title: "Size", values: availableSizes });
+  }
+  if (availableLengths.length > 0 && availableCapacities.length === 0) {
+    variants.push({ title: "Length", values: availableLengths });
   }
   if (availableMaterials.length > 0) variants.push({ title: "Material", values: availableMaterials });
   if (availableDensities.length > 0) variants.push({ title: "Density", values: availableDensities });

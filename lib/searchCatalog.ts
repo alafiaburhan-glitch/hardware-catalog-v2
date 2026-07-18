@@ -5,6 +5,7 @@ import { pneumaticBrassFittings } from "@/data/pneumaticBrassFittings";
 import { powerTools } from "@/data/powerTools";
 import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
+import { packingMaterials } from "@/data/packingMaterials";
 import { supabase } from "@/lib/supabase";
 
 export type CatalogSearchProduct = {
@@ -23,6 +24,7 @@ export async function getSearchCatalog(): Promise<CatalogSearchProduct[]> {
     ...pneumaticBrassFittings,
     ...measuringInstruments,
     ...agriTools,
+    ...packingMaterials,
   ];
   const { data: databaseProducts } = await supabase
     .from("products")
