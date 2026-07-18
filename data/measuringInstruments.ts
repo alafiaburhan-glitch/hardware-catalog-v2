@@ -123,21 +123,58 @@ const keyFor = (value: string) => {
   return FAMILY_ALIASES[normalized] ?? normalized;
 };
 
+function catalogFamilyFor(name: string) {
+  const value = name.toLowerCase();
+
+  // Keep the storefront useful: catalogue model variants belong in the
+  // Available Options field, not as near-identical product cards.
+  if (/(depth caliper|depth gauge|height gauge)/.test(value)) return "Height & Depth Gauges";
+  if (/(dial caliper|vernier caliper)/.test(value)) return "Vernier & Dial Calipers";
+  if (/(digital|digimatic|absolute)/.test(value) && /caliper/.test(value)) return "Digital Calipers";
+  if (/caliper/.test(value)) return "Specialist Calipers";
+
+  if (/(dial test indicator|digital test indicator|digimatic test indicator|vertical dial test indicator)/.test(value)) return "Dial Test Indicators";
+  if (/(dial indicator|digital indicator|digimatic indicator)/.test(value)) return "Dial Indicators";
+  if (/(bore.*gauge|gap and step|welding seam|snap gauge|hole gauge|telescoping gauge|caliper gauge)/.test(value)) return "Bore & Inspection Gauges";
+  if (/(coating thickness|ultrasonic thickness)/.test(value)) return "Thickness & Coating Testers";
+  if (/thickness gauge/.test(value)) return "Thickness Gauges";
+
+  if (/(outside.*micrometer|micrometer.*outside)/.test(value)) return "Outside Micrometers";
+  if (/inside micrometer/.test(value)) return "Inside Micrometers";
+  if (/depth micrometer/.test(value)) return "Depth Micrometers";
+  if (/micrometer stand/.test(value)) return "Stands & Holders";
+  if (/micrometer/.test(value)) return "Specialist Micrometers";
+
+  if (/(tape rule|measuring tape|open reel|close reel|leatherette|top line|fibreglass|metal wired|tape refill|oil tape|pye tape|dip tape|fibra tape|kompakt steel tape|steel abs case|steel top gear|tailor tape)/.test(value)) return "Measuring Tapes";
+  if (/measuring wheel/.test(value)) return "Measuring Wheels";
+  if (/(laser distance meter|height-o-meter)/.test(value)) return "Distance & Height Measuring Tools";
+  if (/(spirit level|aluminium level|digital level|linear block level)/.test(value)) return "Spirit & Digital Levels";
+  if (/laser.*level/.test(value)) return "Laser Levels";
+  if (/(protractor|angle finder|angle gauge|bevel box|square)/.test(value)) return "Squares & Angle Tools";
+  if (/(steel rule|steel ruler|straight edge)/.test(value)) return "Steel Rules & Straight Edges";
+  if (/(magnetic stand|dial holder|micrometer stand)/.test(value)) return "Stands & Holders";
+  if (/(durometer|shore hardness|leeb hardness|portable hardness)/.test(value)) return "Hardness Testers";
+  if (/(borescope|endoscope|fiberscope)/.test(value)) return "Industrial Borescopes";
+  if (/(sound level|tachometer|vibration meter|infrared thermometer|anemometer|lux meter|moisture meter)/.test(value)) return "Environmental Test Meters";
+
+  return name;
+}
+
 function instrumentGroupFor(name: string) {
   const value = name.toLowerCase();
   if (/(caliper|height gauge|depth gauge)/.test(value)) return "Calipers, Height & Depth Gauges";
+  if (/stands? (?:and|&) holders?/.test(value)) return "Stands & Holders";
   if (/micrometer/.test(value)) return "Micrometers";
-  if (/(dial indicator|test indicator|bore gauge|snap gauge|hole gauge|telescoping|caliper gauge|thickness gauge|gap and step|welding seam)/.test(value)) return "Indicators & Gauges";
-  if (/(tape|measuring wheel|height-o-meter)/.test(value)) return "Tapes & Measuring Wheels";
-  if (/(level|protractor|angle|square|straight edge)/.test(value)) return "Levels, Squares & Angle Measurement";
-  if (/(hardness|durometer|coating thickness|ultrasonic thickness|surface roughness|borescope|endoscope|fiberscope)/.test(value)) return "NDT & Material Testing";
-  if (/(sound|tachometer|vibration|thermometer|anemometer|lux|moisture)/.test(value)) return "Environmental & Electronic Testers";
-  if (/(rule|ruler|gauge block|radius gauge)/.test(value)) return "Rules, Blocks & Reference Gauges";
-  if (/(magnetic stand|dial holder|micrometer stand)/.test(value)) return "Stands & Holders";
+  if (/(dial indicator|test indicator|bore & inspection|bore gauge|inspection gauge|thickness gauge|gap and step|welding seam)/.test(value)) return "Indicators & Gauges";
+  if (/(tape|measuring wheel|height-o-meter|height measuring|laser distance)/.test(value)) return "Tapes & Measuring Wheels";
+  if (/(environmental test|sound|tachometer|vibration|thermometer|anemometer|lux|moisture)/.test(value)) return "Environmental & Electronic Testers";
+  if (/(hardness|durometer|thickness.*coating|coating thickness|ultrasonic thickness|surface roughness|borescope|endoscope|fiberscope)/.test(value)) return "NDT & Material Testing";
+  if (/(rule|ruler|straight edge|gauge block|radius gauge)/.test(value)) return "Rules, Blocks & Reference Gauges";
+  if (/(level|protractor|angle|square)/.test(value)) return "Levels, Squares & Angle Measurement";
   return "Other Precision Instruments";
 }
 
-const pdfImage = (name: string) => `/products/measuring-instruments/pdf/${name}.webp`;
+const catalogImage = (name: string) => `/products/measuring-instruments/catalog/${name}.webp`;
 const animatedImage = (name: string) => `/products/measuring-instruments/animated/${name}.png`;
 
 function imageFor(name: string, brand: string, group: string) {
@@ -149,9 +186,16 @@ function imageFor(name: string, brand: string, group: string) {
   ];
   if (brand === "Freemans") {
     const series = freemansSeries.find(([term]) => value.includes(term));
-    if (series) return pdfImage(series[1]);
-    if (value.includes("measuring wheel")) return pdfImage("freemans-measuring-wheel");
+    if (series) return catalogImage(series[1]);
+    if (value.includes("measuring wheel")) return catalogImage("freemans-measuring-wheel");
   }
+
+  if (value === "digital calipers") return animatedImage("digital-calipers");
+  if (value === "vernier & dial calipers") return animatedImage("vernier-calipers");
+  if (value === "dial test indicators") return animatedImage("dial-test-indicators");
+  if (/(dial indicators|bore & inspection gauges)/.test(value)) return animatedImage("dial-indicators-bore-gauges");
+  if (value === "measuring tapes") return animatedImage("measuring-tapes");
+  if (value === "hardness testers") return animatedImage("hardness-testers");
 
   const imageByGroup: Record<string, string> = {
     "Calipers, Height & Depth Gauges": "calipers",
@@ -166,6 +210,23 @@ function imageFor(name: string, brand: string, group: string) {
     "Other Precision Instruments": "rules-blocks",
   };
   return animatedImage(imageByGroup[group] ?? "rules-blocks");
+}
+
+function relatedSpecificationsFor(name: string, group: string): Record<string, string> {
+  const value = name.toLowerCase();
+  const common = {
+    "Quality Standard": "Professional industrial measuring and inspection grade",
+    Accuracy: "Depends on selected model, range and resolution",
+  };
+
+  if (/caliper/.test(value)) return { ...common, Material: "Hardened stainless steel", Measurement: "Outside, inside, step and depth measurement", Readout: /digital/.test(value) ? "Digital LCD" : /dial/.test(value) ? "Dial" : "Vernier scale" };
+  if (/micrometer/.test(value)) return { ...common, Construction: "Rigid frame with hardened spindle and anvil", Readout: /digital/.test(value) ? "Digital LCD" : "Graduated thimble", Application: "Precision dimensional inspection" };
+  if (/(indicator|gauge)/.test(value)) return { ...common, Construction: "Precision mechanism with hardened contact points", Readout: /digital/.test(value) ? "Digital LCD" : "Analogue dial or scale", Application: "Comparative measurement and inspection" };
+  if (/(tape|measuring wheel|distance)/.test(value)) return { ...common, Measurement: "Linear distance", Units: "Metric; selected models may include imperial graduations", Application: "Site, workshop and layout measurement" };
+  if (/(level|square|angle|protractor)/.test(value)) return { ...common, Measurement: "Level, alignment and angular reference", Construction: "Industrial aluminium, steel or reinforced polymer", Application: "Installation, fabrication and inspection" };
+  if (group === "NDT & Material Testing") return { ...common, Measurement: "Non-destructive material or surface testing", Readout: "Digital instrument display", Application: "Quality control and condition assessment" };
+  if (group === "Environmental & Electronic Testers") return { ...common, Measurement: "Environmental or rotational test parameter", Readout: "Digital LCD", Application: "Maintenance, safety and site inspection" };
+  return { ...common, Application: "Precision measurement, workshop inspection and quality control" };
 }
 
 function sizeOptionsFor(name: string): string | undefined {
@@ -202,8 +263,9 @@ const sources: Array<{ brand: string; items: SourceItem[] }> = [
 const byFamily = new Map<string, { name: string; brands: Set<string>; variants: Set<string> }>();
 for (const source of sources) {
   for (const item of source.items) {
-    const key = keyFor(item.name);
-    const entry = byFamily.get(key) ?? { name: item.name, brands: new Set(), variants: new Set() };
+    const familyName = catalogFamilyFor(item.name);
+    const key = keyFor(familyName);
+    const entry = byFamily.get(key) ?? { name: familyName, brands: new Set(), variants: new Set() };
     entry.brands.add(source.brand);
     entry.variants.add(item.name);
     byFamily.set(key, entry);
@@ -222,7 +284,7 @@ export const measuringInstruments: CatalogMeasuringInstrument[] = [...byFamily.v
       slug,
       code: `MI-${String(index + 1).padStart(3, "0")}`,
       category: "measuring-instruments" as const,
-      description: `${item.name} from ${brands.join(" and ")} for precision measurement, inspection and professional industrial use. Available in multiple models, ranges and sizes.`,
+      description: `${item.name} for professional measurement and inspection. Choose from the available brands, models, ranges and sizes listed in the specifications.`,
       image: imageFor(item.name, brands[0], instrumentGroup),
       brand: brands[0],
       instrumentGroup,
@@ -233,8 +295,8 @@ export const measuringInstruments: CatalogMeasuringInstrument[] = [...byFamily.v
         "Instrument Group": instrumentGroup,
         "Available Options": [...item.variants].join(", "),
         ...(availableSizes ? { "Available Sizes": availableSizes } : {}),
-        Availability: "Multiple models, measuring ranges, sizes and variants",
-        Application: "Precision measurement, quality control, inspection, workshop and industrial use",
+        ...relatedSpecificationsFor(item.name, instrumentGroup),
+        Availability: "Multiple models, measuring ranges and sizes",
       },
     };
   })

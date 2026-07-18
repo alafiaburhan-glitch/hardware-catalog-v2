@@ -28,7 +28,7 @@ export default function BrandCategoryClient({
   brands,
   directProducts = [],
 }: Props) {
-  const isProductGrouping = categorySlug === "hand-tools";
+  const isProductGrouping = categorySlug === "hand-tools" || categorySlug === "measuring-instruments";
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap text-sm text-gray-400 mb-8 pb-1">
