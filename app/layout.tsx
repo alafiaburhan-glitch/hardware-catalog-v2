@@ -7,6 +7,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import NavigationProgress from "@/components/NavigationProgress";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -143,6 +144,7 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-screen bg-white overflow-x-hidden">
+        <NavigationProgress />
         <Navbar />
 
         <main>{children}</main>

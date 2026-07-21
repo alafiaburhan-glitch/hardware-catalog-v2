@@ -78,51 +78,48 @@ export default function HomePageClient() {
 
   useEffect(() => {
     async function loadData() {
-      const { data: categoryData } = await supabase
-        .from("categories")
-        .select("id, name, slug")
-        .order("name");
-      const validCategories: CategorySummary[] = (categoryData ?? []).filter((category) => category.slug?.trim());
-      for (const category of localCategories) {
-        if (!validCategories.some((item) => item.slug?.trim() === category.slug)) {
-          validCategories.push({ id: `local-${category.slug}`, ...category });
+      try {
+        const [categoryResult, countResult, featuredResult] = await Promise.all([
+          supabase.from("categories").select("id, name, slug").order("name"),
+          supabase.from("products").select("id", { count: "exact", head: true }),
+          supabase
+            .from("products")
+            .select("id, name, code, image, slug, category")
+            .eq("featured", true)
+            .limit(8),
+        ]);
+
+        const validCategories: CategorySummary[] = (categoryResult.data ?? []).filter((category) => category.slug?.trim());
+        for (const category of localCategories) {
+          if (!validCategories.some((item) => item.slug?.trim() === category.slug)) {
+            validCategories.push({ id: `local-${category.slug}`, ...category });
+          }
         }
-      }
-      if (!validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
-        validCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
-      }
-      if (!validCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
-        validCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
-      }
-      if (!validCategories.some((category) => category.slug?.trim() === "agri-tools")) {
-        validCategories.push({ id: "local-agri-tools", name: "Agri Tools", slug: "agri-tools" });
-      }
-      setCategories(validCategories);
-      setLoadingCategories(false);
+        if (!validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
+          validCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
+        }
+        if (!validCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
+          validCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
+        }
+        if (!validCategories.some((category) => category.slug?.trim() === "agri-tools")) {
+          validCategories.push({ id: "local-agri-tools", name: "Agri Tools", slug: "agri-tools" });
+        }
+        setCategories(validCategories);
+        setTotalProductCount(countResult.count ?? 0);
 
-      const { count } = await supabase
-        .from("products")
-        .select("id", { count: "exact", head: true });
-      setTotalProductCount(count ?? 0);
-
-      let { data: productData } = await supabase
-        .from("products")
-        .select("*")
-        .eq("featured", true)
-        .limit(8);
-
-      if (!productData || productData.length === 0) {
-        const { data: fallback } = await supabase
-          .from("products")
-          .select("*")
-          .limit(8);
-        productData = fallback;
+        let productData = featuredResult.data;
+        if (!productData?.length) {
+          const { data: fallback } = await supabase
+            .from("products")
+            .select("id, name, code, image, slug, category")
+            .limit(8);
+          productData = fallback;
+        }
+        setProducts((productData ?? []).filter((product) => product.slug?.trim()));
+      } finally {
+        setLoadingCategories(false);
+        setLoadingProducts(false);
       }
-
-      if (productData) {
-        setProducts(productData.filter((product) => product.slug?.trim()));
-      }
-      setLoadingProducts(false);
     }
     loadData();
   }, []);

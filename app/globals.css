@@ -12,6 +12,43 @@ body {
   min-height: 100%;
 }
 
+.navigation-progress,
+.route-loading-progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 10000;
+  height: 3px;
+  width: 100%;
+  pointer-events: none;
+  transform-origin: left;
+  background: linear-gradient(90deg, #991b1b, #dc2626, #f87171);
+  box-shadow: 0 0 10px rgb(220 38 38 / 70%);
+}
+
+.navigation-progress {
+  opacity: 0;
+  transition: transform 180ms ease-out, opacity 160ms ease;
+}
+
+.navigation-progress--active {
+  opacity: 1;
+}
+
+.route-loading-progress {
+  animation: route-progress 1.6s ease-in-out infinite;
+}
+
+@keyframes route-progress {
+  0% { transform: scaleX(0); opacity: 1; }
+  70% { transform: scaleX(0.82); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-progress { transition: opacity 160ms ease; }
+  .route-loading-progress { animation-duration: 3s; }
+}
+
 .industrial-grid {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
