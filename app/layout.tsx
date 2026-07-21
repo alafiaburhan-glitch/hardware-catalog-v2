@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
@@ -9,16 +8,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import NavigationProgress from "@/components/NavigationProgress";
 import { Toaster } from "sonner";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { QuoteProvider } from "@/components/QuoteProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nooragencies.in"),
@@ -61,7 +51,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
       style={{ overflowX: "hidden" }}
     >
       <head>
@@ -129,13 +118,23 @@ export default function RootLayout({
 
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "KLR Complex, 569 Cross Cut Road, Gandipuram",
                 addressLocality: "Coimbatore",
                 addressRegion: "Tamil Nadu",
-                postalCode: "641018",
+                postalCode: "641012",
                 addressCountry: "IN",
               },
 
               areaServed: "India",
+
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  opens: "09:00",
+                  closes: "19:00",
+                },
+              ],
 
               sameAs: [],
             }),
@@ -144,14 +143,16 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-screen bg-white overflow-x-hidden">
-        <NavigationProgress />
-        <Navbar />
+        <QuoteProvider>
+          <NavigationProgress />
+          <Navbar />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <Footer />
+          <Footer />
 
-        <FloatingWhatsApp />
+          <FloatingWhatsApp />
+        </QuoteProvider>
 
         <Toaster
           position="bottom-right"

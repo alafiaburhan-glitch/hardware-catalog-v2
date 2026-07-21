@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type ProductResult = {
   id: string;
@@ -20,6 +22,7 @@ export default function Navbar() {
   const [results, setResults] = useState<ProductResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -61,6 +64,7 @@ export default function Navbar() {
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     if (query.trim()) {
+      trackEvent("catalog_search", { search_term: query.trim() });
       router.push(`/search?q=${encodeURIComponent(query.trim())}`);
       setSearchOpen(false);
       setQuery("");
@@ -225,8 +229,12 @@ export default function Navbar() {
                 </svg>
               </button>
             )}
+            {!searchOpen && <button type="button" onClick={() => setMenuOpen((value) => !value)} className="rounded-xl p-2 text-gray-700 hover:bg-gray-100 md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>}
             <a
               href="tel:+919626652275"
+              onClick={() => trackEvent("phone_click", { location: "navbar" })}
               className="bg-red-700 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold hover:bg-red-800 transition text-xs sm:text-base"
             >
               Call Now
@@ -235,6 +243,12 @@ export default function Navbar() {
 
         </div>
       </div>
+      {menuOpen && !searchOpen && <nav className="border-t bg-white px-4 py-4 shadow-lg md:hidden" aria-label="Mobile navigation">
+        <div className="mx-auto grid max-w-7xl gap-1">
+          {[["Home", "/"], ["Categories", "/categories"], ["About", "/about"], ["Contact", "/contact"]].map(([label, href]) => <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="rounded-xl px-4 py-3 font-semibold text-slate-800 hover:bg-red-50 hover:text-red-700">{label}</Link>)}
+          <a href="https://wa.me/919626652275?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("whatsapp_click", { location: "mobile_menu" })} className="mt-2 rounded-xl bg-green-600 px-4 py-3 text-center font-bold text-white">WhatsApp us</a>
+        </div>
+      </nav>}
     </header>
   );
 }

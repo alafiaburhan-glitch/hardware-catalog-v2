@@ -16,6 +16,8 @@ import { getMeasuringInstrument, measuringInstruments } from "@/data/measuringIn
 import { getAgriTool, agriTools } from "@/data/agriTools";
 import { getPackingMaterial, packingMaterials } from "@/data/packingMaterials";
 import { getLiftingEquipment, liftingEquipment } from "@/data/liftingEquipment";
+import AddToQuoteButton from "@/components/AddToQuoteButton";
+import ProductEngagement from "@/components/ProductEngagement";
 
 export const dynamic = "force-dynamic";
 
@@ -23,15 +25,22 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+type RelatedProduct = {
+  id: string | number;
+  name: string;
+  code: string;
+  image?: string | null;
+  slug: string;
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { data: product } = await supabase
-    .from("products")
-    .select("name, description, image, code, category")
-    .eq("slug", slug)
-    .single();
+  const localProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug);
+  const { data: databaseProduct } = localProduct
+    ? { data: null }
+    : await supabase.from("products").select("name, description, image, code, category").eq("slug", slug).single();
 
-  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? product;
+  const catalogProduct = localProduct ?? databaseProduct;
   if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
@@ -82,25 +91,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
-  const { data: databaseProduct } = await supabase
-    .from("products")
-    .select("*")
-    .eq("slug", slug)
-    .single();
-
   const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug);
+  const { data: databaseProduct } = catalogProduct
+    ? { data: null }
+    : await supabase.from("products").select("*").eq("slug", slug).single();
   const product = catalogProduct ?? databaseProduct;
   if (!product) {
     notFound();
   }
 
-  const { data: databaseRelatedProducts } = await supabase
-    .from("products")
-    .select("id, name, code, image, slug")
-    .eq("category", product.category)
-    .neq("slug", slug)
-    .limit(4);
-  const relatedProducts = product.category === "hand-tools"
+  let relatedProducts: RelatedProduct[] | null = product.category === "hand-tools"
     ? handTools.filter((item) => item.slug !== slug).slice(0, 4)
     : product.category === "power-tools"
       ? powerTools.filter((item) => item.slug !== slug).slice(0, 4)
@@ -114,7 +114,16 @@ export default async function ProductPage({ params }: Props) {
           ? packingMaterials.filter((item) => item.slug !== slug).slice(0, 4)
         : product.category === "lifting-equipments"
           ? liftingEquipment.filter((item) => item.slug !== slug).slice(0, 4)
-        : databaseRelatedProducts;
+        : null;
+  if (!relatedProducts) {
+    const { data } = await supabase
+      .from("products")
+      .select("id, name, code, image, slug")
+      .eq("category", product.category)
+      .neq("slug", slug)
+      .limit(4);
+    relatedProducts = data;
+  }
 
   const specs = product.specifications ?? {};
   const catalogModels: PowerToolModel[] = "models" in product && Array.isArray(product.models) ? product.models : [];
@@ -153,7 +162,7 @@ export default async function ProductPage({ params }: Props) {
   if (catalogModels.length === 0 && availableBrands.length > 1) variants.push({ title: "Brand", values: availableBrands });
   if (availableGrits.length > 0) variants.push({ title: "Grit", values: availableGrits });
   if (availableWidths.length > 0) variants.push({ title: "Width", values: availableWidths });
-  if (availableWeights.length > 0) variants.push({ title: "Weight", values: availableWeights });
+  if (catalogModels.length === 0 && availableWeights.length > 0) variants.push({ title: "Weight", values: availableWeights });
   if (availableCapacities.length > 0 && availableLengths.length > 0) {
     variants.push({ title: "Capacity", values: availableCapacities });
     variants.push({ title: "Length", values: availableLengths });
@@ -353,17 +362,36 @@ export default async function ProductPage({ params }: Props) {
   ],
 }
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    sku: product.code,
+    description: product.description,
+    category: product.category.replace(/-/g, " "),
+    url: `https://www.nooragencies.in/products/${product.slug}`,
+    image: product.image
+      ? product.image.startsWith("http")
+        ? product.image
+        : `https://www.nooragencies.in${product.image}`
+      : undefined,
+    brand: product.brand ? { "@type": "Brand", name: product.brand } : undefined,
+    additionalProperty: Object.entries(specs)
+      .filter(([key]) => isPublicSpecification(key))
+      .map(([name, value]) => ({ "@type": "PropertyValue", name, value: String(value) })),
+  };
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
 
       <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(breadcrumbSchema),
-  }}
-/>
-    
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
 
       {/* BREADCRUMB */}
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-8 flex-wrap">
@@ -414,16 +442,18 @@ export default async function ProductPage({ params }: Props) {
                 productCode={product.code}
               />
             ) : catalogModels.length === 0 ? (
-              <WhatsAppButton
-                productName={product.name}
-                productCode={product.code}
-              />
+              <div className="flex flex-wrap gap-3">
+                <AddToQuoteButton productName={product.name} productCode={product.code} />
+                <WhatsAppButton productName={product.name} productCode={product.code} />
+              </div>
             ) : null}
 
             {detailsBottom}
           </div>
         </div>
       )}
+
+      <ProductEngagement product={{ name: product.name, code: product.code, slug: product.slug, image: product.image || categoryIcon || null, category: product.category }} />
 
       {/* RELATED PRODUCTS */}
       {relatedProducts && relatedProducts.length > 0 && (

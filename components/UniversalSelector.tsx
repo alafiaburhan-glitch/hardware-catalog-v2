@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import AddToQuoteButton from "@/components/AddToQuoteButton";
 
 interface UniversalSelectorProps {
   productName: string;
@@ -96,14 +97,17 @@ export default function UniversalSelector({
       ))}
 
       {allSelected && (
-        <a
-          href={`https://wa.me/919626652275?text=${encodeURIComponent(buildWhatsAppMessage())}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-2xl"
-        >
-          WhatsApp for Quote
-        </a>
+        <div className="flex flex-wrap gap-3">
+          <AddToQuoteButton productName={productName} productCode={productCode} variants={selected} />
+          <a
+            href={`https://wa.me/919626652275?text=${encodeURIComponent(buildWhatsAppMessage())}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-2xl bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700"
+          >
+            WhatsApp now
+          </a>
+        </div>
       )}
     </div>
   );

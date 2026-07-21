@@ -99,7 +99,7 @@ export default function BrandCategoryClient({
 
       {directProducts.length > 0 && (
         <section className="mt-14 border-t border-gray-200 pt-10">
-          <h2 className="mb-6 text-2xl font-bold text-black">Hand Tools</h2>
+          <h2 className="mb-6 text-2xl font-bold text-black">Additional Products</h2>
           <div className="grid grid-cols-1 gap-4 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-6">
             {directProducts.map((product) => (
               <ProductCard

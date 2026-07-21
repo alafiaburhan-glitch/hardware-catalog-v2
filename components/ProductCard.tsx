@@ -5,9 +5,10 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 type ProductCardProps = {
   name: string;
   code: string;
-  image?: string;
+  image?: string | null;
   slug?: string;
   category?: string;
+  eager?: boolean;
 };
 
 export default function ProductCard({
@@ -16,6 +17,7 @@ export default function ProductCard({
   image,
   slug,
   category,
+  eager = false,
 }: ProductCardProps) {
   const pneumaticCatalogImage =
     category === "pneumatic-brass-fittings" && /^PBF-\d{3}$/.test(code)
@@ -33,6 +35,7 @@ export default function ProductCard({
               alt={name}
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 520px) 50vw, 100vw"
+              loading={eager ? "eager" : "lazy"}
               className={`h-full w-full transition duration-700 group-hover:scale-105 ${category === "power-tools" || category === "measuring-instruments" ? "object-contain p-3" : image?.trim() || pneumaticCatalogImage ? "object-cover" : "object-contain p-5"}`}
             />
           ) : (

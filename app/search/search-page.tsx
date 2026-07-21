@@ -1,5 +1,6 @@
-import { supabase } from "@/lib/supabase";
 import SearchClient from "@/components/SearchClient";
+import { getSearchCatalog } from "@/lib/searchCatalog";
+import localCategories from "@/data/categories";
 
 export default async function SearchPage({
   searchParams,
@@ -8,15 +9,14 @@ export default async function SearchPage({
 }) {
   const { q } = await searchParams;
 
-  const { data: products } = await supabase
-    .from("products")
-    .select("id, name, code, image, slug, category")
-    .order("name");
-
-  const { data: categories } = await supabase
-    .from("categories")
-    .select("name, slug")
-    .order("name");
+  const products = await getSearchCatalog();
+  const categoryNames = new Map(localCategories.map((category) => [category.slug, category.name]));
+  for (const product of products) {
+    if (product.category && !categoryNames.has(product.category)) {
+      categoryNames.set(product.category, product.category.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()));
+    }
+  }
+  const categories = [...categoryNames].map(([slug, name]) => ({ slug, name })).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
@@ -31,8 +31,8 @@ export default async function SearchPage({
       </div>
 
       <SearchClient
-        products={products ?? []}
-        categories={categories ?? []}
+        products={products}
+        categories={categories}
         initialQuery={q ?? ""}
       />
     </main>

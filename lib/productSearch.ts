@@ -2,6 +2,9 @@ export type SearchableProduct = {
   name: string;
   code?: string | null;
   category?: string | null;
+  brand?: string | null;
+  description?: string | null;
+  specifications?: Record<string, string> | null;
 };
 
 function normalize(value: string) {
@@ -48,7 +51,10 @@ function scoreProduct(product: SearchableProduct, rawQuery: string) {
   const name = normalize(product.name);
   const code = normalize(product.code ?? "");
   const category = normalize(product.category ?? "");
-  const searchable = `${name} ${code} ${category}`.trim();
+  const brand = normalize(product.brand ?? "");
+  const description = normalize(product.description ?? "");
+  const specifications = normalize(Object.values(product.specifications ?? {}).join(" "));
+  const searchable = `${name} ${code} ${category} ${brand} ${description} ${specifications}`.trim();
 
   if (name === query || code === query) return 0;
   if (name.startsWith(query) || code.startsWith(query)) return 10;

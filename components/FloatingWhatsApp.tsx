@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { trackEvent } from "@/lib/analytics";
 
 export default function FloatingWhatsApp() {
   const [hovered, setHovered] = useState(false);
 
   function handleClick() {
+    trackEvent("whatsapp_click", { location: "floating_button" });
     toast.success("Opening WhatsApp...", {
       description: "Connecting you with Noor Agencies",
       duration: 3000,

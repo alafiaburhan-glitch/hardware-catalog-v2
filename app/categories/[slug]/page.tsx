@@ -13,6 +13,7 @@ import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
 import { liftingEquipment } from "@/data/liftingEquipment";
+import { productBelongsToCategory } from "@/lib/categoryMatching";
 
 export const dynamic = "force-dynamic";
 
@@ -178,17 +179,20 @@ export default async function CategoryPage({ params }: Props) {
 
   const { data: category } = await supabase
     .from("categories")
-    .select("name, faqs")
+    .select("id, name, slug, faqs")
     .eq("slug", slug)
     .single();
 
-  const productCategorySlugs = slug === "packaging-material"
-    ? ["packaging-material", "packing-material"]
-    : [slug];
-  const { data: databaseProducts } = await supabase
+  const { data: allDatabaseProducts } = await supabase
     .from("products")
-    .select("*")
-    .in("category", productCategorySlugs);
+    .select("*");
+  const databaseProducts = (allDatabaseProducts ?? []).filter((product) =>
+    productBelongsToCategory(product.category, {
+      id: category?.id,
+      name: category?.name,
+      slug,
+    }),
+  );
 
   // Hand tools are intentionally grouped by tool family, with brands and
   // models exposed as options instead of creating a separate card per brand.
@@ -234,11 +238,9 @@ export default async function CategoryPage({ params }: Props) {
       ...brand,
       productCount: products.filter((product) => productMatchesBrand(product, brand)).length,
     }));
-    const directProducts = slug === "hand-tools"
-      ? products.filter(
-          (product) => !brandGroups.some((brand) => productMatchesBrand(product, brand)),
-        )
-      : [];
+    const directProducts = products.filter(
+      (product) => !brandGroups.some((brand) => productMatchesBrand(product, brand)),
+    );
 
     return (
       <BrandCategoryClient
@@ -304,6 +306,17 @@ export default async function CategoryPage({ params }: Props) {
       })) ?? [],
   };
 
+  const categoryFaqs = (category?.faqs ?? []) as { question: string; answer: string }[];
+  const faqSchema = categoryFaqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: categoryFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  } : null;
+
   return (
     <>
       <script
@@ -312,6 +325,10 @@ export default async function CategoryPage({ params }: Props) {
           __html: JSON.stringify(collectionSchema),
         }}
       />
+      {faqSchema && <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -329,7 +346,7 @@ export default async function CategoryPage({ params }: Props) {
         categoryName={categoryName}
         initialProducts={products}
         seoDescription={seoDescription}
-        faqs={category?.faqs ?? []}
+        faqs={categoryFaqs}
       />
     </>
   );

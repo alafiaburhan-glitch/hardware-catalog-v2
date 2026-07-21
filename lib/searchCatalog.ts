@@ -15,9 +15,24 @@ export type CatalogSearchProduct = {
   slug: string;
   image?: string;
   category?: string;
+  brand?: string;
+  description?: string;
+  specifications?: Record<string, string>;
 };
 
-export async function getSearchCatalog(): Promise<CatalogSearchProduct[]> {
+type DatabaseSearchProduct = {
+  id: string | number;
+  name: string;
+  code?: string | null;
+  slug?: string | null;
+  image?: string | null;
+  category?: string | null;
+  brand?: string | null;
+  description?: string | null;
+  specifications?: Record<string, string> | null;
+};
+
+export function mergeSearchCatalog(databaseProducts: DatabaseSearchProduct[] = []): CatalogSearchProduct[] {
   const localProducts: CatalogSearchProduct[] = [
     ...handTools,
     ...powerTools,
@@ -26,16 +41,10 @@ export async function getSearchCatalog(): Promise<CatalogSearchProduct[]> {
     ...agriTools,
     ...packingMaterials,
   ];
-  const { data: databaseProducts } = await supabase
-    .from("products")
-    .select("id, name, code, slug, image, category")
-    .order("name");
 
-  const productsBySlug = new Map(
-    localProducts.map((product) => [product.slug, product]),
-  );
+  const productsBySlug = new Map(localProducts.map((product) => [product.slug, product]));
 
-  for (const product of databaseProducts ?? []) {
+  for (const product of databaseProducts) {
     if (!product.slug || !product.name) continue;
     productsBySlug.set(product.slug, {
       id: String(product.id),
@@ -44,10 +53,20 @@ export async function getSearchCatalog(): Promise<CatalogSearchProduct[]> {
       slug: product.slug,
       image: product.image ?? undefined,
       category: product.category ?? undefined,
+      brand: product.brand ?? undefined,
+      description: product.description ?? undefined,
+      specifications: product.specifications ?? undefined,
     });
   }
 
-  return [...productsBySlug.values()].sort((first, second) =>
-    first.name.localeCompare(second.name),
-  );
+  return [...productsBySlug.values()].sort((first, second) => first.name.localeCompare(second.name));
+}
+
+export async function getSearchCatalog(): Promise<CatalogSearchProduct[]> {
+  const { data: databaseProducts } = await supabase
+    .from("products")
+    .select("id, name, code, slug, image, category, brand, description, specifications")
+    .order("name");
+
+  return mergeSearchCatalog(databaseProducts ?? []);
 }

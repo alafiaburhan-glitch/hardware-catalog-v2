@@ -65,15 +65,7 @@ export default async function CategoriesPage() {
       allCategories.push({ id: `local-${category.slug}`, ...category });
     }
   }
-  if (!allCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
-    allCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
-  }
-  if (!allCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
-    allCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
-  }
-  if (!allCategories.some((category) => category.slug?.trim() === "agri-tools")) {
-    allCategories.push({ id: "local-agri-tools", name: "Agri Tools", slug: "agri-tools" });
-  }
+  allCategories.sort((first, second) => first.name.localeCompare(second.name));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">

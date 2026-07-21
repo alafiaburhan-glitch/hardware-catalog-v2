@@ -6,6 +6,8 @@ import Counter from "@/components/Counter";
 import TrustSection from "@/components/TrustSection";
 import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
+import FaqAccordion from "@/components/FaqAccordion";
+import { siteFaqs } from "@/data/siteFaqs";
 import {
   ArrowRight,
   BadgeIndianRupee,
@@ -16,17 +18,13 @@ import {
   Sparkles,
   Truck,
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
-import localCategories from "@/data/categories";
-
-type CategorySummary = {
+export type CategorySummary = {
   id: number | string;
   name: string;
   slug: string | null;
 };
 
-type FeaturedProduct = {
+export type FeaturedProduct = {
   id: number | string;
   name: string;
   code: string;
@@ -69,60 +67,7 @@ function getCategoryIcon(slug: string | null) {
   return categoryIcons[slug.trim().toLowerCase()] ?? null;
 }
 
-export default function HomePageClient() {
-  const [categories, setCategories] = useState<CategorySummary[]>([]);
-  const [products, setProducts] = useState<FeaturedProduct[]>([]);
-  const [totalProductCount, setTotalProductCount] = useState(0);
-  const [loadingCategories, setLoadingCategories] = useState(true);
-  const [loadingProducts, setLoadingProducts] = useState(true);
-
-  useEffect(() => {
-    async function loadData() {
-      try {
-        const [categoryResult, countResult, featuredResult] = await Promise.all([
-          supabase.from("categories").select("id, name, slug").order("name"),
-          supabase.from("products").select("id", { count: "exact", head: true }),
-          supabase
-            .from("products")
-            .select("id, name, code, image, slug, category")
-            .eq("featured", true)
-            .limit(8),
-        ]);
-
-        const validCategories: CategorySummary[] = (categoryResult.data ?? []).filter((category) => category.slug?.trim());
-        for (const category of localCategories) {
-          if (!validCategories.some((item) => item.slug?.trim() === category.slug)) {
-            validCategories.push({ id: `local-${category.slug}`, ...category });
-          }
-        }
-        if (!validCategories.some((category) => category.slug?.trim() === "pneumatic-brass-fittings")) {
-          validCategories.push({ id: "local-pneumatic-brass-fittings", name: "Pneumatic & Brass Fittings", slug: "pneumatic-brass-fittings" });
-        }
-        if (!validCategories.some((category) => category.slug?.trim() === "measuring-instruments")) {
-          validCategories.push({ id: "local-measuring-instruments", name: "Measuring Instruments", slug: "measuring-instruments" });
-        }
-        if (!validCategories.some((category) => category.slug?.trim() === "agri-tools")) {
-          validCategories.push({ id: "local-agri-tools", name: "Agri Tools", slug: "agri-tools" });
-        }
-        setCategories(validCategories);
-        setTotalProductCount(countResult.count ?? 0);
-
-        let productData = featuredResult.data;
-        if (!productData?.length) {
-          const { data: fallback } = await supabase
-            .from("products")
-            .select("id, name, code, image, slug, category")
-            .limit(8);
-          productData = fallback;
-        }
-        setProducts((productData ?? []).filter((product) => product.slug?.trim()));
-      } finally {
-        setLoadingCategories(false);
-        setLoadingProducts(false);
-      }
-    }
-    loadData();
-  }, []);
+export default function HomePageClient({ categories, products, totalProductCount }: { categories: CategorySummary[]; products: FeaturedProduct[]; totalProductCount: number }) {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
@@ -217,11 +162,7 @@ export default function HomePageClient() {
         </div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
-          {loadingCategories
-            ? Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-16 sm:h-20 rounded-2xl bg-gray-100 animate-pulse" />
-              ))
-            : categories.map((category) => {
+          {categories.map((category) => {
                 const icon = getCategoryIcon(category.slug);
 
                 return (
@@ -279,13 +220,7 @@ export default function HomePageClient() {
             </Link>
           </div>
 
-          {loadingProducts ? (
-            <div className="flex gap-4 overflow-hidden">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="flex-none w-[70vw] sm:w-[45vw] md:w-[23%] h-64 rounded-3xl bg-gray-200 animate-pulse" />
-              ))}
-            </div>
-          ) : products.length > 0 ? (
+          {products.length > 0 ? (
             <FeaturedCarousel products={products} />
           ) : null}
         </div>
@@ -382,6 +317,10 @@ export default function HomePageClient() {
           </div>
         </div>
       </motion.section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 md:pb-16">
+        <FaqAccordion faqs={siteFaqs} categoryName="ordering from Noor Agencies" />
+      </section>
 
       {/* CTA BANNER */}
       <motion.section

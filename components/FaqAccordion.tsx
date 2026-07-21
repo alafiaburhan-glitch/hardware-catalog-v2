@@ -31,11 +31,15 @@ export default function FaqAccordion({ faqs, categoryName }: FaqAccordionProps) 
           const isOpen = openIndex === index;
           return (
             <div
-              key={index}
+              key={faq.question}
               className="border border-gray-200 rounded-2xl overflow-hidden"
             >
               <button
+                type="button"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
+                id={`faq-question-${index}`}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${index}`}
                 className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left bg-white hover:bg-gray-50 transition"
               >
                 <span className="font-semibold text-gray-800 text-sm sm:text-base">
@@ -56,6 +60,10 @@ export default function FaqAccordion({ faqs, categoryName }: FaqAccordionProps) 
               </button>
 
               <div
+                id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+                aria-hidden={!isOpen}
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${
                   isOpen ? "max-h-96" : "max-h-0"
                 }`}

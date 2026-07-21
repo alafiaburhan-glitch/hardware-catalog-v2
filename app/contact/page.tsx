@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import ContactEnquiryForm from "@/components/ContactEnquiryForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Noor Agencies",
+  title: "Contact Us",
   description:
     "Get in touch with Noor Agencies for industrial hardware enquiries, bulk pricing, and product availability. Located in Coimbatore, Tamil Nadu.",
   alternates: {
@@ -159,7 +160,9 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT — Map */}
-          <div>
+          <div className="space-y-10">
+            <ContactEnquiryForm />
+            <div>
             <h2 className="text-2xl font-bold mb-8">Find Us</h2>
             <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-sm h-80 md:h-96">
               <iframe
@@ -184,6 +187,7 @@ export default function ContactPage() {
               </svg>
               Open in Google Maps
             </a>
+            </div>
           </div>
 
         </div>

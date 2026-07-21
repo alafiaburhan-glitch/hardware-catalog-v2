@@ -1,0 +1,240 @@
+[
+  {
+    "id": 14,
+    "created_at": "2026-06-17T11:44:22.499147+00:00",
+    "name": "Lubricants & Sealants",
+    "slug": "lubricants-sealants",
+    "faqs": [
+      {
+        "answer": "Lubricants reduce friction, minimize wear, and improve equipment efficiency.",
+        "question": "Why are industrial lubricants important?"
+      },
+      {
+        "answer": "Lubrication intervals depend on equipment usage and manufacturer recommendations.",
+        "question": "How often should machinery be lubricated?"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "created_at": "2026-07-07T10:00:43.418803+00:00",
+    "name": "Tapes",
+    "slug": "tapes",
+    "faqs": []
+  },
+  {
+    "id": 16,
+    "created_at": "2026-07-05T05:50:33.503039+00:00",
+    "name": "Packing Material",
+    "slug": "packaging-material",
+    "faqs": []
+  },
+  {
+    "id": 10,
+    "created_at": "2026-06-08T10:24:27.46205+00:00",
+    "name": "Emery Paper",
+    "slug": "emery-papers",
+    "faqs": [
+      {
+        "answer": "Emery paper is an abrasive paper primarily used for sanding, polishing, deburring, and finishing metal surfaces. It is also suitable for removing rust, paint, oxidation, and surface imperfections before painting or coating.",
+        "question": "What is Emery Paper used for?"
+      },
+      {
+        "answer": "Emery paper is mainly intended for metal finishing and contains natural emery abrasive, whereas standard sandpaper often uses aluminum oxide or silicon carbide abrasives and is commonly used for wood, plastic, and general-purpose sanding.",
+        "question": "What is the difference between emery paper and sandpaper?"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "created_at": "2026-06-02T09:33:01.617984+00:00",
+    "name": "Hand tools",
+    "slug": "hand-tools",
+    "faqs": [
+      {
+        "answer": "Choose a hand tool based on the material, task, required precision, and frequency of use. Using the correct tool improves efficiency and safety.",
+        "question": "How do I choose the right hand tool for my application?"
+      },
+      {
+        "answer": "Yes. Industrial-grade hand tools are designed for workshops, manufacturing units, construction sites, and maintenance applications.",
+        "question": "Are industrial hand tools suitable for professional use?"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "created_at": "2026-06-02T09:33:31.896037+00:00",
+    "name": "Power tools",
+    "slug": "power-tools",
+    "faqs": [
+      {
+        "answer": "Choose a power tool based on the application, material, power rating, and frequency of use.",
+        "question": "How do I choose the right power tool?"
+      },
+      {
+        "answer": "Common accessories include drill bits, cutting discs, grinding wheels, sanding pads, and polishing attachments.",
+        "question": "What accessories are commonly used with power tools?"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "created_at": "2026-06-02T09:34:24.975756+00:00",
+    "name": "Ropes",
+    "slug": "ropes",
+    "faqs": [
+      {
+        "answer": "Common types include polypropylene, nylon, polyester, cotton, and natural fiber ropes for various industrial applications.",
+        "question": "What types of ropes are available?"
+      },
+      {
+        "answer": "Only ropes specifically rated for lifting applications should be used for lifting loads.",
+        "question": "Can industrial ropes be used for lifting?"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "created_at": "2026-06-02T09:37:27.45021+00:00",
+    "name": "Hoses",
+    "slug": "hoses",
+    "faqs": [
+      {
+        "answer": "Industrial hoses include air hoses, water hoses, hydraulic hoses, chemical hoses, and suction hoses.",
+        "question": "What types of hoses are available?"
+      },
+      {
+        "answer": "Inspect hoses regularly for cracks, leaks, abrasions, and loose fittings.",
+        "question": "How often should hoses be inspected?"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "created_at": "2026-06-02T09:37:51.724199+00:00",
+    "name": "Safety products",
+    "slug": "safety-products",
+    "faqs": [
+      {
+        "answer": "Construction, manufacturing, oil & gas, engineering, logistics, and fabrication industries all require PPE.",
+        "question": "Which industries require safety products?"
+      },
+      {
+        "answer": "Safety helmets, gloves, goggles, face shields, safety shoes, ear protection, and reflective clothing.",
+        "question": "What are the most commonly used safety products?"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "created_at": "2026-06-02T09:38:09.605391+00:00",
+    "name": "Lifting equipments",
+    "slug": "lifting-equipments",
+    "faqs": [
+      {
+        "answer": "Select lifting equipment based on the weight of the load, working environment, and required safety factor.",
+        "question": "How do I determine the lifting capacity required?"
+      },
+      {
+        "answer": "Common lifting equipment includes chain blocks, lever hoists, lifting slings, shackles, hooks, and lifting clamps.",
+        "question": "What types of lifting equipment are available?"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "created_at": "2026-06-02T09:39:39.088024+00:00",
+    "name": "Shade nets",
+    "slug": "shade-nets",
+    "faqs": [
+      {
+        "answer": "Shade nets are available in different shading percentages, such as 35%, 50%, 75%, and 90%, depending on the application.",
+        "question": "What shade percentages are available?"
+      },
+      {
+        "answer": "Yes, shade nets are available in different sizes, colors, and custom dimensions.",
+        "question": "Can shade nets be customized?"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "created_at": "2026-06-02T09:40:55.437424+00:00",
+    "name": "Tarpaulins",
+    "slug": "tarpaulins",
+    "faqs": [
+      {
+        "answer": "Tarpaulins are commonly manufactured from HDPE, LDPE, PVC, or canvas materials.",
+        "question": "What materials are tarpaulins made from?"
+      },
+      {
+        "answer": "Choose a size that provides complete coverage while allowing proper fastening.",
+        "question": "How do I select the right tarpaulin size?"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "created_at": "2026-06-02T09:41:43.650345+00:00",
+    "name": "Ladders & Sections",
+    "slug": "ladders-sections",
+    "faqs": [
+      {
+        "answer": "Aluminium ladders are lightweight and corrosion resistant, while steel ladders provide higher strength.",
+        "question": "Which ladder material is best?"
+      },
+      {
+        "answer": "Choose a ladder that allows you to work comfortably without standing on the top step.",
+        "question": "How do I choose the correct ladder height?"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "created_at": "2026-06-13T10:35:54.141282+00:00",
+    "name": "Emery Roll",
+    "slug": "emery-roll",
+    "faqs": [
+      {
+        "answer": "Emery rolls are used for sanding, polishing, deburring, and finishing metal surfaces.",
+        "question": "What is an emery roll used for?"
+      },
+      {
+        "answer": "They are suitable for steel, stainless steel, aluminium, brass, and other metals.",
+        "question": "Which materials can be finished using emery rolls?"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "created_at": "2026-06-15T15:16:22.78914+00:00",
+    "name": "Heat/Insulation",
+    "slug": "heat-insulation",
+    "faqs": [
+      {
+        "answer": "Common insulation materials include fiberglass, ceramic fiber, mineral wool, and foam insulation.",
+        "question": "What materials are used in insulation products?"
+      },
+      {
+        "answer": "Yes, proper insulation minimizes heat loss and improves energy efficiency.",
+        "question": "Can insulation reduce energy consumption?"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "created_at": "2026-06-17T10:29:13.169067+00:00",
+    "name": "Industrial Adhesives & Sealants",
+    "slug": "industrial-adhesives-sealants",
+    "faqs": [
+      {
+        "answer": "Adhesives bond materials together, while sealants fill gaps and prevent leakage.",
+        "question": "What is the difference between adhesives and sealants?"
+      },
+      {
+        "answer": "Epoxy and polyurethane adhesives are commonly used for strong metal bonding.",
+        "question": "Which adhesive is suitable for metal bonding?"
+      }
+    ]
+  }
+]

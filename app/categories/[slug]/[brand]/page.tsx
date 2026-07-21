@@ -9,6 +9,7 @@ import CategoryPageClient from "@/components/CategoryPageClient";
 import { sortProductsAlphabetically } from "@/lib/sortProducts";
 import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
+import { productBelongsToCategory } from "@/lib/categoryMatching";
 
 export const dynamic = "force-dynamic";
 
@@ -81,14 +82,20 @@ export default async function BrandPage({ params }: Props) {
 
   const { data: category } = await supabase
     .from("categories")
-    .select("name")
+    .select("id, name, slug")
     .eq("slug", slug)
     .single();
 
-  const { data: databaseProducts } = await supabase
+  const { data: allDatabaseProducts } = await supabase
     .from("products")
-    .select("*")
-    .eq("category", slug);
+    .select("*");
+  const databaseProducts = (allDatabaseProducts ?? []).filter((product) =>
+    productBelongsToCategory(product.category, {
+      id: category?.id,
+      name: category?.name,
+      slug,
+    }),
+  );
 
   const products = slug === "hand-tools"
     ? [
