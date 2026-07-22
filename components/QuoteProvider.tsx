@@ -1,11 +1,12 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { Check, ClipboardList, MessageCircle, Minus, Plus, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 
-export type QuoteItem = { key: string; productName: string; productCode: string; quantity: number; variants: Record<string, string> };
+export type QuoteItem = { key: string; productName: string; productCode: string; productImage?: string | null; quantity: number; variants: Record<string, string> };
 type AddQuoteItem = Omit<QuoteItem, "key" | "quantity"> & { quantity?: number };
 type QuoteContextValue = { items: QuoteItem[]; addItem: (item: AddQuoteItem) => void; openQuote: () => void };
 
@@ -43,7 +44,7 @@ export function QuoteProvider({ children }: { children: React.ReactNode }) {
     const key = itemKey(input);
     setItems((current) => {
       const existing = current.find((item) => item.key === key);
-      if (existing) return current.map((item) => item.key === key ? { ...item, quantity: item.quantity + (input.quantity ?? 1) } : item);
+      if (existing) return current.map((item) => item.key === key ? { ...item, ...input, key, quantity: item.quantity + (input.quantity ?? 1) } : item);
       return [...current, { ...input, key, quantity: input.quantity ?? 1 }];
     });
     trackEvent("add_to_quote", { product_code: input.productCode, product_name: input.productName });
@@ -105,7 +106,7 @@ export function QuoteProvider({ children }: { children: React.ReactNode }) {
                 <tbody className="divide-y divide-slate-200">
                   {items.map((item, index) => <tr key={item.key} className="align-top odd:bg-white even:bg-slate-50/70">
                     <td className="px-4 py-4 text-center font-semibold text-slate-500">{index + 1}</td>
-                    <td className="px-4 py-4"><p className="font-bold text-slate-900">{item.productName}</p><p className="mt-1 text-xs font-medium text-slate-500">Code: {item.productCode}</p></td>
+                    <td className="px-4 py-4"><div className="flex items-center gap-3">{item.productImage ? <Image src={item.productImage} alt="" width={56} height={56} className="h-14 w-14 shrink-0 rounded-xl border border-slate-200 bg-white object-contain p-1" /> : <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[10px] font-bold uppercase text-slate-400">No image</div>}<div><p className="font-bold text-slate-900">{item.productName}</p><p className="mt-1 text-xs font-medium text-slate-500">Code: {item.productCode}</p></div></div></td>
                     <td className="px-4 py-4 text-slate-600">{Object.keys(item.variants).length > 0 ? <dl className="space-y-1">{Object.entries(item.variants).map(([name, variant]) => <div key={name} className="flex gap-1"><dt className="font-semibold text-slate-700">{name}:</dt><dd>{variant}</dd></div>)}</dl> : <span className="text-slate-400">Standard</span>}</td>
                     <td className="px-4 py-4"><div className="mx-auto inline-flex items-center rounded-xl border border-slate-200 bg-white"><button onClick={() => updateQuantity(item.key, -1)} className="p-2 hover:bg-slate-100" aria-label={`Decrease quantity of ${item.productName}`}><Minus className="h-4 w-4" /></button><span className="min-w-9 text-center font-bold">{item.quantity}</span><button onClick={() => updateQuantity(item.key, 1)} className="p-2 hover:bg-slate-100" aria-label={`Increase quantity of ${item.productName}`}><Plus className="h-4 w-4" /></button></div></td>
                     <td className="px-3 py-4"><button onClick={() => removeItem(item.key)} className="rounded-lg p-2 text-slate-400 hover:bg-red-50 hover:text-red-700" aria-label={`Remove ${item.productName}`}><Trash2 className="h-4 w-4" /></button></td>

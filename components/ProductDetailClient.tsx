@@ -125,6 +125,7 @@ export default function ProductDetailClient({
         <UniversalSelector
           productName={productName}
           productCode={productCode}
+          productImage={currentImage}
           variants={variants}
           onSelectionChange={handleSelectionChange}
         />
