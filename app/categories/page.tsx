@@ -69,7 +69,7 @@ export default async function CategoriesPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
-      <div className="mb-8 flex items-end justify-between gap-4 sm:mb-10">
+      <div className="mb-8 sm:mb-10">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.36em] text-red-700 sm:text-sm">
             Browse Products
@@ -78,12 +78,6 @@ export default async function CategoriesPage() {
             Product Categories
           </h1>
         </div>
-        <Link
-          href="/categories"
-          className="hidden shrink-0 text-sm font-semibold text-red-700 transition hover:underline sm:block"
-        >
-          View All &rarr;
-        </Link>
       </div>
 
       <div className="grid grid-cols-1 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">

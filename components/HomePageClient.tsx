@@ -12,6 +12,7 @@ import {
   ArrowRight,
   BadgeIndianRupee,
   CheckCircle2,
+  Grid3X3,
   MessageCircle,
   PackageCheck,
   ShieldCheck,
@@ -23,6 +24,17 @@ export type CategorySummary = {
   name: string;
   slug: string | null;
 };
+
+const homepageCategoryOrder = [
+  "power-tools",
+  "tapes",
+  "lifting-equipments",
+  "industrial-adhesives-sealants",
+  "measuring-instruments",
+  "pneumatic-brass-fittings",
+  "hoses",
+  "hand-tools",
+];
 
 export type FeaturedProduct = {
   id: number | string;
@@ -68,6 +80,9 @@ function getCategoryIcon(slug: string | null) {
 }
 
 export default function HomePageClient({ categories, products, totalProductCount }: { categories: CategorySummary[]; products: FeaturedProduct[]; totalProductCount: number }) {
+  const homepageCategories = homepageCategoryOrder
+    .map((slug) => categories.find((category) => category.slug?.trim() === slug))
+    .filter((category): category is CategorySummary => Boolean(category));
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
@@ -149,20 +164,17 @@ export default function HomePageClient({ categories, products, totalProductCount
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24"
       >
-        <div className="flex items-center justify-between mb-8">
+        <div className="mb-8">
           <div>
             <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-2 text-xs sm:text-sm">
               Browse Products
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Product Categories</h2>
           </div>
-          <Link href="/categories" className="text-red-700 font-semibold hover:underline text-sm shrink-0 ml-4">
-            View All →
-          </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
-          {categories.map((category) => {
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
+          {homepageCategories.map((category) => {
                 const icon = getCategoryIcon(category.slug);
 
                 return (
@@ -196,6 +208,18 @@ export default function HomePageClient({ categories, products, totalProductCount
                   </Link>
                 );
               })}
+          <Link
+            href="/categories"
+            className="group relative overflow-hidden rounded-2xl border border-red-700 bg-red-700 p-4 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:bg-red-800 hover:shadow-[0_24px_60px_rgba(127,29,29,0.22)] sm:rounded-3xl sm:p-6"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex min-w-0 items-center gap-3">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15"><Grid3X3 className="h-7 w-7" /></span>
+                <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-100">Full catalogue</p><h3 className="mt-1 text-base font-bold sm:text-lg">Explore More</h3></div>
+              </div>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-red-700 transition group-hover:translate-x-1"><ArrowRight className="h-4 w-4" /></span>
+            </div>
+          </Link>
         </div>
       </motion.section>
 
