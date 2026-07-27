@@ -46,6 +46,9 @@ const categoryIcons: Record<string, string> = {
   "pneumatic-brass-fittings": "/category-icons/pneumatic-brass-fittings.png",
   "measuring-instruments": "/category-icons/measuring-instruments-red.png",
   "agri-tools": "/category-icons/agri-tools.png",
+  "floor-mats": "/category-icons/floor-mats.png",
+  "industrial-chemicals": "/category-icons/industrial-chemicals.png",
+  "valves-watering-equipment": "/category-icons/valves-watering-equipment.png",
 };
 
 function getCategoryIcon(slug: string | null) {

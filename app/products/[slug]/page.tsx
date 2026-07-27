@@ -163,13 +163,12 @@ export default async function ProductPage({ params }: Props) {
   if (availableGrits.length > 0) variants.push({ title: "Grit", values: availableGrits });
   if (availableWidths.length > 0) variants.push({ title: "Width", values: availableWidths });
   if (catalogModels.length === 0 && availableWeights.length > 0) variants.push({ title: "Weight", values: availableWeights });
-  if (availableCapacities.length > 0 && availableLengths.length > 0) {
+  if (availableCapacities.length > 0) {
     variants.push({ title: "Capacity", values: availableCapacities });
-    variants.push({ title: "Length", values: availableLengths });
   } else if (availableSizes.length > 0) {
     variants.push({ title: "Size", values: availableSizes });
   }
-  if (availableLengths.length > 0 && availableCapacities.length === 0) {
+  if (availableLengths.length > 0) {
     variants.push({ title: "Length", values: availableLengths });
   }
   if (availableMaterials.length > 0) variants.push({ title: "Material", values: availableMaterials });
