@@ -58,7 +58,7 @@ export default function Footer() {
         <div className="mt-4 space-y-4 text-sm">
           <a href="tel:+919626652275" onClick={() => trackEvent("phone_click", { location: "footer" })} className="flex items-start gap-3 hover:text-red-700"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-red-600" /><span>+91 96266 52275<br />+91 77089 14004</span></a>
           <a href="mailto:nooragenciescbe@gmail.com" className="flex items-start gap-3 break-all hover:text-red-700"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />nooragenciescbe@gmail.com</a>
-          <a href="https://www.google.com/maps/dir//Noor+Agencies,+KLR+Complex,+569,+Cross+Cut+Rd,+Gandipuram,+Coimbatore,+Tamil+Nadu+641012" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("directions_click", { location: "footer" })} className="flex items-start gap-3 leading-6 hover:text-red-700"><MapPin className="mt-1 h-4 w-4 shrink-0 text-red-600" />KLR Complex, 569 Cross Cut Road, Gandipuram, Coimbatore 641012</a>
+          <a href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("directions_click", { location: "footer" })} className="flex items-start gap-3 leading-6 hover:text-red-700"><MapPin className="mt-1 h-4 w-4 shrink-0 text-red-600" />No. 21, Dr. Nanjappa Road, Coimbatore 641018</a>
           <div className="flex items-start gap-3 leading-6"><Clock3 className="mt-1 h-4 w-4 shrink-0 text-red-500" /><span>Monday–Saturday<br />9:00 AM–7:00 PM</span></div>
         </div>
       </div>

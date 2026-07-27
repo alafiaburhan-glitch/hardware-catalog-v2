@@ -103,12 +103,12 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Address</p>
                   <p className="text-gray-800 font-semibold leading-relaxed">
-                    Noor Agencies, KLR Complex,<br />
-                    569, Cross Cut Rd, Gandipuram,<br />
-                    Coimbatore, Tamil Nadu 641012
+                    Noor Agencies, No. 21,<br />
+                    Dr. Nanjappa Road,<br />
+                    Coimbatore, Tamil Nadu 641018
                   </p>
                   <a
-                    href="https://www.google.com/maps/dir//Noor+Agencies,+KLR+Complex,+569,+Cross+Cut+Rd,+Varuthiangara+Palayam,+ATT+Colony,+Gandipuram,+Coimbatore,+Tamil+Nadu+641012"
+                    href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-red-700 font-semibold hover:underline mt-1 inline-block"
@@ -166,7 +166,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-8">Find Us</h2>
             <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-sm h-80 md:h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4!2d76.9667571!3d11.0061266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858fc57832b35%3A0x4c666229781e4e84!2sNoor%20Agencies!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps?q=Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -176,7 +176,7 @@ export default function ContactPage() {
               />
             </div>
             <a
-              href="https://www.google.com/maps/dir//Noor+Agencies,+KLR+Complex,+569,+Cross+Cut+Rd,+Varuthiangara+Palayam,+ATT+Colony,+Gandipuram,+Coimbatore,+Tamil+Nadu+641012"
+              href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 w-full flex items-center justify-center gap-2 border border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 px-5 py-3 rounded-xl font-semibold transition text-sm"

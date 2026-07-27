@@ -26,6 +26,6 @@ export const siteFaqs: SiteFaq[] = [
   },
   {
     question: "Where is Noor Agencies located?",
-    answer: "Noor Agencies is located at KLR Complex, 569 Cross Cut Road, Gandipuram, Coimbatore, Tamil Nadu 641012. The contact page includes directions and current business hours.",
+    answer: "Noor Agencies is located at No. 21, Dr. Nanjappa Road, Coimbatore, Tamil Nadu 641018. The contact page includes directions and current business hours.",
   },
 ];

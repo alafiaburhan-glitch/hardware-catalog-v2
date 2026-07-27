@@ -31,10 +31,10 @@ export default function AboutPage() {
       email: "nooragenciescbe@gmail.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "KLR Complex, 569 Cross Cut Road, Gandipuram",
+        streetAddress: "No. 21, Dr. Nanjappa Road",
         addressLocality: "Coimbatore",
         addressRegion: "Tamil Nadu",
-        postalCode: "641012",
+        postalCode: "641018",
         addressCountry: "IN",
       },
     },
