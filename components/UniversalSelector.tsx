@@ -6,6 +6,7 @@ import AddToQuoteButton from "@/components/AddToQuoteButton";
 interface UniversalSelectorProps {
   productName: string;
   productCode: string;
+  productSlug: string;
   productImage?: string | null;
   variants: {
     title: string;
@@ -27,6 +28,7 @@ function buildCombinedSizeKey(capacity: string, length: string): string {
 export default function UniversalSelector({
   productName,
   productCode,
+  productSlug,
   productImage,
   variants,
   onSelectionChange,
@@ -100,7 +102,7 @@ export default function UniversalSelector({
 
       {allSelected && (
         <div className="flex flex-wrap gap-3">
-          <AddToQuoteButton productName={productName} productCode={productCode} productImage={productImage} variants={selected} />
+          <AddToQuoteButton productName={productName} productCode={productCode} productSlug={productSlug} productImage={productImage} variants={selected} />
           <a
             href={`https://wa.me/919626652275?text=${encodeURIComponent(buildWhatsAppMessage())}`}
             target="_blank"

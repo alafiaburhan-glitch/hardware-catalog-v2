@@ -8,6 +8,7 @@ import UniversalSelector from "@/components/UniversalSelector";
 interface ProductDetailClientProps {
   productName: string;
   productCode: string;
+  productSlug: string;
   defaultImage: string | null;
   sizeImages: Record<string, string>;
   variants: { title: string; values: string[] }[];
@@ -20,6 +21,7 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({
   productName,
   productCode,
+  productSlug,
   defaultImage,
   sizeImages,
   variants,
@@ -125,6 +127,7 @@ export default function ProductDetailClient({
         <UniversalSelector
           productName={productName}
           productCode={productCode}
+          productSlug={productSlug}
           productImage={currentImage}
           variants={variants}
           onSelectionChange={handleSelectionChange}

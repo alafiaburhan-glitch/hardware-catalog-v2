@@ -260,7 +260,7 @@ export default async function ProductPage({ params }: Props) {
       </div>
 
       {catalogModels.length > 0 && (
-        <BrandModelSelector productName={product.name} productCode={product.code} productImage={product.image || categoryIcon || null} models={catalogModels} />
+        <BrandModelSelector productName={product.name} productCode={product.code} productSlug={product.slug} productImage={product.image || categoryIcon || null} models={catalogModels} />
       )}
 
       {/* DATASHEET */}
@@ -413,6 +413,7 @@ export default async function ProductPage({ params }: Props) {
         <ProductDetailClient
           productName={product.name}
           productCode={product.code}
+          productSlug={product.slug}
           defaultImage={product.image || categoryIcon || null}
           sizeImages={product.size_images ?? {}}
           variants={variants}
@@ -442,7 +443,7 @@ export default async function ProductPage({ params }: Props) {
               />
             ) : catalogModels.length === 0 ? (
               <div className="flex flex-wrap gap-3">
-                <AddToQuoteButton productName={product.name} productCode={product.code} productImage={product.image || categoryIcon || null} />
+                <AddToQuoteButton productName={product.name} productCode={product.code} productSlug={product.slug} productImage={product.image || categoryIcon || null} />
                 <WhatsAppButton productName={product.name} productCode={product.code} />
               </div>
             ) : null}
