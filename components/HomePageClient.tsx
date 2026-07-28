@@ -7,17 +7,12 @@ import TrustSection from "@/components/TrustSection";
 import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import FaqAccordion from "@/components/FaqAccordion";
+import HeroBannerCarousel from "@/components/HeroBannerCarousel";
 import { siteFaqs } from "@/data/siteFaqs";
 import {
   ArrowRight,
-  BadgeIndianRupee,
   CheckCircle2,
   Grid3X3,
-  MessageCircle,
-  PackageCheck,
-  ShieldCheck,
-  Sparkles,
-  Truck,
 } from "lucide-react";
 export type CategorySummary = {
   id: number | string;
@@ -89,71 +84,10 @@ export default function HomePageClient({ categories, products, totalProductCount
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-black text-white">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.22),transparent_34%),radial-gradient(circle_at_88%_70%,rgba(127,29,29,0.2),transparent_40%)]" />
-        <div className="industrial-grid absolute inset-0 -z-10 opacity-15" />
-        <motion.div
-          aria-hidden
-          className="absolute -left-32 top-28 h-80 w-80 rounded-full border border-white/20"
-          animate={{ scale: [1, 1.12, 1], rotate: [0, 18, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-
-        <div className="mx-auto flex min-h-[50vh] max-w-7xl items-center px-4 py-12 sm:px-6 sm:py-14">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="relative z-10 max-w-4xl"
-          >
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-white backdrop-blur-xl">
-              <Sparkles className="h-4 w-4" /> Coimbatore&apos;s industrial supply partner
-            </div>
-            <h1 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.045em] sm:text-5xl lg:text-6xl xl:text-7xl">
-              Built for work.
-              <span className="mt-2 block text-red-100">
-                Ready for industry.
-              </span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
-              Hardware, lifting equipment, safety products, adhesives and power tools—sourced for serious work and delivered with dependable support.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/categories" className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-7 py-4 font-bold text-red-800 shadow-[0_18px_50px_rgba(255,255,255,0.12)] transition hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(255,255,255,0.2)]">
-                Explore the catalog <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
-              </Link>
-              <a href="https://wa.me/919626652275?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/35 bg-white/15 px-7 py-4 font-bold text-white backdrop-blur-xl transition hover:bg-white/25">
-                <MessageCircle className="h-5 w-5" /> Get a quick quote
-              </a>
-            </div>
-
-            <div className="mt-10 grid max-w-xl grid-cols-3 gap-3 border-t border-white/10 pt-7">
-              {[['10+', 'Years'], [totalProductCount ? `${totalProductCount}+` : '—', 'Products'], [categories.length || '—', 'Categories']].map(([value, label]) => (
-                <div key={label}>
-                  <p className="text-2xl font-black sm:text-3xl">{value}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/65">{label}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-        </div>
-
-        <div className="border-t border-white/20 bg-red-800/20 backdrop-blur-xl">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px px-4 sm:grid-cols-4 sm:px-6">
-            {[
-              [ShieldCheck, 'Quality checked'],
-              [PackageCheck, 'Wide catalog'],
-              [BadgeIndianRupee, 'Bulk pricing'],
-              [Truck, 'Pan-India supply'],
-            ].map(([Icon, label]) => {
-              const FeatureIcon = Icon as typeof ShieldCheck;
-              return <div key={label as string} className="flex items-center gap-3 border-white/10 px-3 py-4 text-sm font-semibold text-red-50 sm:border-l"><FeatureIcon className="h-5 w-5 text-red-300" />{label as string}</div>;
-            })}
-          </div>
-        </div>
-      </section>
+      <HeroBannerCarousel
+        categoryCount={categories.length}
+        productCount={totalProductCount}
+      />
 
 
       {/* BRANDS MARQUEE */}
