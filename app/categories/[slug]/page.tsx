@@ -13,6 +13,7 @@ import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
 import { liftingEquipment } from "@/data/liftingEquipment";
+import { ropes } from "@/data/ropes";
 import { productBelongsToCategory } from "@/lib/categoryMatching";
 
 export const dynamic = "force-dynamic";
@@ -132,7 +133,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments" || slug === "agri-tools";
+  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments" || slug === "agri-tools" || slug === "ropes";
   const categoryDoesNotExist = !categoryError || categoryError.code === "PGRST116";
   if (!category && !isLocalCategory && categoryDoesNotExist) {
     notFound();
@@ -215,6 +216,8 @@ export default async function CategoryPage({ params }: Props) {
           ? [...packingMaterials, ...(databaseProducts ?? []).filter((product) => !packingMaterials.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : slug === "lifting-equipments"
           ? [...liftingEquipment, ...(databaseProducts ?? []).filter((product) => !liftingEquipment.some((catalogProduct) => catalogProduct.slug === product.slug))]
+        : slug === "ropes"
+          ? [...ropes, ...(databaseProducts ?? []).filter((product) => !ropes.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : (databaseProducts ?? []));
 
   const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"

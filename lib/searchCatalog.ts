@@ -6,6 +6,7 @@ import { powerTools } from "@/data/powerTools";
 import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
+import { ropes } from "@/data/ropes";
 import { supabase } from "@/lib/supabase";
 
 export type CatalogSearchProduct = {
@@ -40,6 +41,7 @@ export function mergeSearchCatalog(databaseProducts: DatabaseSearchProduct[] = [
     ...measuringInstruments,
     ...agriTools,
     ...packingMaterials,
+    ...ropes,
   ];
 
   const productsBySlug = new Map(localProducts.map((product) => [product.slug, product]));
