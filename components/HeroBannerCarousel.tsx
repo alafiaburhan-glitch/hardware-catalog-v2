@@ -109,9 +109,17 @@ export default function HeroBannerCarousel({
                 <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
                   Job-ready tarpaulins, dependable power tools, and lifting solutions for workshops, sites, transport, and industry.
                 </p>
-                <Link href="/categories" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-red-600 px-6 py-3.5 font-bold transition hover:bg-red-500">
-                  Shop product categories <ArrowRight className="h-5 w-5" />
-                </Link>
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {products.map((product) => (
+                    <Link
+                      key={product.href}
+                      href={product.href}
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-bold transition hover:border-red-400 hover:bg-red-600"
+                    >
+                      {product.name} <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ))}
+                </div>
               </div>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {products.map((product, index) => (
