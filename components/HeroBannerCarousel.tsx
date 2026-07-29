@@ -29,13 +29,11 @@ export default function HeroBannerCarousel({
   productCount: number;
 }) {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
     const timer = window.setInterval(() => setActive((value) => (value + 1) % 3), INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [active, paused]);
+  }, []);
 
   const goTo = (index: number) => setActive((index + 3) % 3);
 
@@ -44,10 +42,6 @@ export default function HeroBannerCarousel({
       aria-label="Noor Agencies highlights"
       aria-roledescription="carousel"
       className="relative isolate overflow-hidden bg-slate-950 text-white"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}
     >
       <div className="relative h-[680px] sm:h-[620px] lg:h-[560px]">
       <AnimatePresence mode="wait">
