@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const INTERVAL_MS = 7_000;
+const INTERVAL_MS = 4_000;
 
 const products = [
   { name: "Tarpaulins", image: "/products/tarp_nylon.jpg", href: "/categories/tarpaulins" },
@@ -135,9 +135,17 @@ export default function HeroBannerCarousel({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -32 }}
             transition={{ duration: 0.6 }}
-            className="absolute inset-0 h-full overflow-hidden bg-gradient-to-br from-red-800 via-red-700 to-orange-600"
+            className="absolute inset-0 h-full overflow-hidden bg-slate-950"
           >
-            <div className="absolute -right-20 -top-28 h-96 w-96 rounded-full bg-white/15 blur-3xl" />
+            <Image
+              src="/images/noor-agencies-office.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-center sm:object-[center_25%]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-red-950/45" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-slate-950/30" />
             <div className="relative mx-auto grid h-full max-w-7xl content-center gap-5 px-4 pb-16 pt-8 sm:items-center sm:gap-8 sm:px-6 sm:py-12 lg:grid-cols-[1fr_0.9fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-100">Talk to our team</p>
@@ -152,22 +160,12 @@ export default function HeroBannerCarousel({
                   </Link>
                 </div>
               </div>
-              <div className="relative h-[300px] overflow-hidden rounded-3xl border border-white/20 bg-slate-950 shadow-2xl sm:h-[260px] sm:rounded-[2rem] lg:h-[440px]">
-                <Image
-                  src="/images/noor-agencies-office.webp"
-                  alt="Noor Agencies office on Dr. Nanjappa Road, Coimbatore"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 44vw"
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 lg:p-7">
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-red-300 sm:text-sm">Visit Noor Agencies</p>
-                  <div className="mt-3 grid gap-2.5 text-xs sm:grid-cols-3 sm:text-sm lg:mt-5 lg:grid-cols-1 lg:gap-4 lg:text-base">
-                    <a href="tel:+919626652275" className="flex gap-4 hover:text-red-200"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span className="font-semibold">+91 96266 52275<br />+91 77089 14004</span></a>
-                    <a href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018" target="_blank" rel="noopener noreferrer" className="flex gap-4 leading-6 hover:text-red-200"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>No. 21, Dr. Nanjappa Road,<br />Coimbatore 641018</span></a>
-                    <div className="flex gap-4 text-slate-300"><Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>Monday–Saturday<br />9:00 AM–7:00 PM</span></div>
-                  </div>
+              <div className="rounded-3xl border border-white/20 bg-slate-950 p-5 shadow-2xl sm:rounded-[2rem] sm:p-8">
+                <p className="text-sm font-bold uppercase tracking-[0.22em] text-red-300">Noor Agencies</p>
+                <div className="mt-4 space-y-3.5 text-sm sm:mt-6 sm:space-y-5 sm:text-base">
+                  <a href="tel:+919626652275" className="flex gap-4 hover:text-red-200"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span className="font-semibold">+91 96266 52275<br />+91 77089 14004</span></a>
+                  <a href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018" target="_blank" rel="noopener noreferrer" className="flex gap-4 leading-6 hover:text-red-200"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>No. 21, Dr. Nanjappa Road,<br />Coimbatore 641018</span></a>
+                  <div className="flex gap-4 text-slate-300"><Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>Monday–Saturday<br />9:00 AM–7:00 PM</span></div>
                 </div>
               </div>
             </div>
