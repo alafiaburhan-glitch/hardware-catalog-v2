@@ -152,12 +152,22 @@ export default function HeroBannerCarousel({
                   </Link>
                 </div>
               </div>
-              <div className="rounded-3xl border border-white/20 bg-slate-950/85 p-5 shadow-2xl backdrop-blur-xl sm:rounded-[2rem] sm:p-8">
-                <p className="text-sm font-bold uppercase tracking-[0.22em] text-red-300">Noor Agencies</p>
-                <div className="mt-4 space-y-3.5 text-sm sm:mt-6 sm:space-y-5 sm:text-base">
-                  <a href="tel:+919626652275" className="flex gap-4 hover:text-red-200"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span className="font-semibold">+91 96266 52275<br />+91 77089 14004</span></a>
-                  <a href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018" target="_blank" rel="noopener noreferrer" className="flex gap-4 leading-6 hover:text-red-200"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>No. 21, Dr. Nanjappa Road,<br />Coimbatore 641018</span></a>
-                  <div className="flex gap-4 text-slate-300"><Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>Monday–Saturday<br />9:00 AM–7:00 PM</span></div>
+              <div className="relative h-[300px] overflow-hidden rounded-3xl border border-white/20 bg-slate-950 shadow-2xl sm:h-[260px] sm:rounded-[2rem] lg:h-[440px]">
+                <Image
+                  src="/images/noor-agencies-office.webp"
+                  alt="Noor Agencies office on Dr. Nanjappa Road, Coimbatore"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 44vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 lg:p-7">
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-red-300 sm:text-sm">Visit Noor Agencies</p>
+                  <div className="mt-3 grid gap-2.5 text-xs sm:grid-cols-3 sm:text-sm lg:mt-5 lg:grid-cols-1 lg:gap-4 lg:text-base">
+                    <a href="tel:+919626652275" className="flex gap-4 hover:text-red-200"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span className="font-semibold">+91 96266 52275<br />+91 77089 14004</span></a>
+                    <a href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018" target="_blank" rel="noopener noreferrer" className="flex gap-4 leading-6 hover:text-red-200"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>No. 21, Dr. Nanjappa Road,<br />Coimbatore 641018</span></a>
+                    <div className="flex gap-4 text-slate-300"><Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>Monday–Saturday<br />9:00 AM–7:00 PM</span></div>
+                  </div>
                 </div>
               </div>
             </div>
