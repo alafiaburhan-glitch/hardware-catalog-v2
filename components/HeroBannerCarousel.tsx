@@ -43,7 +43,7 @@ export default function HeroBannerCarousel({
       aria-roledescription="carousel"
       className="relative isolate overflow-hidden bg-slate-950 text-white"
     >
-      <div className="relative h-[680px] sm:h-[620px] lg:h-[560px]">
+      <div className="relative h-[760px] sm:h-[620px] lg:h-[560px]">
       <AnimatePresence mode="wait">
         {active === 0 && (
           <motion.div
@@ -138,12 +138,12 @@ export default function HeroBannerCarousel({
             className="absolute inset-0 h-full overflow-hidden bg-gradient-to-br from-red-800 via-red-700 to-orange-600"
           >
             <div className="absolute -right-20 -top-28 h-96 w-96 rounded-full bg-white/15 blur-3xl" />
-            <div className="relative mx-auto grid h-full max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_0.9fr]">
+            <div className="relative mx-auto grid h-full max-w-7xl content-center gap-5 px-4 pb-16 pt-8 sm:items-center sm:gap-8 sm:px-6 sm:py-12 lg:grid-cols-[1fr_0.9fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-100">Talk to our team</p>
-                <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">Tell us what the job needs.</h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-red-50 sm:text-lg">Get availability, bulk pricing, and practical help from our Coimbatore team.</p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight sm:mt-4 sm:text-5xl lg:text-6xl">Tell us what the job needs.</h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-red-50 sm:mt-5 sm:text-lg sm:leading-7">Get availability, bulk pricing, and practical help from our Coimbatore team.</p>
+                <div className="mt-5 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:gap-3">
                   <a href="https://wa.me/919626652275?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-green-600 px-6 py-3.5 font-bold transition hover:bg-green-500">
                     <MessageCircle className="h-5 w-5" /> WhatsApp us
                   </a>
@@ -152,9 +152,9 @@ export default function HeroBannerCarousel({
                   </Link>
                 </div>
               </div>
-              <div className="rounded-[2rem] border border-white/20 bg-slate-950/85 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+              <div className="rounded-3xl border border-white/20 bg-slate-950/85 p-5 shadow-2xl backdrop-blur-xl sm:rounded-[2rem] sm:p-8">
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-red-300">Noor Agencies</p>
-                <div className="mt-6 space-y-5">
+                <div className="mt-4 space-y-3.5 text-sm sm:mt-6 sm:space-y-5 sm:text-base">
                   <a href="tel:+919626652275" className="flex gap-4 hover:text-red-200"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span className="font-semibold">+91 96266 52275<br />+91 77089 14004</span></a>
                   <a href="https://www.google.com/maps/dir//Noor+Agencies,+No.+21,+Dr.+Nanjappa+Road,+Coimbatore,+Tamil+Nadu+641018" target="_blank" rel="noopener noreferrer" className="flex gap-4 leading-6 hover:text-red-200"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>No. 21, Dr. Nanjappa Road,<br />Coimbatore 641018</span></a>
                   <div className="flex gap-4 text-slate-300"><Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-red-300" /><span>Monday–Saturday<br />9:00 AM–7:00 PM</span></div>
