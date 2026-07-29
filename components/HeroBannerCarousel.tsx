@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowLeft,
   ArrowRight,
   Clock3,
   MapPin,
@@ -14,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const INTERVAL_MS = 30_000;
+const INTERVAL_MS = 7_000;
 
 const products = [
   { name: "Tarpaulins", image: "/products/tarp_nylon.jpg", href: "/categories/tarpaulins" },
@@ -173,12 +172,10 @@ export default function HeroBannerCarousel({
       </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/15 bg-slate-950/75 p-1.5 backdrop-blur-xl">
-        <button type="button" onClick={() => goTo(active - 1)} aria-label="Previous banner" className="rounded-full p-2 text-white/75 hover:bg-white/15 hover:text-white"><ArrowLeft className="h-4 w-4" /></button>
+      <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-slate-950/35 px-2 py-1.5 backdrop-blur-sm">
         {[0, 1, 2].map((index) => (
-          <button type="button" key={index} onClick={() => goTo(index)} aria-label={`Show banner ${index + 1}`} aria-current={active === index ? "true" : undefined} className={`h-2.5 rounded-full transition-all ${active === index ? "w-8 bg-white" : "w-2.5 bg-white/45 hover:bg-white/70"}`} />
+          <button type="button" key={index} onClick={() => goTo(index)} aria-label={`Show banner ${index + 1}`} aria-current={active === index ? "true" : undefined} className={`h-1.5 rounded-full transition-all ${active === index ? "w-4 bg-white/85" : "w-1.5 bg-white/35 hover:bg-white/55"}`} />
         ))}
-        <button type="button" onClick={() => goTo(active + 1)} aria-label="Next banner" className="rounded-full p-2 text-white/75 hover:bg-white/15 hover:text-white"><ArrowRight className="h-4 w-4" /></button>
       </div>
     </section>
   );
