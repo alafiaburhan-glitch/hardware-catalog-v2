@@ -58,6 +58,7 @@ function BrandCard({ brand, duplicate = false }: { brand: Brand; duplicate?: boo
           src={brand.logo}
           alt={duplicate ? "" : `${brand.name} logo`}
           fill
+          loading="eager"
           sizes="(max-width: 640px) 115px, 145px"
           className="object-contain"
         />
@@ -68,10 +69,14 @@ function BrandCard({ brand, duplicate = false }: { brand: Brand; duplicate?: boo
 
 function MarqueeRow({ brands, reverse = false }: { brands: Brand[]; reverse?: boolean }) {
   return (
-    <div className="group overflow-hidden py-1.5">
+    <div className="overflow-hidden py-1.5">
       <div className={`flex w-max ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
-        {brands.map((brand) => <BrandCard key={brand.name} brand={brand} />)}
-        {brands.map((brand) => <BrandCard key={`${brand.name}-duplicate`} brand={brand} duplicate />)}
+        <div className="flex shrink-0">
+          {brands.map((brand) => <BrandCard key={brand.name} brand={brand} />)}
+        </div>
+        <div className="flex shrink-0" aria-hidden="true">
+          {brands.map((brand) => <BrandCard key={`${brand.name}-duplicate`} brand={brand} duplicate />)}
+        </div>
       </div>
     </div>
   );
