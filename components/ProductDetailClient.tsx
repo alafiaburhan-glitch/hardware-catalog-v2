@@ -12,6 +12,11 @@ interface ProductDetailClientProps {
   defaultImage: string | null;
   sizeImages: Record<string, string>;
   variants: { title: string; values: string[] }[];
+  sizeDetails?: Record<string, {
+    metresPerKg: number;
+    coil220Kg?: number;
+    coil40Kg?: number;
+  }>;
   /** Rendered above the selector in the details column */
   detailsTop: React.ReactNode;
   /** Rendered below the selector in the details column */
@@ -25,6 +30,7 @@ export default function ProductDetailClient({
   defaultImage,
   sizeImages,
   variants,
+  sizeDetails,
   detailsTop,
   detailsBottom,
 }: ProductDetailClientProps) {
@@ -130,6 +136,7 @@ export default function ProductDetailClient({
           productSlug={productSlug}
           productImage={currentImage}
           variants={variants}
+          sizeDetails={sizeDetails}
           onSelectionChange={handleSelectionChange}
         />
 

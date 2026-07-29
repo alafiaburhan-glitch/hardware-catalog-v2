@@ -217,6 +217,8 @@ export default async function ProductPage({ params }: Props) {
   const hasGrit = availableGrits.length > 0;
   const hasVariants = variants.length > 0;
   const categoryIcon = getCategoryIcon(product.category);
+  const ropeSizeDetails =
+    "sizeDetails" in product ? product.sizeDetails : undefined;
 
   const detailsTop = (
     <>
@@ -420,6 +422,7 @@ export default async function ProductPage({ params }: Props) {
           defaultImage={product.image || categoryIcon || null}
           sizeImages={product.size_images ?? {}}
           variants={variants}
+          sizeDetails={ropeSizeDetails}
           detailsTop={detailsTop}
           detailsBottom={detailsBottom}
         />

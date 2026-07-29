@@ -8,6 +8,13 @@ export type RopeProduct = {
   image: string;
   material: string;
   specifications: Record<string, string>;
+  sizeDetails: Record<string, RopeSizeDetail>;
+};
+
+export type RopeSizeDetail = {
+  metresPerKg: number;
+  coil220Kg?: number;
+  coil40Kg?: number;
 };
 
 function rope(
@@ -16,9 +23,7 @@ function rope(
   code: string,
   color: string,
   material: string,
-  sizes: string,
-  metresPerKg: string,
-  coilWeights: string,
+  sizeDetails: Record<string, RopeSizeDetail>,
 ): RopeProduct {
   return {
     id: `rope-${slug}`,
@@ -29,14 +34,13 @@ function rope(
     description: `${color} ${material.toLowerCase()} rope for industrial, commercial, packing and general-purpose applications. Select the required diameter and contact Noor Agencies for current availability and a quotation.`,
     image: `/products/ropes/${slug}.png`,
     material,
+    sizeDetails,
     specifications: {
       Category: "Ropes",
       Material: material,
       Color: color,
       Construction: "Twisted rope",
-      "Available Sizes": sizes,
-      "Metres per Kilogram": metresPerKg,
-      "Approx. Weight of 220 m Coil": coilWeights,
+      "Available Sizes": Object.keys(sizeDetails).join(", "),
       Application: "Industrial, commercial, packing and general-purpose use",
     },
   };
@@ -49,9 +53,26 @@ export const ropes: RopeProduct[] = [
     "RP-YPP",
     "Yellow",
     "Polypropylene",
-    "3 mm, 4 mm, 5 mm, 6 mm, 8 mm, 10 mm, 12 mm, 14 mm, 16 mm, 18 mm, 20 mm, 22 mm, 24 mm, 28 mm, 30 mm, 32 mm, 36 mm, 40 mm",
-    "3 mm: 150; 4 mm: 120; 5 mm: 90; 6 mm: 50; 8 mm: 30; 10 mm: 20; 12 mm: 13; 14 mm: 10; 16 mm: 8; 18 mm: 6; 20 mm: 5; 22 mm: 4; 24 mm: 3; 28 mm: 2.75; 30 mm: 2; 32 mm: 1.8; 36 mm: 1.5; 40 mm: 1",
-    "3–6 mm: 4 kg; 8 mm: 6.5 kg; 10 mm: 10 kg; 12 mm: 15 kg; 14 mm: 20 kg; 16 mm: 25 kg; 18 mm: 32 kg; 20 mm: 40 kg; 22 mm: 48.5 kg; 24 mm: 57 kg; 28 mm: 78 kg; 30 mm: 89 kg; 32 mm: 101 kg; 36 mm: 129 kg; 40 mm: 158 kg",
+    {
+      "3 mm": { metresPerKg: 150, coil220Kg: 4 },
+      "4 mm": { metresPerKg: 120, coil220Kg: 4 },
+      "5 mm": { metresPerKg: 90, coil220Kg: 4 },
+      "6 mm": { metresPerKg: 50, coil220Kg: 4 },
+      "8 mm": { metresPerKg: 30, coil220Kg: 6.5 },
+      "10 mm": { metresPerKg: 20, coil220Kg: 10 },
+      "12 mm": { metresPerKg: 13, coil220Kg: 15 },
+      "14 mm": { metresPerKg: 10, coil220Kg: 20 },
+      "16 mm": { metresPerKg: 8, coil220Kg: 25 },
+      "18 mm": { metresPerKg: 6, coil220Kg: 32 },
+      "20 mm": { metresPerKg: 5, coil220Kg: 40 },
+      "22 mm": { metresPerKg: 4, coil220Kg: 48.5 },
+      "24 mm": { metresPerKg: 3, coil220Kg: 57 },
+      "28 mm": { metresPerKg: 2.75, coil220Kg: 78 },
+      "30 mm": { metresPerKg: 2, coil220Kg: 89 },
+      "32 mm": { metresPerKg: 1.8, coil220Kg: 101 },
+      "36 mm": { metresPerKg: 1.5, coil220Kg: 129 },
+      "40 mm": { metresPerKg: 1, coil220Kg: 158 },
+    },
   ),
   rope(
     "brown-polypropylene-rope",
@@ -59,9 +80,18 @@ export const ropes: RopeProduct[] = [
     "RP-BPP",
     "Brown",
     "Polypropylene",
-    "4 mm, 5 mm, 6 mm, 8 mm, 10 mm, 12 mm, 14 mm, 16 mm, 18 mm, 24 mm",
-    "4 mm: 100; 5 mm: 80; 6 mm: 40; 8 mm: 25; 10 mm: 15; 12 mm: 10; 14 mm: 8; 16 mm: 6; 18 mm: 5; 24 mm: 2",
-    "Contact Noor Agencies for coil-weight details",
+    {
+      "4 mm": { metresPerKg: 100 },
+      "5 mm": { metresPerKg: 80 },
+      "6 mm": { metresPerKg: 40 },
+      "8 mm": { metresPerKg: 25 },
+      "10 mm": { metresPerKg: 15 },
+      "12 mm": { metresPerKg: 10 },
+      "14 mm": { metresPerKg: 8 },
+      "16 mm": { metresPerKg: 6 },
+      "18 mm": { metresPerKg: 5 },
+      "24 mm": { metresPerKg: 2 },
+    },
   ),
   rope(
     "white-polyester-rope",
@@ -69,9 +99,20 @@ export const ropes: RopeProduct[] = [
     "RP-WPE",
     "White",
     "Polyester",
-    "3 mm, 4 mm, 5 mm, 6 mm, 8 mm, 10 mm, 12 mm, 14 mm, 16 mm, 18 mm, 20 mm, 24 mm",
-    "3 mm: 120; 4 mm: 90; 5 mm: 75; 6 mm: 38; 8 mm: 23; 10 mm: 15; 12 mm: 10; 14 mm: 8; 16 mm: 6; 18 mm: 5; 20 mm: 4; 24 mm: 2.5",
-    "3–6 mm: 4 kg; 8 mm: 9.5 kg; 10 mm: 15 kg; 12 mm: 21.5 kg; 14 mm: 19 kg; 16 mm: 35 kg; 18 mm: 46 kg; 20 mm: 57 kg; 24 mm: 78 kg",
+    {
+      "3 mm": { metresPerKg: 120, coil220Kg: 4, coil40Kg: 0.3 },
+      "4 mm": { metresPerKg: 90, coil220Kg: 4 },
+      "5 mm": { metresPerKg: 75, coil220Kg: 4 },
+      "6 mm": { metresPerKg: 38, coil220Kg: 4, coil40Kg: 1 },
+      "8 mm": { metresPerKg: 23, coil220Kg: 9.5, coil40Kg: 1.5 },
+      "10 mm": { metresPerKg: 15, coil220Kg: 15, coil40Kg: 2.2 },
+      "12 mm": { metresPerKg: 10, coil220Kg: 21.5, coil40Kg: 2.5 },
+      "14 mm": { metresPerKg: 8, coil220Kg: 19, coil40Kg: 3.5 },
+      "16 mm": { metresPerKg: 6, coil220Kg: 35, coil40Kg: 6 },
+      "18 mm": { metresPerKg: 5, coil220Kg: 46 },
+      "20 mm": { metresPerKg: 4, coil220Kg: 57, coil40Kg: 7.5 },
+      "24 mm": { metresPerKg: 2.5, coil220Kg: 78 },
+    },
   ),
 ];
 

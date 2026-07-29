@@ -13,6 +13,11 @@ interface UniversalSelectorProps {
     values: string[];
   }[];
   onSelectionChange?: (selected: Record<string, string>) => void;
+  sizeDetails?: Record<string, {
+    metresPerKg: number;
+    coil220Kg?: number;
+    coil40Kg?: number;
+  }>;
 }
 
 /**
@@ -32,10 +37,12 @@ export default function UniversalSelector({
   productImage,
   variants,
   onSelectionChange,
+  sizeDetails,
 }: UniversalSelectorProps) {
   const [selected, setSelected] = useState<Record<string, string>>({});
 
   const allSelected = variants.every((v) => selected[v.title]);
+  const selectedSizeDetail = selected["Size"] ? sizeDetails?.[selected["Size"]] : undefined;
 
   const hasCapacityAndLength =
     variants.some((v) => v.title === "Capacity") &&
@@ -99,6 +106,32 @@ export default function UniversalSelector({
           </div>
         </div>
       ))}
+
+      {selectedSizeDetail && (
+        <div className="rounded-2xl border border-red-100 bg-red-50/60 p-4 sm:p-5">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-700">
+            {selected["Size"]} rope details
+          </p>
+          <dl className="mt-3 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-xl bg-white p-3 shadow-sm">
+              <dt className="text-xs font-medium text-gray-500">Metres per kilogram</dt>
+              <dd className="mt-1 text-lg font-bold text-gray-900">{selectedSizeDetail.metresPerKg} m/kg</dd>
+            </div>
+            {selectedSizeDetail.coil220Kg !== undefined && (
+              <div className="rounded-xl bg-white p-3 shadow-sm">
+                <dt className="text-xs font-medium text-gray-500">Approx. 220 m coil</dt>
+                <dd className="mt-1 text-lg font-bold text-gray-900">{selectedSizeDetail.coil220Kg} kg</dd>
+              </div>
+            )}
+            {selectedSizeDetail.coil40Kg !== undefined && (
+              <div className="rounded-xl bg-white p-3 shadow-sm">
+                <dt className="text-xs font-medium text-gray-500">Approx. 40 m coil</dt>
+                <dd className="mt-1 text-lg font-bold text-gray-900">{selectedSizeDetail.coil40Kg} kg</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+      )}
 
       {allSelected && (
         <div className="flex flex-wrap gap-3">
