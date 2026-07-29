@@ -142,7 +142,7 @@ export default function HeroBannerCarousel({
               alt=""
               fill
               sizes="100vw"
-              className="object-cover object-center sm:object-[center_25%]"
+              className="object-cover object-center sm:object-[center_10%]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-red-950/45" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-slate-950/30" />
