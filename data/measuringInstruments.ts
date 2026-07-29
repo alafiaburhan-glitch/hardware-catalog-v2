@@ -171,7 +171,7 @@ function instrumentGroupFor(name: string) {
   if (/(hardness|durometer|thickness.*coating|coating thickness|ultrasonic thickness|surface roughness|borescope|endoscope|fiberscope)/.test(value)) return "NDT & Material Testing";
   if (/(rule|ruler|straight edge|gauge block|radius gauge)/.test(value)) return "Rules, Blocks & Reference Gauges";
   if (/(level|protractor|angle|square)/.test(value)) return "Levels, Squares & Angle Measurement";
-  return "Other Precision Instruments";
+  throw new Error(`Unmapped measuring-instrument family: ${name}`);
 }
 
 const catalogImage = (name: string) => `/products/measuring-instruments/catalog/${name}.webp`;
@@ -207,7 +207,6 @@ function imageFor(name: string, brand: string, group: string) {
     "Environmental & Electronic Testers": "electronic-testers",
     "Rules, Blocks & Reference Gauges": "rules-blocks",
     "Stands & Holders": "stands-holders",
-    "Other Precision Instruments": "rules-blocks",
   };
   return animatedImage(imageByGroup[group] ?? "rules-blocks");
 }
