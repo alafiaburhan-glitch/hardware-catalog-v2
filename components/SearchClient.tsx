@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import ProductCard from "@/components/ProductCard";
 import { searchProducts } from "@/lib/productSearch";
+import { normalizeCategoryIdentifier } from "@/lib/categoryMatching";
 
 type Product = {
   id: string;
@@ -33,10 +34,16 @@ export default function SearchClient({ products = [], categories = [], initialQu
   const [selectedBrand, setSelectedBrand] = useState("all");
   const [visibleCount, setVisibleCount] = useState(24);
   const availableCategories = useMemo(() => {
-    const names = new Map(categories.map((category) => [category.slug, category.name]));
+    const names = new Map(
+      categories.map((category) => [
+        normalizeCategoryIdentifier(category.slug),
+        category.name,
+      ]),
+    );
     for (const product of products) {
-      if (product.category && !names.has(product.category)) {
-        names.set(product.category, product.category.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()));
+      const normalizedCategory = normalizeCategoryIdentifier(product.category);
+      if (normalizedCategory && !names.has(normalizedCategory)) {
+        names.set(normalizedCategory, normalizedCategory.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()));
       }
     }
     return [...names].map(([slug, name]) => ({ slug, name })).sort((a, b) => a.name.localeCompare(b.name));
@@ -61,7 +68,7 @@ export default function SearchClient({ products = [], categories = [], initialQu
     const productsInCategory = (products ?? []).filter((product) => {
       const brandValue = product.brand ?? product.specifications?.Brand ?? product.specifications?.brand ?? "";
       const matchesBrand = selectedBrand === "all" || brandValue.split(",").some((brand) => brand.trim().toLowerCase() === selectedBrand.toLowerCase());
-      return (selectedCategory === "all" || product.category?.toLowerCase() === selectedCategory.toLowerCase()) && matchesBrand;
+      return (selectedCategory === "all" || normalizeCategoryIdentifier(product.category) === selectedCategory) && matchesBrand;
     });
 
     return searchProducts(productsInCategory, query);

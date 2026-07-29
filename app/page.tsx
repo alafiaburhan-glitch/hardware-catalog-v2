@@ -22,7 +22,12 @@ export default async function HomePage() {
     supabase.from("products").select("id, name, code, image, slug, category, brand, description, specifications, featured").order("name"),
   ]);
 
-  const categories: CategorySummary[] = (categoryResult.data ?? []).filter((category) => category.slug?.trim());
+  const legacyEmerySlugs = new Set(["emery-paper", "emery-papers", "emery-roll", "emery-rolls"]);
+  const categories: CategorySummary[] = (categoryResult.data ?? []).filter(
+    (category) =>
+      category.slug?.trim() &&
+      !legacyEmerySlugs.has(category.slug.trim().toLowerCase()),
+  );
   const requiredCategories = localCategories;
   for (const category of requiredCategories) {
     if (!categories.some((item) => item.slug?.trim() === category.slug)) categories.push({ id: `local-${category.slug}`, ...category });

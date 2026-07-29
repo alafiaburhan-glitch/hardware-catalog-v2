@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import SearchClient from "@/components/SearchClient";
 import { getSearchCatalog } from "@/lib/searchCatalog";
+import localCategories from "@/data/categories";
 
 export const metadata: Metadata = {
   title: "Search Products",
@@ -29,6 +30,16 @@ export default async function SearchPage({
     .select("name, slug")
     .order("name");
 
+  const legacyEmerySlugs = new Set(["emery-paper", "emery-papers", "emery-roll", "emery-rolls"]);
+  const filterCategories = (categories ?? []).filter(
+    (category) => !legacyEmerySlugs.has(category.slug.trim().toLowerCase()),
+  );
+  for (const category of localCategories) {
+    if (!filterCategories.some((item) => item.slug === category.slug)) {
+      filterCategories.push(category);
+    }
+  }
+
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
       <div className="mb-10">
@@ -43,7 +54,7 @@ export default async function SearchPage({
 
       <SearchClient
         products={products}
-        categories={categories ?? []}
+        categories={filterCategories}
         initialQuery={q ?? ""}
       />
     </main>

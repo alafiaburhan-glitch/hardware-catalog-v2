@@ -1,5 +1,8 @@
 const categoryAliases: Record<string, string> = {
-  "emery-paper": "emery-papers",
+  "emery-paper": "emery-abrasives",
+  "emery-papers": "emery-abrasives",
+  "emery-roll": "emery-abrasives",
+  "emery-rolls": "emery-abrasives",
   "lifting-equipment": "lifting-equipments",
   "packing-material": "packaging-material",
 };

@@ -1,7 +1,6 @@
 const categories = [
   { name: "Agri Tools", slug: "agri-tools" },
-  { name: "Emery Paper", slug: "emery-papers" },
-  { name: "Emery Roll", slug: "emery-roll" },
+  { name: "Emery Abrasives", slug: "emery-abrasives" },
   { name: "Hand Tools", slug: "hand-tools" },
   { name: "Heat & Insulation", slug: "heat-insulation" },
   { name: "Hoses", slug: "hoses" },

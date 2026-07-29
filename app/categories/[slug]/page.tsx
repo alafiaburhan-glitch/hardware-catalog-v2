@@ -19,15 +19,10 @@ import { productBelongsToCategory } from "@/lib/categoryMatching";
 export const dynamic = "force-dynamic";
 
 const categorySeo: Record<string, { title: string; description: string }> = {
-  "emery-papers": {
-    title: "Emery Paper in Coimbatore",
+  "emery-abrasives": {
+    title: "Emery Abrasives Supplier in Coimbatore",
     description:
-      "Buy emery paper in Coimbatore from Noor Agencies. We supply industrial emery sheets for sanding, surface preparation, deburring, metal work and workshop use.",
-  },
-  "emery-roll": {
-    title: "Emery Roll Supplier in Coimbatore",
-    description:
-      "Noor Agencies supplies emery rolls in Coimbatore in multiple grit options for sanding, metal finishing, fabrication and workshop use.",
+      "Buy emery paper and emery rolls in Coimbatore from Noor Agencies. We supply industrial abrasives in multiple grit options for sanding, surface preparation, deburring, metal finishing and workshop use.",
   },
   "industrial-adhesives-sealants": {
     title: "Industrial Adhesives & Sealants Supplier in Coimbatore",
@@ -120,7 +115,11 @@ type Props = {
 };
 
 function normalizeCategorySlug(slug: string) {
-  return slug === "packing-material" ? "packaging-material" : slug;
+  if (slug === "packing-material") return "packaging-material";
+  if (["emery-paper", "emery-papers", "emery-roll", "emery-rolls"].includes(slug)) {
+    return "emery-abrasives";
+  }
+  return slug;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -133,7 +132,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments" || slug === "agri-tools" || slug === "ropes";
+  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments" || slug === "agri-tools" || slug === "ropes" || slug === "emery-abrasives";
   const categoryDoesNotExist = !categoryError || categoryError.code === "PGRST116";
   if (!category && !isLocalCategory && categoryDoesNotExist) {
     notFound();
@@ -220,7 +219,9 @@ export default async function CategoryPage({ params }: Props) {
           ? [...ropes, ...(databaseProducts ?? []).filter((product) => !ropes.some((catalogProduct) => catalogProduct.slug === product.slug))]
         : (databaseProducts ?? []));
 
-  const categoryName = category?.name ?? (slug === "pneumatic-brass-fittings"
+  const categoryName = category?.name ?? (slug === "emery-abrasives"
+    ? "Emery Abrasives"
+    : slug === "pneumatic-brass-fittings"
     ? "Pneumatic & Brass Fittings"
     : slug === "measuring-instruments"
       ? "Measuring Instruments"

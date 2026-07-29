@@ -41,10 +41,11 @@ export type FeaturedProduct = {
 };
 
 const categoryIcons: Record<string, string> = {
-  "emery-paper": "/category-icons/emery-papers.png",
-  "emery-papers": "/category-icons/emery-papers.png",
-  "emery-roll": "/category-icons/emery-roll.png",
-  "emery-rolls": "/category-icons/emery-roll.png",
+  "emery-abrasives": "/category-icons/emery-abrasives.png",
+  "emery-paper": "/category-icons/emery-abrasives.png",
+  "emery-papers": "/category-icons/emery-abrasives.png",
+  "emery-roll": "/category-icons/emery-abrasives.png",
+  "emery-rolls": "/category-icons/emery-abrasives.png",
   "hand-tools": "/category-icons/hand-tools.png",
   "power-tools": "/category-icons/power-tools.png",
   ropes: "/category-icons/ropes.png",
