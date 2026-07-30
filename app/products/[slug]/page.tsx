@@ -19,6 +19,7 @@ import { getLiftingEquipment, liftingEquipment } from "@/data/liftingEquipment";
 import { getRope, ropes } from "@/data/ropes";
 import AddToQuoteButton from "@/components/AddToQuoteButton";
 import ProductEngagement from "@/components/ProductEngagement";
+import { jsonLd } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +56,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const productUrl = `https://www.nooragencies.in/products/${slug}`;
   const title = `${catalogProduct.name} in Coimbatore`;
-  const description = `Buy ${catalogProduct.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
+  const suppliedDescription = "description" in catalogProduct ? catalogProduct.description : undefined;
+  const description = suppliedDescription
+    ? `${String(suppliedDescription).slice(0, 125).trim()} Contact Noor Agencies in Coimbatore for availability and a quote.`
+    : `Buy ${catalogProduct.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
 
   return {
     title,
@@ -79,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: productUrl,
     },
     twitter: {
-      card: "summary",
+      card: catalogProduct.image ? "summary_large_image" : "summary",
       title,
       description,
     },
@@ -390,11 +394,11 @@ export default async function ProductPage({ params }: Props) {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(productSchema) }}
       />
 
       {/* BREADCRUMB */}

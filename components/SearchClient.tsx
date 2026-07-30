@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import ProductCard from "@/components/ProductCard";
 import { searchProducts } from "@/lib/productSearch";
 import { normalizeCategoryIdentifier } from "@/lib/categoryMatching";
+import { trackEvent } from "@/lib/analytics";
 
 type Product = {
   id: string;
@@ -76,6 +77,21 @@ export default function SearchClient({ products = [], categories = [], initialQu
 
   const visibleProducts = filtered.slice(0, visibleCount);
 
+  useEffect(() => {
+    const normalizedQuery = query.trim().slice(0, 100);
+    const timer = window.setTimeout(() => {
+      if (normalizedQuery || selectedCategory !== "all" || selectedBrand !== "all") {
+        trackEvent("catalog_search", {
+          search_term: normalizedQuery || undefined,
+          category_filter: selectedCategory,
+          brand_filter: selectedBrand,
+          result_count: filtered.length,
+        });
+      }
+    }, 700);
+    return () => window.clearTimeout(timer);
+  }, [query, selectedBrand, selectedCategory, filtered.length]);
+
   return (
     <div>
       <div className="grid gap-3 mb-8 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_14rem_14rem]">
@@ -100,7 +116,11 @@ export default function SearchClient({ products = [], categories = [], initialQu
         </div>
         <select
           value={selectedCategory}
-          onChange={(e) => { setSelectedCategory(e.target.value); setVisibleCount(24); }}
+          onChange={(e) => {
+            setSelectedCategory(e.target.value);
+            setVisibleCount(24);
+            trackEvent("filter_change", { filter_type: "category", filter_value: e.target.value });
+          }}
           className="px-4 py-3 rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-800"
           aria-label="Filter by category"
         >
@@ -109,7 +129,11 @@ export default function SearchClient({ products = [], categories = [], initialQu
             <option key={cat.slug} value={cat.slug}>{cat.name}</option>
           ))}
         </select>
-        <select value={selectedBrand} onChange={(e) => { setSelectedBrand(e.target.value); setVisibleCount(24); }} className="px-4 py-3 rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-800" aria-label="Filter by brand">
+        <select value={selectedBrand} onChange={(e) => {
+          setSelectedBrand(e.target.value);
+          setVisibleCount(24);
+          trackEvent("filter_change", { filter_type: "brand", filter_value: e.target.value });
+        }} className="px-4 py-3 rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent text-gray-800" aria-label="Filter by brand">
           <option value="all">All Brands</option>
           {availableBrands.map((brand) => <option key={brand} value={brand}>{brand}</option>)}
         </select>
@@ -145,7 +169,10 @@ export default function SearchClient({ products = [], categories = [], initialQu
         </div>
       )}
       {visibleProducts.length < filtered.length && <div className="mt-10 text-center">
-        <button onClick={() => setVisibleCount((count) => count + 24)} className="rounded-2xl border-2 border-red-700 px-7 py-3 font-bold text-red-700 transition hover:bg-red-700 hover:text-white">Load 24 more</button>
+        <button onClick={() => {
+          setVisibleCount((count) => count + 24);
+          trackEvent("load_more_products", { visible_count: Math.min(visibleCount + 24, filtered.length), result_count: filtered.length });
+        }} className="rounded-2xl border-2 border-red-700 px-7 py-3 font-bold text-red-700 transition hover:bg-red-700 hover:text-white">Load 24 more</button>
         <p className="mt-2 text-xs text-slate-500">Showing {visibleProducts.length} of {filtered.length} matching products</p>
       </div>}
     </div>

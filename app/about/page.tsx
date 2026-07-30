@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Boxes, CheckCircle2, MapPin, MessageCircle, PackageSearch, ShieldCheck, Truck } from "lucide-react";
+import { jsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -41,7 +42,7 @@ export default function AboutPage() {
   };
 
   return <main className="bg-white">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(aboutSchema) }} />
 
     <section className="relative overflow-hidden bg-gradient-to-br from-red-800 via-red-700 to-slate-950 text-white">
       <div className="industrial-grid absolute inset-0 opacity-15" />

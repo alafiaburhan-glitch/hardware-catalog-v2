@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase-server";
 import localCategories from "@/data/categories";
 import { mergeSearchCatalog } from "@/lib/searchCatalog";
 import { siteFaqs } from "@/data/siteFaqs";
+import { jsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Noor Agencies | Industrial Hardware Supplier in Coimbatore",
@@ -52,7 +53,7 @@ export default async function HomePage() {
   };
 
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
     <HomePageClient categories={categories} products={products} totalProductCount={fullCatalog.length} />
   </>;
 }

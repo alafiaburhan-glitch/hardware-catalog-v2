@@ -1,6 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
+import { trackEvent } from "@/lib/analytics";
 
 interface Props {
   productName: string;
@@ -9,6 +10,7 @@ interface Props {
 
 export default function WhatsAppButton({ productName, productCode }: Props) {
   function handleClick() {
+    trackEvent("whatsapp_click", { location: "product_page", product_code: productCode });
     toast.success("Opening WhatsApp...", {
       description: `Enquiring about ${productName}`,
       duration: 3000,

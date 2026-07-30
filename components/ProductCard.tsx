@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { getCategoryIcon } from "@/lib/categoryIcons";
+import { trackEvent } from "@/lib/analytics";
 
 type ProductCardProps = {
   name: string;
@@ -26,7 +29,16 @@ export default function ProductCard({
   const displayImage = image?.trim() || pneumaticCatalogImage || getCategoryIcon(category);
 
   return (
-    <Link href={`/products/${slug || ""}`} className="block h-full group">
+    <Link
+      href={`/products/${slug || ""}`}
+      className="block h-full group"
+      onClick={() => trackEvent("select_product", {
+        product_name: name,
+        product_code: code,
+        category,
+        destination: `/products/${slug || ""}`,
+      })}
+    >
       <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-3xl">
         <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
           {displayImage ? (
