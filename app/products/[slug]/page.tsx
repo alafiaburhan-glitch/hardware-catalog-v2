@@ -17,6 +17,7 @@ import { getAgriTool, agriTools } from "@/data/agriTools";
 import { getPackingMaterial, packingMaterials } from "@/data/packingMaterials";
 import { getLiftingEquipment, liftingEquipment } from "@/data/liftingEquipment";
 import { getRope, ropes } from "@/data/ropes";
+import { getLadder, ladders } from "@/data/ladders";
 import AddToQuoteButton from "@/components/AddToQuoteButton";
 import ProductEngagement from "@/components/ProductEngagement";
 import { jsonLd } from "@/lib/site";
@@ -37,7 +38,7 @@ type RelatedProduct = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const localProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug);
+  const localProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
   const { data: databaseProduct } = localProduct
     ? { data: null }
     : await supabase.from("products").select("name, description, image, code, category").eq("slug", slug).single();
@@ -96,7 +97,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
-  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug);
+  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
   const { data: databaseProduct } = catalogProduct
     ? { data: null }
     : await supabase.from("products").select("*").eq("slug", slug).single();
@@ -121,6 +122,8 @@ export default async function ProductPage({ params }: Props) {
           ? liftingEquipment.filter((item) => item.slug !== slug).slice(0, 4)
         : product.category === "ropes"
           ? ropes.filter((item) => item.slug !== slug).slice(0, 4)
+        : product.category === "ladders-sections"
+          ? ladders.filter((item) => item.slug !== slug).slice(0, 4)
         : null;
   if (!relatedProducts) {
     const { data } = await supabase
@@ -161,6 +164,7 @@ export default async function ProductPage({ params }: Props) {
   const availableCapacities = parseComma(findKey("available capacity"));
   const availableLengths = parseComma(findKey("available length"));
   const availableOptions = parseComma(findKey("available options"));
+  const availableSteps = parseComma(findKey("available steps"));
   const weightKey = findKey("available weight") ?? findKey("available weights");
   const availableWeights = parseComma(weightKey);
   const availableBrands = parseComma(findKey("brand")) || [];
@@ -185,6 +189,7 @@ export default async function ProductPage({ params }: Props) {
     title: "GSM",
     values: availableGsms,
   });
+  if (availableSteps.length > 0) variants.push({ title: "Number of Steps", values: availableSteps });
   if (availableOptions.length > 0) variants.push({ title: "Option", values: availableOptions });
 
   const hiddenSpecKeys = new Set([
@@ -202,6 +207,7 @@ export default async function ProductPage({ params }: Props) {
     "available models",
     "available weight",
     "available weights",
+    "available steps",
     "instrument group",
     "catalog source",
     "catalog page",
