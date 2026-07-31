@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
@@ -16,14 +15,6 @@ const categoryLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const pathname = usePathname();
-
-  if (pathname !== "/") {
-    return <footer className="border-t border-red-100 bg-red-50/60 px-5 py-5 text-center text-xs text-slate-500">
-      <p>&copy; {currentYear} Noor Agencies. All rights reserved.</p>
-    </footer>;
-  }
-
   return <footer className="border-t border-red-100 bg-gradient-to-b from-red-50 via-white to-white text-slate-700">
     <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1.2fr] lg:py-16">
       <div>

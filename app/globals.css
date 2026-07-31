@@ -50,6 +50,11 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .navigation-progress { transition: opacity 160ms ease; }
   .route-loading-progress { animation-duration: 3s; }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-marquee-vertical {
+    animation-play-state: paused !important;
+  }
 }
 
 .industrial-grid {

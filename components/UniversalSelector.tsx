@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { MessageCircle, Minus, Plus } from "lucide-react";
 import AddToQuoteButton from "@/components/AddToQuoteButton";
 
 interface UniversalSelectorProps {
@@ -40,6 +41,7 @@ export default function UniversalSelector({
   sizeDetails,
 }: UniversalSelectorProps) {
   const [selected, setSelected] = useState<Record<string, string>>({});
+  const [quantity, setQuantity] = useState(1);
 
   const allSelected = variants.every((v) => selected[v.title]);
   const selectedSizeDetail = selected["Size"] ? sizeDetails?.[selected["Size"]] : undefined;
@@ -62,10 +64,13 @@ export default function UniversalSelector({
   }, [hasCapacityAndLength, onSelectionChange, selected]);
 
   function buildWhatsAppMessage() {
-    const lines = variants.map((v) => `${v.title}: ${selected[v.title]}`);
+    const lines = variants
+      .filter((variant) => selected[variant.title])
+      .map((variant) => `${variant.title}: ${selected[variant.title]}`);
     return (
       `Hi, I am interested in ${productName} (Code: ${productCode})\n\n` +
-      lines.join("\n")
+      (lines.length > 0 ? `${lines.join("\n")}\n` : "") +
+      `Quantity: ${quantity}\nPlease help me confirm the correct specification, availability and price.`
     );
   }
 
@@ -133,19 +138,31 @@ export default function UniversalSelector({
         </div>
       )}
 
-      {allSelected && (
-        <div className="flex flex-wrap gap-3">
-          <AddToQuoteButton productName={productName} productCode={productCode} productSlug={productSlug} productImage={productImage} variants={selected} />
+      <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
+        <div className="mb-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="font-bold text-slate-900">Request a quotation</p>
+            <p className="mt-1 text-sm text-slate-500">Choose the required specifications, then add the quantity.</p>
+          </div>
+          <div className="inline-flex shrink-0 items-center rounded-xl border border-slate-200 bg-white">
+            <button type="button" onClick={() => setQuantity((value) => Math.max(1, value - 1))} className="p-2.5 hover:bg-slate-100" aria-label="Decrease quantity"><Minus className="h-4 w-4" /></button>
+            <span className="min-w-9 text-center font-bold" aria-label={`Quantity ${quantity}`}>{quantity}</span>
+            <button type="button" onClick={() => setQuantity((value) => value + 1)} className="p-2.5 hover:bg-slate-100" aria-label="Increase quantity"><Plus className="h-4 w-4" /></button>
+          </div>
+        </div>
+        {!allSelected && <p className="mb-3 rounded-xl bg-amber-50 px-3 py-2 text-sm font-medium text-amber-800">Select {variants.filter((variant) => !selected[variant.title]).map((variant) => variant.title).join(", ")} to add this item to your quote.</p>}
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <AddToQuoteButton productName={productName} productCode={productCode} productSlug={productSlug} productImage={productImage} variants={selected} quantity={quantity} disabled={!allSelected} />
           <a
             href={`https://wa.me/919626652275?text=${encodeURIComponent(buildWhatsAppMessage())}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700"
+            className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-green-600 px-6 font-semibold text-white hover:bg-green-700"
           >
-            WhatsApp now
+            <MessageCircle className="h-5 w-5" /> Ask on WhatsApp
           </a>
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -2,8 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Counter from "@/components/Counter";
-import TrustSection from "@/components/TrustSection";
 import BrandsMarquee from "@/components/BrandsMarquee";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -188,94 +186,35 @@ export default function HomePageClient({ categories, products, totalProductCount
         </div>
       </motion.section>
 
-      {/* TRUST SECTION */}
+      {/* BUSINESS PROOF */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="bg-white border-t border-b"
+        className="border-y border-red-100 bg-gradient-to-br from-red-50 via-white to-slate-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white shadow-xl">
+              <Image src="/images/noor-agencies-office.webp" alt="Noor Agencies office and industrial hardware store in Coimbatore" width={900} height={650} className="aspect-[4/3] w-full object-cover" />
+              <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-slate-950/90 px-4 py-3 text-sm font-semibold text-white backdrop-blur">No. 21, Dr. Nanjappa Road, Coimbatore 641018</div>
+            </div>
             <div>
-              <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-3 text-xs sm:text-sm">
-                Trusted Across Industries
-              </p>
-              <div className="mb-4 flex items-baseline">
-                <Counter
-                  value={10}
-                  places={[10, 1]}
-                  fontSize={60}
-                  padding={5}
-                  gap={4}
-                  textColor="#b91c1c"
-                  fontWeight={800}
-                />
-                <span className="text-5xl sm:text-6xl font-extrabold text-red-700">+</span>
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-700">A supplier you can verify</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">A real Coimbatore store, backed by a working industrial catalogue.</h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">Browse specifications online, combine multiple products into one RFQ, and confirm current stock, pricing, GST and delivery details with our team.</p>
+              <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {[`${totalProductCount}+ products`, `${categories.length} categories`, "10+ years", "Mon–Sat, 9–7"].map((item) => <div key={item} className="rounded-2xl border border-red-100 bg-white px-4 py-4 text-center text-sm font-black text-slate-900 shadow-sm">{item}</div>)}
               </div>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Years of delivering trusted industrial hardware, lifting solutions,
-                ropes, tarpaulins, and safety products across industries.
-              </p>
+              <ul className="mt-7 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+                {["Specification-based quotations", "Bulk and business enquiries", "Supply enquiries across India", "Phone and WhatsApp support"].map((item) => <li key={item} className="flex items-center gap-2"><CheckCircle2 className="h-5 w-5 shrink-0 text-green-600" />{item}</li>)}
+              </ul>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link href="/about" className="rounded-xl bg-red-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-red-800">How ordering works</Link>
+                <Link href="/contact" className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-red-300 hover:text-red-700">Visit or contact us</Link>
+              </div>
             </div>
-            <TrustSection
-              productCount={totalProductCount}
-              categoryCount={categories.length}
-            />
-          </div>
-        </div>
-      </motion.section>
-
-      {/* ABOUT */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16"
-      >
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
-            <p className="text-red-700 font-semibold uppercase tracking-[0.3em] mb-3 text-xs sm:text-sm">
-              About Noor Agencies
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5">
-              Reliable Industrial Supply Partner
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
-              Noor Agencies has been serving industries with high-quality industrial
-              hardware products, ropes, lifting equipment, tarpaulins, cargo solutions,
-              and safety materials for over 10 years.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/about" className="inline-block bg-red-700 text-white px-5 py-3 rounded-xl font-semibold hover:bg-red-800 transition text-sm">
-                Read More
-              </Link>
-              <Link href="/contact" className="inline-block border border-gray-200 text-gray-700 px-5 py-3 rounded-xl font-semibold hover:border-red-300 hover:text-red-700 transition text-sm">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#dc2626_0%,#b91c1c_48%,#7f1d1d_100%)] p-7 text-white shadow-[0_28px_80px_rgba(127,29,29,0.24)] sm:p-10">
-            <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/15 blur-3xl" />
-            <div className="absolute -bottom-24 -left-16 h-52 w-52 rounded-full bg-red-950/25 blur-3xl" />
-            <h3 className="text-xl sm:text-2xl font-bold mb-5">Why Choose Us?</h3>
-            <ul className="space-y-3 sm:space-y-4 text-red-100">
-              {[
-                "Premium Quality Products",
-                "Trusted Industry Experience",
-                "Competitive Pricing",
-                "Reliable Customer Support",
-                "Fast Product Availability",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm sm:text-base">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-red-300" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </motion.section>

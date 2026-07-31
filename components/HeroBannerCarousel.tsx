@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   Clock3,
   MapPin,
   MessageCircle,
+  Pause,
+  Play,
   Phone,
   Sparkles,
 } from "lucide-react";
@@ -29,11 +31,14 @@ export default function HeroBannerCarousel({
   productCount: number;
 }) {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (paused || reduceMotion) return;
     const timer = window.setInterval(() => setActive((value) => (value + 1) % 3), INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [paused, reduceMotion]);
 
   const goTo = (index: number) => setActive((index + 3) % 3);
 
@@ -174,10 +179,14 @@ export default function HeroBannerCarousel({
       </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-slate-950/35 px-2 py-1.5 backdrop-blur-sm">
+      <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-slate-950/55 px-2 py-1.5 backdrop-blur-sm">
         {[0, 1, 2].map((index) => (
           <button type="button" key={index} onClick={() => goTo(index)} aria-label={`Show banner ${index + 1}`} aria-current={active === index ? "true" : undefined} className={`h-1.5 rounded-full transition-all ${active === index ? "w-4 bg-white/85" : "w-1.5 bg-white/35 hover:bg-white/55"}`} />
         ))}
+        <span className="mx-0.5 h-4 w-px bg-white/25" aria-hidden="true" />
+        <button type="button" onClick={() => setPaused((value) => !value)} className="rounded-full p-1 text-white/75 transition hover:bg-white/10 hover:text-white" aria-label={paused ? "Play banner rotation" : "Pause banner rotation"}>
+          {paused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
+        </button>
       </div>
     </section>
   );

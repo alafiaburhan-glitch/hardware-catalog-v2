@@ -89,8 +89,8 @@ export function QuoteProvider({ children }: { children: React.ReactNode }) {
 
   return <QuoteContext.Provider value={value}>
     {children}
-    {hydrated && items.length > 0 && <button type="button" onClick={() => setOpen(true)} className="fixed bottom-4 left-4 z-40 flex items-center gap-2 rounded-full bg-slate-950 px-4 py-3 text-sm font-bold text-white shadow-2xl transition hover:bg-red-800 sm:bottom-6 sm:left-6" aria-label={`Open quote list with ${items.length} items`}>
-      <ClipboardList className="h-5 w-5" /> Quote list <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-red-600 px-1.5 text-xs">{items.length}</span>
+    {hydrated && items.length > 0 && <button type="button" onClick={() => setOpen(true)} className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-3 z-40 flex h-12 items-center gap-2 rounded-full bg-slate-950 px-3 text-sm font-bold text-white shadow-2xl transition hover:bg-red-800 sm:bottom-6 sm:left-6 sm:h-auto sm:px-4 sm:py-3" aria-label={`Open quote list with ${items.length} items`}>
+      <ClipboardList className="h-5 w-5" /> <span className="hidden sm:inline">Quote list</span><span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-red-600 px-1.5 text-xs">{items.length}</span>
     </button>}
     {open && <div className="fixed inset-0 z-[100]">
       <button className="absolute inset-0 bg-black/45" onClick={() => setOpen(false)} aria-label="Close quote list" />

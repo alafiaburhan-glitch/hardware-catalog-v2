@@ -242,11 +242,11 @@ export default async function ProductPage({ params }: Props) {
         </span>
       </div>
       <p className="text-gray-600 leading-relaxed text-lg mb-8">{product.description}</p>
-      <p className="text-gray-600 leading-relaxed mb-8">
-        {product.name} is available from Noor Agencies in Coimbatore for
-        industrial, workshop, maintenance and bulk supply enquiries. Contact us
-        to confirm current stock, sizes, variants and pricing.
-      </p>
+      <div className="mb-8 grid gap-3 rounded-2xl border border-red-100 bg-red-50/60 p-4 text-sm text-slate-700 sm:grid-cols-3">
+        <div><p className="font-bold text-slate-950">Current availability</p><p className="mt-1">Confirmed when you request a quote.</p></div>
+        <div><p className="font-bold text-slate-950">Business enquiries</p><p className="mt-1">Bulk, workshop and maintenance supply.</p></div>
+        <div><p className="font-bold text-slate-950">Support hours</p><p className="mt-1">Monday–Saturday, 9:00 AM–7:00 PM.</p></div>
+      </div>
     </>
   );
 

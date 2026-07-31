@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import { searchProducts } from "@/lib/productSearch";
 import { normalizeCategoryIdentifier } from "@/lib/categoryMatching";
 import { trackEvent } from "@/lib/analytics";
+import { productBrandNames } from "@/lib/brandNormalization";
 
 type Product = {
   id: string;
@@ -54,12 +55,9 @@ export default function SearchClient({ products = [], categories = [], initialQu
     const brands = new Map<string, string>();
     for (const product of products) {
       const brandValue = product.brand ?? product.specifications?.Brand ?? product.specifications?.brand;
-      for (const brand of brandValue?.split(",") ?? []) {
-        const cleanBrand = brand.trim();
-        if (cleanBrand && cleanBrand.toLowerCase() !== "generic") {
-          const normalized = cleanBrand.toLowerCase();
-          if (!brands.has(normalized)) brands.set(normalized, cleanBrand);
-        }
+      for (const brand of productBrandNames(brandValue)) {
+        const normalized = brand.toLowerCase();
+        if (!brands.has(normalized)) brands.set(normalized, brand);
       }
     }
     return [...brands.values()].sort((a, b) => a.localeCompare(b));
@@ -68,7 +66,7 @@ export default function SearchClient({ products = [], categories = [], initialQu
   const filtered = useMemo(() => {
     const productsInCategory = (products ?? []).filter((product) => {
       const brandValue = product.brand ?? product.specifications?.Brand ?? product.specifications?.brand ?? "";
-      const matchesBrand = selectedBrand === "all" || brandValue.split(",").some((brand) => brand.trim().toLowerCase() === selectedBrand.toLowerCase());
+      const matchesBrand = selectedBrand === "all" || productBrandNames(brandValue).some((brand) => brand.toLowerCase() === selectedBrand.toLowerCase());
       return (selectedCategory === "all" || normalizeCategoryIdentifier(product.category) === selectedCategory) && matchesBrand;
     });
 

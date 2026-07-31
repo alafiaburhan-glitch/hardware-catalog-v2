@@ -58,7 +58,7 @@ function BrandCard({ brand, duplicate = false }: { brand: Brand; duplicate?: boo
           src={brand.logo}
           alt={duplicate ? "" : `${brand.name} logo`}
           fill
-          loading="eager"
+          loading="lazy"
           sizes="(max-width: 640px) 115px, 145px"
           className="object-contain"
         />

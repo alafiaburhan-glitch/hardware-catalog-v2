@@ -23,7 +23,7 @@ export default function FloatingWhatsApp() {
       onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="fixed bottom-4 right-4 z-50 flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden sm:bottom-6 sm:right-6"
+      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-3 z-50 flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden sm:bottom-6 sm:right-6"
       style={{
         height: "56px",
         width: hovered ? "180px" : "56px",

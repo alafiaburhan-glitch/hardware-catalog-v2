@@ -3,7 +3,7 @@
 import { ClipboardPlus } from "lucide-react";
 import { useQuote } from "@/components/QuoteProvider";
 
-export default function AddToQuoteButton({ productName, productCode, productSlug, productImage = null, variants = {}, disabled = false }: { productName: string; productCode: string; productSlug: string; productImage?: string | null; variants?: Record<string, string>; disabled?: boolean }) {
+export default function AddToQuoteButton({ productName, productCode, productSlug, productImage = null, variants = {}, quantity = 1, disabled = false }: { productName: string; productCode: string; productSlug: string; productImage?: string | null; variants?: Record<string, string>; quantity?: number; disabled?: boolean }) {
   const { addItem, openQuote } = useQuote();
-  return <button type="button" disabled={disabled} onClick={() => { addItem({ productName, productCode, productSlug, productImage, variants }); openQuote(); }} className="inline-flex h-14 w-64 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-red-700 px-6 text-base font-bold leading-none text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-slate-300"><ClipboardPlus className="h-5 w-5 shrink-0" /> Add to quote</button>;
+  return <button type="button" disabled={disabled} onClick={() => { addItem({ productName, productCode, productSlug, productImage, variants, quantity }); openQuote(); }} className="inline-flex h-14 w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-red-700 px-6 text-base font-bold leading-none text-white transition hover:bg-red-800 disabled:cursor-not-allowed disabled:bg-slate-300 sm:w-64"><ClipboardPlus className="h-5 w-5 shrink-0" /> Add to quote</button>;
 }
