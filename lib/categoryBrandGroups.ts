@@ -178,12 +178,14 @@ export const categoryBrandGroups: Record<string, CategoryBrand[]> = {
       name: "Anabond",
       slug: "anabond",
       description: "Gasket makers, threadlockers, retaining compounds, silicones, and instant adhesives.",
+      image: "/products/anabond.jpg",
       matchTerms: ["anabond", "ana-"],
     },
     {
       name: "M-Seal",
       slug: "m-seal",
       description: "Epoxy repair compounds and PVC, UPVC, and CPVC solvent cements.",
+      image: "/products/mseal family photo.jpg",
       matchTerms: ["m-seal", "mseal", "mse-"],
     },
     {

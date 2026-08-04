@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { trackEvent } from "@/lib/analytics";
+import { getProductFamilyImage } from "@/lib/productFamilyImages";
 
 type ProductCardProps = {
   name: string;
@@ -26,7 +27,8 @@ export default function ProductCard({
     category === "pneumatic-brass-fittings" && /^PBF-\d{3}$/.test(code)
       ? `/products/pneumatic-brass-fittings/${code.toLowerCase()}.webp`
       : undefined;
-  const displayImage = image?.trim() || pneumaticCatalogImage || getCategoryIcon(category);
+  const familyImage = getProductFamilyImage({ name, code, category, image });
+  const displayImage = familyImage || pneumaticCatalogImage || getCategoryIcon(category);
 
   return (
     <Link
@@ -48,7 +50,7 @@ export default function ProductCard({
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 520px) 50vw, 100vw"
               loading={eager ? "eager" : "lazy"}
-              className={`h-full w-full transition duration-700 group-hover:scale-105 ${category === "power-tools" || category === "measuring-instruments" ? "object-contain p-3" : image?.trim() || pneumaticCatalogImage ? "object-cover" : "object-contain p-5"}`}
+              className={`h-full w-full transition duration-700 group-hover:scale-105 ${category === "power-tools" || category === "measuring-instruments" ? "object-contain p-3" : familyImage || pneumaticCatalogImage ? "object-cover" : "object-contain p-5"}`}
             />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center bg-gray-50 px-4 text-center">

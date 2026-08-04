@@ -23,6 +23,7 @@ import AddToQuoteButton from "@/components/AddToQuoteButton";
 import ProductEngagement from "@/components/ProductEngagement";
 import { jsonLd } from "@/lib/site";
 import { getProductIndexingContent } from "@/lib/productIndexingContent";
+import { getProductFamilyImage } from "@/lib/productFamilyImages";
 
 export const dynamic = "force-dynamic";
 
@@ -45,7 +46,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? { data: null }
     : await supabase.from("products").select("name, description, image, code, category").eq("slug", slug).single();
 
-  const catalogProduct = localProduct ?? databaseProduct;
+  const rawCatalogProduct = localProduct ?? databaseProduct;
+  const catalogProduct = rawCatalogProduct
+    ? { ...rawCatalogProduct, image: getProductFamilyImage(rawCatalogProduct) }
+    : null;
   if (!catalogProduct) {
     return {
       title: "Product Not Found | Noor Agencies",
@@ -106,7 +110,10 @@ export default async function ProductPage({ params }: Props) {
   const { data: databaseProduct } = catalogProduct
     ? { data: null }
     : await supabase.from("products").select("*").eq("slug", slug).single();
-  const product = catalogProduct ?? databaseProduct;
+  const rawProduct = catalogProduct ?? databaseProduct;
+  const product = rawProduct
+    ? { ...rawProduct, image: getProductFamilyImage(rawProduct) }
+    : null;
   if (!product) {
     notFound();
   }
