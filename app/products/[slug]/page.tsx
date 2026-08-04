@@ -241,7 +241,7 @@ export default async function ProductPage({ params }: Props) {
       <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
         Product Details
       </p>
-      <h1 className="text-4xl font-bold mb-4">{product.name} in Coimbatore</h1>
+      <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
       <div className="mb-6">
         <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
           Code: {product.code}
