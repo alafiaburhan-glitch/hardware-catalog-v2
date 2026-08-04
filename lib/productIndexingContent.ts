@@ -5,6 +5,14 @@ type ProductIndexingContent = {
 };
 
 const productIndexingContent: Readonly<Record<string, ProductIndexingContent>> = {
+  "wesaf-premium-butane-gas": {
+    description:
+      "Wesaf Premium Butane Gas 225 g refill in Coimbatore for compatible gas torches, burners and workshop tools. Contact Noor Agencies for current availability.",
+    overview:
+      "Wesaf Premium Butane Gas is a 225 g refill can for compatible butane-powered torches, burners and workshop equipment. Noor Agencies supplies this workshop consumable from its store on Dr. Nanjappa Road in Coimbatore for professional maintenance, repair, fabrication and installation work.",
+    selectionGuide:
+      "Confirm that your tool is designed for a standard butane refill can and follow the tool manufacturer's refilling and safety instructions. Contact Noor Agencies to confirm current stock and compatibility before ordering.",
+  },
   "elephant-air-chuck": {
     description:
       "Elephant air chuck for connecting an air line to tyre valves during inflation in garages, workshops and vehicle service operations. Enquire in Coimbatore.",
