@@ -37,13 +37,6 @@ export default function AdminLayout({
             Categories
           </a>
 
-          <a
-            href="/admin/editors"
-            className="block px-4 py-3 rounded-xl hover:bg-white/10 transition"
-          >
-            Editors
-          </a>
-
         </nav>
 
       </aside>

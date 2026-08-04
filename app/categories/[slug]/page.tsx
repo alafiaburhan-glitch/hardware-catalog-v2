@@ -111,6 +111,21 @@ const categorySeo: Record<string, { title: string; description: string }> = {
   },
 };
 
+// These categories have bundled catalog data and remain valid even when their
+// optional Supabase category record is missing or temporarily unavailable.
+const localCategorySlugs = new Set([
+  "agri-tools",
+  "emery-abrasives",
+  "hand-tools",
+  "ladders-sections",
+  "lifting-equipments",
+  "measuring-instruments",
+  "packaging-material",
+  "pneumatic-brass-fittings",
+  "power-tools",
+  "ropes",
+]);
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -133,7 +148,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("slug", slug)
     .single();
 
-  const isLocalCategory = slug === "pneumatic-brass-fittings" || slug === "measuring-instruments" || slug === "agri-tools" || slug === "ropes" || slug === "ladders-sections" || slug === "emery-abrasives";
+  const isLocalCategory = localCategorySlugs.has(slug);
   const categoryDoesNotExist = !categoryError || categoryError.code === "PGRST116";
   if (!category && !isLocalCategory && categoryDoesNotExist) {
     notFound();
