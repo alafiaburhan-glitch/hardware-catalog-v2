@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/products/wesaf-premium-butane-gas",
+        destination: "/products/butane-gas",
+        permanent: true,
+      },
+      {
         source: "/products/emery-roll-36grit",
         destination: "/products/emery-roll",
         permanent: true,
