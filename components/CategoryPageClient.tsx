@@ -3,6 +3,7 @@
 import ProductCard from "@/components/ProductCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import Link from "next/link";
+import PowerToolsSectionNav from "@/components/PowerToolsSectionNav";
 
 type Product = {
   id: string;
@@ -64,6 +65,14 @@ export default function CategoryPageClient({
           </p>
         )}
       </div>
+
+      {slug === "power-tools" && (
+        <div className="mb-10 sm:mb-12">
+          <PowerToolsSectionNav
+            activeSection={categoryName.toLowerCase().includes("spare parts") ? "spare-parts" : "accessories"}
+          />
+        </div>
+      )}
 
       {initialProducts.length === 0 ? (
         <div className="rounded-3xl border border-red-100 bg-red-50/50 px-5 py-12 text-center sm:px-8 sm:py-16">
