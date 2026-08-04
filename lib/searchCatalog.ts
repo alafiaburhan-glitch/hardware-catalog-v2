@@ -7,6 +7,7 @@ import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
 import { ropes } from "@/data/ropes";
+import { localProducts as codeBackedProducts } from "@/data/localProducts";
 import { supabase } from "@/lib/supabase";
 
 export type CatalogSearchProduct = {
@@ -35,6 +36,7 @@ type DatabaseSearchProduct = {
 
 export function mergeSearchCatalog(databaseProducts: DatabaseSearchProduct[] = []): CatalogSearchProduct[] {
   const localProducts: CatalogSearchProduct[] = [
+    ...codeBackedProducts,
     ...handTools,
     ...powerTools,
     ...pneumaticBrassFittings,

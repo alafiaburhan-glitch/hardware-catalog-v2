@@ -18,6 +18,7 @@ import { getPackingMaterial, packingMaterials } from "@/data/packingMaterials";
 import { getLiftingEquipment, liftingEquipment } from "@/data/liftingEquipment";
 import { getRope, ropes } from "@/data/ropes";
 import { getLadder, ladders } from "@/data/ladders";
+import { getLocalProduct } from "@/data/localProducts";
 import AddToQuoteButton from "@/components/AddToQuoteButton";
 import ProductEngagement from "@/components/ProductEngagement";
 import { jsonLd } from "@/lib/site";
@@ -39,7 +40,7 @@ type RelatedProduct = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const localProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
+  const localProduct = getLocalProduct(slug) ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
   const { data: databaseProduct } = localProduct
     ? { data: null }
     : await supabase.from("products").select("name, description, image, code, category").eq("slug", slug).single();
@@ -101,7 +102,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
-  const catalogProduct = getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
+  const catalogProduct = getLocalProduct(slug) ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
   const { data: databaseProduct } = catalogProduct
     ? { data: null }
     : await supabase.from("products").select("*").eq("slug", slug).single();

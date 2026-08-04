@@ -9,6 +9,7 @@ import { handTools } from "@/data/handTools";
 import { powerTools } from "@/data/powerTools";
 import { liftingEquipment } from "@/data/liftingEquipment";
 import { ladders } from "@/data/ladders";
+import { localProducts } from "@/data/localProducts";
 import { normalizeCategorySlug } from "@/lib/categorySlugs";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -78,7 +79,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) ?? [];
 
   const knownProductUrls = new Set(productPages.map((product) => product.url));
-  const localProducts = [
+  const catalogProducts = [
+    ...localProducts,
     ...handTools,
     ...powerTools,
     ...pneumaticBrassFittings,
@@ -89,7 +91,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...ropes,
     ...ladders,
   ];
-  for (const product of localProducts) {
+  for (const product of catalogProducts) {
     const url = `${baseUrl}/products/${product.slug}`;
     if (!knownProductUrls.has(url)) {
       const image = product.image
