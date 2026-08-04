@@ -5,6 +5,7 @@ import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
 import { ropes } from "@/data/ropes";
+import { normalizeCategorySlug } from "@/lib/categorySlugs";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nooragencies.in";
@@ -44,33 +45,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const categoryPages =
-    categories?.filter((category) => category.slug?.trim()).map((category) => ({
-      url: `${baseUrl}/categories/${category.slug.trim()}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })) ?? [];
+  const categorySlugs = new Set(
+    categories
+      ?.map((category) => normalizeCategorySlug(category.slug ?? ""))
+      .filter(Boolean) ?? [],
+  );
+  for (const requiredCategory of [
+    "agri-tools",
+    "measuring-instruments",
+    "pneumatic-brass-fittings",
+  ]) {
+    categorySlugs.add(requiredCategory);
+  }
 
-  if (!categoryPages.some((category) => category.url.endsWith("/pneumatic-brass-fittings"))) {
-    categoryPages.push({
-      url: `${baseUrl}/categories/pneumatic-brass-fittings`,
+  const categoryPages: MetadataRoute.Sitemap = Array.from(categorySlugs).map((slug) => ({
+      url: `${baseUrl}/categories/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
-    });
-  }
-  if (!categoryPages.some((category) => category.url.endsWith("/measuring-instruments"))) {
-    categoryPages.push({
-      url: `${baseUrl}/categories/measuring-instruments`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    });
-  }
-  if (!categoryPages.some((category) => category.url.endsWith("/agri-tools"))) {
-    categoryPages.push({ url: `${baseUrl}/categories/agri-tools`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 });
-  }
+    }));
 
   const productPages =
     products?.filter((product) => product.slug?.trim()).map((product) => ({
@@ -85,6 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const url = `${baseUrl}/products/${product.slug}`;
     if (!knownProductUrls.has(url)) {
       productPages.push({ url, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 });
+      knownProductUrls.add(url);
     }
   }
 

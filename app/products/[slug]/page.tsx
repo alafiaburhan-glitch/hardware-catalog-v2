@@ -21,6 +21,7 @@ import { getLadder, ladders } from "@/data/ladders";
 import AddToQuoteButton from "@/components/AddToQuoteButton";
 import ProductEngagement from "@/components/ProductEngagement";
 import { jsonLd } from "@/lib/site";
+import { getProductIndexingContent } from "@/lib/productIndexingContent";
 
 export const dynamic = "force-dynamic";
 
@@ -57,10 +58,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const productUrl = `https://www.nooragencies.in/products/${slug}`;
   const title = `${catalogProduct.name} in Coimbatore`;
+  const indexingContent = getProductIndexingContent(slug);
   const suppliedDescription = "description" in catalogProduct ? catalogProduct.description : undefined;
-  const description = suppliedDescription
-    ? `${String(suppliedDescription).slice(0, 125).trim()} Contact Noor Agencies in Coimbatore for availability and a quote.`
-    : `Buy ${catalogProduct.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`;
+  const description = indexingContent?.description ?? (suppliedDescription
+    ? String(suppliedDescription).trim()
+    : `Buy ${catalogProduct.name} in Coimbatore from Noor Agencies. Contact us for availability, bulk enquiries and industrial hardware supply.`
+  );
 
   return {
     title,
@@ -105,6 +108,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) {
     notFound();
   }
+  const indexingContent = getProductIndexingContent(slug);
 
   let relatedProducts: RelatedProduct[] | null = product.category === "hand-tools"
     ? handTools.filter((item) => item.slug !== slug).slice(0, 4)
@@ -241,7 +245,7 @@ export default async function ProductPage({ params }: Props) {
           Code: {product.code}
         </span>
       </div>
-      <p className="text-gray-600 leading-relaxed text-lg mb-8">{product.description}</p>
+      <p className="text-gray-600 leading-relaxed text-lg mb-8">{indexingContent?.description ?? product.description}</p>
       <div className="mb-8 grid gap-3 rounded-2xl border border-red-100 bg-red-50/60 p-4 text-sm text-slate-700 sm:grid-cols-3">
         <div><p className="font-bold text-slate-950">Current availability</p><p className="mt-1">Confirmed when you request a quote.</p></div>
         <div><p className="font-bold text-slate-950">Business enquiries</p><p className="mt-1">Bulk, workshop and maintenance supply.</p></div>
@@ -253,6 +257,15 @@ export default async function ProductPage({ params }: Props) {
   const detailsBottom = (
     <>
       {/* QUICK INFO */}
+      {indexingContent && (
+        <section className="mb-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-slate-950">About {product.name}</h2>
+          <p className="mt-3 leading-7 text-slate-700">{indexingContent.overview}</p>
+          <h3 className="mt-6 text-lg font-bold text-slate-950">Choosing the right option</h3>
+          <p className="mt-2 leading-7 text-slate-700">{indexingContent.selectionGuide}</p>
+        </section>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 mt-8">
         {product.material && (
           <div className="border rounded-2xl p-4">
@@ -376,35 +389,12 @@ export default async function ProductPage({ params }: Props) {
   ],
 }
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.name,
-    sku: product.code,
-    description: product.description,
-    category: product.category.replace(/-/g, " "),
-    url: `https://www.nooragencies.in/products/${product.slug}`,
-    image: product.image
-      ? product.image.startsWith("http")
-        ? product.image
-        : `https://www.nooragencies.in${product.image}`
-      : undefined,
-    brand: product.brand ? { "@type": "Brand", name: product.brand } : undefined,
-    additionalProperty: Object.entries(specs)
-      .filter(([key]) => isPublicSpecification(key))
-      .map(([name, value]) => ({ "@type": "PropertyValue", name, value: String(value) })),
-  };
-
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(productSchema) }}
       />
 
       {/* BREADCRUMB */}

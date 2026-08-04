@@ -16,6 +16,7 @@ import { liftingEquipment } from "@/data/liftingEquipment";
 import { ropes } from "@/data/ropes";
 import { ladders } from "@/data/ladders";
 import { productBelongsToCategory } from "@/lib/categoryMatching";
+import { normalizeCategorySlug } from "@/lib/categorySlugs";
 
 export const dynamic = "force-dynamic";
 
@@ -129,14 +130,6 @@ const localCategorySlugs = new Set([
 type Props = {
   params: Promise<{ slug: string }>;
 };
-
-function normalizeCategorySlug(slug: string) {
-  if (slug === "packing-material") return "packaging-material";
-  if (["emery-paper", "emery-papers", "emery-roll", "emery-rolls"].includes(slug)) {
-    return "emery-abrasives";
-  }
-  return slug;
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug: rawSlug } = await params;
