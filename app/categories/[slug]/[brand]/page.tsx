@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { consolidateProductFamilies } from "@/lib/productFamilies";
 import BrandProductsClient from "@/components/BrandProductsClient";
 import { getCategoryBrand, productMatchesBrand } from "@/lib/categoryBrandGroups";
 import { handTools } from "@/data/handTools";
@@ -89,7 +90,7 @@ export default async function BrandPage({ params }: Props) {
   const { data: allDatabaseProducts } = await supabase
     .from("products")
     .select("*");
-  const databaseProducts = (allDatabaseProducts ?? []).filter((product) =>
+  const databaseProducts = consolidateProductFamilies(allDatabaseProducts ?? []).filter((product) =>
     productBelongsToCategory(product.category, {
       id: category?.id,
       name: category?.name,

@@ -6,7 +6,7 @@ import ProductImageLightbox from "@/components/ProductImageLightbox";
 import ProductDetailClient from "@/components/ProductDetailClient";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getHandTool, handTools } from "@/data/handTools";
 import { getPowerTool, powerTools, type PowerToolModel } from "@/data/powerTools";
 import BrandModelSelector from "@/components/BrandModelSelector";
@@ -24,6 +24,7 @@ import ProductEngagement from "@/components/ProductEngagement";
 import { jsonLd } from "@/lib/site";
 import { getProductIndexingContent } from "@/lib/productIndexingContent";
 import { getProductFamilyImage } from "@/lib/productFamilyImages";
+import { canonicalProductSlug, consolidateProductFamilies } from "@/lib/productFamilies";
 
 export const dynamic = "force-dynamic";
 
@@ -40,13 +41,16 @@ type RelatedProduct = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug: requestedSlug } = await params;
+  const slug = canonicalProductSlug(requestedSlug);
   const localProduct = getLocalProduct(slug) ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
   const { data: databaseProduct } = localProduct
     ? { data: null }
     : await supabase.from("products").select("name, description, image, code, category").eq("slug", slug).single();
 
-  const rawCatalogProduct = localProduct ?? databaseProduct;
+  const rawCatalogProduct = localProduct ?? (databaseProduct
+    ? consolidateProductFamilies([databaseProduct])[0]
+    : null);
   const catalogProduct = rawCatalogProduct
     ? { ...rawCatalogProduct, image: getProductFamilyImage(rawCatalogProduct) }
     : null;
@@ -104,13 +108,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 export default async function ProductPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug: requestedSlug } = await params;
+  const slug = canonicalProductSlug(requestedSlug);
+
+  if (requestedSlug !== slug) {
+    permanentRedirect(`/products/${slug}`);
+  }
 
   const catalogProduct = getLocalProduct(slug) ?? getHandTool(slug) ?? getPowerTool(slug) ?? getPneumaticBrassFitting(slug) ?? getMeasuringInstrument(slug) ?? getAgriTool(slug) ?? getPackingMaterial(slug) ?? getLiftingEquipment(slug) ?? getRope(slug) ?? getLadder(slug);
   const { data: databaseProduct } = catalogProduct
     ? { data: null }
     : await supabase.from("products").select("*").eq("slug", slug).single();
-  const rawProduct = catalogProduct ?? databaseProduct;
+  const rawProduct = catalogProduct ?? (databaseProduct
+    ? consolidateProductFamilies([databaseProduct])[0]
+    : null);
   const product = rawProduct
     ? { ...rawProduct, image: getProductFamilyImage(rawProduct) }
     : null;
@@ -144,8 +155,10 @@ export default async function ProductPage({ params }: Props) {
       .select("id, name, code, image, slug")
       .eq("category", product.category)
       .neq("slug", slug)
-      .limit(4);
-    relatedProducts = data;
+      .limit(8);
+    relatedProducts = consolidateProductFamilies(data ?? [])
+      .filter((item) => item.slug !== slug)
+      .slice(0, 4) as RelatedProduct[];
   }
 
   const specs = product.specifications ?? {};

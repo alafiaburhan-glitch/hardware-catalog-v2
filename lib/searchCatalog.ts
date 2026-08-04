@@ -9,6 +9,7 @@ import { packingMaterials } from "@/data/packingMaterials";
 import { ropes } from "@/data/ropes";
 import { localProducts as codeBackedProducts } from "@/data/localProducts";
 import { supabase } from "@/lib/supabase";
+import { consolidateProductFamilies } from "@/lib/productFamilies";
 
 export type CatalogSearchProduct = {
   id: string;
@@ -48,7 +49,7 @@ export function mergeSearchCatalog(databaseProducts: DatabaseSearchProduct[] = [
 
   const productsBySlug = new Map(localProducts.map((product) => [product.slug, product]));
 
-  for (const product of databaseProducts) {
+  for (const product of consolidateProductFamilies(databaseProducts)) {
     if (!product.slug || !product.name) continue;
     productsBySlug.set(product.slug, {
       id: String(product.id),

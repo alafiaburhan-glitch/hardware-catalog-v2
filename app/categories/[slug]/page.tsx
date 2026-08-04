@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { consolidateProductFamilies } from "@/lib/productFamilies";
 import CategoryPageClient from "@/components/CategoryPageClient";
 import BrandCategoryClient from "@/components/BrandCategoryClient";
 import { getCategoryBrands, productMatchesBrand } from "@/lib/categoryBrandGroups";
@@ -195,7 +196,7 @@ export default async function CategoryPage({ params }: Props) {
   const { data: allDatabaseProducts } = await supabase
     .from("products")
     .select("*");
-  const databaseProducts = (allDatabaseProducts ?? []).filter((product) =>
+  const databaseProducts = consolidateProductFamilies(allDatabaseProducts ?? []).filter((product) =>
     productBelongsToCategory(product.category, {
       id: category?.id,
       name: category?.name,

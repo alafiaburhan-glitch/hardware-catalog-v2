@@ -11,6 +11,7 @@ import { liftingEquipment } from "@/data/liftingEquipment";
 import { ladders } from "@/data/ladders";
 import { localProducts } from "@/data/localProducts";
 import { normalizeCategorySlug } from "@/lib/categorySlugs";
+import { canonicalProductSlug } from "@/lib/productFamilies";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nooragencies.in";
@@ -70,13 +71,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
+  const databaseProductSlugs = Array.from(new Set(
+    products?.map((product) => canonicalProductSlug(product.slug?.trim() ?? "")).filter(Boolean) ?? [],
+  ));
   const productPages: MetadataRoute.Sitemap =
-    products?.filter((product) => product.slug?.trim()).map((product) => ({
-      url: `${baseUrl}/products/${product.slug.trim()}`,
+    databaseProductSlugs.map((slug) => ({
+      url: `${baseUrl}/products/${slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
-    })) ?? [];
+    }));
 
   const knownProductUrls = new Set(productPages.map((product) => product.url));
   const catalogProducts = [
