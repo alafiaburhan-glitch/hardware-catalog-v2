@@ -197,7 +197,7 @@ export default function HomePageClient({ categories, products, totalProductCount
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
             <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white shadow-xl">
-              <Image src="/images/noor-agencies-office.webp" alt="Noor Agencies office and industrial hardware store in Coimbatore" width={900} height={650} className="aspect-[4/3] w-full object-cover" />
+              <Image src="/images/noor-agencies-office.webp" alt="Noor Agencies office and industrial hardware store in Coimbatore" width={900} height={650} className="aspect-[4/3] w-full object-cover object-[center_42%]" />
               <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-slate-950/90 px-4 py-3 text-sm font-semibold text-white backdrop-blur">No. 21, Dr. Nanjappa Road, Coimbatore 641018</div>
             </div>
             <div>
