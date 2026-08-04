@@ -23,8 +23,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/products/butane-gas",
-        destination: "/products/wesaf-premium-butane-gas",
+        source: "/products/wesaf-premium-butane-gas",
+        destination: "/products/butane-gas",
         permanent: true,
       },
       {

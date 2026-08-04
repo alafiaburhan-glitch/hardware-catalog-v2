@@ -22,19 +22,19 @@ export type LocalProduct = {
 // is removed or temporarily unavailable.
 export const localProducts: LocalProduct[] = [
   {
-    id: "local-wesaf-premium-butane-gas",
-    name: "Wesaf Premium Butane Gas",
+    id: "local-butane-gas",
+    name: "Butane Gas",
     code: "WES-BUTANE",
-    slug: "wesaf-premium-butane-gas",
+    slug: "butane-gas",
     category: "lubricants-sealants",
     description:
-      "Wesaf Premium Butane Gas is a 225 g refill for compatible butane-powered torches, burners and workshop tools. Contact Noor Agencies in Coimbatore for current availability.",
+      "Butane Gas 225 g refill for compatible butane-powered torches, burners and workshop tools. Contact Noor Agencies in Coimbatore for current availability.",
     image: "/products/web-catalog/wesaf-butane.jpg",
     brand: "Wesaf",
     material: "Premium butane gas refill",
     size: "225 g",
     weight: "225 g",
-    box_contents: "1 Wesaf Premium Butane Gas refill can",
+    box_contents: "1 Butane Gas refill can",
     datasheet_url: "",
     featured: false,
     size_images: {},
