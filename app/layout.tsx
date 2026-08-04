@@ -12,6 +12,7 @@ import JourneyAnalytics from "@/components/JourneyAnalytics";
 import { Toaster } from "sonner";
 import { QuoteProvider } from "@/components/QuoteProvider";
 import { jsonLd, SITE_NAME, SITE_URL } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -164,6 +165,7 @@ export default function RootLayout({
             },
           }}
         />
+        <Analytics />
       </body>
     </html>
   );
