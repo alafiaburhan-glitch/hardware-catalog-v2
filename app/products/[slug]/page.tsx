@@ -56,9 +56,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const productUrl = `https://www.nooragencies.in/products/${slug}`;
+  const canonicalSlug = "slug" in catalogProduct && catalogProduct.slug ? catalogProduct.slug : slug;
+  const productUrl = `https://www.nooragencies.in/products/${canonicalSlug}`;
   const title = `${catalogProduct.name} in Coimbatore`;
-  const indexingContent = getProductIndexingContent(slug);
+  const indexingContent = getProductIndexingContent(slug, catalogProduct);
   const suppliedDescription = "description" in catalogProduct ? catalogProduct.description : undefined;
   const description = indexingContent?.description ?? (suppliedDescription
     ? String(suppliedDescription).trim()
@@ -108,7 +109,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) {
     notFound();
   }
-  const indexingContent = getProductIndexingContent(slug);
+  const indexingContent = getProductIndexingContent(slug, product);
 
   let relatedProducts: RelatedProduct[] | null = product.category === "hand-tools"
     ? handTools.filter((item) => item.slug !== slug).slice(0, 4)
@@ -239,7 +240,7 @@ export default async function ProductPage({ params }: Props) {
       <p className="text-red-700 font-semibold uppercase tracking-[0.2em] mb-3">
         Product Details
       </p>
-      <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+      <h1 className="text-4xl font-bold mb-4">{product.name} in Coimbatore</h1>
       <div className="mb-6">
         <span className="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold">
           Code: {product.code}
@@ -389,12 +390,36 @@ export default async function ProductPage({ params }: Props) {
   ],
 }
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `https://www.nooragencies.in/products/${product.slug}#product`,
+    name: product.name,
+    sku: product.code,
+    url: `https://www.nooragencies.in/products/${product.slug}`,
+    description: indexingContent?.description ?? product.description,
+    category: product.category.replace(/-/g, " "),
+    image: product.image
+      ? product.image.startsWith("http")
+        ? product.image
+        : `https://www.nooragencies.in${product.image}`
+      : undefined,
+    brand: product.brand ? { "@type": "Brand", name: product.brand } : undefined,
+    additionalProperty: Object.entries(specs)
+      .filter(([key]) => isPublicSpecification(key))
+      .map(([name, value]) => ({ "@type": "PropertyValue", name, value: String(value) })),
+  };
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(productSchema) }}
       />
 
       {/* BREADCRUMB */}

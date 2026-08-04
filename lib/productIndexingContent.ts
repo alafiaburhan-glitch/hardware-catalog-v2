@@ -4,6 +4,15 @@ type ProductIndexingContent = {
   selectionGuide: string;
 };
 
+type ProductForIndexing = {
+  name: string;
+  description?: string | null;
+  category?: string | null;
+  brand?: string | null;
+  material?: string | null;
+  specifications?: Record<string, unknown> | null;
+};
+
 const productIndexingContent: Readonly<Record<string, ProductIndexingContent>> = {
   "wesaf-premium-butane-gas": {
     description:
@@ -63,6 +72,50 @@ const productIndexingContent: Readonly<Record<string, ProductIndexingContent>> =
   },
 };
 
-export function getProductIndexingContent(slug: string) {
-  return productIndexingContent[slug];
+function readableCategory(category?: string | null) {
+  return (category || "industrial hardware").replace(/-/g, " ");
+}
+
+function specification(product: ProductForIndexing, ...names: string[]) {
+  const entries = Object.entries(product.specifications ?? {});
+  const match = entries.find(([key]) => names.some((name) => key.toLowerCase() === name.toLowerCase()));
+  return match?.[1] ? String(match[1]).trim() : "";
+}
+
+export function getProductIndexingContent(slug: string, product?: ProductForIndexing | null): ProductIndexingContent | undefined {
+  const curated = productIndexingContent[slug];
+  if (curated || !product) return curated;
+
+  const category = readableCategory(product.category);
+  const brand = product.brand || specification(product, "Brand");
+  const application = specification(product, "Application", "Suitable For");
+  const type = specification(product, "Type", "Product Type") || product.material || "";
+  const options = specification(
+    product,
+    "Available Options",
+    "Available Sizes",
+    "Available Size",
+    "Available Capacity",
+    "Available Length",
+    "Available Grit",
+  );
+
+  const suppliedDescription = product.description?.trim();
+  const description = suppliedDescription && /coimbatore/i.test(suppliedDescription)
+    ? suppliedDescription
+    : `${product.name} supplier in Coimbatore for industrial, workshop and commercial requirements. Contact Noor Agencies for current availability and a quotation.`;
+
+  const details = [
+    brand ? `Available brand: ${brand}.` : "",
+    type && type.toLowerCase() !== product.name.toLowerCase() ? `Product type: ${type}.` : "",
+    application ? `Typical applications include ${application.charAt(0).toLowerCase()}${application.slice(1)}.` : "",
+  ].filter(Boolean).join(" ");
+
+  return {
+    description,
+    overview: `${product.name} is part of our ${category} range supplied from Noor Agencies in Coimbatore. ${details || "It is intended for professional maintenance, repair, fabrication, installation or general industrial use."}`,
+    selectionGuide: options
+      ? `Available selections include ${options}. Confirm the required size, model, material or capacity for your application and contact Noor Agencies for current stock.`
+      : `Confirm the required specification, size, material and intended application before ordering. Noor Agencies can help identify a suitable option and confirm current stock in Coimbatore.`,
+  };
 }

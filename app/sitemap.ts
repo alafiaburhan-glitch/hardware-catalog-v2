@@ -5,6 +5,10 @@ import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
 import { ropes } from "@/data/ropes";
+import { handTools } from "@/data/handTools";
+import { powerTools } from "@/data/powerTools";
+import { liftingEquipment } from "@/data/liftingEquipment";
+import { ladders } from "@/data/ladders";
 import { normalizeCategorySlug } from "@/lib/categorySlugs";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -65,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
-  const productPages =
+  const productPages: MetadataRoute.Sitemap =
     products?.filter((product) => product.slug?.trim()).map((product) => ({
       url: `${baseUrl}/products/${product.slug.trim()}`,
       lastModified: new Date(),
@@ -74,10 +78,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) ?? [];
 
   const knownProductUrls = new Set(productPages.map((product) => product.url));
-  for (const product of [...pneumaticBrassFittings, ...measuringInstruments, ...agriTools, ...packingMaterials, ...ropes]) {
+  const localProducts = [
+    ...handTools,
+    ...powerTools,
+    ...pneumaticBrassFittings,
+    ...measuringInstruments,
+    ...agriTools,
+    ...packingMaterials,
+    ...liftingEquipment,
+    ...ropes,
+    ...ladders,
+  ];
+  for (const product of localProducts) {
     const url = `${baseUrl}/products/${product.slug}`;
     if (!knownProductUrls.has(url)) {
-      productPages.push({ url, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 });
+      const image = product.image
+        ? product.image.startsWith("http") ? product.image : `${baseUrl}${product.image}`
+        : undefined;
+      productPages.push({
+        url,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        images: image ? [image] : undefined,
+      });
       knownProductUrls.add(url);
     }
   }
