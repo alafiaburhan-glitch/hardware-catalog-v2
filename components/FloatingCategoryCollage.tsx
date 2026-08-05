@@ -8,8 +8,8 @@ const categories = [
   { name: "Tarpaulins", slug: "tarpaulins" },
   { name: "Safety", slug: "safety-products" },
   { name: "Power Tools", slug: "power-tools" },
-  { name: "Lifting", slug: "lifting-equipment" },
-  { name: "Adhesives", slug: "industrial-adhesives" },
+  { name: "Lifting", slug: "lifting-equipments" },
+  { name: "Adhesives", slug: "industrial-adhesives-sealants" },
 ];
 
 export default function FloatingCategoryCollage() {

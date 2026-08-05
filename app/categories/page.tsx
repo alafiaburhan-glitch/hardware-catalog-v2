@@ -3,6 +3,7 @@ import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import type { Metadata } from "next";
 import localCategories from "@/data/categories";
+import { normalizeCategorySlug } from "@/lib/categorySlugs";
 
 export const metadata: Metadata = {
   title: "Industrial Hardware Product Categories in Coimbatore",
@@ -63,10 +64,12 @@ export default async function CategoriesPage() {
     .select("*")
     .order("name");
 
-  const legacyEmerySlugs = new Set(["emery-paper", "emery-papers", "emery-roll", "emery-rolls"]);
-  const allCategories = (categories ?? []).filter(
-    (category) => !legacyEmerySlugs.has(category.slug?.trim().toLowerCase()),
-  );
+  const allCategories = (categories ?? []).reduce<NonNullable<typeof categories>>((canonicalCategories, category) => {
+    const slug = normalizeCategorySlug(category.slug?.trim().toLowerCase() ?? "");
+    if (!slug || canonicalCategories.some((item) => item.slug === slug)) return canonicalCategories;
+    canonicalCategories.push({ ...category, slug });
+    return canonicalCategories;
+  }, []);
   for (const category of localCategories) {
     if (!allCategories.some((item) => item.slug?.trim() === category.slug)) {
       allCategories.push({ id: `local-${category.slug}`, ...category });

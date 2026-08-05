@@ -23,6 +23,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/categories/industrial-adhesives",
+        destination: "/categories/industrial-adhesives-sealants",
+        permanent: true,
+      },
+      {
+        source: "/categories/ladders",
+        destination: "/categories/ladders-sections",
+        permanent: true,
+      },
+      {
+        source: "/categories/lifting-equipment",
+        destination: "/categories/lifting-equipments",
+        permanent: true,
+      },
+      {
+        source: "/categories/packing-material",
+        destination: "/categories/packaging-material",
+        permanent: true,
+      },
+      {
         source: "/products/wesaf-premium-butane-gas",
         destination: "/products/butane-gas",
         permanent: true,

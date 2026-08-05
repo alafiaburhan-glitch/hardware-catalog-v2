@@ -3,6 +3,9 @@ const CATEGORY_SLUG_ALIASES: Readonly<Record<string, string>> = {
   "emery-papers": "emery-abrasives",
   "emery-roll": "emery-abrasives",
   "emery-rolls": "emery-abrasives",
+  "industrial-adhesives": "industrial-adhesives-sealants",
+  "ladders": "ladders-sections",
+  "lifting-equipment": "lifting-equipments",
   "packing-material": "packaging-material",
 };
 
