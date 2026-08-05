@@ -16,6 +16,17 @@ export const metadata: Metadata = {
   },
 };
 
+const featuredProductSlugs = [
+  "wd-40",
+  "loctite-243",
+  "emery-roll",
+  "pvc-suction-hose",
+  "webbing-sling",
+  "hdpe-tarpaulin",
+  "duct-tape",
+  "telescopic-ladder-15-step",
+];
+
 export default async function HomePage() {
   const supabase = await createClient();
   const [categoryResult, productResult] = await Promise.all([
@@ -37,7 +48,11 @@ export default async function HomePage() {
 
   const databaseProducts = productResult.data ?? [];
   const fullCatalog = mergeSearchCatalog(databaseProducts);
-  let products: FeaturedProduct[] = databaseProducts.filter((product) => product.featured && product.slug?.trim()).slice(0, 8);
+  const catalogBySlug = new Map(fullCatalog.map((product) => [product.slug, product]));
+  let products: FeaturedProduct[] = featuredProductSlugs.flatMap((slug) => {
+    const product = catalogBySlug.get(slug);
+    return product ? [product] : [];
+  });
   if (products.length === 0) {
     products = fullCatalog.slice(0, 8);
   }
