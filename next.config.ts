@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/categories/tarpaulins",
+        destination: "/categories/tarpaulins",
+        permanent: true,
+      },
+      {
         source: "/products/wesaf-premium-butane-gas",
         destination: "/products/butane-gas",
         permanent: true,

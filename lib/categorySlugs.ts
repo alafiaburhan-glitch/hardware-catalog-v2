@@ -7,6 +7,7 @@ const CATEGORY_SLUG_ALIASES: Readonly<Record<string, string>> = {
   "ladders": "ladders-sections",
   "lifting-equipment": "lifting-equipments",
   "packing-material": "packaging-material",
+  "tarpaulins": "tarpaulins",
 };
 
 export function normalizeCategorySlug(slug: string) {
