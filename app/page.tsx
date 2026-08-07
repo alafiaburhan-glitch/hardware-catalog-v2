@@ -31,7 +31,7 @@ export default async function HomePage() {
   const supabase = await createClient();
   const [categoryResult, productResult] = await Promise.all([
     supabase.from("categories").select("id, name, slug").order("name"),
-    supabase.from("products").select("id, name, code, image, slug, category, brand, description, specifications, featured").order("name"),
+    supabase.from("products").select("id, name, code, image, slug, category, description, specifications, featured").order("name"),
   ]);
 
   const legacyEmerySlugs = new Set(["emery-paper", "emery-papers", "emery-roll", "emery-rolls"]);
