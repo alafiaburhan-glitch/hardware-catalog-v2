@@ -49,13 +49,22 @@ export default async function HomePage() {
   const databaseProducts = productResult.data ?? [];
   const fullCatalog = mergeSearchCatalog(databaseProducts);
   const catalogBySlug = new Map(fullCatalog.map((product) => [product.slug, product]));
-  let products: FeaturedProduct[] = featuredProductSlugs.flatMap((slug) => {
+  const curatedProducts = featuredProductSlugs.flatMap((slug) => {
     const product = catalogBySlug.get(slug);
     return product ? [product] : [];
   });
-  if (products.length === 0) {
-    products = fullCatalog.slice(0, 8);
-  }
+  const databaseFeaturedProducts = databaseProducts.flatMap((product) => {
+    const slug = product.featured ? product.slug?.trim() : null;
+    const catalogProduct = slug ? catalogBySlug.get(slug) : null;
+    return catalogProduct ? [catalogProduct] : [];
+  });
+  const products: FeaturedProduct[] = [
+    ...new Map(
+      [...curatedProducts, ...databaseFeaturedProducts, ...fullCatalog].map(
+        (product) => [product.slug, product],
+      ),
+    ).values(),
+  ].slice(0, 8);
 
   const faqSchema = {
     "@context": "https://schema.org",
