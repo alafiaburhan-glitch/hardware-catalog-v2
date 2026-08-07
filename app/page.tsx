@@ -24,7 +24,7 @@ const featuredProductSlugs = [
   "webbing-sling",
   "hdpe-tarpaulin",
   "duct-tape",
-  "telescopic-ladder",
+  "telescopic-ladder-15-step",
 ];
 
 export default async function HomePage() {
@@ -49,22 +49,10 @@ export default async function HomePage() {
   const databaseProducts = productResult.data ?? [];
   const fullCatalog = mergeSearchCatalog(databaseProducts);
   const catalogBySlug = new Map(fullCatalog.map((product) => [product.slug, product]));
-  const curatedProducts = featuredProductSlugs.flatMap((slug) => {
+  const products: FeaturedProduct[] = featuredProductSlugs.flatMap((slug) => {
     const product = catalogBySlug.get(slug);
     return product ? [product] : [];
   });
-  const databaseFeaturedProducts = databaseProducts.flatMap((product) => {
-    const slug = product.featured ? product.slug?.trim() : null;
-    const catalogProduct = slug ? catalogBySlug.get(slug) : null;
-    return catalogProduct ? [catalogProduct] : [];
-  });
-  const products: FeaturedProduct[] = [
-    ...new Map(
-      [...curatedProducts, ...databaseFeaturedProducts, ...fullCatalog].map(
-        (product) => [product.slug, product],
-      ),
-    ).values(),
-  ].slice(0, 8);
 
   const faqSchema = {
     "@context": "https://schema.org",
