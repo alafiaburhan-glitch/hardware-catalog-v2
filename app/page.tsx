@@ -24,7 +24,7 @@ const featuredProductSlugs = [
   "webbing-sling",
   "hdpe-tarpaulin",
   "duct-tape",
-  "telescopic-ladder-15-step",
+  "telescopic-ladder",
 ];
 
 export default async function HomePage() {
