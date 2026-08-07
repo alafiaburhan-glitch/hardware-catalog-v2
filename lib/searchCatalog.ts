@@ -7,6 +7,8 @@ import { measuringInstruments } from "@/data/measuringInstruments";
 import { agriTools } from "@/data/agriTools";
 import { packingMaterials } from "@/data/packingMaterials";
 import { ropes } from "@/data/ropes";
+import { liftingEquipment } from "@/data/liftingEquipment";
+import { ladders } from "@/data/ladders";
 import { localProducts as codeBackedProducts } from "@/data/localProducts";
 import { supabase } from "@/lib/supabase";
 import { consolidateProductFamilies } from "@/lib/productFamilies";
@@ -45,6 +47,15 @@ export function mergeSearchCatalog(databaseProducts: DatabaseSearchProduct[] = [
     ...agriTools,
     ...packingMaterials,
     ...ropes,
+    ...liftingEquipment.map(({ specifications, ...product }) => ({
+      ...product,
+      specifications: Object.fromEntries(
+        Object.entries(specifications).filter(
+          (entry): entry is [string, string] => typeof entry[1] === "string",
+        ),
+      ),
+    })),
+    ...ladders,
   ];
 
   const productsBySlug = new Map(localProducts.map((product) => [product.slug, product]));
